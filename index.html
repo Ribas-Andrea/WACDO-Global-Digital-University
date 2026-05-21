@@ -3,14 +3,34 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet" />
     <title>WACDO</title>
   </head>
   <body>
-    <header></header>
-    <main></main>
-    <section></section>
-    <aside></aside>
-    <footer></footer>
+    <div id="fond-ecran"></div>
+    <section id="menu-accueil">
+      <div id="menu-accueil-titre-p">
+        <h1>Bonjour,</h1>
+
+        <p id="question-choix-lieu">Souhaitez-vous consommer votre menu sur place ou préférez-vous l'emporter ?</p>
+      </div>
+      <div id="espace-btn-choix-lieu">
+        <button class="btn-choix-lieu">
+          <img class="btn-img" src="assets/illustration-sur-place.png" alt="illustration-sur-place" />
+          <br />
+          <span class="choix">Sur Place</span>
+        </button>
+        <button class="btn-choix-lieu">
+          <img class="btn-img" src="assets/illustration-a-emporter.png" alt="illustration-a-emporter" />
+          <br />
+          <span class="choix">A Emporter</span>
+        </button>
+      </div>
+    </section>
+
+    <div id="fond-ecran-blanc"></div>
   </body>
 </html>

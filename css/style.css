@@ -1,0 +1,269 @@
+/* --------------------------------------------- Général --------------------------------------------- */
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Source Sans 3";
+  box-sizing: border-box;
+}
+
+body {
+  max-width: 1920px;
+  max-height: 1080px;
+  overflow-x: hidden; /* évite la barre horizontale et cache ce qui dépasse */
+  background-color: white;
+}
+
+/* --------------------------------------------- Fonds écran --------------------------------------------- */
+
+#fond-ecran {
+  background-image: url("../assets/mc_landing_banner.png");
+  opacity: 0.85;
+  position: fixed;
+  top: -90px;
+  width: 118%;
+  height: 100vh;
+  background-size: contain;
+  background-position: top right;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
+/* --------------------------------------------- Menu accueil --------------------------------------------- */
+
+#menu-accueil {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 36.3%; /* 698px*/
+  height: 47.9%; /*517px*/
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.25);
+  padding: 32px;
+  position: absolute;
+  bottom: 28%; /* distance du bas 300px */
+  left: 53%; /* centre horizontal */
+  z-index: 2; /*image devant le fond d'écran*/
+  transform: translateX(-50%); /*placement au milieu*/
+}
+
+#menu-accueil-titre-p {
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 42px;
+}
+#question-choix-lieu {
+  font-weight: 700;
+  font-size: 26px;
+  padding-top: 45px;
+}
+
+/* --------------------------------------------- Boutons --------------------------------------------- */
+
+.btn-choix-lieu {
+  border: 8px solid #ffc836;
+  border-radius: 8px;
+  background-color: white;
+  cursor: pointer;
+}
+
+#espace-btn-choix-lieu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 30px;
+  margin-top: 40px;
+  margin-bottom: 60px;
+}
+
+.btn-choix-lieu {
+  width: 45.1%; /* 285px */
+  height: 131.2%; /* 202px*/
+}
+
+.choix {
+  font-weight: 700;
+  font-size: 26px;
+}
+
+/* --------------------------------------------- Responsive --------------------------------------------- */
+
+/* --------------------- Petit pc Nest Hub Max -------------------*/
+
+@media (max-width: 1280px) {
+  #menu-accueil {
+    bottom: 35%;
+  }
+
+  h1 {
+    font-size: 25px;
+  }
+
+  #question-choix-lieu {
+    font-size: 16px;
+    padding-top: 7%;
+  }
+
+  .choix {
+    font-size: 10px;
+  }
+
+  .btn-img {
+    width: 50%;
+  }
+}
+
+/* --------------------- Tablette ipad mini horizontale -------------------*/
+
+@media (max-width: 1180px) {
+  #fond-ecran {
+    top: 0px;
+  }
+
+  #menu-accueil {
+    bottom: 26%;
+    height: 51.9%;
+  }
+
+  h1 {
+    font-size: 25px;
+  }
+
+  #question-choix-lieu {
+    font-size: 16px;
+    padding-top: 7%;
+  }
+
+  .choix {
+    font-size: 10px;
+  }
+
+  .btn-img {
+    width: 50%;
+  }
+}
+
+/* --------------------- Tablette ipad air vertical -------------------*/
+
+@media (max-width: 820px) {
+  body {
+    background-color: #f1f1f1;
+  }
+  #menu-accueil {
+    bottom: 31%;
+    height: 26.9%;
+    padding: 11px;
+    padding-top: 0px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  #question-choix-lieu {
+    font-size: 12px;
+    padding-top: 7%;
+  }
+
+  .choix {
+    font-size: 10px;
+  }
+
+  .btn-img {
+    width: 50%;
+  }
+}
+
+/* --------------------- Tel Iphone SE  horizontal -------------------*/
+
+@media (max-width: 667px) {
+  #fond-ecran {
+    top: 0;
+  }
+  #menu-accueil {
+    bottom: 13%;
+    height: 60.9%;
+    padding: 6px;
+    padding-top: 0px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  #question-choix-lieu {
+    font-size: 10px;
+    padding-top: 7%;
+  }
+
+  .choix {
+    font-size: 7px;
+  }
+
+  .btn-img {
+    width: 50%;
+  }
+  #espace-btn-choix-lieu {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3px;
+    margin-bottom: 0px;
+    gap: 5px;
+  }
+
+  .btn-choix-lieu {
+    border: 2px solid #ffc836;
+    padding: 2px;
+  }
+}
+
+/* --------------------- Tel Iphone SE vertical -------------------*/
+
+@media (max-width: 375px) {
+  body {
+    background-color: #f1f1f1;
+  }
+
+  #fond-ecran {
+    top: 0;
+  }
+  #menu-accueil {
+    bottom: 36%;
+    height: 32.9%;
+    padding: 9px;
+    padding-top: 0px;
+  }
+
+  h1 {
+    font-size: 15px;
+  }
+
+  #question-choix-lieu {
+    font-size: 9px;
+    padding-top: 2%;
+  }
+
+  .choix {
+    font-size: 5px;
+  }
+
+  .btn-img {
+    width: 50%;
+  }
+  #espace-btn-choix-lieu {
+    align-items: center;
+    margin-top: 3px;
+    margin-bottom: 0px;
+    gap: 5px;
+  }
+
+  .btn-choix-lieu {
+    border: 2px solid #ffc836;
+    padding: 2px;
+  }
+}
