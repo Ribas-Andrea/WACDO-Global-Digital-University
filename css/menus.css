@@ -1,0 +1,243 @@
+/* --------------------------------------------- Page --------------------------------------------- */
+
+#page-choix-menus {
+  display: flex;
+  flex-direction: row;
+}
+
+/* --------------------------------------------- Gauche --------------------------------------------- */
+
+#partie-gauche-choix-menu {
+  display: flex;
+  flex-direction: column;
+  width: 1300px;
+}
+
+#nav-page-menus {
+  display: flex;
+  flex-direction: row;
+  margin: 50px;
+  height: 126px;
+}
+
+#choix-categorie-menus {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  overflow-x: hidden;
+  gap: 34px;
+  width: 1000px;
+}
+
+.card-categories-nav {
+  border: 1px solid #6e6e6e;
+  border-radius: 8px;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.titre-images-nav {
+  padding-top: 5px;
+}
+
+.fleche-slider-droite {
+  transform: rotate(180deg);
+}
+
+#nos-menus {
+  display: flex;
+  flex-direction: column;
+  margin-left: 135px;
+  width: 1060px;
+  height: 126px;
+}
+
+#titre-menus {
+  display: flex;
+  flex-direction: column;
+}
+
+h2 {
+  font-weight: 400;
+  font-size: 28px;
+  padding-bottom: 20px;
+}
+
+#description-menus {
+  font-weight: 400;
+  font-size: 14px;
+  padding-bottom: 50px;
+}
+
+#zone-choix {
+  display: flex;
+  flex-direction: row;
+  height: 614px;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 20px;
+}
+
+.card-choix {
+  border: 1px solid #6e6e6e;
+  border-radius: 8px;
+  height: 296px;
+  width: 240px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
+}
+
+#image-card {
+  height: 200px;
+  width: 199px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nom-du-produit {
+  font-weight: 400;
+  font-size: 20px;
+}
+
+.prix-produit {
+  font-weight: 400;
+  font-size: 18px;
+}
+
+/* --------------------------------------------- Droite --------------------------------------------- */
+
+#partie-droite-panier {
+  display: flex;
+  width: 443px;
+  height: 1024px;
+  background-color: #f1f1f1;
+  flex-direction: column;
+  padding-right: 25px;
+}
+
+#logo-numero-commande {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-panier {
+  width: 32.3px;
+  height: 28.24px;
+  margin: 10% 50% 10% 50%;
+}
+
+#panier {
+  padding-left: 25px;
+}
+
+#zone-numero-ticket {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#numero-commande {
+  display: flex;
+  flex-direction: column;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+#numero-emporter {
+  display: flex;
+  flex-direction: row;
+}
+
+#numero-sur-place {
+  display: flex;
+  flex-direction: row;
+}
+
+#numero-commande-emporter {
+  font-weight: 400;
+  font-size: 42px;
+}
+
+#numero-commande-sur-place {
+  font-weight: 700;
+  padding-left: 10px;
+}
+
+.barre-separation {
+  border: 1px solid black;
+  width: 100%;
+  margin-bottom: 20px;
+}
+#articles-panier {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  padding-bottom: 80%;
+}
+
+.menus-panier {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.liste-detail-menu {
+  font-size: 14px;
+  padding-left: 30px;
+}
+
+#total-panier {
+  font-weight: 700;
+  font-size: 22px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#total {
+  font-size: 22px;
+  font-weight: 400;
+  display: flex;
+  flex-direction: column;
+}
+#montant {
+  font-size: 42px;
+  font-weight: 400;
+}
+
+#btn-panier {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 25px;
+}
+
+#btn-abandon {
+  border: 1px solid black;
+  padding: 25px 50px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+#btn-payer {
+  border-radius: 8px;
+  background-color: #ffc836;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 25px 50px;
+  border: none;
+}
