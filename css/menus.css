@@ -10,41 +10,65 @@
 #partie-gauche-choix-menu {
   display: flex;
   flex-direction: column;
-  width: 1300px;
+  width: 78.9%; /*1300px*/
 }
 
 #nav-page-menus {
   display: flex;
   flex-direction: row;
-  margin: 50px;
-  height: 126px;
+  margin: 3.9%; /*50px*/
+  height: 12.3%; /*126px*/
 }
 
 #choix-categorie-menus {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  overflow-x: hidden;
-  gap: 34px;
-  width: 1000px;
+  overflow: hidden;
+  width: 83.5%; /*1000px*/
+}
+.parent-liste-categorie {
+  display: flex;
+  flex-direction: row;
+  gap: 8.1%;
 }
 
 .card-categories-nav {
   border: 1px solid #6e6e6e;
   border-radius: 8px;
-  width: 120px;
-  height: 120px;
+  height: 100%; /*120px*/
   display: flex;
   flex-direction: column;
   align-content: center;
   justify-content: flex-end;
   align-items: center;
-  font-size: 14px;
+  font-size: 0.875rem; /*14px*/
   font-weight: 400;
+  padding: 4.26%; /*25px*/
+}
+
+.parent-image {
+  width: 100%;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.parent-texte {
+  height: 20%;
+  width: 100%;
+  text-align: center;
+}
+
+.image-card-categorie {
+  height: 78.03%; /*100px*/
+  padding-top: 1.48%; /*2px*/
 }
 
 .titre-images-nav {
-  padding-top: 5px;
+  padding-top: 4.3%; /*5px*/
+  white-space: nowrap;
 }
 
 .fleche-slider-droite {
@@ -54,9 +78,9 @@
 #nos-menus {
   display: flex;
   flex-direction: column;
-  margin-left: 135px;
-  width: 1060px;
-  height: 126px;
+  margin-left: 10.4%; /* 135px*/
+  width: 81.6%; /*1060px*/
+  height: 12.3%; /*126px*/
 }
 
 #titre-menus {
@@ -64,66 +88,72 @@
   flex-direction: column;
 }
 
-h2 {
+h1 {
   font-weight: 400;
-  font-size: 28px;
-  padding-bottom: 20px;
+  font-size: 1.75rem; /*28px*/
+  padding-bottom: 1.9%; /*20px*/
 }
 
 #description-menus {
   font-weight: 400;
-  font-size: 14px;
-  padding-bottom: 50px;
+  font-size: 0.875rem; /*14px*/
+  padding-bottom: 4.7%; /*50px*/
 }
 
 #zone-choix {
   display: flex;
   flex-direction: row;
-  height: 614px;
-  width: 100%;
+  /* height: 612px; */
+  /* width: 1060px; */
   flex-wrap: wrap;
   justify-content: flex-start;
-  gap: 20px;
+  gap: 2.4%; /*20px*/
 }
 
 .card-choix {
   border: 1px solid #6e6e6e;
   border-radius: 8px;
-  height: 296px;
-  width: 240px;
+  height: 53.8%; /*296px*/
+  width: 22.6%; /*240px*/
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 10px;
+  padding: 0.95%; /*10px*/
 }
 
 #image-card {
-  height: 200px;
-  width: 199px;
+  height: 73.1%; /*200px*/
+  width: 93.93%; /*199px*/
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+.image-card-produits {
+  width: 97.38%; /*199px*/
+  height: 99.898%; /*200px*/
+}
+
 .nom-du-produit {
   font-weight: 400;
-  font-size: 20px;
+  font-size: 1.25rem; /*20px*/
 }
 
 .prix-produit {
   font-weight: 400;
-  font-size: 18px;
+  font-size: 1.125rem; /*18px*/
 }
 
 /* --------------------------------------------- Droite --------------------------------------------- */
 
 #partie-droite-panier {
   display: flex;
-  width: 443px;
-  height: 1024px;
+  width: 21.8%; /*418.55px*/
+  height: 100%; /*1080px*/
   background-color: #f1f1f1;
   flex-direction: column;
-  padding-right: 25px;
+  padding-right: 1.31%; /*25px*/
+  padding-bottom: 2.92%; /*56px*/
 }
 
 #logo-numero-commande {
@@ -132,13 +162,13 @@ h2 {
 }
 
 .logo-panier {
-  width: 32.3px;
-  height: 28.24px;
+  width: 8.53%; /*32.3px*/
+  /* height: 28.24px; */
   margin: 10% 50% 10% 50%;
 }
 
 #panier {
-  padding-left: 25px;
+  padding-left: 6.6%; /*25px*/
 }
 
 #zone-numero-ticket {
@@ -151,7 +181,7 @@ h2 {
   display: flex;
   flex-direction: column;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 0.875rem; /*14px*/
 }
 
 #numero-emporter {
@@ -166,55 +196,55 @@ h2 {
 
 #numero-commande-emporter {
   font-weight: 400;
-  font-size: 42px;
+  font-size: 2.625rem; /*42px*/
 }
 
 #numero-commande-sur-place {
   font-weight: 700;
-  padding-left: 10px;
+  padding-left: 8.54%; /*10px*/
 }
 
 .barre-separation {
   border: 1px solid black;
   width: 100%;
-  margin-bottom: 20px;
+  margin-bottom: 5.66%; /*20px*/
 }
 #articles-panier {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   width: 100%;
-  padding-bottom: 80%;
+  padding-bottom: 100%; /*353.81px*/
 }
 
 .menus-panier {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 10px;
+  padding: 2.83%; /*10px*/
 }
 
 .liste-detail-menu {
-  font-size: 14px;
-  padding-left: 30px;
+  font-size: 0.875rem; /*14px*/
+  padding-left: 8.48%; /*30px*/
 }
 
 #total-panier {
   font-weight: 700;
-  font-size: 22px;
+  font-size: 1.375rem; /*22px*/
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
 #total {
-  font-size: 22px;
+  font-size: 1.375rem; /*22px*/
   font-weight: 400;
   display: flex;
   flex-direction: column;
 }
 #montant {
-  font-size: 42px;
+  font-size: 2.625rem; /*42px*/
   font-weight: 400;
 }
 
@@ -222,22 +252,79 @@ h2 {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding-top: 25px;
+  padding-top: 7.07%; /*25px*/
 }
 
 #btn-abandon {
   border: 1px solid black;
-  padding: 25px 50px;
+  padding: 7.07% 14.135%; /*25px 50px*/
   border-radius: 8px;
-  font-size: 16px;
+  font-size: 1rem; /*16px*/
   font-weight: 400;
 }
 
 #btn-payer {
   border-radius: 8px;
   background-color: #ffc836;
-  font-size: 18px;
+  font-size: 1.125rem; /*18px*/
   font-weight: 700;
-  padding: 25px 50px;
+  padding: 7.07% 14.135%; /*25px 50px*/
   border: none;
+}
+
+/* --------------------------------------------- Responsive --------------------------------------------- */
+
+/* --------------------------------------------- Responsive page index --------------------------------------------- */
+
+/* --------------------- Petit pc Nest Hub Max -------------------*/
+
+@media (max-width: 1280px) {
+  .parent-liste-categorie {
+    gap: 2.1%;
+  }
+
+  .card-categories-nav {
+    padding: 2.26%;
+  }
+
+  #btn-abandon,
+  #btn-payer {
+    padding: 4.07% 10.135%;
+  }
+}
+
+/* --------------------- Tablette ipad air horizontale -------------------*/
+
+@media (max-width: 1180px) {
+  #partie-droite-panier {
+    width: 21.1%;
+  }
+  #btn-panier {
+    padding-top: 19.07%;
+  }
+}
+
+/* --------------------- Tablette ipad air vertical -------------------*/
+
+@media (max-width: 820px) {
+  #partie-droite-panier {
+    width: 24.1%;
+    padding-right: 3%;
+  }
+
+  #montant {
+    font-size: 1.625rem;
+  }
+
+  #btn-panier {
+    padding-top: 38%;
+  }
+
+  #btn-abandon,
+  #btn-payer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 2.07% 2.135%;
+  }
 }
