@@ -19,15 +19,14 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  width: 41.3%; /* 698px*/
-  height: 83.9%;
+  width: 42%;
   background-color: white;
   border-radius: 16px;
   box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.25);
   padding: 32px;
   position: absolute;
-  bottom: 6%; /* distance du bas 300px */
-  left: 53%; /* centre horizontal */
+  bottom: 6%;
+  left: 53%;
   z-index: 2; /*image devant le fond d'écran*/
   transform: translateX(-50%); /*placement au milieu*/
 }
@@ -105,7 +104,7 @@ form label .input-numero-chevalet {
 
 /* --------------------------------------------- Responsive --------------------------------------------- */
 
-/* --------------------------------------------- Responsive page index --------------------------------------------- */
+/* --------------------------------------------- Responsive page chevalet --------------------------------------------- */
 
 /* --------------------- Petit pc Nest Hub Max -------------------*/
 

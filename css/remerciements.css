@@ -1,0 +1,55 @@
+/* --------------------------------------------- Fonds écran --------------------------------------------- */
+
+#fond-ecran {
+  background-image: url("../assets/mc_landing_banner.png");
+  opacity: 0.85;
+  position: fixed;
+  top: -90px;
+  width: 118%;
+  height: 100vh; /*représente 100 % de la hauteur de la fenêtre ou toute la hauteur de l'écran.*/
+  background-size: contain;
+  background-position: top right;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
+/* --------------------------------------------- Menu chevalet --------------------------------------------- */
+
+#menu-remerciements {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 43%; /* 698px*/
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.25);
+  padding: 32px;
+  position: absolute;
+  bottom: 32%; /* distance du bas 300px */
+  left: 43%; /* centre horizontal */
+  z-index: 2; /*image devant le fond d'écran*/
+  transform: translateX(-50%); /*placement au milieu*/
+}
+
+#image-remerciements {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 42px;
+}
+#texte-remerciements {
+  font-weight: 700;
+  font-size: 26px;
+  padding-top: 60px;
+  width: 90%;
+}
+
+#img-a-bientot {
+  width: 40%;
+  padding-top: 80px;
+}

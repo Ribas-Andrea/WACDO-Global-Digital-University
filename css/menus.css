@@ -10,14 +10,18 @@
 #partie-gauche-choix-menu {
   display: flex;
   flex-direction: column;
-  width: 78.9%; /*1300px*/
+  width: 80%;
 }
 
 #nav-page-menus {
   display: flex;
   flex-direction: row;
-  margin: 3.9%; /*50px*/
-  height: 12.3%; /*126px*/
+  margin: 50px;
+  height: 150px;
+}
+
+.fleche-gauche {
+  margin-right: 25px;
 }
 
 #choix-categorie-menus {
@@ -25,18 +29,20 @@
   flex-direction: row;
   flex-wrap: nowrap;
   overflow: hidden;
-  width: 83.5%; /*1000px*/
+  width: 85%;
 }
 .parent-liste-categorie {
   display: flex;
   flex-direction: row;
-  gap: 8.1%;
+  gap: 35px;
+  padding-left: 25px;
 }
 
 .card-categories-nav {
   border: 1px solid #6e6e6e;
   border-radius: 8px;
-  height: 100%; /*120px*/
+  height: 150px;
+  width: 150px;
   display: flex;
   flex-direction: column;
   align-content: center;
@@ -44,7 +50,6 @@
   align-items: center;
   font-size: 0.875rem; /*14px*/
   font-weight: 400;
-  padding: 4.26%; /*25px*/
 }
 
 .parent-image-card-categorie {
@@ -53,6 +58,7 @@
   align-content: center;
   justify-content: center;
   align-items: center;
+  padding: 15px;
 }
 
 .parent-texte-titre-image-nav {
@@ -62,25 +68,25 @@
 }
 
 .image-card-categorie {
-  height: 78.03%; /*100px*/
-  padding-top: 1.48%; /*2px*/
+  height: 55px;
+  padding-top: 1px;
 }
 
 .titre-images-nav {
-  padding-top: 4.3%; /*5px*/
+  padding-top: 5px;
   white-space: nowrap;
 }
 
-.fleche-slider-droite {
+.fleche-droite {
   transform: rotate(180deg);
 }
 
 #nos-menus {
   display: flex;
   flex-direction: column;
-  margin-left: 10.4%; /* 135px*/
-  width: 81.6%; /*1060px*/
-  height: 12.3%; /*126px*/
+  margin-left: 135px;
+  width: 80%;
+  height: 12%;
 }
 
 #titre-menus {
@@ -91,47 +97,45 @@
 h1 {
   font-weight: 400;
   font-size: 1.75rem; /*28px*/
-  padding-bottom: 1.9%; /*20px*/
+  padding-bottom: 20px;
 }
 
 #description-menus {
   font-weight: 400;
   font-size: 0.875rem; /*14px*/
-  padding-bottom: 4.7%; /*50px*/
+  padding-bottom: 50px;
 }
 
 #zone-choix {
   display: flex;
   flex-direction: row;
-  /* height: 612px; */
-  /* width: 1060px; */
   flex-wrap: wrap;
   justify-content: flex-start;
-  gap: 2.4%; /*20px*/
+  gap: 20px;
 }
 
 .card-choix {
   border: 1px solid #6e6e6e;
   border-radius: 8px;
-  height: 53.8%; /*296px*/
-  width: 22.6%; /*240px*/
+  height: 55%;
+  width: 25%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0.95%; /*10px*/
+  padding: 10px;
 }
 
 #image-card {
-  height: 73.1%; /*200px*/
-  width: 93.93%; /*199px*/
+  height: 200px;
+  width: 199px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .image-card-produits {
-  width: 97.38%; /*199px*/
-  height: 99.898%; /*200px*/
+  width: 199px;
+  height: 200px;
 }
 
 .nom-du-produit {
@@ -148,12 +152,12 @@ h1 {
 
 #partie-droite-panier {
   display: flex;
-  width: 21.8%; /*418.55px*/
-  height: 100%; /*1080px*/
+  width: 20%;
+  /* height: 100%; */
   background-color: #f1f1f1;
   flex-direction: column;
-  padding-right: 1.31%; /*25px*/
-  padding-bottom: 2.92%; /*56px*/
+  padding-right: 25px;
+  padding-bottom: 56px;
 }
 
 #logo-numero-commande {
@@ -162,13 +166,12 @@ h1 {
 }
 
 .logo-panier {
-  width: 8.53%; /*32.3px*/
-  /* height: 28.24px; */
+  width: 32.3px;
   margin: 10% 50% 10% 50%;
 }
 
 #panier {
-  padding-left: 6.6%; /*25px*/
+  padding-left: 25px;
 }
 
 #zone-numero-ticket {
@@ -201,32 +204,32 @@ h1 {
 
 #numero-commande-sur-place {
   font-weight: 700;
-  padding-left: 8.54%; /*10px*/
+  padding-left: 10px;
 }
 
 .barre-separation {
   border: 1px solid black;
   width: 100%;
-  margin-bottom: 5.66%; /*20px*/
+  margin-bottom: 20px;
 }
 #articles-panier {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   width: 100%;
-  padding-bottom: 100%; /*353.81px*/
+  padding-bottom: 334px;
 }
 
 .menus-panier {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 2.83%; /*10px*/
+  padding: 10px;
 }
 
 .liste-detail-menu {
   font-size: 0.875rem; /*14px*/
-  padding-left: 8.48%; /*30px*/
+  padding-left: 30px;
 }
 
 #total-panier {
@@ -252,12 +255,12 @@ h1 {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding-top: 7.07%; /*25px*/
+  padding-top: 25px;
 }
 
 #btn-abandon {
   border: 1px solid black;
-  padding: 7.07% 14.135%; /*25px 50px*/
+  padding: 25px 50px;
   border-radius: 8px;
   font-size: 1rem; /*16px*/
   font-weight: 400;
@@ -268,7 +271,7 @@ h1 {
   background-color: #ffc836;
   font-size: 1.125rem; /*18px*/
   font-weight: 700;
-  padding: 7.07% 14.135%; /*25px 50px*/
+  padding: 25px 50px;
   border: none;
 }
 
