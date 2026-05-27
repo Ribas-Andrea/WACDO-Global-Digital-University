@@ -1,26 +1,26 @@
 /* --------------------------------------------- Page --------------------------------------------- */
 
-#page-choix-menus {
+#page-choix-boissons {
   display: flex;
   flex-direction: row;
 }
 
 /* --------------------------------------------- Gauche --------------------------------------------- */
 
-#partie-gauche-choix-menu {
+#partie-gauche-choix-boissons {
   display: flex;
   flex-direction: column;
   width: 78.9%; /*1300px*/
 }
 
-#nav-page-menus {
+#nav-page-boissons {
   display: flex;
   flex-direction: row;
   margin: 3.9%; /*50px*/
   height: 12.3%; /*126px*/
 }
 
-#choix-categorie-menus {
+#choix-categorie-boissons {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -75,7 +75,7 @@
   transform: rotate(180deg);
 }
 
-#nos-menus {
+#nos-boissons {
   display: flex;
   flex-direction: column;
   margin-left: 10.4%; /* 135px*/
@@ -83,7 +83,7 @@
   height: 12.3%; /*126px*/
 }
 
-#titre-menus {
+#titre-boissons {
   display: flex;
   flex-direction: column;
 }
@@ -94,7 +94,7 @@ h1 {
   padding-bottom: 1.9%; /*20px*/
 }
 
-#description-menus {
+#description-boissons {
   font-weight: 400;
   font-size: 0.875rem; /*14px*/
   padding-bottom: 4.7%; /*50px*/

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wacdo</title>
+    <link rel="stylesheet" href="./css/chevalet.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="fond-ecran"></div>
+
+    <section id="menu-chevalet">
+      <div id="image-chevalet">
+        <img src="./assets/chevalet.png" alt="Illustration Chevalet" />
+      </div>
+      <div id="menu-chevalet-titre-p">
+        <h1>Pour être servis à table,</h1>
+
+        <p id="texte-chevalet">Récupérez un chevalet et indiquez ici le numéro inscrit dessus</p>
+
+        <form action="">
+          <div id="form-numero-chevalet">
+            <label for="numero-un"></label>
+            <input class="input-numero-chevalet" type="text" id="numero-un" name="numero-un" maxlength="1" size="1" value="2" />
+            <label for="numero-deux"></label>
+            <input class="input-numero-chevalet" type="text" id="numero-deux" name="numero-deux" maxlength="1" size="1" value="6" />
+            <label for="numero-trois"></label>
+            <input class="input-numero-chevalet" type="text" id="numero-trois" name="numero-trois" maxlength="1" size="1" value="1" />
+          </div>
+          <div id="form-btn">
+            <button class="btn-chevalet">Enregistrer le numéro</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </body>
+</html>

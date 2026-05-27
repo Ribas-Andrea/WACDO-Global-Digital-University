@@ -8,5 +8,5 @@ Etapes avancement github :
 1/ Mise en place de l'environnement + github
 2/ Creation page index.html + CSS 6 responsive + verification code html/CSS W3C
 3/ Creation feuille de style par page + creation page menu avec CSS
-4/ Responsive + verification W3C
-5/
+4/ Responsive + verification W3C (page menus)
+5/ Creation page boissons + page chevalet avec Responsive
