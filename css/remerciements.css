@@ -1,21 +1,6 @@
-/* --------------------------------------------- Fonds écran --------------------------------------------- */
-
-#fond-ecran {
-  background-image: url("../assets/mc_landing_banner.png");
-  opacity: 0.85;
-  position: fixed;
-  top: -90px;
-  width: 118%;
-  height: 100vh; /*représente 100 % de la hauteur de la fenêtre ou toute la hauteur de l'écran.*/
-  background-size: contain;
-  background-position: top right;
-  background-repeat: no-repeat;
-  z-index: -1;
-}
-
 /* --------------------------------------------- Menu chevalet --------------------------------------------- */
 
-#menu-remerciements {
+#container-menu-remerciements {
   display: flex;
   flex-direction: column;
   justify-content: space-around;

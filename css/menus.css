@@ -7,7 +7,7 @@
 
 /* --------------------------------------------- Gauche --------------------------------------------- */
 
-#partie-gauche-choix-menu {
+#partie-gauche-choix-menus {
   display: flex;
   flex-direction: column;
   width: 80%;
@@ -20,7 +20,7 @@
   height: 150px;
 }
 
-.fleche-gauche {
+#fleche-gauche {
   margin-right: 25px;
 }
 
@@ -31,7 +31,8 @@
   overflow: hidden;
   width: 85%;
 }
-.parent-liste-categorie {
+
+#container-liste-categories {
   display: flex;
   flex-direction: row;
   gap: 35px;
@@ -50,9 +51,10 @@
   align-items: center;
   font-size: 0.875rem; /*14px*/
   font-weight: 400;
+  cursor: pointer;
 }
 
-.parent-image-card-categorie {
+.container-img-card-categorie {
   width: 100%;
   display: flex;
   align-content: center;
@@ -61,18 +63,18 @@
   padding: 15px;
 }
 
-.parent-texte-titre-image-nav {
+.container-titre-img-nav {
   height: 20%;
   width: 100%;
   text-align: center;
 }
 
-.image-card-categorie {
+.img-card-categorie {
   height: 55px;
   padding-top: 1px;
 }
 
-.titre-images-nav {
+.titre-img-nav {
   padding-top: 5px;
   white-space: nowrap;
 }
@@ -81,7 +83,7 @@
   transform: rotate(180deg);
 }
 
-#nos-menus {
+#container-nos-menus {
   display: flex;
   flex-direction: column;
   margin-left: 135px;
@@ -106,36 +108,40 @@ h1 {
   padding-bottom: 50px;
 }
 
-#zone-choix {
+#container-zone-choix {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-start;
-  gap: 20px;
+  gap: 25px;
 }
 
 .card-choix {
   border: 1px solid #6e6e6e;
   border-radius: 8px;
-  height: 55%;
-  width: 25%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 10px;
+  height: 326px;
+  width: 229px;
 }
 
-#image-card {
-  height: 200px;
-  width: 199px;
+#container-img-card {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.image-card-produits {
-  width: 199px;
+.img-card-produits {
   height: 200px;
+  width: 199px;
+}
+
+.container-titre-prix {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .nom-du-produit {
@@ -153,7 +159,6 @@ h1 {
 #partie-droite-panier {
   display: flex;
   width: 20%;
-  /* height: 100%; */
   background-color: #f1f1f1;
   flex-direction: column;
   padding-right: 25px;
@@ -170,11 +175,11 @@ h1 {
   margin: 10% 50% 10% 50%;
 }
 
-#panier {
+#container-panier {
   padding-left: 25px;
 }
 
-#zone-numero-ticket {
+#container-numero-commande {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -212,7 +217,8 @@ h1 {
   width: 100%;
   margin-bottom: 20px;
 }
-#articles-panier {
+
+#container-articles-panier {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -227,12 +233,12 @@ h1 {
   padding: 10px;
 }
 
-.liste-detail-menu {
+.liste-detail-menus {
   font-size: 0.875rem; /*14px*/
   padding-left: 30px;
 }
 
-#total-panier {
+#container-total-panier {
   font-weight: 700;
   font-size: 1.375rem; /*22px*/
   display: flex;
@@ -251,7 +257,7 @@ h1 {
   font-weight: 400;
 }
 
-#btn-panier {
+#container-btn-panier {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -276,8 +282,6 @@ h1 {
 }
 
 /* --------------------------------------------- Responsive --------------------------------------------- */
-
-/* --------------------------------------------- Responsive page index --------------------------------------------- */
 
 /* --------------------- Petit pc Nest Hub Max -------------------*/
 

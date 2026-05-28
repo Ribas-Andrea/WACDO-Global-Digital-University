@@ -13,3 +13,16 @@ body {
   overflow-x: hidden; /* évite la barre horizontale et cache ce qui dépasse */
   background-color: white;
 }
+
+#fond-ecran {
+  background-image: url("../assets/mc_landing_banner.png");
+  opacity: 0.85;
+  position: fixed;
+  top: -90px;
+  width: 118%;
+  height: 100vh;
+  background-size: contain;
+  background-position: top right;
+  background-repeat: no-repeat;
+  z-index: -1;
+}

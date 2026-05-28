@@ -1,21 +1,6 @@
-/* --------------------------------------------- Fonds écran --------------------------------------------- */
-
-#fond-ecran {
-  background-image: url("../assets/mc_landing_banner.png");
-  opacity: 0.85;
-  position: fixed;
-  top: -90px;
-  width: 118%;
-  height: 100vh;
-  background-size: contain;
-  background-position: top right;
-  background-repeat: no-repeat;
-  z-index: -1;
-}
-
 /* --------------------------------------------- Menu chevalet --------------------------------------------- */
 
-#menu-chevalet {
+#container-menu-chevalet {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -31,7 +16,7 @@
   transform: translateX(-50%); /*placement au milieu*/
 }
 
-#image-chevalet {
+#container-img-chevalet {
   display: flex;
   justify-content: center;
   align-content: center;
@@ -47,6 +32,7 @@ h1 {
   font-weight: 700;
   font-size: 42px;
 }
+
 #texte-chevalet {
   font-weight: 700;
   font-size: 26px;
@@ -100,6 +86,7 @@ form label .input-numero-chevalet {
   font-weight: 700;
   font-size: 18px;
   border: none;
+  cursor: pointer;
 }
 
 /* --------------------------------------------- Responsive --------------------------------------------- */

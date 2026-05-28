@@ -13,8 +13,8 @@
   <body>
     <div id="fond-ecran"></div>
 
-    <section id="menu-chevalet">
-      <div id="image-chevalet">
+    <section id="container-menu-chevalet">
+      <div id="container-img-chevalet">
         <img src="./assets/chevalet.png" alt="Illustration Chevalet" />
       </div>
       <div id="menu-chevalet-titre-p">
@@ -22,7 +22,7 @@
 
         <p id="texte-chevalet">Récupérez un chevalet et indiquez ici le numéro inscrit dessus</p>
 
-        <form action="">
+        <form method="get" action="">
           <div id="form-numero-chevalet">
             <label for="numero-un"></label>
             <input class="input-numero-chevalet" type="text" id="numero-un" name="numero-un" maxlength="1" size="1" value="2" />
@@ -32,7 +32,7 @@
             <input class="input-numero-chevalet" type="text" id="numero-trois" name="numero-trois" maxlength="1" size="1" value="1" />
           </div>
           <div id="form-btn">
-            <button class="btn-chevalet">Enregistrer le numéro</button>
+            <input class="btn-chevalet" type="submit" value="Enregistrer le numéro" />
           </div>
         </form>
       </div>

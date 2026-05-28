@@ -1,21 +1,6 @@
-/* --------------------------------------------- Fonds écran --------------------------------------------- */
-
-#fond-ecran {
-  background-image: url("../assets/mc_landing_banner.png");
-  opacity: 0.85;
-  position: fixed;
-  top: -90px;
-  width: 118%;
-  height: 100vh;
-  background-size: contain;
-  background-position: top right;
-  background-repeat: no-repeat;
-  z-index: -1;
-}
-
 /* --------------------------------------------- Menu accueil --------------------------------------------- */
 
-#menu-accueil {
+#container-menu-accueil {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -56,7 +41,7 @@ h1 {
   cursor: pointer;
 }
 
-#espace-btn-choix-lieu {
+#container-btn-choix-lieu {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -70,7 +55,7 @@ h1 {
   height: 131%;
 }
 
-.choix {
+.choix-lieu {
   font-weight: 700;
   font-size: 26px;
 }
