@@ -29,7 +29,7 @@
   flex-direction: row;
   flex-wrap: nowrap;
   overflow: hidden;
-  width: 85%;
+  width: 80%;
 }
 
 #container-liste-categories {
@@ -49,7 +49,7 @@
   align-content: center;
   justify-content: flex-end;
   align-items: center;
-  font-size: 0.875rem; /*14px*/
+  font-size: 14px;
   font-weight: 400;
   cursor: pointer;
 }
@@ -75,7 +75,7 @@
 }
 
 .titre-img-nav {
-  padding-top: 5px;
+  padding-bottom: 5px;
   white-space: nowrap;
 }
 
@@ -88,7 +88,6 @@
   flex-direction: column;
   margin-left: 135px;
   width: 80%;
-  height: 12%;
 }
 
 #titre-menus {
@@ -98,13 +97,13 @@
 
 h1 {
   font-weight: 400;
-  font-size: 1.75rem; /*28px*/
+  font-size: 28px;
   padding-bottom: 20px;
 }
 
 #description-menus {
   font-weight: 400;
-  font-size: 0.875rem; /*14px*/
+  font-size: 14px;
   padding-bottom: 50px;
 }
 
@@ -146,12 +145,12 @@ h1 {
 
 .nom-du-produit {
   font-weight: 400;
-  font-size: 1.25rem; /*20px*/
+  font-size: 20px;
 }
 
 .prix-produit {
   font-weight: 400;
-  font-size: 1.125rem; /*18px*/
+  font-size: 18px;
 }
 
 /* --------------------------------------------- Droite --------------------------------------------- */
@@ -163,6 +162,8 @@ h1 {
   flex-direction: column;
   padding-right: 25px;
   padding-bottom: 56px;
+  position: sticky; /*permet de faire suivre le panier quand on descend en bas de page, il faut un top: 0 pour que cela fontionne*/
+  top: 0;
 }
 
 #logo-numero-commande {
@@ -189,7 +190,7 @@ h1 {
   display: flex;
   flex-direction: column;
   font-weight: 400;
-  font-size: 0.875rem; /*14px*/
+  font-size: 14px;
 }
 
 #numero-emporter {
@@ -204,7 +205,7 @@ h1 {
 
 #numero-commande-emporter {
   font-weight: 400;
-  font-size: 2.625rem; /*42px*/
+  font-size: 42px;
 }
 
 #numero-commande-sur-place {
@@ -234,26 +235,26 @@ h1 {
 }
 
 .liste-detail-menus {
-  font-size: 0.875rem; /*14px*/
+  font-size: 14px;
   padding-left: 30px;
 }
 
 #container-total-panier {
   font-weight: 700;
-  font-size: 1.375rem; /*22px*/
+  font-size: 22px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
 #total {
-  font-size: 1.375rem; /*22px*/
+  font-size: 22px;
   font-weight: 400;
   display: flex;
   flex-direction: column;
 }
 #montant {
-  font-size: 2.625rem; /*42px*/
+  font-size: 42px;
   font-weight: 400;
 }
 
@@ -268,14 +269,14 @@ h1 {
   border: 1px solid black;
   padding: 25px 50px;
   border-radius: 8px;
-  font-size: 1rem; /*16px*/
+  font-size: 16px;
   font-weight: 400;
 }
 
 #btn-payer {
   border-radius: 8px;
   background-color: #ffc836;
-  font-size: 1.125rem; /*18px*/
+  font-size: 18px;
   font-weight: 700;
   padding: 25px 50px;
   border: none;
@@ -285,53 +286,128 @@ h1 {
 
 /* --------------------- Petit pc Nest Hub Max -------------------*/
 
-@media (max-width: 1280px) {
-  .parent-liste-categorie {
-    gap: 2.1%;
+@media (max-width: 1860px) {
+  #btn-abandon,
+  #btn-payer {
+    padding: 25px 25px;
+    width: 45%;
+  }
+}
+
+@media (max-width: 1450px) {
+  #montant {
+    font-size: 26px;
+  }
+
+  #total {
+    font-size: 15px;
+  }
+
+  #container-btn-panier {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #btn-abandon,
+  #btn-payer {
+    width: 80%;
+  }
+
+  #btn-payer {
+    margin-top: 5%;
+  }
+}
+
+@media (max-width: 1000px) {
+  #partie-gauche-choix-menus {
+    width: 70%;
+  }
+
+  #partie-droite-panier {
+    width: 30%;
   }
 
   .card-categories-nav {
-    padding: 2.26%;
+    height: 120px;
+    width: 120px;
   }
 
-  #btn-abandon,
-  #btn-payer {
-    padding: 4.07% 10.135%;
+  #nav-page-menus {
+    height: 120px;
+  }
+
+  .card-choix {
+    height: 270px;
+    width: 210px;
+    padding-bottom: 10px;
+  }
+
+  .nom-du-produit {
+    font-size: 15px;
+  }
+
+  .prix-produit {
+    font-size: 15px;
+  }
+
+  #container-liste-categories {
+    gap: 15px;
+  }
+
+  #fleche-gauche {
+    margin-right: 0px;
+  }
+
+  #container-liste-categories {
+    padding-left: 5px;
+  }
+
+  #container-nos-menus {
+    margin-left: 60px;
   }
 }
 
-/* --------------------- Tablette ipad air horizontale -------------------*/
-
-@media (max-width: 1180px) {
-  #partie-droite-panier {
-    width: 21.1%;
-  }
-  #btn-panier {
-    padding-top: 19.07%;
-  }
-}
-
-/* --------------------- Tablette ipad air vertical -------------------*/
-
-@media (max-width: 820px) {
-  #partie-droite-panier {
-    width: 24.1%;
-    padding-right: 3%;
-  }
-
-  #montant {
-    font-size: 1.625rem;
-  }
-
-  #btn-panier {
-    padding-top: 38%;
-  }
-
-  #btn-abandon,
-  #btn-payer {
+@media (max-width: 795px) {
+  section#page-choix-menus {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 2.07% 2.135%;
+    flex-direction: column;
+  }
+
+  #partie-gauche-choix-menus {
+    width: 100%;
+  }
+
+  #partie-droite-panier {
+    width: 100%;
+    margin-top: 10%;
+  }
+}
+
+@media (max-width: 556px) {
+  .card-categories-nav {
+    height: 100px;
+    width: 100px;
+  }
+
+  #nav-page-menus {
+    height: 100px;
+  }
+
+  .card-choix {
+    height: 220px;
+    width: 170px;
+    padding-bottom: 10px;
+  }
+
+  .img-card-produits {
+    height: 150px;
+    width: 149px;
+  }
+}
+
+@media (max-width: 457px) {
+  #container-zone-choix {
+    justify-content: center;
   }
 }

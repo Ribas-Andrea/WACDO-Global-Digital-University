@@ -12,3 +12,4 @@ Etapes avancement github :
 5/ Creation page chevalet + css + creation page remerciements + css+ + modification px/% suite RDV mentor +  verification W3C
 6/ Creation popup boissons petites-grandes + renommage class et id
 7/ Responsive page index.html
+8/ Responsive page menu.html

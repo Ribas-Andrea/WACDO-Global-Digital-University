@@ -126,7 +126,6 @@ h1 {
 
   #question-choix-lieu {
     font-size: 10px;
-    padding-top: 30px;
   }
 
   .choix-lieu {
@@ -143,11 +142,6 @@ h1 {
     font-size: 20px;
   }
 
-  #question-choix-lieu {
-    font-size: 10px;
-    padding-top: 30px;
-  }
-
   #container-btn-choix-lieu {
     flex-direction: column;
     gap: 15px;
@@ -161,10 +155,6 @@ h1 {
     border: 5px solid #ffc836;
   }
 
-  .choix-lieu {
-    font-size: 10px;
-  }
-
   .btn-img {
     width: 30%;
   }
@@ -172,7 +162,7 @@ h1 {
 
 @media (max-width: 375px) {
   #container-menu-accueil {
-    height: 37%;
+    height: 45%;
     padding: 20px;
   }
 
@@ -185,24 +175,7 @@ h1 {
     padding-top: 15px;
   }
 
-  #container-btn-choix-lieu {
-    flex-direction: column;
-    gap: 15px;
-    margin: auto;
-    width: 60%;
-    margin-top: 15px;
-    margin-bottom: 15px;
-  }
-
-  .btn-choix-lieu {
-    border: 5px solid #ffc836;
-  }
-
   .choix-lieu {
     font-size: 8px;
-  }
-
-  .btn-img {
-    width: 30%;
   }
 }
