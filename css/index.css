@@ -4,17 +4,16 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  width: 36%;
-  height: 48%;
+  width: 45%;
+  height: 55%;
   background-color: white;
   border-radius: 16px;
   box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.25);
   padding: 32px;
   position: absolute;
-  bottom: 28%; /* distance du bas*/
-  left: 53%; /* centre horizontal */
+  top: 20%; /* distance du bas*/
   z-index: 2; /*image devant le fond d'écran*/
-  transform: translateX(-50%); /*placement au milieu*/
+  margin-left: 30%;
 }
 
 #menu-accueil-titre-p {
@@ -51,8 +50,15 @@ h1 {
 }
 
 .btn-choix-lieu {
-  width: 45%;
-  height: 131%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-top: 20px;
+}
+
+.btn-img {
+  width: 60%;
 }
 
 .choix-lieu {
@@ -62,105 +68,56 @@ h1 {
 
 /* --------------------------------------------- Responsive --------------------------------------------- */
 
-/* --------------------------------------------- Responsive page index --------------------------------------------- */
-
-/* --------------------- Petit pc Nest Hub Max -------------------*/
-
-@media (max-width: 1280px) {
-  #menu-accueil {
-    bottom: 35%;
-  }
-
-  h1 {
-    font-size: 25px;
-  }
-
-  #question-choix-lieu {
-    font-size: 16px;
-    padding-top: 7%;
-  }
-
-  .choix {
-    font-size: 10px;
-  }
-
-  .btn-img {
-    width: 50%;
-  }
-}
-
-/* --------------------- Tablette ipad air horizontale -------------------*/
-
-@media (max-width: 1180px) {
+@media (max-width: 1875px) {
   #fond-ecran {
-    top: 0px;
+    width: 100%;
   }
 
-  #menu-accueil {
-    bottom: 26%;
-    height: 51.9%;
+  #container-menu-accueil {
+    height: 65%;
   }
 
   h1 {
-    font-size: 25px;
+    font-size: 30px;
   }
 
   #question-choix-lieu {
-    font-size: 16px;
-    padding-top: 7%;
-  }
-
-  .choix {
-    font-size: 10px;
-  }
-
-  .btn-img {
-    width: 50%;
-  }
-}
-
-/* --------------------- Tablette ipad air vertical -------------------*/
-
-@media (max-width: 820px) {
-  body {
-    background-color: #f1f1f1;
-  }
-  #menu-accueil {
-    bottom: 31%;
-    height: 26.9%;
-    padding: 11px;
-    padding-top: 0px;
-  }
-
-  h1 {
     font-size: 20px;
   }
 
-  #question-choix-lieu {
-    font-size: 12px;
-    padding-top: 7%;
-  }
-
-  .choix {
-    font-size: 10px;
-  }
-
-  .btn-img {
-    width: 50%;
+  .choix-lieu {
+    font-size: 20px;
   }
 }
 
-/* --------------------- Tel Iphone SE  horizontal -------------------*/
-
-@media (max-width: 667px) {
+@media (max-width: 1475px) {
   #fond-ecran {
-    top: 0;
+    top: 0%;
   }
-  #menu-accueil {
-    bottom: 13%;
-    height: 60.9%;
-    padding: 6px;
-    padding-top: 0px;
+}
+
+@media (max-width: 915px) {
+  #container-menu-accueil {
+    height: 45%;
+  }
+
+  h1 {
+    font-size: 25px;
+  }
+
+  #question-choix-lieu {
+    font-size: 15px;
+    padding-top: 30px;
+  }
+
+  .choix-lieu {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 722px) {
+  #container-menu-accueil {
+    height: 38%;
   }
 
   h1 {
@@ -169,45 +126,54 @@ h1 {
 
   #question-choix-lieu {
     font-size: 10px;
-    padding-top: 7%;
+    padding-top: 30px;
   }
 
-  .choix {
-    font-size: 7px;
+  .choix-lieu {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 540px) {
+  #container-menu-accueil {
+    height: 43%;
   }
 
-  .btn-img {
-    width: 50%;
+  h1 {
+    font-size: 20px;
   }
-  #espace-btn-choix-lieu {
+
+  #question-choix-lieu {
+    font-size: 10px;
+    padding-top: 30px;
+  }
+
+  #container-btn-choix-lieu {
     flex-direction: column;
-    align-items: center;
-    margin-top: 3px;
-    margin-bottom: 0px;
-    gap: 5px;
+    gap: 15px;
+    margin: auto;
+    width: 60%;
+    margin-top: 15px;
+    margin-bottom: 15px;
   }
 
   .btn-choix-lieu {
-    border: 2px solid #ffc836;
-    padding: 2px;
+    border: 5px solid #ffc836;
+  }
+
+  .choix-lieu {
+    font-size: 10px;
+  }
+
+  .btn-img {
+    width: 30%;
   }
 }
 
-/* --------------------- Tel Iphone SE vertical -------------------*/
-
 @media (max-width: 375px) {
-  body {
-    background-color: #f1f1f1;
-  }
-
-  #fond-ecran {
-    top: 0;
-  }
-  #menu-accueil {
-    bottom: 36%;
-    height: 32.9%;
-    padding: 9px;
-    padding-top: 0px;
+  #container-menu-accueil {
+    height: 37%;
+    padding: 20px;
   }
 
   h1 {
@@ -215,26 +181,28 @@ h1 {
   }
 
   #question-choix-lieu {
-    font-size: 9px;
-    padding-top: 2%;
+    font-size: 8px;
+    padding-top: 15px;
   }
 
-  .choix {
-    font-size: 5px;
-  }
-
-  .btn-img {
-    width: 50%;
-  }
-  #espace-btn-choix-lieu {
-    align-items: center;
-    margin-top: 3px;
-    margin-bottom: 0px;
-    gap: 5px;
+  #container-btn-choix-lieu {
+    flex-direction: column;
+    gap: 15px;
+    margin: auto;
+    width: 60%;
+    margin-top: 15px;
+    margin-bottom: 15px;
   }
 
   .btn-choix-lieu {
-    border: 2px solid #ffc836;
-    padding: 2px;
+    border: 5px solid #ffc836;
+  }
+
+  .choix-lieu {
+    font-size: 8px;
+  }
+
+  .btn-img {
+    width: 30%;
   }
 }
