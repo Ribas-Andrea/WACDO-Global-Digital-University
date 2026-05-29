@@ -57,7 +57,7 @@ h2 {
   gap: 70px;
 }
 
-#container-taille {
+.container-taille {
   width: 285px;
   height: 202px;
   border: 2px solid #d6d6d6;
@@ -78,7 +78,7 @@ h2 {
   height: 154px;
 }
 
-#texte-choix-taille {
+.texte-choix-taille {
   font-weight: 700;
   font-size: 26px;
 }

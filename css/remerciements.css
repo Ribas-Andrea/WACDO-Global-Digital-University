@@ -11,9 +11,8 @@
   padding: 32px;
   position: absolute;
   bottom: 32%; /* distance du bas 300px */
-  left: 43%; /* centre horizontal */
   z-index: 2; /*image devant le fond d'écran*/
-  transform: translateX(-50%); /*placement au milieu*/
+  margin-left: 29%;
 }
 
 #image-remerciements {
@@ -37,4 +36,51 @@ h1 {
 #img-a-bientot {
   width: 40%;
   padding-top: 80px;
+}
+
+/* --------------------------------------------- Responsive --------------------------------------------- */
+@media (max-width: 1420px) {
+  #texte-remerciements {
+    font-size: 15px;
+  }
+  h1 {
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 1069px) {
+  #container-menu-remerciements {
+    width: 50%;
+    bottom: 50%;
+  }
+}
+
+@media (max-width: 940px) {
+  #container-menu-remerciements {
+    width: 60%;
+    margin-left: 25%;
+    bottom: 40%;
+  }
+}
+
+@media (max-width: 700px) {
+  #texte-remerciements {
+    font-size: 10px;
+    padding-top: 30px;
+  }
+  h1 {
+    font-size: 20px;
+  }
+  #img-a-bientot {
+    width: 40%;
+    padding-top: 40px;
+  }
+}
+
+@media (max-width: 600px) {
+  #container-menu-remerciements {
+    width: 60%;
+    margin-left: 25%;
+    bottom: 60%;
+  }
 }

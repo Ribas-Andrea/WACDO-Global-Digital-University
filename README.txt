@@ -13,3 +13,4 @@ Etapes avancement github :
 6/ Creation popup boissons petites-grandes + renommage class et id
 7/ Responsive page index.html
 8/ Responsive page menu.html
+9/ Responsive page chevalet.html + page remerciements.html + correction code page popup.html
