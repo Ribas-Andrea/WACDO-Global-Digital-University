@@ -74,7 +74,7 @@ h1 {
   }
 
   #container-menu-accueil {
-    height: 65%;
+    height: auto;
   }
 
   h1 {
@@ -98,7 +98,7 @@ h1 {
 
 @media (max-width: 915px) {
   #container-menu-accueil {
-    height: 45%;
+    height: auto;
   }
 
   h1 {
@@ -117,7 +117,7 @@ h1 {
 
 @media (max-width: 722px) {
   #container-menu-accueil {
-    height: 38%;
+    height: auto;
   }
 
   h1 {
@@ -135,7 +135,7 @@ h1 {
 
 @media (max-width: 540px) {
   #container-menu-accueil {
-    height: 43%;
+    height: auto;
   }
 
   h1 {
@@ -162,7 +162,7 @@ h1 {
 
 @media (max-width: 375px) {
   #container-menu-accueil {
-    height: 45%;
+    height: auto;
     padding: 20px;
   }
 
@@ -182,7 +182,7 @@ h1 {
 
 @media (max-width: 300px) {
   #container-menu-accueil {
-    height: 55%;
+    height: auto;
     padding: 10px;
   }
 }

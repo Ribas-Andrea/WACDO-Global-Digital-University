@@ -12,6 +12,7 @@ Etapes avancement github :
 5/ Creation page chevalet + css + creation page remerciements + css+ + modification px/% suite RDV mentor +  verification W3C
 6/ Creation popup boissons petites-grandes + renommage class et id
 7/ Responsive page index.html
-8/ Responsive page menu.html
+8/ Responsive page menus.html
 9/ Responsive page chevalet.html + page remerciements.html + correction code page popup.html
-10/ Test responsive mobile taille 300
+10/ Test responsive mobile taille 300 (mon mobile 286*516) (selon chatgpt il fait 360*800px)
+11/ Test 2 responsive mobile taille 300
