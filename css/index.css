@@ -179,3 +179,10 @@ h1 {
     font-size: 8px;
   }
 }
+
+@media (max-width: 300px) {
+  #container-menu-accueil {
+    height: 55%;
+    padding: 10px;
+  }
+}

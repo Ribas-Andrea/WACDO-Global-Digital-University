@@ -14,3 +14,4 @@ Etapes avancement github :
 7/ Responsive page index.html
 8/ Responsive page menu.html
 9/ Responsive page chevalet.html + page remerciements.html + correction code page popup.html
+10/ Test responsive mobile taille 300
