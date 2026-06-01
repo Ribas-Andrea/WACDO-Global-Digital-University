@@ -102,7 +102,7 @@ form label .input-numero-chevalet {
   #container-menu-chevalet {
     padding: 18px;
     bottom: 17.5%;
-    height: 65%;
+    height: auto;
   }
 
   #texte-chevalet {
@@ -128,7 +128,7 @@ form label .input-numero-chevalet {
 @media (max-width: 978px) {
   #container-menu-chevalet {
     width: 60%;
-    height: 63%;
+    height: auto;
     margin-left: 22%;
   }
 }
@@ -136,11 +136,11 @@ form label .input-numero-chevalet {
 @media (max-width: 682px) {
   #container-menu-chevalet {
     width: 60%;
-    height: 71%;
+    height: auto;
   }
 }
 
-@media (max-width: 595px) {
+@media (max-width: 625px) {
   #container-img-chevalet img {
     width: 70%;
   }

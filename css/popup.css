@@ -30,7 +30,7 @@ body {
 }
 
 #container-titre-description-img {
-  padding-left: 140px;
+  padding: 0px 15% 0 15%;
   margin-bottom: 50px;
 }
 
@@ -143,4 +143,143 @@ h2 {
   padding: 16px 32px;
   font-weight: 700;
   font-size: 18px;
+}
+
+/* --------------------------------------------- Responsive --------------------------------------------- */
+
+@media (max-width: 1720px) {
+  #container-titre-description-img {
+    padding: 0 5% 0 5%;
+  }
+}
+
+@media (max-width: 1000px) {
+  h2 {
+    font-size: 20px;
+  }
+
+  #texte-description-popup {
+    font-size: 12px;
+    margin-bottom: 25px;
+  }
+
+  .texte-choix-taille {
+    font-size: 20px;
+  }
+
+  #container-choix-taille {
+    gap: 12px;
+  }
+
+  #valeur-compteur {
+    font-size: 30px;
+    padding: 0px 40px 0 40px;
+  }
+
+  #btn-plus,
+  #btn-moins {
+    font-size: 30px;
+    width: 65px;
+    height: 65px;
+  }
+
+  #container-compteur {
+    width: 226px;
+    height: 65px;
+  }
+
+  #container-btn-validation {
+    gap: 40px;
+  }
+
+  #btn-annuler-commande,
+  button#btn-ajouter-commande {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 800px) {
+  #container-choix-taille {
+    flex-direction: column;
+  }
+
+  #container-choix-taille {
+    align-items: center;
+  }
+
+  .container-taille {
+    width: 190px;
+    height: 165px;
+  }
+
+  #valeur-compteur {
+    padding: 0px 25px 0 25px;
+  }
+
+  #container-compteur {
+    width: 195px;
+  }
+
+  #container-btn-validation {
+    gap: 30px;
+  }
+}
+
+@media (max-width: 500px) {
+  .container-taille {
+    width: 145px;
+    height: 125px;
+  }
+
+  #container-titre-descritpion-popup {
+    padding-bottom: 10px;
+  }
+
+  #valeur-compteur {
+    font-size: 25px;
+    padding: 0px 20px 0 20px;
+  }
+
+  #container-compteur {
+    width: 145px;
+  }
+
+  #container-btn-validation {
+    gap: 20px;
+  }
+
+  #img-grande-taille,
+  #img-petite-taille {
+    width: 89px;
+    height: 104px;
+  }
+
+  h2 {
+    font-size: 15px;
+  }
+
+  #texte-description-popup {
+    font-size: 7px;
+    margin-bottom: 20px;
+  }
+
+  .texte-choix-taille {
+    font-size: 15px;
+  }
+
+  #container-choix-taille {
+    gap: 10px;
+  }
+
+  #btn-plus,
+  #btn-moins {
+    font-size: 25px;
+  }
+
+  #btn-annuler-commande,
+  button#btn-ajouter-commande {
+    padding: 8px 12px;
+    font-size: 10px;
+  }
 }

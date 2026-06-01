@@ -407,6 +407,37 @@ h1 {
 }
 
 @media (max-width: 457px) {
+  .card-categories-nav {
+    height: 80px;
+    width: 80px;
+  }
+
+  .container-img-card-categorie {
+    padding: 5px;
+  }
+
+  #container-liste-categories {
+    gap: 8px;
+  }
+
+  #nav-page-menus {
+    height: 80px;
+    margin: 30px;
+  }
+
+  .card-choix {
+    height: 200px;
+    width: 150px;
+    padding-bottom: 10px;
+  }
+
+  .img-card-produits {
+    height: 130px;
+    width: 129px;
+  }
+}
+
+@media (max-width: 407px) {
   #container-zone-choix {
     justify-content: center;
   }
