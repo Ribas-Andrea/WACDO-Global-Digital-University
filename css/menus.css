@@ -126,7 +126,7 @@ h1 {
   width: 229px;
 }
 
-#container-img-card {
+.container-img-card {
   display: flex;
   align-items: center;
   justify-content: center;

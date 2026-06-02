@@ -35,7 +35,7 @@ body {
   margin-bottom: 50px;
 }
 
-h2 {
+h1 {
   font-weight: 700;
   font-size: 26px;
 }
@@ -156,7 +156,7 @@ h2 {
 }
 
 @media (max-width: 1000px) {
-  h2 {
+  h1 {
     font-size: 20px;
   }
 
@@ -265,7 +265,7 @@ h2 {
     height: 104px;
   }
 
-  h2 {
+  h1 {
     font-size: 15px;
   }
 

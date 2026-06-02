@@ -18,3 +18,4 @@ Etapes avancement github :
 11/ Test 2 responsive mobile taille 300
 12/ Responsive mobile page menus.html + page chevalet.html + responsive page popup.html
 13/ Correction des balises (main/article/section/div) sur toutes les pages
+14/ Fixation des erreurs W3C
