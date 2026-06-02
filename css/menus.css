@@ -234,6 +234,11 @@ h1 {
   padding: 10px;
 }
 
+.logo-trash {
+  width: 10%;
+  height: 10%;
+}
+
 .liste-detail-menus {
   font-size: 14px;
   padding-left: 30px;
@@ -369,7 +374,7 @@ h1 {
 }
 
 @media (max-width: 795px) {
-  section#page-choix-menus {
+  #page-choix-menus {
     display: flex;
     flex-direction: column;
   }
@@ -381,6 +386,11 @@ h1 {
   #partie-droite-panier {
     width: 100%;
     margin-top: 10%;
+  }
+
+  .logo-trash {
+    width: 5%;
+    height: 5%;
   }
 }
 

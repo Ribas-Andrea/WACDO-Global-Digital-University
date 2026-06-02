@@ -11,8 +11,8 @@
     <title>Wacdo</title>
   </head>
   <body>
-    <section id="page-choix-menus">
-      <section id="partie-gauche-choix-menus">
+    <main id="page-choix-menus">
+      <aside id="partie-gauche-choix-menus">
         <nav id="nav-page-menus">
           <img id="fleche-gauche" src="assets/fleche-slider.png" alt="fleche-slider-gauche" />
           <div id="choix-categorie-menus">
@@ -89,7 +89,7 @@
             <p id="description-menus">Un Sandwich,une friture ou une salade et une boisson</p>
           </div>
           <div id="container-zone-choix">
-            <div class="card-choix">
+            <article class="card-choix">
               <div id="container-img-card">
                 <img class="img-card-produits" src="assets/burgers/BIG_TASTY_BACON_1_VIANDE.png" alt="BIG_TASTY_BACON_1_VIANDE" />
               </div>
@@ -97,8 +97,8 @@
                 <span class="nom-du-produit">Big Tasty Bacon 1 viande</span>
                 <span class="prix-produit">7.50€</span>
               </div>
-            </div>
-            <div class="card-choix">
+            </article>
+            <article class="card-choix">
               <div id="container-img-card">
                 <img class="img-card-produits" src="assets/burgers/BIG_TASTY_1_VIANDE.png" alt="BIG_TASTY_1_VIANDE" />
               </div>
@@ -106,8 +106,8 @@
                 <span class="nom-du-produit">Big Tasty Bacon 1 viande</span>
                 <span class="prix-produit">7.50€</span>
               </div>
-            </div>
-            <div class="card-choix">
+            </article>
+            <article class="card-choix">
               <div id="container-img-card">
                 <img class="img-card-produits" src="assets/burgers/CBO.png" alt="CBO" />
               </div>
@@ -115,8 +115,8 @@
                 <span class="nom-du-produit">CBO</span>
                 <span class="prix-produit">7.50€</span>
               </div>
-            </div>
-            <div class="card-choix">
+            </article>
+            <article class="card-choix">
               <div id="container-img-card">
                 <img class="img-card-produits" src="assets/burgers/BIGMAC.png" alt="BIGMAC" />
               </div>
@@ -124,8 +124,8 @@
                 <span class="nom-du-produit">BIGMAC</span>
                 <span class="prix-produit">7.50€</span>
               </div>
-            </div>
-            <div class="card-choix">
+            </article>
+            <article class="card-choix">
               <div id="container-img-card">
                 <img class="img-card-produits" src="assets/burgers/SIGNATURE_BBQ_BEEF_(2_VIANDES).png" alt="SIGNATURE_BBQ_BEEF" />
               </div>
@@ -133,15 +133,15 @@
                 <span class="nom-du-produit">Signature BBQ Beef</span>
                 <span class="prix-produit">7.50€</span>
               </div>
-            </div>
+            </article>
           </div>
         </section>
-      </section>
-      <section id="partie-droite-panier">
+      </aside>
+      <aside id="partie-droite-panier">
         <img class="logo-panier" src="assets/logo.png" alt="logo" />
-        <section id="container-panier">
-          <section id="container-numero-commande">
-            <section id="numero-commande">
+        <article id="container-panier">
+          <div id="container-numero-commande">
+            <div id="numero-commande">
               <!-- C'est l'un ou l'autre ?  -->
               <div id="numero-emporter">
                 <div>Commande numéro</div>
@@ -151,16 +151,16 @@
                 <p>Sur place :</p>
                 <p id="numero-commande-sur-place">326</p>
               </div>
-            </section>
+            </div>
             <div id="numero-commande-emporter">72</div>
-          </section>
+          </div>
           <div class="barre-separation"></div>
 
           <div id="container-articles-panier">
-            <div class="menus-panier">
+            <section class="menus-panier">
               <h2>Menu 1</h2>
-              <img src="assets/trash.png" alt="Logo Supprimer" />
-            </div>
+              <img class="logo-trash" src="assets/trash.png" alt="Logo Supprimer" />
+            </section>
             <ul class="liste-detail-menus">
               <li>frite</li>
               <li>sprite</li>
@@ -168,19 +168,19 @@
               <li>sauce deluxe</li>
             </ul>
 
-            <div class="menus-panier">
+            <section class="menus-panier">
               <h2>Menu 2</h2>
-              <img src="assets/trash.png" alt="Logo Supprimer" />
-            </div>
+              <img class="logo-trash" src="assets/trash.png" alt="Logo Supprimer" />
+            </section>
             <ul class="liste-detail-menus">
               <li>frite</li>
               <li>sprite</li>
               <li>ketchup</li>
             </ul>
-            <div class="menus-panier">
+            <section class="menus-panier">
               <h2>Menu 3</h2>
-              <img src="assets/trash.png" alt="Logo Supprimer" />
-            </div>
+              <img class="logo-trash" src="assets/trash.png" alt="Logo Supprimer" />
+            </section>
 
             <ul class="liste-detail-menus">
               <li>sauce curry</li>
@@ -199,8 +199,8 @@
             <button id="btn-abandon">Abandon</button>
             <button id="btn-payer">Payer</button>
           </div>
-        </section>
-      </section>
-    </section>
+        </article>
+      </aside>
+    </main>
   </body>
 </html>

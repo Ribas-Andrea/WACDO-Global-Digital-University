@@ -17,3 +17,4 @@ Etapes avancement github :
 10/ Test responsive mobile taille 300 (mon mobile 286*516) (selon chatgpt il fait 360*800px)
 11/ Test 2 responsive mobile taille 300
 12/ Responsive mobile page menus.html + page chevalet.html + responsive page popup.html
+13/ Correction des balises (main/article/section/div) sur toutes les pages

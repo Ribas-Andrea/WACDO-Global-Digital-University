@@ -1,3 +1,4 @@
+main,
 body {
   background-color: grey;
 }
@@ -54,6 +55,7 @@ h2 {
 
 #container-choix-taille {
   display: flex;
+  justify-content: space-between;
   gap: 70px;
 }
 
@@ -168,7 +170,7 @@ h2 {
   }
 
   #container-choix-taille {
-    gap: 12px;
+    gap: 35px;
   }
 
   #valeur-compteur {
@@ -193,7 +195,7 @@ h2 {
   }
 
   #btn-annuler-commande,
-  button#btn-ajouter-commande {
+  #btn-ajouter-commande {
     padding: 10px 20px;
     font-size: 14px;
   }
@@ -222,11 +224,19 @@ h2 {
   }
 
   #container-btn-validation {
+    flex-direction: column-reverse;
+  }
+
+  #container-btn-validation {
     gap: 30px;
   }
 }
 
 @media (max-width: 500px) {
+  #croix {
+    width: 10%;
+  }
+
   .container-taille {
     width: 145px;
     height: 125px;
@@ -278,7 +288,7 @@ h2 {
   }
 
   #btn-annuler-commande,
-  button#btn-ajouter-commande {
+  #btn-ajouter-commande {
     padding: 8px 12px;
     font-size: 10px;
   }
