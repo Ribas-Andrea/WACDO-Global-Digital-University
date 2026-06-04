@@ -1,0 +1,84 @@
+Etape 1/ On récupère les données du fichier json : 
+
+
+// Création de la fonction pour afficher les données dans la console : 
+ function getData(){
+
+// fonction fetch pour récupérer les données du json
+  fetch("./data/categories.json")
+  .then(data => data.json())
+  .then(categories => {
+    console.log(categories);
+  })
+  }
+
+// On oublie pas de lancer la fonction : 
+getData();
+
+
+Etape 2/ On remplace les données en dur du html par les données réelles du fichier json : 
+
+// Création de la fonction pour afficher les données dans la console puis dans le DOM: 
+ function getData(){
+
+// Pour insérer catNav dans le DOM :
+const catList = document.getElementById('container-liste-categories');
+
+// fonction fetch pour récupérer les données du json
+  fetch("./data/categories.json")
+  .then(data => data.json())
+  .then(categories => {
+    console.log(categories);
+    categories.forEach((cat) => {
+
+
+// On créer les différentes section/div/p/img du html : 
+      // <div class="card-categories-nav">
+            //   <div class="container-img-card-categorie">
+            //          <img class="img-card-categorie" src="assets/categories/menus.png" alt="Menus" />
+            //   </div>
+            //   <div class="container-titre-img-nav">
+            //          <p class="titre-img-nav">Menus</p>
+            //   </div>
+      // </div>
+
+      const catNav = document.createElement('div');
+      catNav.classList.add('card-categories-nav');
+
+      const catNavContainerImgCard = document.createElement('div');
+      catNavContainerImgCard.classList.add('container-img-card-categorie');
+
+      const catNavImgCard = document.createElement('img');
+      catNavImgCard.classList.add('img-card-categorie');
+      // on récupère les données json grâce à la console (ici, on ouvre les catégories (cat) et la partie image de la categorie(image)), attention de bien mettre src pour une image : 
+      catNavImgCard.src = cat.image;
+
+      const catNavContainerTitreImg = document.createElement('div');
+      catNavContainerTitreImg.classList.add('container-titre-img-nav');
+
+      const catNavTitreImg = document.createElement('p');
+      catNavTitreImg.classList.add('titre-img-nav');
+      // on récupère les données json grâce à la console (ici, on ouvre les catégories (cat) et la partie titre de la catégorie(title)) : 
+      catNavTitreImg.textContent = cat.title;
+
+// On implemente les div les une dans les autres selon le fichier html : 
+
+// 1/ creéation des 2 éléments (img et p) à l'interieur des div
+catNavContainerImgCard.appendChild(catNavImgCard);
+catNavContainerTitreImg.appendChild(catNavTitreImg);
+
+// 2/ creation des 2 div (container) à l'interieur de la div catNav
+catNav.appendChild(catNavContainerImgCard);
+catNav.appendChild(catNavContainerTitreImg);
+// On ajoute ces implémentation dans le dom : 
+
+catList.appendChild(catNav);
+
+
+    })
+  })
+  }
+
+// On oublie pas de lancer la fonction :
+getData();
+

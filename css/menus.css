@@ -1,19 +1,19 @@
 /* --------------------------------------------- Page --------------------------------------------- */
 
-#page-choix-menus {
+#page-choix-produits {
   display: flex;
   flex-direction: row;
 }
 
 /* --------------------------------------------- Gauche --------------------------------------------- */
 
-#partie-gauche-choix-menus {
+#partie-gauche-choix-produits {
   display: flex;
   flex-direction: column;
   width: 80%;
 }
 
-#nav-page-menus {
+#nav-page-produits {
   display: flex;
   flex-direction: row;
   margin: 50px;
@@ -24,7 +24,7 @@
   margin-right: 25px;
 }
 
-#choix-categorie-menus {
+#choix-categorie-produits {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -83,14 +83,14 @@
   transform: rotate(180deg);
 }
 
-#container-nos-menus {
+#container-nos-produits {
   display: flex;
   flex-direction: column;
   margin-left: 135px;
   width: 80%;
 }
 
-#titre-menus {
+#titre-produits {
   display: flex;
   flex-direction: column;
 }
@@ -101,7 +101,7 @@ h1 {
   padding-bottom: 20px;
 }
 
-#description-menus {
+#description-produits {
   font-weight: 400;
   font-size: 14px;
   padding-bottom: 50px;
@@ -227,7 +227,7 @@ h1 {
   padding-bottom: 334px;
 }
 
-.menus-panier {
+.produits-panier {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -239,7 +239,7 @@ h1 {
   height: 10%;
 }
 
-.liste-detail-menus {
+.liste-detail-produits {
   font-size: 14px;
   padding-left: 30px;
 }
@@ -325,7 +325,7 @@ h1 {
 }
 
 @media (max-width: 1000px) {
-  #partie-gauche-choix-menus {
+  #partie-gauche-choix-produits {
     width: 70%;
   }
 
@@ -338,7 +338,7 @@ h1 {
     width: 120px;
   }
 
-  #nav-page-menus {
+  #nav-page-produits {
     height: 120px;
   }
 
@@ -368,18 +368,18 @@ h1 {
     padding-left: 5px;
   }
 
-  #container-nos-menus {
+  #container-nos-produits {
     margin-left: 60px;
   }
 }
 
 @media (max-width: 795px) {
-  #page-choix-menus {
+  #page-choix-produits {
     display: flex;
     flex-direction: column;
   }
 
-  #partie-gauche-choix-menus {
+  #partie-gauche-choix-produits {
     width: 100%;
   }
 
@@ -400,7 +400,7 @@ h1 {
     width: 100px;
   }
 
-  #nav-page-menus {
+  #nav-page-produits {
     height: 100px;
   }
 
@@ -430,7 +430,7 @@ h1 {
     gap: 8px;
   }
 
-  #nav-page-menus {
+  #nav-page-produits {
     height: 80px;
     margin: 30px;
   }
