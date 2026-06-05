@@ -20,3 +20,4 @@ Etapes avancement github :
 13/ Correction des balises (main/article/section/div) sur toutes les pages
 14/ Fixation des erreurs W3C
 15/ Javascript nav + menus
+16/ Javascript : addEventListener au click sur les card avec affichage titre,Description et produits + défiler de la navbar
