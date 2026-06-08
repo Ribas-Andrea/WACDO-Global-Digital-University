@@ -211,6 +211,23 @@ function afficherProduits(categories) {
         const prodCardChoix = document.createElement('article');
         prodCardChoix.classList.add('card-choix');
 
+
+
+        prodCardChoix.addEventListener('click', () =>{
+            
+            console.log('Vous avez cliquer sur un menu');
+            console.table(panier)
+            // Exemple d'ajout d'un tableau avec les articles choisi ( lien avec const panier = [];)
+            panier.push({
+                type: categories,
+                nom: prod.nom,
+                prix: prod.prix,
+                options: {}
+            });
+
+            afficherPanier();
+        });
+        
         const prodContainerImgCard = document.createElement('div');
         prodContainerImgCard.classList.add('container-img-card');
 
@@ -274,7 +291,68 @@ function afficherProduits(categories) {
     });
 }
 
+
+const panier = []; // Creation d'un tableau pour les articles du panier
+
+function afficherPanier(){
+  const containerPanier = document.getElementById('container-articles-panier');
+  console.log(containerPanier);
+  containerPanier.innerHTML = ''; 
+  if (!containerPanier) {
+    console.error('Conteneur panier introuvable');
+    return;
+    }
+
+  panier.forEach((article) => {
+    console.log(article) ;
+
+
+// <article class="produits-panier">
+//     <h3>Menu 1</h3>
+//     <img class="logo-trash" src="assets/trash.png" alt="Logo Supprimer" />
+// </article>
+// <ul class="liste-detail-produits">
+//   <li>frite</li>
+//   <li>sprite</li>
+//   <li>ketchup</li>
+//   <li>sauce deluxe</li>
+// </ul>
+
+
+const prodPanier = document.createElement ('article');
+prodPanier.classList.add('produits-panier');
+
+const titrePanier = document.createElement('h3');
+titrePanier.textContent = article.nom;
+
+const logoSupp = document.createElement ('img');
+logoSupp.classList.add('logo-trash');
+logoSupp.src = './assets/trash.png';
+logoSupp.alt = 'Supprimer';
+
+
+prodPanier.appendChild(titrePanier);
+prodPanier.appendChild(logoSupp);
+
+const listPanier = document.createElement('ul');
+listPanier.classList.add('liste-detail-produits');
+
+Object.entries(article.options).forEach(([cle, valeur]) => {
+    const li = document.createElement('li');
+    li.textContent = valeur;
+    listPanier.appendChild(li);
+});
+
+
+containerPanier.appendChild(prodPanier);
+containerPanier.appendChild(listPanier);
+
+  })
+}
+
 // On oublie pas de lancer les fonctions :
 getDataCat();
 
 // Les fonctions (afficherDescription()) et (afficherProduits()) sont lancés directement dans la fonction principale getDataCat() grâce à la detection du clic de la nav bar
+
+

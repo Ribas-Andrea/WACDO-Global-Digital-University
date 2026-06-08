@@ -129,6 +129,7 @@ h1 {
   padding: 10px;
   height: 326px;
   width: 229px;
+  cursor: pointer;
 }
 
 .container-img-card {
