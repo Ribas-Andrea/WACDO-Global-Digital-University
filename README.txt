@@ -21,3 +21,4 @@ Etapes avancement github :
 14/ Fixation des erreurs W3C
 15/ Javascript nav + menus
 16/ Javascript : addEventListener au click sur les card avec affichage titre,Description et produits + défiler de la navbar
+17/ Javascript : ajout d'erreur avec catch + reprise du responsive de la zone de choix

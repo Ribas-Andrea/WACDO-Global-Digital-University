@@ -13,7 +13,6 @@ flecheDroite.addEventListener('click', () => {
         compteur++;
         container.style.transform = `translateX(-${185 * compteur}px)`;
     }
-
 });
 
 // Flèche gauche
