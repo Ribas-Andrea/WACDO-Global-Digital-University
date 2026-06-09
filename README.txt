@@ -23,3 +23,4 @@ Etapes avancement github :
 16/ Javascript : addEventListener au click sur les card avec affichage titre,Description et produits + défiler de la navbar
 17/ Javascript : ajout d'erreur avec catch + reprise du responsive de la zone de choix
 18 / Javascript : début ajout au panier 1 menu
+19/ Javascript : ajout de la popup sur le click de la nav bar pour le choix du menu
