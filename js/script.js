@@ -24,5 +24,3 @@ flecheDroite.addEventListener('click', () => {
         container.style.transform = `translateX(-${185 * compteur}px)`;
     }
   });
-
-

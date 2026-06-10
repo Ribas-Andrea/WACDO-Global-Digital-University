@@ -35,7 +35,7 @@ img#croix {
 }
 
 #btn-retour {
-  display: flex;
+  display: none;
   flex-direction: row;
   align-items: center;
   padding-right: 2px;
@@ -49,20 +49,8 @@ img#croix {
 
 
 #popup {
-  /* width: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  background-color: white;
-  border: none;
-  border-radius: 16px;
-  margin-top: 10%;
-  padding: 20px; */
-
-
-
-  width: 50%;
-  max-width: 800px;
+  width: 70%;
+  max-width: 930px;
   background-color: white;
   border-radius: 16px;
   padding: 20px;
@@ -93,7 +81,7 @@ h1 {
 
 #container-choix-taille {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   gap: 70px;
 }
 
@@ -110,8 +98,8 @@ h1 {
 }
 
 #img-petite-taille {
-  width: 94px;
-  height: 104px;
+  width: 139px;
+  height: 154px;
 }
 
 #img-grande-taille {
@@ -339,25 +327,87 @@ h1 {
 }
 
 
-/* -------------------------------------------- test modals */
+
+/* --------------------------------------------- Css pour javascript --------------------------------------------- */
 
 
-.modal {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.5);
+
+.nav-popup-boissons{
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  width: 100%;
+}
+
+.nav-popup-boissons #nav-page-produits {
+  display: flex;
+  flex-direction: row;
+  margin: 50px;
+  height: 150px;
+}
+
+.nav-popup-boissons #fleche-gauche {
+  margin-right: 5px;
+  cursor: pointer;
+  height: 60%;
+  }
+
+.nav-popup-boissons #choix-categorie-produits {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  width: 80%;
+}
+
+.nav-popup-boissons #container-liste-categories {
+  display: flex;
+  flex-direction: row;
+  gap: 25px;
+  padding-left: 0;
+  transition: all 1s;
+}
+
+.nav-popup-boissons .card-categories-nav {
+  border: 1px solid #6e6e6e;
+  border-radius: 8px;
+  height: 150px;
+  width: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.nav-popup-boissons .container-img-card-categorie {
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 10px;
 }
 
-.modal-content {
-  background: white;
-  padding: 20px;
-  border-radius: 8px;
-  width: 300px;
+.nav-popup-boissons .img-card-categorie {
+  height: 85px;
+  padding-top: 1px;
 }
 
-.hidden {
-  display: none;
+.nav-popup-boissons .container-titre-img-nav {
+  height: 100%;
+  width: 100%;
+  text-align: center;
+}
+
+.nav-popup-boissons .titre-img-nav {
+  padding-bottom: 5px;
+  white-space: nowrap;
+}
+
+.nav-popup-boissons .fleche-droite {
+  transform: rotate(180deg);
+  cursor: pointer;
+  height: 60%;
 }

@@ -24,3 +24,4 @@ Etapes avancement github :
 17/ Javascript : ajout d'erreur avec catch + reprise du responsive de la zone de choix
 18 / Javascript : début ajout au panier 1 menu
 19/ Javascript : ajout de la popup sur le click de la nav bar pour le choix du menu
+20/ Modification popup boissons avec ajout class imbriqué de la nav bar pour pouvoir modifier les tailles sur la popup + modification des étapes du switch pour effecer le contenu et le remettre avec le btn retour
