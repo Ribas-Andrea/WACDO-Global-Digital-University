@@ -63,7 +63,7 @@ function getDataCat() {
           }
 
           if (index === 1) {
-            afficherPopupNav('boissons');
+            // afficherPopupBoissons('boissons');
             afficherDescription(index);
             afficherProduits('boissons');
           }
@@ -321,6 +321,10 @@ function afficherProduits(categories) {
     // });
 }
 
+
+
+
+// ----------------------------------------------------------------- Popup ----------------------------------------------------------------
 // Creation de la fonction pour afficher la popup de choix du menus à partir de la nav : 
 function afficherPopupNav (categorieRecherchee){
 
@@ -465,10 +469,6 @@ function afficherPopupNav (categorieRecherchee){
 
       const addContainerPetiteTaille = document.createElement ('div');
       addContainerPetiteTaille.classList.add('container-taille');
-      addContainerPetiteTaille.addEventListener("click", () => {
-      addContainerPetiteTaille.classList.add("activeBorder");
-      addContainerGrandeTaille.classList.remove("activeBorder");
-      });
 
       const addDivParentImgPetiteTaille = document.createElement ('div');
 
@@ -485,10 +485,7 @@ function afficherPopupNav (categorieRecherchee){
 
       const addContainerGrandeTaille = document.createElement ('div');
       addContainerGrandeTaille.classList.add('container-taille');
-      addContainerGrandeTaille.addEventListener("click", () => {
-      addContainerGrandeTaille.classList.add("activeBorder");
-      addContainerPetiteTaille.classList.remove("activeBorder");
-      });
+   
 
       const addDivParentImgGrandeTaille = document.createElement ('div');
 
@@ -549,7 +546,7 @@ function afficherPopupNav (categorieRecherchee){
 
         if(step < 4){
           step++;
-          afficherEtape();
+          afficherPopupMenu();
         }
 
       });
@@ -563,7 +560,7 @@ function afficherPopupNav (categorieRecherchee){
 
         if(step > 1){
           step--;
-          afficherEtape();
+          afficherPopupMenu();
         }
 
       });
@@ -572,54 +569,120 @@ function afficherPopupNav (categorieRecherchee){
             addContainerBtnValidation.appendChild(OpenbtnEtapeSuivante);
             addLogoCroix.appendChild(btnRetour);
 
-        function afficherEtape() {
+        function afficherPopupMenu() {
 
           switch(step) {
 
             case 1:
-              btnRetour.style.display = 'none';
+
+            // ces éléments permettent de remettre les éléments du case 1 avec le bouton retour
+
+              // pour cacher le bouton retour sur la case 1
+              btnRetour.style.display = 'none'; 
+              // pour afficher tous ces éléments : 
               titrePopup.style.display = 'flex';
               descriptionPopup.style.display = 'flex';
               imgPetiteTaille.style.display = 'flex';
               imgGrandeTaille.style.display = 'flex';
+              OpenbtnEtapeSuivante.style.display = 'flex';
+              // pour remettre le titre du bouton orsque l'on clique sur le bouton retour : 
+              OpenbtnEtapeSuivante.textContent = 'Étape suivante';
 
 
-              // mettre un switch case avec evenement au click sur le menu pour afficher 50Cl ou 30cl sur le titre
-              
-              texteChoixPetiteTaille.textContent = 'Menu Best Of';
-              imgPetiteTaille.src= "./assets/illustration-best-of.png";
+              // Evenement au click pour selectionner le menu et changer le texte pour afficher 50Cl/30cl et petite faim/grosse faim sur le titre
+                addContainerGrandeTaille.addEventListener("click", () => {
+                addContainerGrandeTaille.classList.add("activeBorder");
+                addContainerPetiteTaille.classList.remove("activeBorder");
+                // Modification du titre, de la description et de l'image
+                titrePopup.textContent = "Une grosse faim ?";
+                descriptionPopup.textContent = "Le menu maxi Best Of comprend un sandwich, une grande frite et une boisson 50 Cl";
+                texteChoixGrandeTaille.textContent = 'Menu Maxi Best Of';
+                imgGrandeTaille.src= "./assets/illustration-maxi-best-of.png";
+                });
 
-              texteChoixGrandeTaille.textContent = 'Menu Maxi Best Of';
-              imgGrandeTaille.src= "./assets/illustration-maxi-best-of.png";
-              titrePopup.textContent = "Une grosse faim ?";
-              descriptionPopup.textContent = "Le menu maxi Best Of comprend un sandwich, une grande frite et une boisson 50 Cl";
+
+                addContainerPetiteTaille.addEventListener("click", () => {
+                addContainerPetiteTaille.classList.add("activeBorder");
+                addContainerGrandeTaille.classList.remove("activeBorder");
+                // Modification du titre, de la description et de l'image
+                titrePopup.textContent = "Une petite faim ?";
+                descriptionPopup.textContent = "Le menu Best Of comprend un sandwich, une moyenne frite et une boisson 30 Cl";
+                texteChoixPetiteTaille.textContent = 'Menu Best Of';
+                imgPetiteTaille.src= "./assets/illustration-best-of.png";
+                });
               
               break;
 
             case 2:
+              // ces éléments permettent de remettre les éléments du case 2 avec le bouton retour
+              // On fait apparaître le bouton retour : 
               btnRetour.style.display = 'flex';
+              // Pour cacher le conteneur des boissons avec le bouton retour : 
+              containerChoixBoissons.style.display = 'none';
+              // Pour afficher tous ces éléments : 
               titrePopup.style.display = 'flex';
               descriptionPopup.style.display = 'flex';
-              containerChoixBoissons.style.display = 'none';
               addContainerPetiteTaille.style.display = 'flex';
               addContainerGrandeTaille.style.display = 'flex';
+              OpenbtnEtapeSuivante.style.display = 'flex';
+              // pour remettre le titre du bouton orsque l'on clique sur le bouton retour : 
+              OpenbtnEtapeSuivante.textContent = 'Étape suivante';
+
+              // Popup frites potatoes sans click : 
+              titrePopup.textContent = "Choisissez votre accompagnement";
+              descriptionPopup.textContent = "Frites, potatoes, la pomme de terre dans tous ses états";
+              texteChoixPetiteTaille.textContent='Frites';
+              imgPetiteTaille.src= "./assets/frites/MOYENNE_FRITE.png";
+              texteChoixGrandeTaille.textContent='Potatoes';
+              imgGrandeTaille.src= "./assets/frites/GRANDE_POTATOES.png";
+              imgGrandeTaille.style.width = "100%";
+              imgGrandeTaille.style.height = "100%";
+
+
+              // Click sur l'image de gauche
+              addContainerPetiteTaille.addEventListener("click", () => {
+              addContainerPetiteTaille.classList.add("activeBorder");
+              addContainerGrandeTaille.classList.remove("activeBorder");
+              // Modification du titre, de la description et de l'image
+              titrePopup.textContent = "Choisissez votre accompagnement";
+              descriptionPopup.textContent = "Frites, potatoes, la pomme de terre dans tous ses états";
+              texteChoixPetiteTaille.textContent='Frites';
+              imgPetiteTaille.src= "./assets/frites/MOYENNE_FRITE.png";
+              });
+
+
+              // Click sur l'image de gauche
+              addContainerGrandeTaille.addEventListener("click", () => {
+              addContainerGrandeTaille.classList.add("activeBorder");
+              addContainerPetiteTaille.classList.remove("activeBorder");
+              // Modification du titre, de la description et de l'image
               titrePopup.textContent = "Choisissez votre accompagnement";
               descriptionPopup.textContent = "Frites, potatoes, la pomme de terre dans tous ses états";
               texteChoixGrandeTaille.textContent='Potatoes';
               imgGrandeTaille.src= "./assets/frites/GRANDE_POTATOES.png";
               imgGrandeTaille.style.width = "100%";
               imgGrandeTaille.style.height = "100%";
-              texteChoixPetiteTaille.textContent='Frites';
-              imgPetiteTaille.src= "./assets/frites/MOYENNE_FRITE.png";
+              });
+
+
+
               break;
 
             case 3:
+              // ces éléments permettent de remettre les éléments du case 3 avec le bouton retour
+              // Pour cacher les cartes frites/potatoes : 
+              addContainerPetiteTaille.style.display = 'none';
+              addContainerGrandeTaille.style.display = 'none';
+              // Pour recevoir le conteneur des boissons : 
+              addContainerChoixTaille.style.display = 'flex';
+              // Pour afficher tous ces éléments : 
               btnRetour.style.display = 'flex';
               titrePopup.style.display = 'flex';
               descriptionPopup.style.display = 'flex';
-              addContainerPetiteTaille.style.display = 'none';
-              addContainerGrandeTaille.style.display = 'none';
-              addContainerChoixTaille.style.display = 'block';
+
+              
+
+              // Modification du titre et de la description
               titrePopup.textContent = "Choisissez votre boisson";
               descriptionPopup.textContent = "Un soda , un jus de fruit ou un verre d’eau pour accompagner votre repas";
 
@@ -657,7 +720,8 @@ function afficherPopupNav (categorieRecherchee){
 
 
                   containerChoixBoissons.innerHTML = '';
-                  containerChoixBoissons.style.display = 'block';
+                   // Le slider des boissons est visible : 
+                  containerChoixBoissons.style.display = 'flex';
                   // le conteneur des boissons a déjà été créer plus tôt dans la fonction, donc on le vide et le réaffiche avec les bon éléments
 
                   const imgFlecheGaucheBoissons = document.createElement('img');
@@ -711,8 +775,16 @@ function afficherPopupNav (categorieRecherchee){
 
 // La creation des card boissons : 
                       
-                        const cardBoisson = document.createElement('div');
-                        cardBoisson.classList.add('card-categories-nav');
+                        const cardBoissons = document.createElement('div');
+                        cardBoissons.classList.add('card-categories-nav');
+                        cardBoissons.addEventListener("click", () => {
+                          console.log("clic");
+                          document.querySelectorAll('.card-categories-nav').forEach(cardBoisson => {
+                            cardBoisson.classList.remove('activeBorder');
+                            });
+                            cardBoissons.classList.add("activeBorder");
+                            afficherPopupBoissons(categorieRecherchee);
+                        });
 
                         const containerImgCardBoisson = document.createElement('div');
                         containerImgCardBoisson.classList.add('container-img-card-categorie');
@@ -731,11 +803,11 @@ function afficherPopupNav (categorieRecherchee){
                         containerImgCardBoisson.appendChild(imgCardBoisson);
                         containerTitreCardBoisson.appendChild(titreCardBoisson);
 
-                        cardBoisson.appendChild(containerImgCardBoisson);
-                        cardBoisson.appendChild(containerTitreCardBoisson);
+                        cardBoissons.appendChild(containerImgCardBoisson);
+                        cardBoissons.appendChild(containerTitreCardBoisson);
 
 
-                        containerListBoissons.appendChild(cardBoisson);
+                        containerListBoissons.appendChild(cardBoissons);
 
                       });
 
@@ -756,258 +828,300 @@ function afficherPopupNav (categorieRecherchee){
 
 
         }
-      afficherEtape();
+
+
+      afficherPopupMenu();
       });
 };
 
 
 // Creation de la fonction pour afficher les popup par la section principale : 
-// function afficherPopup (categorieRecherchee){
+function afficherPopupBoissons (categorieRecherchee){
 
-// const containerPopup = document.getElementById('container-popup');
-// console.log(containerPopup);
+const containerPopupBoissons = document.getElementById('container-popup');
+console.log(containerPopupBoissons);
 
-// // on vérifie si containerPopup existe : 
-//   if (!containerPopup) {
-//     console.error('Conteneur popup introuvable');
-//     return;
-//     }
+// on vérifie si containerPopup existe : 
+  if (!containerPopupBoissons) {
+    console.error('Conteneur popup introuvable');
+    return;
+    }
 
-//     // pour enlever le display none de la popup
-// containerPopup.style.display = 'flex';
-// containerPopup.innerHTML = ''; 
+    // pour enlever le display none de la popup
+containerPopupBoissons.style.display = 'flex';
+containerPopupBoissons.innerHTML = '';  // enlève la popup de la nav
 
-//   fetch('./data/categories.json')
-//     .then((response) => response.json())
-//     .then((popups) => {
-//       console.log(popups);
+  fetch('./data/categories.json')
+    .then((response) => response.json())
+    .then((popups) => {
+      console.log(popups);
 
-//        const popup = popups.find(
-//         item => item.title === categorieRecherchee
-//       );
+       const popupBoissons = popups.find(
+        item => item.title === categorieRecherchee
+      );
 
-//       if (!popup) {
-//         console.error("Aucune popup trouvée pour :", categorieRecherchee);
-//         return;
-//       }
+      if (!popupBoissons) {
+        console.error("Aucune popup trouvée pour :", categorieRecherchee);
+        return;
+      }
 
   
 
-// //   <section id="popup">   addPopup
-// //     <div id="img-logo-croix"> addLogoCroix
-// //       <img id="croix" src="./assets/supprimer.png" alt="Logo croix Fermeture" /> addImgLogoCroix
-// //     </div>
-// //     <div id="container-titre-description-img"> addContainerTitreDescriptionImg
-// //       <div id="container-titre-descritpion-popup"> addContainerTitreDescriptionPopup
-// //         <h1>Une petite soif ?</h1> titrePopup
-// //         <p id="texte-description-popup">Choisissez la taille de votre boisson, +0.50€ pour le format 50Cl</p> descriptionPopup
-// //       </div>
-// //       <div id="container-choix-taille"> addContainerChoixTaille
-// //         <div class="container-taille"> addContainerPetiteTaille
-// //           <div> addDivParentImgTaille
-// //             <img id="img-petite-taille" src="./assets/boissons/coca-cola.png" alt="Illustration 30 Cl" /> imgPetiteTaille
-// //           </div>
-// //           <div> addDivTxtChoixTaille
-// //             <span class="texte-choix-taille">30 Cl</span> texteChoixTaille
-// //           </div>
-// //         </div>
-// //         <div class="container-taille"> addContainerGrandeTaille
-// //           <div> addDivParentImgTaille
-// //             <img id="img-grande-taille" src="./assets/boissons/coca-cola.png" alt="Illustration 50 Cl" /> imgGrandeTaille
-// //           </div>
-// //           <div> addDivTxtChoixTaille
-// //             <span class="texte-choix-taille">50 Cl</span> texteChoixTaille
-// //           </div>
-// //         </div>
-// //       </div>
-// //     </div>
-// //     <div id="container-parent-compteur"> addContainerParentCompteur
-// //       <div id="container-compteur"> addContaineCompteur
-// //         <button id="btn-moins">-</button> btnMoins
-// //         <span id="valeur-compteur"> 1 </span> valeurCompteur
-// //         <button id="btn-plus">+</button> btnPlus
-// //       </div>
-// //     </div>
-// //     <div id="container-btn-validation"> addContainerBtnValidation
-// //       <button id="btn-annuler-commande">Annuler</button> btnAnnuler
-// //       <button id="btn-ajouter-commande">Ajouter a ma commande</button> btnAjouter
-// //     </div>
-// //   </section>
-// // </main>
+//   <section id="popup">   addPopup
+//     <div id="img-logo-croix"> addLogoCroix
+//       <img id="croix" src="./assets/supprimer.png" alt="Logo croix Fermeture" /> addImgLogoCroix
+//     </div>
+//     <div id="container-titre-description-img"> addContainerTitreDescriptionImg
+//       <div id="container-titre-descritpion-popup"> addContainerTitreDescriptionPopup
+//         <h1>Une petite soif ?</h1> titrePopup
+//         <p id="texte-description-popup">Choisissez la taille de votre boisson, +0.50€ pour le format 50Cl</p> descriptionPopup
+//       </div>
+//       <div id="container-choix-taille"> addContainerChoixTaille
+//         <div class="container-taille"> addContainerPetiteTaille
+//           <div> addDivParentImgTaille
+//             <img id="img-petite-taille" src="./assets/boissons/coca-cola.png" alt="Illustration 30 Cl" /> imgPetiteTaille
+//           </div>
+//           <div> addDivTxtChoixTaille
+//             <span class="texte-choix-taille">30 Cl</span> texteChoixTaille
+//           </div>
+//         </div>
+//         <div class="container-taille"> addContainerGrandeTaille
+//           <div> addDivParentImgTaille
+//             <img id="img-grande-taille" src="./assets/boissons/coca-cola.png" alt="Illustration 50 Cl" /> imgGrandeTaille
+//           </div>
+//           <div> addDivTxtChoixTaille
+//             <span class="texte-choix-taille">50 Cl</span> texteChoixTaille
+//           </div>
+//         </div>
+//       </div>
+//     </div>
+//     <div id="container-parent-compteur"> addContainerParentCompteur
+//       <div id="container-compteur"> addContaineCompteur
+//         <button id="btn-moins">-</button> btnMoins
+//         <span id="valeur-compteur"> 1 </span> valeurCompteur
+//         <button id="btn-plus">+</button> btnPlus
+//       </div>
+//     </div>
+//     <div id="container-btn-validation"> addContainerBtnValidation
+//       <button id="btn-annuler-commande">Annuler</button> btnAnnuler
+//       <button id="btn-ajouter-commande">Ajouter a ma commande</button> btnAjouter
+//     </div>
+//   </section>
+// </main>
 
 
 
-// // parent main id container-popup
-// //   > addPopup section  id popup
-// //     > addLogoCroix div id img-logo-croix 
-// //       > addImgLogoCroix img id croix
+// parent main id container-popup
+//   > addPopup section  id popup
+//     > addLogoCroix div id img-logo-croix 
+//       > addImgLogoCroix img id croix
 
 
-//     const addPopup = document.createElement ('section');
-//     addPopup.id = 'popup';
+    const addPopup = document.createElement ('section');
+    addPopup.id = 'popup';
 
 
-//     const addLogoCroix = document.createElement ('div');
-//     addLogoCroix.id ='img-logo-croix';
+    const addLogoCroix = document.createElement ('div');
+    addLogoCroix.id ='img-logo-croix';
 
-//     const addImgLogoCroix = document.createElement ('img');
-//     addImgLogoCroix.id ='croix';
-//     addImgLogoCroix.src = './assets/supprimer.png';
-//     addImgLogoCroix.alt = 'Logo Croix';
-
-
-//     // pour fermer la popup avec la croix
-//     addImgLogoCroix.addEventListener('click', () => {
-//     containerPopup.style.display = 'none';
-//     containerPopup.innerHTML = '';
-// });
-
-//     containerPopup.appendChild(addPopup);
-//     addPopup.appendChild(addLogoCroix);
-//     addLogoCroix.appendChild(addImgLogoCroix);
-
-//   // > addContainerTitreDescriptionImg div id container-titre-description-img
-//   //   > addContainerTitreDescriptionPopup div id container-titre-descritpion-popup
-//   //     > titrePopup h1 
-//   //     > descriptionPopup p id texte-description-popup
-//   //   > addContainerChoixTaille div id container-choix-taille
-//   //     > addContainerPetiteTaille div class container-taille
-//   //       > addDivParentImgPetiteTaille div 
-//   //         > imgPetiteTaille img id img-petite-taille
-//   //       > addDivTxtChoixPetiteTaille div
-//   //         > texteChoixPetiteTaille span class texte-choix-taille
-//   //     > addContainerGrandeTaille div class container-taille
-//   //       > addDivParentImgGrandeTaille div 
-//   //         > imgGrandeTaille img id img-grande-taille
-//   //       > addDivTxtChoixGrandeTaille div
-//   //         > texteChoixGrandeTaille span class texte-choix-taille
+    const addImgLogoCroix = document.createElement ('img');
+    addImgLogoCroix.id ='croix';
+    addImgLogoCroix.src = './assets/supprimer.png';
+    addImgLogoCroix.alt = 'Logo Croix';
 
 
-//     const addContainerTitreDescriptionImg = document.createElement ('div');
-//     addContainerTitreDescriptionImg.id = 'container-titre-description-img';
+    // pour fermer la popup avec la croix
+    addImgLogoCroix.addEventListener('click', () => {
+    containerPopupBoissons.style.display = 'none';
+    containerPopupBoissons.innerHTML = '';
+});
 
-//     const addContainerTitreDescriptionPopup = document.createElement ('div');
-//     addContainerTitreDescriptionPopup.id = 'container-titre-descritpion-popup';
+    containerPopupBoissons.appendChild(addPopup);
+    addPopup.appendChild(addLogoCroix);
+    addLogoCroix.appendChild(addImgLogoCroix);
 
-//     const titrePopup = document.createElement ('h1');
-//     titrePopup.textContent = popup.title
-
-//     const descriptionPopup = document.createElement ('p');
-//     descriptionPopup.id = 'texte-description-popup';
-//     descriptionPopup.textContent = popup.description;
-
-//     const addContainerChoixTaille = document.createElement ('div');
-//     addContainerChoixTaille.id = 'container-choix-taille';
-
-//     const addContainerPetiteTaille = document.createElement ('div');
-//     addContainerPetiteTaille.classList.add('container-taille');
-
-//     const addDivParentImgPetiteTaille = document.createElement ('div');
-
-//     const imgPetiteTaille = document.createElement ('img');
-//     imgPetiteTaille.id = 'img-petite-taille';
-//     imgPetiteTaille.src = popup.image;
-//     imgPetiteTaille.alt = 'Petite Taille';
-
-//     const addDivTxtChoixPetiteTaille = document.createElement ('div');
-
-//     const texteChoixPetiteTaille = document.createElement ('span');
-//     texteChoixPetiteTaille.classList.add('texte-choix-taille');
-//     texteChoixPetiteTaille.textContent='30 Cl'
-
-//     const addContainerGrandeTaille = document.createElement ('div');
-//     addContainerGrandeTaille.classList.add('container-taille');
-
-//     const addDivParentImgGrandeTaille = document.createElement ('div');
-
-//     const imgGrandeTaille = document.createElement ('img');
-//     imgGrandeTaille.id = 'img-grande-taille';
-//     imgGrandeTaille.src = popup.image;
-//     imgGrandeTaille.alt = 'Grande Taille';
-
-//     const addDivTxtChoixGrandeTaille = document.createElement ('div');
-
-//     const texteChoixGrandeTaille = document.createElement ('span');
-//     texteChoixGrandeTaille.classList.add('texte-choix-taille');
-//     texteChoixGrandeTaille.textContent='50 Cl'
-
-//     addPopup.appendChild(addContainerTitreDescriptionImg);
-
-//     addContainerTitreDescriptionImg.appendChild(addContainerTitreDescriptionPopup);
-//     addContainerTitreDescriptionImg.appendChild(addContainerChoixTaille);
-
-//     addContainerTitreDescriptionPopup.appendChild(titrePopup);
-//     addContainerTitreDescriptionPopup.appendChild(descriptionPopup);
-
-//     addContainerChoixTaille.appendChild(addContainerPetiteTaille);
-//     addContainerChoixTaille.appendChild(addContainerGrandeTaille);
-
-//     addContainerPetiteTaille.appendChild(addDivParentImgPetiteTaille);
-//     addContainerPetiteTaille.appendChild(addDivTxtChoixPetiteTaille);
+  // > addContainerTitreDescriptionImg div id container-titre-description-img
+  //   > addContainerTitreDescriptionPopup div id container-titre-descritpion-popup
+  //     > titrePopup h1 
+  //     > descriptionPopup p id texte-description-popup
+  //   > addContainerChoixTaille div id container-choix-taille
+  //     > addContainerPetiteTaille div class container-taille
+  //       > addDivParentImgPetiteTaille div 
+  //         > imgPetiteTaille img id img-petite-taille
+  //       > addDivTxtChoixPetiteTaille div
+  //         > texteChoixPetiteTaille span class texte-choix-taille
+  //     > addContainerGrandeTaille div class container-taille
+  //       > addDivParentImgGrandeTaille div 
+  //         > imgGrandeTaille img id img-grande-taille
+  //       > addDivTxtChoixGrandeTaille div
+  //         > texteChoixGrandeTaille span class texte-choix-taille
 
 
-//     addDivParentImgPetiteTaille.appendChild(imgPetiteTaille);
-//     addDivTxtChoixPetiteTaille.appendChild(texteChoixPetiteTaille);
+    const addContainerTitreDescriptionImg = document.createElement ('div');
+    addContainerTitreDescriptionImg.id = 'container-titre-description-img';
+
+    const addContainerTitreDescriptionPopup = document.createElement ('div');
+    addContainerTitreDescriptionPopup.id = 'container-titre-descritpion-popup';
+
+    const titrePopup = document.createElement ('h1');
+    titrePopup.textContent = "Une petite soif ? "
+
+    const descriptionPopup = document.createElement ('p');
+    descriptionPopup.id = 'texte-description-popup';
+    descriptionPopup.textContent = "Choisissez la taille de votre boisson,  +0.50€ pour le format 50 Cl";
+
+    const addContainerChoixTaille = document.createElement ('div');
+    addContainerChoixTaille.id = 'container-choix-taille';
+
+    const addContainerPetiteTaille = document.createElement ('div');
+    addContainerPetiteTaille.classList.add('container-taille');
+        addContainerPetiteTaille.addEventListener("click", () => {
+        console.log("clic");
+        addContainerGrandeTaille.classList.remove('activeBorder');
+        addContainerPetiteTaille.classList.add("activeBorder");
+        });
+
+    const addDivParentImgPetiteTaille = document.createElement ('div');
+    addDivParentImgPetiteTaille.style.display ="flex";
+    addDivParentImgPetiteTaille.style.justifyContent ="center";
 
 
-//     addContainerGrandeTaille.appendChild(addDivParentImgGrandeTaille);
-//     addContainerGrandeTaille.appendChild(addDivTxtChoixGrandeTaille);
+    const imgPetiteTaille = document.createElement ('img');
+    imgPetiteTaille.id = 'img-petite-taille';
+    imgPetiteTaille.src = "./assets/boissons/coca-cola.png";
+    imgPetiteTaille.alt = 'Petite Taille';
+    imgPetiteTaille.style.width = "80%";
+    imgPetiteTaille.style.height = "100%";
 
 
-//     addDivParentImgGrandeTaille.appendChild(imgGrandeTaille);
-//     addDivTxtChoixGrandeTaille.appendChild(texteChoixGrandeTaille);
+
+    const addDivTxtChoixPetiteTaille = document.createElement ('div');
+
+    const texteChoixPetiteTaille = document.createElement ('span');
+    texteChoixPetiteTaille.classList.add('texte-choix-taille');
+    texteChoixPetiteTaille.textContent='30 Cl'
+
+    const addContainerGrandeTaille = document.createElement ('div');
+    addContainerGrandeTaille.classList.add('container-taille');
+        addContainerGrandeTaille.addEventListener("click", () => {
+        console.log("clic");
+        addContainerPetiteTaille.classList.remove('activeBorder');
+        addContainerGrandeTaille.classList.add("activeBorder");
+        });
 
 
-//   // > addContainerParentCompteur div id container-parent-compteur
-//   //   > addContaineCompteur div  id container-compteur
-//   //     > btnMoins button id btn-moins
-//   //     > valeurCompteur span id valeur-compteur
-//   //     > btnPlus button id btn-plus
+    const addDivParentImgGrandeTaille = document.createElement ('div');
+    addDivParentImgGrandeTaille.style.display ="flex";
+    addDivParentImgGrandeTaille.style.justifyContent ="center";
+
+    const imgGrandeTaille = document.createElement ('img');
+    imgGrandeTaille.id = 'img-grande-taille';
+    imgGrandeTaille.src = "./assets/boissons/coca-cola.png";
+    imgGrandeTaille.alt = 'Grande Taille';
+
+    const addDivTxtChoixGrandeTaille = document.createElement ('div');
+
+    const texteChoixGrandeTaille = document.createElement ('span');
+    texteChoixGrandeTaille.classList.add('texte-choix-taille');
+    texteChoixGrandeTaille.textContent='50 Cl'
 
     
-//     const addContainerParentCompteur = document.createElement ('div');
-//     addContainerParentCompteur.id = 'container-parent-compteur';
 
-//     const addContaineCompteur = document.createElement ('div');
-//     addContaineCompteur.id = 'container-compteur';
+    addPopup.appendChild(addContainerTitreDescriptionImg);
 
-//     const btnMoins = document.createElement ('button');
-//     btnMoins.id = 'btn-moins';
-//     btnMoins.textContent='-';
 
-//     const valeurCompteur = document.createElement ('span');
-//     valeurCompteur.id = 'valeur-compteur';
+    addContainerTitreDescriptionImg.appendChild(addContainerTitreDescriptionPopup);
+    addContainerTitreDescriptionImg.appendChild(addContainerChoixTaille);
 
-//     const btnPlus = document.createElement ('button');
-//     btnPlus.id = 'btn-plus';
-//     btnPlus.textContent='+';
+    addContainerTitreDescriptionPopup.appendChild(titrePopup);
+    addContainerTitreDescriptionPopup.appendChild(descriptionPopup);
 
-//     addPopup.appendChild(addContainerParentCompteur);
+    addContainerChoixTaille.appendChild(addContainerPetiteTaille);
+    addContainerChoixTaille.appendChild(addContainerGrandeTaille);
 
-//     addContainerParentCompteur.appendChild(addContaineCompteur);
-//     addContaineCompteur.appendChild(btnMoins);
-//     addContaineCompteur.appendChild(valeurCompteur);
-//     addContaineCompteur.appendChild(btnPlus);
+    addContainerPetiteTaille.appendChild(addDivParentImgPetiteTaille);
+    addContainerPetiteTaille.appendChild(addDivTxtChoixPetiteTaille);
 
-//   // > addContainerBtnValidation div id container-btn-validation
-//   //   > btnAnnuler  button id btn-annuler-commande
-//   //   > btnAjouter button id btn-ajouter-commande
+
+    addDivParentImgPetiteTaille.appendChild(imgPetiteTaille);
+    addDivTxtChoixPetiteTaille.appendChild(texteChoixPetiteTaille);
+
+
+    addContainerGrandeTaille.appendChild(addDivParentImgGrandeTaille);
+    addContainerGrandeTaille.appendChild(addDivTxtChoixGrandeTaille);
+
+
+    addDivParentImgGrandeTaille.appendChild(imgGrandeTaille);
+    addDivTxtChoixGrandeTaille.appendChild(texteChoixGrandeTaille);
+
+
+  // > addContainerParentCompteur div id container-parent-compteur
+  //   > addContaineCompteur div  id container-compteur
+  //     > btnMoins button id btn-moins
+  //     > valeurCompteur span id valeur-compteur
+  //     > btnPlus button id btn-plus
+
     
-//     const addContainerBtnValidation = document.createElement('div');
-//     addContainerBtnValidation.id = 'container-btn-validation';
+    const addContainerParentCompteur = document.createElement ('div');
+    addContainerParentCompteur.id = 'container-parent-compteur';
 
-//     const btnAnnuler = document.createElement ('button');
-//     btnAnnuler.id = 'btn-annuler-commande';
+    const addContaineCompteur = document.createElement ('div');
+    addContaineCompteur.id = 'container-compteur';
 
-//     const btnAjouter = document.createElement ('button');
-//     btnAjouter.id = 'btn-ajouter-commande';
+    const btnMoins = document.createElement ('button');
+    btnMoins.id = 'btn-moins';
+    btnMoins.textContent='-';
+    btnMoins.addEventListener('click', () => {
+      if (compteur > 1) {
+      compteur--;
+      valeurCompteur.textContent = compteur;
+      }
+    });
 
-//     addPopup.appendChild(addContainerBtnValidation);
-//     addContainerBtnValidation.appendChild(btnAnnuler);
-//     addContainerBtnValidation.appendChild(btnAjouter);
+    const valeurCompteur = document.createElement ('span');
+    valeurCompteur.id = 'valeur-compteur';
+    valeurCompteur.textContent='1';
 
-//   });
-// }
+    const btnPlus = document.createElement ('button');
+    btnPlus.id = 'btn-plus';
+    btnPlus.textContent='+';
+    let compteur = 1;
+    valeurCompteur.textContent = compteur;
+    btnPlus.addEventListener('click', () =>{
+      if (compteur < 10) { // limite de 10 boissons
+        compteur++;
+      }
+      valeurCompteur.textContent = compteur;
+    })
+
+    addPopup.appendChild(addContainerParentCompteur);
+
+    addContainerParentCompteur.appendChild(addContaineCompteur);
+    addContaineCompteur.appendChild(btnMoins);
+    addContaineCompteur.appendChild(valeurCompteur);
+    addContaineCompteur.appendChild(btnPlus);
+
+  // > addContainerBtnValidation div id container-btn-validation
+  //   > btnAnnuler  button id btn-annuler-commande
+  //   > btnAjouter button id btn-ajouter-commande
+    
+    const addContainerBtnValidation = document.createElement('div');
+    addContainerBtnValidation.id = 'container-btn-validation';
+
+    const btnAnnuler = document.createElement ('button');
+    btnAnnuler.id = 'btn-annuler-commande';
+    btnAnnuler.textContent = "Annuler";
+
+    const btnAjouter = document.createElement ('button');
+    btnAjouter.id = 'btn-ajouter-commande';
+    btnAjouter.textContent = "Ajouter à ma commande";
+
+    addPopup.appendChild(addContainerBtnValidation);
+    addContainerBtnValidation.appendChild(btnAnnuler);
+    addContainerBtnValidation.appendChild(btnAjouter);
+
+  });
+}
 
 
 

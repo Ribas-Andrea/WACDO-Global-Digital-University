@@ -177,7 +177,8 @@ h1 {
 }
 
 .activeBorder{
-  border: 4px solid #ffc400
+  border: 4px solid #ffc400 ;
+  /* !important; */
 }
 /* --------------------------------------------- Responsive --------------------------------------------- */
 
@@ -328,7 +329,7 @@ h1 {
 
 
 
-/* --------------------------------------------- Css pour javascript --------------------------------------------- */
+/* --------------------------------------------- Css pour javascript popup de la nav bar --------------------------------------------- */
 
 
 
@@ -410,4 +411,9 @@ h1 {
   transform: rotate(180deg);
   cursor: pointer;
   height: 60%;
+}
+
+
+.nav-popup-boissons .activeBorder{
+  border: 4px solid #ffc400 !important;
 }
