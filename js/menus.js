@@ -1,69 +1,109 @@
-const panier = []; // Creation d'un tableau pour les articles du panier
+const panier = []; 
+// Creation d'un tableau pour les articles du panier
 
-
+// -------------------------------------------------------------- NavBar -----------------------------------------------------------------------------------
 // Création de la fonction pour afficher les données de la nav bar dans la console puis dans le DOM:
 function getDataCat() {
-  // Pour insérer catNav dans le DOM :
+
+// Pour insérer catNav dans le DOM (dans l'élément ayant l'id container-liste-categories):
   const catList = document.getElementById('container-liste-categories');
 
-  // fonction fetch pour récupérer les données du json
-  fetch('./data/categories.json')
-    .then((response) => response.json())
+
+// fonction fetch pour récupérer les données du fichier JSON des categories :
+  fetch('./data/categories.json') 
+// on va chercher dans le fichier JSON
+    .then((response) => response.json()) 
+// puis convertit la réponse en objet Javascript
     .then((categories) => {
-      console.log(categories);
+// puis on parcourt les categories du fichier JSON
+// console.log(categories); // on vérifie que categories soient bien récupérées avec un message dans la console
 
-      // On créer les différentes section/div/p/img du html :
+// Création des diiférentes balises HTML (div, img, p,..) : Fichier html en dur :
+// <div class="card-categories-nav">
+//   <div class="container-img-card-categorie">
+//          <img class="img-card-categorie" src="assets/categories/menus.png" alt="produits" />
+//   </div>
+//   <div class="container-titre-img-nav">
+//          <p class="titre-img-nav">produits</p>
+//   </div>
+// </div>
       categories.forEach((cat, index) => {
-        // Fichier html en dur :
-        // <div class="card-categories-nav">
-        //   <div class="container-img-card-categorie">
-        //          <img class="img-card-categorie" src="assets/categories/menus.png" alt="produits" />
-        //   </div>
-        //   <div class="container-titre-img-nav">
-        //          <p class="titre-img-nav">produits</p>
-        //   </div>
-        // </div>
-
-        // 1- on ajoute catNav et on lui met une écoute au click
-        const catNav = document.createElement('div'); // creation de la div sur le dom
-        catNav.id = index; // creation d'un id par card (pour pouvoir ajouter une couleur de bordure à chaque écoute (à chaque click))
-        catNav.classList.add('card-categories-nav'); // Ajoute une class à chaque card (pour le CSS)
-        // Cela revient à dire que nous mettons des paramètres à catNav : let catNav = { id: 0, classList: [], addEventListener: () => {}...... }
+// 1- Création des différentes cartes de la nav bar ( toutes les catégories) et ajout d'un écouteur d'évènement au clic
+        
+        const catNav = document.createElement('div'); 
+// creation de la div en mémoire pour l'inclure avec appendChild sur le DOM
+        catNav.id = index; 
+// Attribue un identifiant unique à chaque carte (permet notamment de modifier son apparence lors d'un clic (voir boucle for en dessous))
+        catNav.classList.add('card-categories-nav'); 
+// Ajoute une class à chaque card (pour le CSS)
+// Ces 2 dernières lignes : Cela revient à dire que nous mettons des paramètres à catNav : let catNav = { id: 0, classList: []) pour ensuite mettre une écoute :  addEventListener: () => {}...... }
 
         function selectionnerCard(event) {
-          // Création de la fonction pour selectionner une card
+// Création de la fonction pour selectionner une card
 
-          const catListCard = document.getElementById('container-liste-categories'); // Au click je récupère la div parente (avec l'id container-liste-categories) qui à toute les div enfant pour les cards de la nav
+          const catListCard = document.getElementById('container-liste-categories'); 
+// Au clic, on récupère la div parente ayant l'ID "container-liste-categories" qui contient toutes les cartes de la nav bar.
 
-          // Parcourir l'élément catListCard pour récupéré cet élément enfant
-          // let catNav = { id: 0, classList: [], addEventListener: () => {}, children: []...... } => dans ma console, je voit que catNav à la propriété children
+// On parcourt les enfants de catListCard afin de récupérer chaque carte.
+// Dans la console, on peut observer que chaque élément DOM possède
+// une propriété "children" contenant ses éléments enfants.
+
+// Exemple simplifié :
+// let catNav = {
+//   id: 0,
+//   classList: [],
+//   children: [],
+//   addEventListener: () => {}
+// };
 
           for (let index = 0; index < catListCard.children.length; index++) {
-            // Parcourir la liste des enfants du parent (la liste des cards de la nav) avec la boucle for :
-            // let index = 0                     => Initialisation du point de départ de la boucle for (0 est le première élément du tableau)
-            // index < catList2.children.length  => Comparaison pour savoir quand on sort de la boucle (si l'index est inférieur au nombre d'élément de la liste on continue le traitement) : Attention on utilise strictement inférieur au nombre d'élément car dans un tableau le premier élément commence toujours à 0 (donc pour burger il y a 8 éléments, mais le 8ème est le 7ème)
-            // Index++                           => Ajoute à chaque fin de boucle +1 à la variable index
+// Parcours de la liste des enfants du conteneur parent
+// (la liste des cartes de navigation) à l'aide d'une boucle for.
 
-            const cardInitiale = catListCard.children[index]; // Récupération de l'élément enfants  catListCard(parent).children(enfant)[index](on prend l'enfant à la position index)
-            cardInitiale.style.borderColor = '#6e6e6e'; // On applique une couleur de bordure initial (et permettra à revenir à cette couleur à la fin de l'évènement)
-            cardInitiale.style.borderWidth = '1px'; // on remet la bordure à 1px
-          } // fin de la boucle
+// let index = 0
+// => Initialise le compteur de boucle à 0
+// (le premier élément d'un tableau se trouve toujours à l'index 0).
 
-          // Ajout de la brodure jaune :
-          const catNavSelectCard = document.getElementById(index); // on créer une variable catNavSelectCard avec l'id index que l'on a créer précédement
-          catNavSelectCard.style.borderColor = '#ffc836'; // on pplique une couleur jaune au click (à la selection de la card)
-          catNavSelectCard.style.borderWidth = '4px'; // on applique une largeur de bordure de 4px
+// index < catListCard.children.length
+// => La boucle continue tant que l'index est inférieur
+// au nombre total d'éléments de la liste.
 
-          // Ajout du contenu correspondant (permet de lancer les fonction titre, description et produits selon l'id) :
+// Attention : on utilise "<" et non "<="
+// car les index commencent à 0.
+// Exemple : si la liste contient 8 éléments,
+// leurs index vont de 0 à 7.
+
+// index++
+// => Incrémente l'index de 1 à chaque tour de boucle.
+
+            const cardInitiale = catListCard.children[index]; 
+// Récupération de l'élément enfants  catListCard(parent).children(enfant)[index](on prend l'enfant à la position index)
+            cardInitiale.style.borderColor = '#6e6e6e'; 
+// On applique une couleur de bordure initial (et permettra à revenir à cette couleur à la fin de l'évènement)
+            cardInitiale.style.borderWidth = '1px'; 
+// on remet la bordure à 1px
+          } 
+// fin de la boucle
+
+// Ajout de la bordure jaune sur la carte selectionnée:
+          const catNavSelectCard = document.getElementById(index); 
+// on récupère la carte correspondant à l'ID "index" que l'on a créé précédemment lors de la génération des cartes.
+          catNavSelectCard.style.borderColor = '#ffc836'; 
+// on applique une couleur jaune au click (à la selection de la card)
+          catNavSelectCard.style.borderWidth = '4px'; 
+// on applique une largeur de bordure de 4px
+
+// Affiche le contenu correspondant à la catégorie sélectionnée selon l'index de la carte cliquée, on appelle :
+// - afficherDescription() pour mettre à jour le texte descriptif,
+// - afficherProduits() pour afficher les produits de la catégorie.
+
 
           if (index === 0) {
-            afficherPopupNav('menus');
             afficherDescription(index);
             afficherProduits('menus');
           }
 
           if (index === 1) {
-            // afficherPopupBoissons('boissons');
             afficherDescription(index);
             afficherProduits('boissons');
           }
@@ -101,11 +141,15 @@ function getDataCat() {
             afficherDescription(index);
             afficherProduits('sauces');
           }
-        } // fin de la fonction => cette fonction permet de mettre en jaune au click, et lorsque l'on click sur une autre card, celli-ci deviendra jaune et la première reviendra à sa couleur initiale
+        } 
+// fin de la fonction => Cette fonction met en évidence la carte sélectionnée en jaune.
+// Lorsqu'une autre carte est cliquée, elle devient à son tour sélectionnée et la précédente retrouve son apparence par défaut.
 
-        catNav.addEventListener('click', selectionnerCard); // on créer l'évènement d'écoute sur catNav au click et on applique la fonction selectionnerCard
 
-        // 2- On ajoute les autres div au DOM
+        catNav.addEventListener('click', selectionnerCard); 
+// on créer l'évènement d'écoute sur catNav au click et on applique la fonction selectionnerCard crée précédement.
+
+// 2- On ajoute les autres éléments HTML au DOM : 
 
         const catNavContainerImgCard = document.createElement('div');
         catNavContainerImgCard.classList.add('container-img-card-categorie');
@@ -113,7 +157,8 @@ function getDataCat() {
         const catNavImgCard = document.createElement('img');
         catNavImgCard.classList.add('img-card-categorie');
 
-        catNavImgCard.src = cat.image; // cat.image : on récupère les données json grâce à la console (ici, on ouvre les catégories (cat) et la partie image de la categorie(image)), attention de bien mettre src pour une image :
+        catNavImgCard.src = cat.image; 
+// cat.image : on récupère les données JSON grâce à la console (ici, on ouvre les catégories (cat) et la partie image de la categorie(image)), attention de bien mettre src pour une image :
 
         const catNavContainerTitreImg = document.createElement('div');
         catNavContainerTitreImg.classList.add('container-titre-img-nav');
@@ -121,28 +166,44 @@ function getDataCat() {
         const catNavTitreImg = document.createElement('p');
         catNavTitreImg.classList.add('titre-img-nav');
 
-        catNavTitreImg.textContent = cat.title; // cat.title : on récupère les données json grâce à la console (ici, on ouvre les catégories (cat) et la partie titre de la catégorie(title)) :
+        catNavTitreImg.textContent = cat.title; 
+// cat.title : on récupère les données json grâce à la console (ici, on ouvre les catégories (cat) et la partie titre de la catégorie(title)) :
 
-        // On insère les div enfants dans les div parentes selon le fichier html :
-
-        // 1/ création des 2 éléments (img et p) à l'interieur des div
+// On insère les div enfants dans les div parentes selon le fichier html :
+// 1/ Ajout des éléments(img et p) dans leurs div respectives : 
         catNavContainerImgCard.appendChild(catNavImgCard);
         catNavContainerTitreImg.appendChild(catNavTitreImg);
 
-        // 2/ creation des 2 div (container) à l'interieur de la div catNav
+// 2 - Ajout des conteneurs dans la carte principale catNav : 
         catNav.appendChild(catNavContainerImgCard);
         catNav.appendChild(catNavContainerTitreImg);
 
-        // On ajoute ces implémentation dans le dom :
+// 3 - Ajout de la carte dans le conteneur principal du DOM : 
         catList.appendChild(catNav);
       });
     })
     .catch((err) => {
-      console.log('<<<<<<<<<<<<<<', err);
+//.catch() sert à gérer les erreurs d’une promesse (fetch ici).
+// Si quelque chose échoue dans :
+// le fetch
+// ou le response.json()
+// ou le .then(...)
+      // console.log(err);
+// Affiche l’erreur dans la console du navigateur.
       window.location.href = 'index.html';
+//Redirige l’utilisateur vers une autre page.
     });
 }
 
+
+
+
+
+
+
+
+
+// ----------------------------------------------------------------- Main (Titre + Descritpion + Produits) ----------------------------------------------------------------
 // Creation de la fonction pour afficher les données titre et descritpion dans le DOM :
 function afficherDescription(indexCategorie) {
   const titreProd = document.getElementById('container-nos-produits');
@@ -215,14 +276,28 @@ function afficherProduits(categories) {
 
         const prodContainerZoneChoix = document.createElement('div');
         prodContainerZoneChoix.classList.add('container-zone-choix');
+        prodContainerZoneChoix.addEventListener("click", () => {
+          console.log("clic");
+            document.querySelectorAll('.container-zone-choix').forEach(prodCardBoisson => {
+            prodCardBoisson.classList.remove('activeBorder');
+            });
+            prodContainerZoneChoix.classList.add("activeBorder");
+            if (categories === "boissons"){
+              afficherPopupBoissons("boissons");
+            }
+            if (categories === "menus"){
+              afficherPopupNav('menus');;
+            }
+
+
+            
+            });
 
         const prodCardChoix = document.createElement('article');
         prodCardChoix.classList.add('card-choix');
         prodCardChoix.dataset.id = prod.id;
 
-
-
-
+// Evènement au clic pour mettre un id par catégorie et affihcer la bonne categorie selon où l'on a cliqué sur la nav bar
         prodCardChoix.addEventListener('click', () =>{
             
             console.log('Vous avez cliquer sur un article');
@@ -246,16 +321,16 @@ function afficherProduits(categories) {
             
             
 
-            // console.table(panier)
-            // // Exemple d'ajout d'un tableau avec les articles choisi ( lien avec const panier = [];)
-            // panier.push({
-            //     type: categories,
-            //     nom: prod.nom,
-            //     prix: prod.prix,
-            //     options: {}
-            // });
+            console.table(panier)
+            // Exemple d'ajout d'un tableau avec les articles choisi ( lien avec const panier = [];)
+            panier.push({
+                type: categories,
+                nom: prod.nom,
+                prix: prod.prix,
+                options: {}
+            });
 
-            // afficherPanier();
+            afficherPanier();
         });
         
         const prodContainerImgCard = document.createElement('div');
@@ -267,14 +342,17 @@ function afficherProduits(categories) {
 
         const prodContainerTitrePrix = document.createElement('div');
         prodContainerTitrePrix.classList.add('container-titre-prix');
+        prodContainerTitrePrix.style.alignItems = 'center';
 
         const prodNom = document.createElement('h2');
         prodNom.classList.add('nom-du-produit');
         prodNom.textContent = prod.nom;
+        prodNom.style.paddingTop = '15px';
 
         const prodPrix = document.createElement('span');
         prodPrix.classList.add('prix-produit');
-        prodContainerTitrePrix.textContent = prod.prix;
+        prodPrix.textContent = prod.prix.toFixed(2) + ' €'; // toFixed pour ajouter une 2eme décimale
+        prodPrix.style.paddingTop = '15px';
 
         // <div id="container-zone-choix"> prodList
         //   <div id="container-zone-choix"> </div> prodContainerZoneChoix
@@ -324,7 +402,16 @@ function afficherProduits(categories) {
 
 
 
-// ----------------------------------------------------------------- Popup ----------------------------------------------------------------
+
+
+
+
+
+
+// -------------------------------------------------------------- Popup -----------------------------------------------------------------------------------
+
+
+
 // Creation de la fonction pour afficher la popup de choix du menus à partir de la nav : 
 function afficherPopupNav (categorieRecherchee){
 
@@ -783,7 +870,7 @@ function afficherPopupNav (categorieRecherchee){
                             cardBoisson.classList.remove('activeBorder');
                             });
                             cardBoissons.classList.add("activeBorder");
-                            afficherPopupBoissons(categorieRecherchee);
+                            // afficherPopupBoissons(categorieRecherchee); on le mettra seulement si c'est demandé
                         });
 
                         const containerImgCardBoisson = document.createElement('div');
@@ -838,18 +925,18 @@ function afficherPopupNav (categorieRecherchee){
 // Creation de la fonction pour afficher les popup par la section principale : 
 function afficherPopupBoissons (categorieRecherchee){
 
-const containerPopupBoissons = document.getElementById('container-popup');
-console.log(containerPopupBoissons);
+const prodContainerZoneChoix = document.getElementById('container-popup');
+console.log(prodContainerZoneChoix);
 
 // on vérifie si containerPopup existe : 
-  if (!containerPopupBoissons) {
+  if (!prodContainerZoneChoix) {
     console.error('Conteneur popup introuvable');
     return;
     }
 
     // pour enlever le display none de la popup
-containerPopupBoissons.style.display = 'flex';
-containerPopupBoissons.innerHTML = '';  // enlève la popup de la nav
+prodContainerZoneChoix.style.display = 'flex';
+prodContainerZoneChoix.innerHTML = '';  // enlève la popup de la nav
 
   fetch('./data/categories.json')
     .then((response) => response.json())
@@ -932,11 +1019,11 @@ containerPopupBoissons.innerHTML = '';  // enlève la popup de la nav
 
     // pour fermer la popup avec la croix
     addImgLogoCroix.addEventListener('click', () => {
-    containerPopupBoissons.style.display = 'none';
-    containerPopupBoissons.innerHTML = '';
+    prodContainerZoneChoix.style.display = 'none';
+    prodContainerZoneChoix.innerHTML = '';
 });
 
-    containerPopupBoissons.appendChild(addPopup);
+    prodContainerZoneChoix.appendChild(addPopup);
     addPopup.appendChild(addLogoCroix);
     addLogoCroix.appendChild(addImgLogoCroix);
 

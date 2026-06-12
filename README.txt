@@ -26,3 +26,4 @@ Etapes avancement github :
 19/ Javascript : ajout de la popup sur le click de la nav bar pour le choix du menu
 20/ Modification popup boissons avec ajout class imbriqué de la nav bar pour pouvoir modifier les tailles sur la popup + modification des étapes du switch pour effecer le contenu et le remettre avec le btn retour
 21/ Corection des problèmes d'affichage css suite à l'ajout du conteneur de boissons et de l'affichage du texte avec le bouton retour de la poopup de la nav + creation popup de la boisson en javascript
+22/ Correction des fonctions afficherPopupNav et afficherPopupBoisson qui étaient appliquées au mauvais endroit pour l'affecter au bon endroit  + Mise à jour des commentaires javascript de la fonction getDataCat()
