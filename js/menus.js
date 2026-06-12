@@ -1,7 +1,7 @@
 const panier = []; 
 // Creation d'un tableau pour les articles du panier
 
-// -------------------------------------------------------------- NavBar -----------------------------------------------------------------------------------
+// -------------------------------------------------------------- NavBar -------------------------------------------------------------------------------------------------
 // Création de la fonction pour afficher les données de la nav bar dans la console puis dans le DOM:
 function getDataCat() {
 
@@ -11,7 +11,7 @@ function getDataCat() {
 
 // fonction fetch pour récupérer les données du fichier JSON des categories :
   fetch('./data/categories.json') 
-// on va chercher dans le fichier JSON
+// // fetch : Sert à récupérer des données depuis Internet (API, serveur) : on va chercher dans le fichier JSON
     .then((response) => response.json()) 
 // puis convertit la réponse en objet Javascript
     .then((categories) => {
@@ -28,6 +28,8 @@ function getDataCat() {
 //   </div>
 // </div>
       categories.forEach((cat, index) => {
+// Sert à boucler sur un tableau déjà disponible : forEach = je parcours un tableau dont on a déjà les données
+
 // 1- Création des différentes cartes de la nav bar ( toutes les catégories) et ajout d'un écouteur d'évènement au clic
         
         const catNav = document.createElement('div'); 
@@ -200,24 +202,59 @@ function getDataCat() {
 
 
 
-
-
-
 // ----------------------------------------------------------------- Main (Titre + Descritpion + Produits) ----------------------------------------------------------------
+
+
+
+
+
+
 // Creation de la fonction pour afficher les données titre et descritpion dans le DOM :
 function afficherDescription(indexCategorie) {
+// indexCategorie est une variable d'entrée, elle sert à recevoir une valeur au moment où la fonction est appelée.
+// Autrement dit, elle représente généralement :
+// l’index (position) d’une catégorie dans un tableau
+// ou un identifiant numérique permettant de savoir quelle catégorie afficher
+
+
   const titreProd = document.getElementById('container-nos-produits');
   console.log(titreProd);
-  titreProd.innerHTML = ''; // vide les anciens produits
+// Vérifie si titreprod existe dans la console
+  titreProd.innerHTML = ''; 
+// vide les anciens titre/ desription des produits
 
 
   fetch('./data/categories.json')
     .then((response) => response.json())
+  // Convertion en données javascript
     .then((categories) => {
-      console.log(categories);
+      // console.log(categories);
 
       categories.forEach((titre, index) => {
-        console.log(titre, index);
+      // console.log(titre, index);
+
+// Elle reçoit deux paramètres :
+
+// 1) titre
+
+// correspond à l’élément actuel du tableau
+
+// 1er tour → "Menu"
+// 2e tour → "Boissons"
+// 3e tour → "Burgers"
+// et ..
+
+// 2) index
+
+// correspond à la position de l’élément dans le tableau
+
+// 0 pour "Menu"
+// 1 pour "Boissons"
+// 2 pour "Burgers"
+// etc..
+
+
+        
 
         // <div class="titre-produits"> titreSection
         //   <h1>Nos menus</h1> titreProduit
@@ -225,12 +262,17 @@ function afficherDescription(indexCategorie) {
         // </div>
 
         if (index === indexCategorie) {
+// Sert à savoir si on est dans la bonne catégorie
+// index = position actuelle dans la boucle
+// indexCategorie = catégorie choisie
+// Si je suis sur l'index 1 alors titre.title sera menus
           const titreSection = document.createElement('div');
           titreSection.classList.add('titre-produits');
 
           const titreProduit = document.createElement('h1');
           titreProduit.textContent = 'Nos ' + titre.title;
-          console.log(titreProduit.textContent);
+          // console.log(titreProduit.textContent); 
+// on vérifie ce que contient le titre
 
           const titreDescription = document.createElement('p');
           titreDescription.textContent = titre.description;
@@ -242,7 +284,7 @@ function afficherDescription(indexCategorie) {
       });
     })
     .catch((err) => {
-      console.log('<<<<<<<<<<<<<<', err);
+      // console.log(err);
       window.location.href = 'index.html';
     });
 }
@@ -250,17 +292,23 @@ function afficherDescription(indexCategorie) {
 // Creation de la fonction pour afficher les données des produits dans le DOM :
 function afficherProduits(categories) {
   const prodList = document.getElementById('container-zone-choix');
-  prodList.innerHTML = ''; // vide les anciens produits
-
+  prodList.innerHTML = ''; 
+// vide les anciens produits
 
 
   fetch('./data/produits.json')
     .then((response) => response.json())
+// Reconvertit en données javascript
     .then((produits) => {
-      console.log(produits);
+      // console.log(produits);
 
       produits[categories].forEach((prod) => {
-        console.log(produits);
+// On accède à une propriété d’un objet ou d’un tableau.
+// produits = objet ou tableau principal
+// categories = une variable
+// On utilise les crochets car le fichier JSON est un objet avec plusieurs catégories et chaque catégorie contient un tableau de produits. Chaque catégorie = un tiroir  et Chaque objet = un produit dans le tiroir
+        // console.log(produits); 
+// affiche les données du JSON
 
         // <div id="container-zone-choix">  prodContainerZoneChoix
         //   <article class="card-choix"> prodCardChoix
@@ -276,34 +324,66 @@ function afficherProduits(categories) {
 
         const prodContainerZoneChoix = document.createElement('div');
         prodContainerZoneChoix.classList.add('container-zone-choix');
+// Ajout de l'évènement au clic pour mettre une bordure (cette bordure va se situer dans la selection des poduits du main)
         prodContainerZoneChoix.addEventListener("click", () => {
-          console.log("clic");
+          // console.log("clic");
             document.querySelectorAll('.container-zone-choix').forEach(prodCardBoisson => {
             prodCardBoisson.classList.remove('activeBorder');
+// Enlève toutes les bordures jaunes
             });
             prodContainerZoneChoix.classList.add("activeBorder");
+// Affecte la bordure jaune à l'élément selectionné
+
+
+// Création de plusieurs if pour l'ouverture des popups : 
             if (categories === "boissons"){
+// Si je suis dans la catégorie des boissons
               afficherPopupBoissons("boissons");
+// Je vais afficher la popup concernant les boissons
             }
             if (categories === "menus"){
+// Si je suis dans la catégorie des menus
               afficherPopupNav('menus');;
+// Je vais afficher la popup concernant les menus
             }
-
-
+// Si je veux choisir d'ajouter ou enlever des ingrédients d'un burger je devrais utiliser :
+//             if (categories === "burgers"){
+// // Si je suis dans la catégorie des burgers
+//               afficherPopupBurgers('burgers');;
+// // Je vais afficher la popup concernant les burgers
+//             }
+// et je devrais créer la fonction afficherPopupBurgers
             
             });
 
         const prodCardChoix = document.createElement('article');
         prodCardChoix.classList.add('card-choix');
-        prodCardChoix.dataset.id = prod.id;
+        prodCardChoix.dataset.id = prod.id; 
+// Création (ou assignation) de l’id dans le HTML via JavaScript
+// prodCardChoix = élément HTML (une carte produit)
+// .dataset = accès aux attributs data-*
+// .id = nom de l'attribut (data-id)
+// prod.id = valeur venant de l'objet produit
 
-// Evènement au clic pour mettre un id par catégorie et affihcer la bonne categorie selon où l'on a cliqué sur la nav bar
+// Evènement au clic pour mettre un id par catégorie et afficher la bonne categorie selon où l'on a cliqué sur la nav bar
         prodCardChoix.addEventListener('click', () =>{
             
-            console.log('Vous avez cliquer sur un article');
-            const id = Number(prodCardChoix.dataset.id); // .dataset : est une propriété qui donne accès aux attributs HTML data-* et number permet de la convertir en nombre.
-            console.log('id cliqué :', id);
+            // console.log('Vous avez cliquer sur un article');
+// Message de la console pour vérifier que le clic fonctionne sur le bon élément
 
+            const id = Number(prodCardChoix.dataset.id); 
+// Récupération de l'id stocké dans l'attribut HTML data-id
+// dataset permet d'accéder aux attributs data-*
+// Number() convertit la valeur (string) en nombre
+
+
+            console.log('>>>>>>>>>>>','id cliqué :', id);
+// Donne le numéro de l'id cliqué dans la console : il y a écrit : id cliqué + numro de l'id
+
+
+
+// Table de correspondance entre l'id et la catégorie : 
+// exemple : “Si j’ai l’ID 9 → je veux la catégorie 'sauces'”
             const categories = {
                 1: 'menus',
                 2: 'boissons',
@@ -316,21 +396,25 @@ function afficherProduits(categories) {
                 9: 'sauces'
             };
 
-            afficherPopup(categories[id]);
-
-            
-            
 
             console.table(panier)
-            // Exemple d'ajout d'un tableau avec les articles choisi ( lien avec const panier = [];)
+// Affiche le contenu du tableau panier sous forme de tableau dans la console ( lien avec const panier = [];)
+
             panier.push({
-                type: categories,
+// Ajout un objet dans le tableau panier.
+                type: categories[id],
+// Pour récupérer les catégories du fichier JSON
+// [id] permet de ne pas stocker l'objet entier categories
                 nom: prod.nom,
+// Pour récupérer les noms du fichier JSON
                 prix: prod.prix,
+// Pour récupérer les prix du fichier JSON
                 options: {}
+// objet vide pour plus tard
             });
 
             afficherPanier();
+// Mise à jour du panier
         });
         
         const prodContainerImgCard = document.createElement('div');
@@ -393,22 +477,19 @@ function afficherProduits(categories) {
         prodContainerTitrePrix.appendChild(prodPrix);
       });
     })
-    // .catch((err) => {
-    //   console.log('<<<<<<<<<<<<<<', err);
-    //   window.location.href = 'index.html';
-    // });
+    .catch((err) => {
+      // console.log(err);
+      window.location.href = 'index.html';
+    });
 }
 
 
 
 
 
+// -------------------------------------------------------------- Popup -------------------------------------------------------------------------------------------------
 
 
-
-
-
-// -------------------------------------------------------------- Popup -----------------------------------------------------------------------------------
 
 
 
@@ -420,7 +501,7 @@ function afficherPopupNav (categorieRecherchee){
 
   // on vérifie si containerPopup existe : 
     if (!containerPopupNav) {
-      console.error('Conteneur popupNav introuvable');
+      // console.error('Conteneur popupNav introuvable');
       return;
     }
 
@@ -1212,7 +1293,7 @@ prodContainerZoneChoix.innerHTML = '';  // enlève la popup de la nav
 
 
 
-// -------------------------------------------------------------- Panier -----------------------------------------------------------------------------------
+// -------------------------------------------------------------- Panier -------------------------------------------------------------------------------------------------
 
 
 function afficherPanier(){
@@ -1270,6 +1351,12 @@ containerPanier.appendChild(listPanier);
 
   })
 }
+
+
+
+
+
+// -------------------------------------------------------------- Lancement des fonctions -------------------------------------------------------------------------------------------------
 
 
 getDataCat();
