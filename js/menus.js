@@ -303,7 +303,7 @@ function afficherProduits(categories) {
       // console.log(produits);
 
       produits[categories].forEach((prod) => {
-// On accède à une propriété d’un objet ou d’un tableau.
+// On accède à une propriété d’un objet ou d’un tableau : {"categories"[]
 // produits = objet ou tableau principal
 // categories = une variable
 // On utilise les crochets car le fichier JSON est un objet avec plusieurs catégories et chaque catégorie contient un tableau de produits. Chaque catégorie = un tiroir  et Chaque objet = un produit dans le tiroir
@@ -497,7 +497,7 @@ function afficherProduits(categories) {
 function afficherPopupNav (categorieRecherchee){
 
   const containerPopupNav = document.getElementById('container-popup');
-  console.log(containerPopupNav);
+  // console.log(containerPopupNav);
 
 // on vérifie si containerPopup existe : 
     if (!containerPopupNav) {
@@ -505,9 +505,11 @@ function afficherPopupNav (categorieRecherchee){
       return;
     }
 
-      // pour enlever le display none de la popup
+// pour enlever le display none de la popup (elle s'affichera seulement au click sur le bouton de l'un des menus situés dans les produits du main) : 
   containerPopupNav.style.display = 'flex';
+// affiche la popup
   containerPopupNav.innerHTML = ''; 
+// Vide le conteneur (celui des boissons), sinon les flèche reste
 
     fetch('./data/categories.json')
       .then((response) => response.json())
@@ -515,7 +517,16 @@ function afficherPopupNav (categorieRecherchee){
         console.log(popups);
 
         const popup = popups.find(
+// popups est un tableau (array) qui contient plusieurs objets (le json categories : [{}])
+// La méthode .find() parcourt le tableau et retourne le premier élément qui correspond à une condition. Si aucun élément ne correspond, elle retourne undefined.
           item => item.title === categorieRecherchee
+// C’est une fonction fléchée (arrow function) qui teste chaque élément :
+// item = un élément du tableau popups
+// item.title = le titre de cet élément
+// categorieRecherchee = la valeur recherchée
+// “Trouve dans popups l’objet dont le title est égal à categorieRecherchee”
+// Si un objet a title === categorieRecherchee, il est stocké dans popup
+// Sinon, popup vaut undefined
         );
 
         if (!popup) {
@@ -630,7 +641,8 @@ function afficherPopupNav (categorieRecherchee){
       const addContainerChoixTaille = document.createElement ('div');
       addContainerChoixTaille.id ='container-choix-taille';
 
-      // Ceci permet de créer le conteneur pour les boissons pour l'afficher puis l'enlever avec la flèche retour
+// Ceci permet de créer le conteneur pour les boissons pour l'afficher puis l'enlever avec la flèche retour grace au display none, 
+// on utilisera display flex pour la faire apparaitre dans le switch case de la fonction afficherPopupMenu() au case n° 3 et le refaire disparaitre au case n°2 avec le bouton retour
       const containerChoixBoissons = document.createElement('div');
       containerChoixBoissons.classList.add('nav-popup-boissons');
       containerChoixBoissons.style.display = 'none';
@@ -704,15 +716,17 @@ function afficherPopupNav (categorieRecherchee){
 
   // On utilise switch case pour modifier les éléments à l'interieur de la popup sans modifier le style de la popup : 
       let step = 1;
+  // “Je crée une variable appelée step et elle commence à 1.”
 
   // Ajout du bouton suivant : 
       const OpenbtnEtapeSuivante = document.createElement('button');
       OpenbtnEtapeSuivante.id = 'btn-etape-suivante';
       OpenbtnEtapeSuivante.textContent = 'Étape suivante';
 
+// Evènement au click pour que lorsque je clique sur suivant, je passe au case suivant (step ++);
       OpenbtnEtapeSuivante.addEventListener("click", () => {
 
-        if(step < 4){
+        if(step < 3){
           step++;
           afficherPopupMenu();
         }
@@ -720,7 +734,8 @@ function afficherPopupNav (categorieRecherchee){
       });
 
 
-  // Ajout du bouton retour : 
+// Ajout du bouton retour : 
+// Evènement au click pour que lorsque je clique sur retour, je retourne au case précédent (step --) sans retourner avant la 1 qui n'existe pas donc strictement >;
       const btnRetour = document.createElement('button');
       btnRetour.id = 'btn-retour';
       btnRetour.textContent = 'Retour';
@@ -819,7 +834,7 @@ function afficherPopupNav (categorieRecherchee){
               });
 
 
-              // Click sur l'image de gauche
+              // Click sur l'image de droite
               addContainerGrandeTaille.addEventListener("click", () => {
               addContainerGrandeTaille.classList.add("activeBorder");
               addContainerPetiteTaille.classList.remove("activeBorder");
@@ -837,10 +852,11 @@ function afficherPopupNav (categorieRecherchee){
               break;
 
             case 3:
-              // ces éléments permettent de remettre les éléments du case 3 avec le bouton retour
+              // ces éléments permettent d'enlever les éléments du case 3 avec le bouton retour
               // Pour cacher les cartes frites/potatoes : 
               addContainerPetiteTaille.style.display = 'none';
               addContainerGrandeTaille.style.display = 'none';
+              // ces éléments permettent de mettre les éléments du case 3
               // Pour recevoir le conteneur des boissons : 
               addContainerChoixTaille.style.display = 'flex';
               // Pour afficher tous ces éléments : 
@@ -859,6 +875,9 @@ function afficherPopupNav (categorieRecherchee){
                 .then(data => {
 
                   const listboissons = data.boissons;
+// data contient le contenu du fichier JSON après sa lecture et sa conversion en objet JavaScript.
+// data.boissons accède à la propriété boissons de l'objet data.
+// On stocke ce tableau dans une nouvelle constante appelée listboissons.
 
 {/* <main id="container-popup">
     <div id="nav-popup-boissons"> containerChoixBoissons
@@ -884,18 +903,17 @@ function afficherPopupNav (categorieRecherchee){
 
 // Element conteneur des boissons avec les flèches : 
 
-
-
-
                   containerChoixBoissons.innerHTML = '';
-                   // Le slider des boissons est visible : 
+// Le slider des boissons est visible : 
                   containerChoixBoissons.style.display = 'flex';
-                  // le conteneur des boissons a déjà été créer plus tôt dans la fonction, donc on le vide et le réaffiche avec les bon éléments
+// le conteneur des boissons a déjà été créer plus tôt dans la fonction, donc on le vide et le réaffiche avec les bon éléments
 
                   const imgFlecheGaucheBoissons = document.createElement('img');
                   imgFlecheGaucheBoissons.id ="fleche-gauche";
                   imgFlecheGaucheBoissons.src = './assets/fleche-slider.png';
 
+
+// On met en place un compteur pour déplacer la nav bar au click des flèches sans dépasser 4 click : 
                       let compteur = 0;
                       const max = 4; // exemple à adapter selon nombre de catégories visibles
                       imgFlecheGaucheBoissons.addEventListener('click', () => {
@@ -903,12 +921,9 @@ function afficherPopupNav (categorieRecherchee){
                         if (compteur > 0 ) {
                             compteur--;
                             containerListBoissons.style.transform = `translateX(-${145 * compteur}px)`;
+// Permet de déplacer 1 card par une card grace à la taille de 145px (taille de la card + le gap)
                         }
                       });
-
-
-
-
 
                   const choixBoissons = document.createElement('div');
                   choixBoissons.id = "choix-categorie-produits"; 
@@ -948,10 +963,12 @@ function afficherPopupNav (categorieRecherchee){
                         cardBoissons.addEventListener("click", () => {
                           console.log("clic");
                           document.querySelectorAll('.card-categories-nav').forEach(cardBoisson => {
+// Récupère toutes les cartes ayant cette classe : <div class="card-categories-nav"></div> puis on parcourt chaque carte une par une pour enlever la bordure jaune s'il y en a une
+
                             cardBoisson.classList.remove('activeBorder');
                             });
                             cardBoissons.classList.add("activeBorder");
-                            // afficherPopupBoissons(categorieRecherchee); on le mettra seulement si c'est demandé
+// On active la bordure sur la carte selectionnée
                         });
 
                         const containerImgCardBoisson = document.createElement('div');
@@ -983,13 +1000,15 @@ function afficherPopupNav (categorieRecherchee){
 
 
               OpenbtnEtapeSuivante.textContent = 'Ajouter le menu à ma commande';
-              break;
+// Evènement au click pour ajouter au panier avec retour à la page menu :  ( à finir) 
+// Inclure des variable "type burger, type menus, type boisson, type accompagnement" pour mémoriser les choix et les mettre dans la fonction afficherPanier 
 
-            case 4:
+
               OpenbtnEtapeSuivante.addEventListener('click', () => {
-                  if(step === 4){
+                  if(step === 3){
                   afficherPanier();
                   }
+                  window.location.href = 'menus.html';
               })
               break;  
           };
@@ -1007,7 +1026,7 @@ function afficherPopupNav (categorieRecherchee){
 function afficherPopupBoissons (categorieRecherchee){
 
 const prodContainerZoneChoix = document.getElementById('container-popup');
-console.log(prodContainerZoneChoix);
+// console.log(prodContainerZoneChoix);
 
 // on vérifie si containerPopup existe : 
   if (!prodContainerZoneChoix) {
@@ -1015,9 +1034,10 @@ console.log(prodContainerZoneChoix);
     return;
     }
 
-    // pour enlever le display none de la popup
+// pour enlever le display none de la popup
 prodContainerZoneChoix.style.display = 'flex';
-prodContainerZoneChoix.innerHTML = '';  // enlève la popup de la nav
+prodContainerZoneChoix.innerHTML = '';  
+// enlève la popup de la nav
 
   fetch('./data/categories.json')
     .then((response) => response.json())
@@ -1239,6 +1259,7 @@ prodContainerZoneChoix.innerHTML = '';  // enlève la popup de la nav
     const btnMoins = document.createElement ('button');
     btnMoins.id = 'btn-moins';
     btnMoins.textContent='-';
+    // Evènement au clic pour baisser la valeur du compteur sans aller en dessous de 1 (strictement >)
     btnMoins.addEventListener('click', () => {
       if (compteur > 1) {
       compteur--;
@@ -1254,12 +1275,16 @@ prodContainerZoneChoix.innerHTML = '';  // enlève la popup de la nav
     btnPlus.id = 'btn-plus';
     btnPlus.textContent='+';
     let compteur = 1;
+    // On initialise le compteur a 1
     valeurCompteur.textContent = compteur;
+    // On applique un texte avec la valeur du compteur
+     // Evènement au clic pour baisser la valeur du compteur
     btnPlus.addEventListener('click', () =>{
       if (compteur < 10) { // limite de 10 boissons
         compteur++;
       }
       valeurCompteur.textContent = compteur;
+  // permet de changer la valeur du compteur au clic
     })
 
     addPopup.appendChild(addContainerParentCompteur);
@@ -1283,6 +1308,7 @@ prodContainerZoneChoix.innerHTML = '';  // enlève la popup de la nav
     const btnAjouter = document.createElement ('button');
     btnAjouter.id = 'btn-ajouter-commande';
     btnAjouter.textContent = "Ajouter à ma commande";
+    // Faire un évènement au click pour l'ajout au panier
 
     addPopup.appendChild(addContainerBtnValidation);
     addContainerBtnValidation.appendChild(btnAnnuler);

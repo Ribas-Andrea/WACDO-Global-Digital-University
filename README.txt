@@ -29,3 +29,4 @@ Etapes avancement github :
 22/ Correction des fonctions afficherPopupNav et afficherPopupBoisson qui étaient appliquées au mauvais endroit pour l'affecter au bon endroit  + Mise à jour des commentaires javascript de la fonction getDataCat()
 23/ Mise à jour des commentaires javascript des fonction afficherProduits () et afficherDescritpion ()
 24/ Mise à jour des commentaires javascript de la fonction afficherPanier()
+25/ Mise à jour des commentaires javascript des fonctions afficherPopupBoisson() et afficherPopupNav()
