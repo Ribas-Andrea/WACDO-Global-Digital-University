@@ -499,9 +499,9 @@ function afficherPopupNav (categorieRecherchee){
   const containerPopupNav = document.getElementById('container-popup');
   console.log(containerPopupNav);
 
-  // on vérifie si containerPopup existe : 
+// on vérifie si containerPopup existe : 
     if (!containerPopupNav) {
-      // console.error('Conteneur popupNav introuvable');
+      console.error('Conteneur popupNav introuvable');
       return;
     }
 
@@ -1298,15 +1298,17 @@ prodContainerZoneChoix.innerHTML = '';  // enlève la popup de la nav
 
 function afficherPanier(){
   const containerPanier = document.getElementById('container-articles-panier');
-  console.log(containerPanier);
+  // console.log(containerPanier);
   containerPanier.innerHTML = ''; 
+// on vérifie si containerPanier existe, si ce n'est pas le cas, la console affiche une erreur : 
   if (!containerPanier) {
     console.error('Conteneur panier introuvable');
     return;
     }
 
+
   panier.forEach((article) => {
-    console.log(article) ;
+    // console.log(article) ;
 
 
 // <article class="produits-panier">
@@ -1340,6 +1342,13 @@ const listPanier = document.createElement('ul');
 listPanier.classList.add('liste-detail-produits');
 
 Object.entries(article.options).forEach(([cle, valeur]) => {
+// article.options est un objet (ex : { menu: "best", accompagnement: "Frites" }).
+// Object.entries(...) transforme cet objet en tableau de paires : [["menu", "best of"], ["accompagnement", "Frites"]] : ForEach fonctionne uniquement avec des tableaus et non des objects
+// .forEach(...) parcourt chaque paire.
+// ([cle, valeur]) utilise la déstructuration :
+// cle = la clé (ex: "menu")
+// valeur = la valeur (ex: "best")
+
     const li = document.createElement('li');
     li.textContent = valeur;
     listPanier.appendChild(li);
