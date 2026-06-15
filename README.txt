@@ -31,3 +31,4 @@ Etapes avancement github :
 24/ Mise à jour des commentaires javascript de la fonction afficherPanier()
 25/ Mise à jour des commentaires javascript des fonctions afficherPopupBoisson() et afficherPopupNav()
 26/ Creation évènement au click sur la page index.html sur place et à emporter
+27/ Creation du changement de numero de commande surplace et à emporter dans le panier

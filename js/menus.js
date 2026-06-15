@@ -1385,11 +1385,26 @@ containerPanier.appendChild(prodPanier);
 containerPanier.appendChild(listPanier);
 
   })
+
+
 }
 
+afficherPanier();
+
+function afficherNumeroCommande(){
+  const mode = localStorage.getItem("mode");
+  console.log(localStorage.getItem("mode"));
 
 
+if (mode === "surplace") {
+  document.getElementById("numero-commande-sur-place").textContent = "327";
+}; 
+if (mode === "emporter") {
+  document.getElementById("numero-commande-emporter").textContent = "73";
+}
+}
 
+afficherNumeroCommande()
 
 // -------------------------------------------------------------- Lancement des fonctions -------------------------------------------------------------------------------------------------
 

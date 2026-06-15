@@ -13,6 +13,8 @@ function choixLieu () {
     console.log("click sur place");
     btnChoixLieuSurPlace.classList.add("activeBorder");
     btnChoixLieuEmporter.classList.remove("activeBorder");
+    const mode = localStorage.setItem("mode", "surplace");
+    console.log("mode =", mode);
     window.location.href = 'menus.html';
     });
 
@@ -20,10 +22,11 @@ function choixLieu () {
     console.log("click à emporter");
     btnChoixLieuEmporter.classList.add("activeBorder");
     btnChoixLieuSurPlace.classList.remove("activeBorder");  
+    const mode = localStorage.setItem("mode", "emporter");
     window.location.href = 'menus.html';
   });
 
-afficherPanier ();
+
 
 };
 
