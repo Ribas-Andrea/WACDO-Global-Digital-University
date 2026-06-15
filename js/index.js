@@ -30,4 +30,5 @@ function choixLieu () {
 
 };
 
-choixLieu ()
+choixLieu ();
+

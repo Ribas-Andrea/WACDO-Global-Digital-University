@@ -335,6 +335,7 @@ function afficherProduits(categories) {
 // Affecte la bordure jaune à l'élément selectionné
 
 
+
 // Création de plusieurs if pour l'ouverture des popups : 
             if (categories === "boissons"){
 // Si je suis dans la catégorie des boissons
@@ -343,7 +344,7 @@ function afficherProduits(categories) {
             }
             if (categories === "menus"){
 // Si je suis dans la catégorie des menus
-              afficherPopupNav('menus');;
+              afficherPopupMenus('menus');
 // Je vais afficher la popup concernant les menus
             }
 // Si je veux choisir d'ajouter ou enlever des ingrédients d'un burger je devrais utiliser :
@@ -367,6 +368,10 @@ function afficherProduits(categories) {
 
 // Evènement au clic pour mettre un id par catégorie et afficher la bonne categorie selon où l'on a cliqué sur la nav bar
         prodCardChoix.addEventListener('click', () =>{
+
+          
+            const memoireBurger = localStorage.setItem("memoireBurger", prod.nom);
+            console.log("memoireBurger =", memoireBurger);
             
             // console.log('Vous avez cliquer sur un article');
 // Message de la console pour vérifier que le clic fonctionne sur le bon élément
@@ -397,20 +402,36 @@ function afficherProduits(categories) {
             };
 
 
+
+
             console.table(panier)
 // Affiche le contenu du tableau panier sous forme de tableau dans la console ( lien avec const panier = [];)
 
             panier.push({
+                quantite: 1,
 // Ajout un objet dans le tableau panier.
-                type: categories[id],
+                type: { // 1 menu maxi besto of big mac => nbMenu + menu + nom
+                  // nbMenu,
+                  // categorie : "menus",   
 // Pour récupérer les catégories du fichier JSON
 // [id] permet de ne pas stocker l'objet entier categories
-                nom: prod.nom,
+                  menu : localStorage.getItem("memoireMenu"),
+                  burger : localStorage.getItem("memoireBurger"),
+                  },
 // Pour récupérer les noms du fichier JSON
+                options: {
+                // **********************************************Local Storage *************************************
+
+                accompagnement : localStorage.getItem("memoireAccompagnement"),
+
+                boisson : localStorage.getItem("memoireBoisson"),
+
+                // *************************************************************************************************
+
+                },
                 prix: prod.prix,
 // Pour récupérer les prix du fichier JSON
-                options: {}
-// objet vide pour plus tard
+
             });
 
             afficherPanier();
@@ -494,21 +515,21 @@ function afficherProduits(categories) {
 
 
 // Creation de la fonction pour afficher la popup de choix du menus à partir de la nav : 
-function afficherPopupNav (categorieRecherchee){
+function afficherPopupMenus (categorieRecherchee){
 
-  const containerPopupNav = document.getElementById('container-popup');
-  // console.log(containerPopupNav);
+  const containerPopupMenus = document.getElementById('container-popup');
+  // console.log(containerPopupMenus);
 
 // on vérifie si containerPopup existe : 
-    if (!containerPopupNav) {
-      console.error('Conteneur popupNav introuvable');
+    if (!containerPopupMenus) {
+      console.error('Conteneur popupMenus introuvable');
       return;
     }
 
 // pour enlever le display none de la popup (elle s'affichera seulement au click sur le bouton de l'un des menus situés dans les produits du main) : 
-  containerPopupNav.style.display = 'flex';
+  containerPopupMenus.style.display = 'flex';
 // affiche la popup
-  containerPopupNav.innerHTML = ''; 
+  containerPopupMenus.innerHTML = ''; 
 // Vide le conteneur (celui des boissons), sinon les flèche reste
 
     fetch('./data/categories.json')
@@ -600,11 +621,11 @@ function afficherPopupNav (categorieRecherchee){
 
       // pour fermer la popup avec la croix
       addImgLogoCroix.addEventListener('click', () => {
-      containerPopupNav.style.display = 'none';
-      containerPopupNav.innerHTML = '';
+      containerPopupMenus.style.display = 'none';
+      containerPopupMenus.innerHTML = '';
       });
 
-      containerPopupNav.appendChild(addPopup);
+      containerPopupMenus.appendChild(addPopup);
       addPopup.appendChild(addLogoCroix);
       addLogoCroix.appendChild(addImgLogoCroix);
 
@@ -725,7 +746,6 @@ function afficherPopupNav (categorieRecherchee){
 
 // Evènement au click pour que lorsque je clique sur suivant, je passe au case suivant (step ++);
       OpenbtnEtapeSuivante.addEventListener("click", () => {
-
         if(step < 3){
           step++;
           afficherPopupMenu();
@@ -781,6 +801,11 @@ function afficherPopupNav (categorieRecherchee){
                 descriptionPopup.textContent = "Le menu maxi Best Of comprend un sandwich, une grande frite et une boisson 50 Cl";
                 texteChoixGrandeTaille.textContent = 'Menu Maxi Best Of';
                 imgGrandeTaille.src= "./assets/illustration-maxi-best-of.png";
+                // **********************************************Local Storage *************************************
+
+                    const memoireMenu = localStorage.setItem("memoireMenu", "Maxi Best of");
+                    console.log("memoireMenu =", memoireMenu);
+                // *************************************************************************************************
                 });
 
 
@@ -792,7 +817,14 @@ function afficherPopupNav (categorieRecherchee){
                 descriptionPopup.textContent = "Le menu Best Of comprend un sandwich, une moyenne frite et une boisson 30 Cl";
                 texteChoixPetiteTaille.textContent = 'Menu Best Of';
                 imgPetiteTaille.src= "./assets/illustration-best-of.png";
+                // **********************************************Local Storage *************************************
+
+                    const memoireMenu = localStorage.setItem("memoireMenu", "Best of");
+                    console.log("memoireMenu", memoireMenu);
+                // *************************************************************************************************
                 });
+
+
               
               break;
 
@@ -831,6 +863,11 @@ function afficherPopupNav (categorieRecherchee){
               descriptionPopup.textContent = "Frites, potatoes, la pomme de terre dans tous ses états";
               texteChoixPetiteTaille.textContent='Frites';
               imgPetiteTaille.src= "./assets/frites/MOYENNE_FRITE.png";
+              // **********************************************Local Storage *************************************
+
+                    const memoireAccompagnement = localStorage.setItem("memoireAccompagnement", "Frites");
+                    console.log("memoireAccompagnement =", memoireAccompagnement);
+              // *************************************************************************************************
               });
 
 
@@ -845,6 +882,11 @@ function afficherPopupNav (categorieRecherchee){
               imgGrandeTaille.src= "./assets/frites/GRANDE_POTATOES.png";
               imgGrandeTaille.style.width = "100%";
               imgGrandeTaille.style.height = "100%";
+              // **********************************************Local Storage *************************************
+
+                    const memoireAccompagnement = localStorage.setItem("memoireAccompagnement", "Potatoes");
+                    console.log("memoireAccompagnement =", memoireAccompagnement);
+              // *************************************************************************************************
               });
 
 
@@ -969,6 +1011,22 @@ function afficherPopupNav (categorieRecherchee){
                             });
                             cardBoissons.classList.add("activeBorder");
 // On active la bordure sur la carte selectionnée
+
+
+// ********************************************** Local Storage *************************************
+
+// On stocke ici la boisson sélectionnée (la dernière cliquée)
+// IMPORTANT : ce n'est pas un tableau, juste une seule valeur
+
+// Quand l'utilisateur clique sur une boisson :
+const memoireBoisson = localStorage.setItem("memoireBoissons", boisson.id);
+console.log("memoireBoissons =", memoireBoisson);
+// ↑ On enregistre l'id de la boisson
+// ↑ À chaque nouveau clic, cette valeur est écrasée
+// → donc il ne reste TOUJOURS que la dernière boisson choisie
+
+
+// *************************************************************************************************
                         });
 
                         const containerImgCardBoisson = document.createElement('div');
@@ -1000,16 +1058,22 @@ function afficherPopupNav (categorieRecherchee){
 
 
               OpenbtnEtapeSuivante.textContent = 'Ajouter le menu à ma commande';
+// pour fermer la popup avec le bouton 'Ajouter le menu à ma commande'
+                  OpenbtnEtapeSuivante.addEventListener('click', () => {
+
+                  if(step === 3){
+                  containerPopupMenus.style.display = 'none';
+                  containerPopupMenus.innerHTML = '';
+
+                  afficherPanier();
+                  }
+
+                  containerPopupMenus.style.display = 'none';
+                  containerPopupMenus.innerHTML = '';
+                  });
 // Evènement au click pour ajouter au panier avec retour à la page menu :  ( à finir) 
 // Inclure des variable "type burger, type menus, type boisson, type accompagnement" pour mémoriser les choix et les mettre dans la fonction afficherPanier 
 
-
-              OpenbtnEtapeSuivante.addEventListener('click', () => {
-                  if(step === 3){
-                  afficherPanier();
-                  }
-                  window.location.href = 'menus.html';
-              })
               break;  
           };
 
@@ -1324,45 +1388,64 @@ prodContainerZoneChoix.innerHTML = '';
 
 function afficherPanier(){
   const containerPanier = document.getElementById('container-articles-panier');
-  // console.log(containerPanier);
-  containerPanier.innerHTML = ''; 
-// on vérifie si containerPanier existe, si ce n'est pas le cas, la console affiche une erreur : 
+
   if (!containerPanier) {
     console.error('Conteneur panier introuvable');
     return;
     }
 
 
+  // console.log(containerPanier);
+  containerPanier.innerHTML = ''; 
+// on vérifie si containerPanier existe, si ce n'est pas le cas, la console affiche une erreur : 
+
+// // **********************************************Local Storage *************************************
+
+// localStorage.getItem("memoireMenu");
+
+// localStorage.getItem("memoireBurger");
+
+// localStorage.getItem("memoireAccompagnement");
+
+// localStorage.getItem("memoireBoisson");
+
+// // *************************************************************************************************
+
   panier.forEach((article) => {
     // console.log(article) ;
 
 
 // <article class="produits-panier">
+//    <div> containerTitreLogo
 //     <h3>Menu 1</h3>
 //     <img class="logo-trash" src="assets/trash.png" alt="Logo Supprimer" />
-// </article>
+//    </div>
 // <ul class="liste-detail-produits">
 //   <li>frite</li>
 //   <li>sprite</li>
 //   <li>ketchup</li>
 //   <li>sauce deluxe</li>
 // </ul>
+// </article>
 
 
 const prodPanier = document.createElement ('article');
 prodPanier.classList.add('produits-panier');
 
+const containerTitreLogo = document.createElement ('div');
+containerTitreLogo.classList.add('container-titre-logo');
+
 const titrePanier = document.createElement('h3');
-titrePanier.textContent = article.nom;
+const nomMenu = article.type.menu.replace("Menu ", ""); // permet d'enlever le mot menu de chaque titre de menu du fichier json
+const nomBurger = article.type.burger.replace("Menu ", ""); // permet d'enlever le mot menu de chaque titre de menu du fichier json
+const libelleMenu = article.quantite > 1 ? 'Menus' : 'Menu';
+titrePanier.textContent = `${article.quantite} ${libelleMenu} ${nomMenu} ${nomBurger}`;
+console.log("burger :", article.type.burger);
 
 const logoSupp = document.createElement ('img');
 logoSupp.classList.add('logo-trash');
 logoSupp.src = './assets/trash.png';
 logoSupp.alt = 'Supprimer';
-
-
-prodPanier.appendChild(titrePanier);
-prodPanier.appendChild(logoSupp);
 
 const listPanier = document.createElement('ul');
 listPanier.classList.add('liste-detail-produits');
@@ -1380,9 +1463,33 @@ Object.entries(article.options).forEach(([cle, valeur]) => {
     listPanier.appendChild(li);
 });
 
+containerTitreLogo.appendChild(titrePanier);
+containerTitreLogo.appendChild(logoSupp);
+
+
+
+prodPanier.appendChild(containerTitreLogo);
+prodPanier.appendChild(listPanier);
+
+
 
 containerPanier.appendChild(prodPanier);
-containerPanier.appendChild(listPanier);
+
+
+console.log(localStorage);
+
+// **********************************************Local Storage *************************************
+
+  // if (memoireBurger === "burgerChoisi") {
+  //   prodpanier.textContent = "";
+  // }; 
+
+  // if (memoireMenu === "memoireMenu") {
+  //   prodpanier.textContent = "";
+  // }; 
+
+
+  // *************************************************************************************************
 
   })
 

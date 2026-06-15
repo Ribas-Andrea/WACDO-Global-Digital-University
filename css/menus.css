@@ -236,9 +236,14 @@ h1 {
 
 .produits-panier {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   padding: 10px;
+}
+
+.container-titre-logo {
+  display: flex;
+  justify-content: space-between;
 }
 
 .logo-trash {

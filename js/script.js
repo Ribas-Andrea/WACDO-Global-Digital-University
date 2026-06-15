@@ -22,5 +22,5 @@ flecheDroite.addEventListener('click', () => {
     if (compteur > 0 ) {
         compteur--;
         container.style.transform = `translateX(-${185 * compteur}px)`;
-    }
+    };
   });
