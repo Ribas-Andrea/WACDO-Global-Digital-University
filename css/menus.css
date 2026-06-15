@@ -170,6 +170,7 @@ h1 {
   padding-bottom: 56px;
   position: sticky; /*permet de faire suivre le panier quand on descend en bas de page, il faut un top: 0 pour que cela fontionne*/
   top: 0;
+  height: 100vh; /* pour que le background prenne toute la page*/
 }
 
 #logo-numero-commande {

@@ -5,7 +5,7 @@
   flex-direction: column;
   justify-content: space-around;
   width: 45%;
-  height: 55%;
+  height: 65%;
   background-color: white;
   border-radius: 16px;
   box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.25);
@@ -13,7 +13,7 @@
   position: absolute;
   top: 20%; /* distance du bas*/
   z-index: 2; /*image devant le fond d'écran*/
-  margin-left: 30%;
+  margin-left:30%;
 }
 
 #menu-accueil-titre-p {
@@ -33,8 +33,9 @@ h1 {
 
 /* --------------------------------------------- Boutons --------------------------------------------- */
 
-.btn-choix-lieu {
-  border: 8px solid #ffc836;
+  .btn-choix-lieu-sur-place,
+  .btn-choix-lieu-emporter{
+  border: 1px solid #6e6e6e;
   border-radius: 8px;
   background-color: white;
   cursor: pointer;
@@ -57,7 +58,8 @@ h1 {
   margin-bottom: 60px;
 }
 
-.btn-choix-lieu {
+  .btn-choix-lieu-sur-place,
+  .btn-choix-lieu-emporter{
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -65,7 +67,8 @@ h1 {
   padding-top: 20px;
 }
 
-.btn-img {
+.btn-img-sur-place,
+.btn-img-emporter {
   width: 60%;
 }
 
@@ -160,11 +163,13 @@ h1 {
     margin-bottom: 15px;
   }
 
-  .btn-choix-lieu {
+  .btn-choix-lieu-sur-place,
+  .btn-choix-lieu-emporter{
     border: 5px solid #ffc836;
   }
 
-  .btn-img {
+.btn-img-sur-place,
+.btn-img-emporter {
     width: 30%;
   }
 }
@@ -194,4 +199,11 @@ h1 {
     height: auto;
     padding: 10px;
   }
+}
+
+/* --------------------------------------------- Javascript --------------------------------------------- */
+
+
+.activeBorder{
+  border: 4px solid #ffc400;
 }

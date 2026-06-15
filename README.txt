@@ -30,3 +30,4 @@ Etapes avancement github :
 23/ Mise à jour des commentaires javascript des fonction afficherProduits () et afficherDescritpion ()
 24/ Mise à jour des commentaires javascript de la fonction afficherPanier()
 25/ Mise à jour des commentaires javascript des fonctions afficherPopupBoisson() et afficherPopupNav()
+26/ Creation évènement au click sur la page index.html sur place et à emporter

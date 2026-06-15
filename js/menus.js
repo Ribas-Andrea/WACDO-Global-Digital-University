@@ -92,7 +92,7 @@ function getDataCat() {
 // on récupère la carte correspondant à l'ID "index" que l'on a créé précédemment lors de la génération des cartes.
           catNavSelectCard.style.borderColor = '#ffc836'; 
 // on applique une couleur jaune au click (à la selection de la card)
-          catNavSelectCard.style.borderWidth = '4px'; 
+          catNavSelectCard.style.borderWidth = '8px'; 
 // on applique une largeur de bordure de 4px
 
 // Affiche le contenu correspondant à la catégorie sélectionnée selon l'index de la carte cliquée, on appelle :
@@ -326,7 +326,7 @@ function afficherProduits(categories) {
         prodContainerZoneChoix.classList.add('container-zone-choix');
 // Ajout de l'évènement au clic pour mettre une bordure (cette bordure va se situer dans la selection des poduits du main)
         prodContainerZoneChoix.addEventListener("click", () => {
-          // console.log("clic");
+          // console.log("click");
             document.querySelectorAll('.container-zone-choix').forEach(prodCardBoisson => {
             prodCardBoisson.classList.remove('activeBorder');
 // Enlève toutes les bordures jaunes
