@@ -2,6 +2,12 @@ Accessibilité des ressources JSON via une URL locale :
 http://localhost:5500/data/produits.json
 http://localhost:5500/data/categories.json
 
+Outils utilisé : 
+Internet : pour les recherche sur la doc officiel comme mdn,
+ChatGpt pour me debugger lorsque je ne trouve pas au bout d'une heure
+Youtube : 
+ * La gestion du local storage pour le panier : https://www.youtube.com/watch?v=vMT4NNFYno0
+
 
 Etapes avancement github : 
 
@@ -33,3 +39,5 @@ Etapes avancement github :
 26/ Creation évènement au click sur la page index.html sur place et à emporter
 27/ Creation du changement de numero de commande surplace et à emporter dans le panier
 28/ Ajout panier avec memoire popupmenu
+29/ Isolement des fonction du panier dans le fichier javascript dédié
+30/ Gérer l'affichage du panier avec quantité de menu
