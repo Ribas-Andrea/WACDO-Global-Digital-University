@@ -42,3 +42,4 @@ Etapes avancement github :
 29/ Isolement des fonction du panier dans le fichier javascript dédié
 30/ Renommage fonction defilerPopupMenus + modification emplacement setItem pour le type de menu et l'accompagnement du local storage
 30/ Gérer l'affichage du menu dans le panier correctement
+31/ Gestion des quantité du panier et ajout de l'évènement au clic pour la suppression
