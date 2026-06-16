@@ -368,9 +368,9 @@ function afficherProduits(categories) {
 // Evènement au clic pour mettre un id par catégorie et afficher la bonne categorie selon où l'on a cliqué sur la nav bar
         prodCardChoix.addEventListener('click', () =>{
 
-          
-            const memoireBurger = localStorage.setItem("memoireBurger", prod.nom);
-            console.log("memoireBurger =", memoireBurger);
+
+            localStorage.setItem("memoireBurger", prod.nom);
+            console.log("memoireBurger =", prod.nom);
             
             // console.log('Vous avez cliquer sur un article');
 // Message de la console pour vérifier que le clic fonctionne sur le bon élément
@@ -403,38 +403,7 @@ function afficherProduits(categories) {
 
 
 
-            console.table(panier)
-// Affiche le contenu du tableau panier sous forme de tableau dans la console ( lien avec const panier = [];)
 
-            panier.push({
-                quantite: 1,
-// Ajout un objet dans le tableau panier.
-                type: { // 1 menu maxi besto of big mac => nbMenu + menu + nom
-                  // nbMenu,
-                  // categorie : "menus",   
-// Pour récupérer les catégories du fichier JSON
-// [id] permet de ne pas stocker l'objet entier categories
-                  menu : localStorage.getItem("memoireMenu"),
-                  burger : localStorage.getItem("memoireBurger"),
-                  },
-// Pour récupérer les noms du fichier JSON
-                options: {
-                // **********************************************Local Storage *************************************
-
-                accompagnement : localStorage.getItem("memoireAccompagnement"),
-
-                boisson : localStorage.getItem("memoireBoisson"),
-
-                // *************************************************************************************************
-
-                },
-                prix: prod.prix,
-// Pour récupérer les prix du fichier JSON
-
-            });
-
-            afficherPanier();
-// Mise à jour du panier
         });
         
         const prodContainerImgCard = document.createElement('div');
@@ -662,7 +631,7 @@ function afficherPopupMenus (categorieRecherchee){
       addContainerChoixTaille.id ='container-choix-taille';
 
 // Ceci permet de créer le conteneur pour les boissons pour l'afficher puis l'enlever avec la flèche retour grace au display none, 
-// on utilisera display flex pour la faire apparaitre dans le switch case de la fonction afficherPopupMenu() au case n° 3 et le refaire disparaitre au case n°2 avec le bouton retour
+// on utilisera display flex pour la faire apparaitre dans le switch case de la fonction defilerPopupMenus() au case n° 3 et le refaire disparaitre au case n°2 avec le bouton retour
       const containerChoixBoissons = document.createElement('div');
       containerChoixBoissons.classList.add('nav-popup-boissons');
       containerChoixBoissons.style.display = 'none';
@@ -747,7 +716,7 @@ function afficherPopupMenus (categorieRecherchee){
       OpenbtnEtapeSuivante.addEventListener("click", () => {
         if(step < 3){
           step++;
-          afficherPopupMenu();
+          defilerPopupMenus();
         }
 
       });
@@ -762,7 +731,7 @@ function afficherPopupMenus (categorieRecherchee){
 
         if(step > 1){
           step--;
-          afficherPopupMenu();
+          defilerPopupMenus();
         }
 
       });
@@ -771,7 +740,32 @@ function afficherPopupMenus (categorieRecherchee){
             addContainerBtnValidation.appendChild(OpenbtnEtapeSuivante);
             addLogoCroix.appendChild(btnRetour);
 
-        function afficherPopupMenu() {
+
+            addContainerPetiteTaille.addEventListener("click", () => {
+
+  if(step <= 1){
+    localStorage.setItem("memoireMenu", "Best of");
+  }
+
+  if(step === 2){
+    localStorage.setItem("memoireAccompagnement", "Frites");
+  }
+
+});
+
+addContainerGrandeTaille.addEventListener("click", () => {
+
+  if(step === 1){
+    localStorage.setItem("memoireMenu", "Maxi Best of");
+  }
+
+  if(step === 2){
+    localStorage.setItem("memoireAccompagnement", "Potatoes");
+  }
+
+});
+
+        function defilerPopupMenus() {
 
           switch(step) {
 
@@ -800,11 +794,7 @@ function afficherPopupMenus (categorieRecherchee){
                 descriptionPopup.textContent = "Le menu maxi Best Of comprend un sandwich, une grande frite et une boisson 50 Cl";
                 texteChoixGrandeTaille.textContent = 'Menu Maxi Best Of';
                 imgGrandeTaille.src= "./assets/illustration-maxi-best-of.png";
-                // **********************************************Local Storage *************************************
 
-                    const memoireMenu = localStorage.setItem("memoireMenu", "Maxi Best of");
-                    console.log("memoireMenu =", memoireMenu);
-                // *************************************************************************************************
                 });
 
 
@@ -816,11 +806,7 @@ function afficherPopupMenus (categorieRecherchee){
                 descriptionPopup.textContent = "Le menu Best Of comprend un sandwich, une moyenne frite et une boisson 30 Cl";
                 texteChoixPetiteTaille.textContent = 'Menu Best Of';
                 imgPetiteTaille.src= "./assets/illustration-best-of.png";
-                // **********************************************Local Storage *************************************
 
-                    const memoireMenu = localStorage.setItem("memoireMenu", "Best of");
-                    console.log("memoireMenu", memoireMenu);
-                // *************************************************************************************************
                 });
 
 
@@ -862,11 +848,7 @@ function afficherPopupMenus (categorieRecherchee){
               descriptionPopup.textContent = "Frites, potatoes, la pomme de terre dans tous ses états";
               texteChoixPetiteTaille.textContent='Frites';
               imgPetiteTaille.src= "./assets/frites/MOYENNE_FRITE.png";
-              // **********************************************Local Storage *************************************
 
-                    const memoireAccompagnement = localStorage.setItem("memoireAccompagnement", "Frites");
-                    console.log("memoireAccompagnement =", memoireAccompagnement);
-              // *************************************************************************************************
               });
 
 
@@ -881,11 +863,6 @@ function afficherPopupMenus (categorieRecherchee){
               imgGrandeTaille.src= "./assets/frites/GRANDE_POTATOES.png";
               imgGrandeTaille.style.width = "100%";
               imgGrandeTaille.style.height = "100%";
-              // **********************************************Local Storage *************************************
-
-                    const memoireAccompagnement = localStorage.setItem("memoireAccompagnement", "Potatoes");
-                    console.log("memoireAccompagnement =", memoireAccompagnement);
-              // *************************************************************************************************
               });
 
 
@@ -1018,8 +995,8 @@ function afficherPopupMenus (categorieRecherchee){
 // IMPORTANT : ce n'est pas un tableau, juste une seule valeur
 
 // Quand l'utilisateur clique sur une boisson :
-const memoireBoisson = localStorage.setItem("memoireBoissons", boisson.id);
-console.log("memoireBoissons =", memoireBoisson);
+localStorage.setItem("memoireBoisson", boisson.nom);
+console.log("memoireBoisson =", boisson.nom);
 // ↑ On enregistre l'id de la boisson
 // ↑ À chaque nouveau clic, cette valeur est écrasée
 // → donc il ne reste TOUJOURS que la dernière boisson choisie
@@ -1064,6 +1041,8 @@ console.log("memoireBoissons =", memoireBoisson);
                   containerPopupMenus.style.display = 'none';
                   containerPopupMenus.innerHTML = '';
 
+
+                  ajouterAuPanier();
                   afficherPanier();
                   }
 
@@ -1080,7 +1059,7 @@ console.log("memoireBoissons =", memoireBoisson);
         }
 
 
-      afficherPopupMenu();
+      defilerPopupMenus();
       });
 };
 
@@ -1371,7 +1350,6 @@ prodContainerZoneChoix.innerHTML = '';
     const btnAjouter = document.createElement ('button');
     btnAjouter.id = 'btn-ajouter-commande';
     btnAjouter.textContent = "Ajouter à ma commande";
-    // Faire un évènement au click pour l'ajout au panier
 
     addPopup.appendChild(addContainerBtnValidation);
     addContainerBtnValidation.appendChild(btnAnnuler);

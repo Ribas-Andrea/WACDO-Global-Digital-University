@@ -40,4 +40,5 @@ Etapes avancement github :
 27/ Creation du changement de numero de commande surplace et à emporter dans le panier
 28/ Ajout panier avec memoire popupmenu
 29/ Isolement des fonction du panier dans le fichier javascript dédié
-30/ Gérer l'affichage du panier avec quantité de menu
+30/ Renommage fonction defilerPopupMenus + modification emplacement setItem pour le type de menu et l'accompagnement du local storage
+30/ Gérer l'affichage du menu dans le panier correctement
