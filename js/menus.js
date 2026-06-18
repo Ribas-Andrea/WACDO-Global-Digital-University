@@ -339,14 +339,11 @@ function afficherProduits(categories) {
               afficherPopupMenus('menus');
 // Je vais afficher la popup concernant les menus
             }
-// Si je veux choisir d'ajouter ou enlever des ingrédients d'un burger je devrais utiliser :
-//             if (categories === "burgers"){
-// // Si je suis dans la catégorie des burgers
-//               afficherPopupBurgers('burgers');;
-// // Je vais afficher la popup concernant les burgers
-//             }
-// et je devrais créer la fonction afficherPopupBurgers
-            
+            if (categories === "burgers"){
+            // Si je suis dans la catégorie des burgers
+              afficherPopupValidation('burgers');
+            // Je vais afficher la popup concernant le boutons de validation pour le panier
+            }
             });
 
         const prodCardChoix = document.createElement('article');
@@ -364,6 +361,9 @@ function afficherProduits(categories) {
 
             localStorage.setItem("memoireBurger", prod.nom);
             console.log("memoireBurger =", prod.nom);
+
+            localStorage.setItem("memoireArticle", prod.nom);
+            console.log("memoireArticle =", prod.nom);
 
             Number(localStorage.setItem("memoirePrix", prod.prix));
             

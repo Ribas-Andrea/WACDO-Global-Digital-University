@@ -44,3 +44,4 @@ Etapes avancement github :
 31/ Gérer l'affichage du menu dans le panier correctement
 32/ Gestion des quantité du panier et ajout de l'évènement au clic pour la suppression
 33/ Ajout du prix du menu + prix du menu en fonction de la quantité + message d'alert si non click de choix et message de confirmation sur la poubelle de suppression du panier
+34/ Ajout d'un bouton de validation pour envoyer au panier d'un burger

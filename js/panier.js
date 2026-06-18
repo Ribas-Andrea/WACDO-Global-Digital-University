@@ -133,6 +133,98 @@ function afficherPanier() {
   });
 }
 
+function ajouterArticleAuPanier() {
+  const article = localStorage.getItem("memoireArticle");
+  const prix = Number(localStorage.getItem("memoirePrix"));
+
+
+  if (!article) {
+    console.warn("Aucun produit sélectionné");
+    return;
+  }
+
+    // On recherche s'il y a un produit identique : (on met p pour le nom d'une variable)
+  const produitExistant = panier.find(p =>
+    p.type.article === article
+  );
+
+  if (produitExistant) {
+    // Si le produit existe déjà alors on augmente la quantité : 
+    produitExistant.quantite += 1;
+  } else {
+    // sinon on créer le nouveau produit : 
+    panier.push({
+      quantite: 1,
+      type: { 
+        article : article,
+        prix
+    },
+    });
+  }
+  console.log("PANIER AJOUTÉ :", panier);
+  afficherArticlePanier();
+}
+
+function afficherArticlePanier() {
+  const containerPanier = document.getElementById('container-articles-panier');
+
+  if (!containerPanier) {
+    console.error('Conteneur panier introuvable');
+    return;
+  }
+
+  containerPanier.innerHTML = '';
+
+  if (panier.length === 0) {
+    containerPanier.innerHTML = `
+    <p>Votre panier est vide</p>
+    </br>
+    <p> <strong> Ajoutez des produits pour poursuivre votre commande.</strong> </p>
+`;
+    return;
+  }
+
+  panier.forEach((article, index) => {
+    const prodPanier = document.createElement('article');
+    prodPanier.classList.add('produits-panier');
+
+    const containerTitreLogo = document.createElement('div');
+    containerTitreLogo.classList.add('container-titre-logo');
+
+    const titrePanier = document.createElement('h3');
+    titrePanier.textContent = article.type.article;
+
+    const logoSupp = document.createElement('img');
+    logoSupp.classList.add('logo-trash');
+    logoSupp.src = './assets/trash.png';
+    logoSupp.alt = 'Supprimer';
+    logoSupp.addEventListener('click', () =>{
+        if (confirm("Êtes-vous sûr de vouloir supprimer cet article?")) {
+        supprimerPanier(index)
+        console.log("Suppression effectuée");
+        } else {
+        console.log("Suppression annulée");
+        }
+      
+    })
+
+    const prixArticle = document.createElement ('p');
+    prixArticle.classList.add('prix-menu');
+    prixArticle.textContent = `${(article.type.prix * article.quantite).toFixed(2)} €`;
+
+
+    containerTitreLogo.appendChild(titrePanier);
+    containerTitreLogo.appendChild(logoSupp);
+
+    prodPanier.appendChild(containerTitreLogo);
+    prodPanier.appendChild(prixArticle);
+
+    containerPanier.appendChild(prodPanier);
+  });
+}
+
+
+
 function changerQuantite(index, quantity){
   // trouver le produit dans le panier : 
   const produit = panier[index];

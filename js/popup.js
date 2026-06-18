@@ -902,3 +902,74 @@ prodContainerZoneChoix.innerHTML = '';
   });
 }
 
+
+
+function afficherPopupValidation (){
+
+const validationChoix = document.getElementById('container-popup');
+// console.log(prodContainerZoneChoix);
+
+// on vérifie si containerPopup existe : 
+  if (!validationChoix) {
+    console.error('Conteneur popup introuvable');
+    return;
+    }
+
+// pour enlever le display none de la popup
+validationChoix.style.display = 'flex';
+validationChoix.innerHTML = '';  
+// enlève la popup de la nav
+
+
+    const addPopup = document.createElement ('section');
+    addPopup.id = 'popupValider';
+
+
+    const addLogoCroix = document.createElement ('div');
+    addLogoCroix.id ='img-logo-croix';
+
+    const addImgLogoCroix = document.createElement ('img');
+    addImgLogoCroix.id ='croix';
+    addImgLogoCroix.src = './assets/supprimer.png';
+    addImgLogoCroix.alt = 'Logo Croix';
+
+
+    // pour fermer la popup avec la croix
+    addImgLogoCroix.addEventListener('click', () => {
+    validationChoix.style.display = 'none';
+    validationChoix.innerHTML = '';
+});
+
+    validationChoix.appendChild(addPopup);
+    addPopup.appendChild(addLogoCroix);
+    addLogoCroix.appendChild(addImgLogoCroix);
+
+    
+// Ajout phrase de confirmation d'ajout d'un article : 
+      const containerDemandeValidation = document.createElement('div');
+
+      const demandeValidation = document.createElement('p');
+      const memoireArticle = localStorage.getItem("memoireArticle");
+      demandeValidation.textContent = `Voulez-vous ajouter  ${memoireArticle} à votre panier ?`;
+      demandeValidation.style.paddingBottom = '20px';
+
+
+
+  // Ajout du bouton de validation : 
+      const btnValidation = document.createElement('button');
+      btnValidation.id = 'btn-etape-suivante';
+      btnValidation.textContent = 'Valider';
+      btnValidation.addEventListener('click', () => {
+        ajouterArticleAuPanier();
+        validationChoix.style.display = 'none';
+        validationChoix.innerHTML = '';
+      })
+
+      containerDemandeValidation.appendChild(demandeValidation);
+      containerDemandeValidation.appendChild(btnValidation);
+
+      addPopup.appendChild(containerDemandeValidation);
+
+
+
+}
