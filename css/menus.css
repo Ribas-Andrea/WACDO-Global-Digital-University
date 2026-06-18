@@ -256,6 +256,16 @@ h1 {
   padding-left: 30px;
 }
 
+.container-list-prix{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.prix-menu{
+  font-weight: bold;
+}
+
 #container-total-panier {
   font-weight: 700;
   font-size: 22px;

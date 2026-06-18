@@ -26,8 +26,9 @@ function ajouterAuPanier() {
   const burger = localStorage.getItem("memoireBurger");
   const boisson = localStorage.getItem("memoireBoisson");
   const accompagnement = localStorage.getItem("memoireAccompagnement");
+  const prix = Number(localStorage.getItem("memoirePrix"));
 
-  if (!menu && !burger) {
+  if (!menu && !burger && !prix) {
     console.warn("Aucun produit sélectionné");
     return;
   }
@@ -36,6 +37,7 @@ function ajouterAuPanier() {
   const produitExistant = panier.find(p =>
     p.type.menu === menu &&
     p.type.burger === burger &&
+    p.type.prix === prix &&
     p.options.boisson === boisson &&
     p.options.accompagnement === accompagnement
   );
@@ -47,7 +49,7 @@ function ajouterAuPanier() {
     // sinon on créer le nouveau produit : 
     panier.push({
       quantite: 1,
-      type: { menu, burger },
+      type: { menu, burger, prix },
       options: { accompagnement, boisson }
     });
   }
@@ -66,7 +68,11 @@ function afficherPanier() {
   containerPanier.innerHTML = '';
 
   if (panier.length === 0) {
-    containerPanier.innerHTML = "<p>Panier vide</p>";
+    containerPanier.innerHTML = `
+    <p>Votre panier est vide</p>
+    </br>
+    <p> <strong> Ajoutez des produits pour poursuivre votre commande.</strong> </p>
+`;
     return;
   }
 
@@ -79,19 +85,28 @@ function afficherPanier() {
 
     const titrePanier = document.createElement('h3');
     const nomBurger = article.type.burger.replace("Menu ", ""); // permet d'enlever le mot menu de chaque titre de menu du fichier json
-    const libelleMenu = article.quantite > 1 ? 'Menus' : 'Menu';
-    titrePanier.textContent =`${article.quantite} ${libelleMenu} ${article.type.menu} ${nomBurger}`;
+    const libelleMenu = article.quantite > 1 ? 'Menus' : 'Menu'; // mettre menus au pluriel si quantité >  
+    titrePanier.textContent =`${article.quantite} ${libelleMenu} ${article.type.menu} ${nomBurger} `;
 
     const logoSupp = document.createElement('img');
     logoSupp.classList.add('logo-trash');
     logoSupp.src = './assets/trash.png';
     logoSupp.alt = 'Supprimer';
     logoSupp.addEventListener('click', () =>{
-      supprimerPanier(index);
+        if (confirm("Êtes-vous sûr de vouloir supprimer ce menu?")) {
+        supprimerPanier(index)
+        console.log("Suppression effectuée");
+        } else {
+        console.log("Suppression annulée");
+        }
+      
     })
 
     const listPanier = document.createElement('ul');
     listPanier.classList.add('liste-detail-produits');
+
+    const containerListPrix = document.createElement('div');
+    containerListPrix.classList.add('container-list-prix');
 
     Object.entries(article.options).forEach(([cle, valeur]) => {
       const li = document.createElement('li');
@@ -99,19 +114,24 @@ function afficherPanier() {
       listPanier.appendChild(li);
     });
 
+    const prixMenu = document.createElement ('p');
+    prixMenu.classList.add('prix-menu');
+    prixMenu.textContent = `${(article.type.prix * article.quantite).toFixed(2)} €`;
+
+
+    
+    containerListPrix.appendChild(listPanier);
+    containerListPrix.appendChild(prixMenu);
+
     containerTitreLogo.appendChild(titrePanier);
     containerTitreLogo.appendChild(logoSupp);
 
     prodPanier.appendChild(containerTitreLogo);
-    prodPanier.appendChild(listPanier);
+    prodPanier.appendChild(containerListPrix);
 
     containerPanier.appendChild(prodPanier);
   });
 }
-
-afficherPanier();
-
-
 
 function changerQuantite(index, quantity){
   // trouver le produit dans le panier : 
@@ -121,13 +141,14 @@ function changerQuantite(index, quantity){
    
   if (nouvelleQuantite <= 0) {
     panier.splice(index, 1);
+
   } else {
     produit.quantite = nouvelleQuantite;
   }
 
+
   afficherPanier();
 }
-
 
 function supprimerPanier(index) {
   if (index < 0 || index >= panier.length) return;
