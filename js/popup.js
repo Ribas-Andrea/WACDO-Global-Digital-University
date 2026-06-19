@@ -266,7 +266,7 @@ let cardSelected = null;
 
 
   ajouterMenuPanier();
-  afficherMenuPanier();
+  afficherPanier();
 
   }
 
@@ -904,7 +904,7 @@ containerPopupBoissons.innerHTML = '';
     btnAjouter.textContent = "Ajouter à ma commande";
     btnAjouter.addEventListener('click', () =>{
       ajouterBoissonPanier()
-      afficherBoissonPanier()
+      afficherPanier()
       containerPopupBoissons.style.display = 'none';
       containerPopupBoissons.innerHTML = '';
     })

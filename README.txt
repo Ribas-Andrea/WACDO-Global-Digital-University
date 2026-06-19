@@ -46,7 +46,8 @@ Etapes avancement github :
 33/ Ajout du prix du menu + prix du menu en fonction de la quantité + message d'alert si non click de choix et message de confirmation sur la poubelle de suppression du panier
 34/ Ajout d'un bouton de validation pour envoyer au panier d'un burger
 35/ Ajout des boissons au panier
-36/ A faire : 
+36/ Correction erreur sur panier undefined : rassemblement des 3 fonctions afficher panier en une
+37/ A faire : 
  - Les menus deviennent undifined à l'ajout de sautres produits
  - Lorsque je choisis plusieurs boissons, il n'y en a qu'une au panier
  - faire le click du bouton annuler des boissons
