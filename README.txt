@@ -45,3 +45,12 @@ Etapes avancement github :
 32/ Gestion des quantité du panier et ajout de l'évènement au clic pour la suppression
 33/ Ajout du prix du menu + prix du menu en fonction de la quantité + message d'alert si non click de choix et message de confirmation sur la poubelle de suppression du panier
 34/ Ajout d'un bouton de validation pour envoyer au panier d'un burger
+35/ Ajout des boissons au panier
+36/ A faire : 
+ - Les menus deviennent undifined à l'ajout de sautres produits
+ - Lorsque je choisis plusieurs boissons, il n'y en a qu'une au panier
+ - faire le click du bouton annuler des boissons
+ - correction de la suppression de la poubelle qui supprime tout le panier
+ - les quantités disparaissent à l'ajout de d'autres produits
+ - pas de quantités si plusieurs au niveau des articles seuls
+ - mettre en place le total du panier

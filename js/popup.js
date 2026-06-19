@@ -10,7 +10,7 @@
 // Creation de la fonction pour afficher la popup de choix du menus à partir de la nav : 
 function afficherPopupMenus (categorieRecherchee){
 
-  const containerPopupMenus = document.getElementById('container-popup');
+  const containerPopupMenus = document.getElementById('container-popup-menus');
   // console.log(containerPopupMenus);
 
 // on vérifie si containerPopup existe : 
@@ -265,8 +265,8 @@ let cardSelected = null;
   containerPopupMenus.innerHTML = '';
 
 
-  ajouterAuPanier();
-  afficherPanier();
+  ajouterMenuPanier();
+  afficherMenuPanier();
 
   }
 
@@ -609,33 +609,33 @@ console.log("memoireBoisson =", boisson.nom);
 
 
 // Creation de la fonction pour afficher les popup par la section principale : 
-function afficherPopupBoissons (categorieRecherchee){
+function afficherPopupBoissons (produitRecherche){
 
-const prodContainerZoneChoix = document.getElementById('container-popup');
+const containerPopupBoissons = document.getElementById('container-popup-boissons');
 // console.log(prodContainerZoneChoix);
 
 // on vérifie si containerPopup existe : 
-  if (!prodContainerZoneChoix) {
+  if (!containerPopupBoissons) {
     console.error('Conteneur popup introuvable');
     return;
     }
 
 // pour enlever le display none de la popup
-prodContainerZoneChoix.style.display = 'flex';
-prodContainerZoneChoix.innerHTML = '';  
+containerPopupBoissons.style.display = 'flex';
+containerPopupBoissons.innerHTML = '';  
 // enlève la popup de la nav
 
-  fetch('./data/categories.json')
+  fetch('./data/produits.json')
     .then((response) => response.json())
     .then((popups) => {
-      console.log(popups);
+      console.log(popups.boissons);
 
-       const popupBoissons = popups.find(
-        item => item.title === categorieRecherchee
+       const boisson = popups.boissons.find(
+        item => item.nom === produitRecherche
       );
 
-      if (!popupBoissons) {
-        console.error("Aucune popup trouvée pour :", categorieRecherchee);
+      if (!boisson) {
+        console.error("Aucune boisson trouvée pour :", produitRecherche);
         return;
       }
 
@@ -706,11 +706,11 @@ prodContainerZoneChoix.innerHTML = '';
 
     // pour fermer la popup avec la croix
     addImgLogoCroix.addEventListener('click', () => {
-    prodContainerZoneChoix.style.display = 'none';
-    prodContainerZoneChoix.innerHTML = '';
+    containerPopupBoissons.style.display = 'none';
+    containerPopupBoissons.innerHTML = '';
 });
 
-    prodContainerZoneChoix.appendChild(addPopup);
+    containerPopupBoissons.appendChild(addPopup);
     addPopup.appendChild(addLogoCroix);
     addLogoCroix.appendChild(addImgLogoCroix);
 
@@ -750,9 +750,13 @@ prodContainerZoneChoix.innerHTML = '';
     const addContainerPetiteTaille = document.createElement ('div');
     addContainerPetiteTaille.classList.add('container-taille');
         addContainerPetiteTaille.addEventListener("click", () => {
-        console.log("clic");
+        console.log("clic petite taille");
         addContainerGrandeTaille.classList.remove('activeBorder');
         addContainerPetiteTaille.classList.add("activeBorder");
+            localStorage.setItem("memoireTaille", JSON.stringify({
+                nom: boisson.nom,
+                taille: "petite"
+            }));
         });
 
     const addDivParentImgPetiteTaille = document.createElement ('div');
@@ -778,9 +782,13 @@ prodContainerZoneChoix.innerHTML = '';
     const addContainerGrandeTaille = document.createElement ('div');
     addContainerGrandeTaille.classList.add('container-taille');
         addContainerGrandeTaille.addEventListener("click", () => {
-        console.log("clic");
+        console.log("clic grande taille");
         addContainerPetiteTaille.classList.remove('activeBorder');
         addContainerGrandeTaille.classList.add("activeBorder");
+            localStorage.setItem("memoireTaille", JSON.stringify({
+                nom: boisson.nom,
+                taille: "grande"
+            }));
         });
 
 
@@ -894,6 +902,15 @@ prodContainerZoneChoix.innerHTML = '';
     const btnAjouter = document.createElement ('button');
     btnAjouter.id = 'btn-ajouter-commande';
     btnAjouter.textContent = "Ajouter à ma commande";
+    btnAjouter.addEventListener('click', () =>{
+      ajouterBoissonPanier()
+      afficherBoissonPanier()
+      containerPopupBoissons.style.display = 'none';
+      containerPopupBoissons.innerHTML = '';
+    })
+
+
+
 
     addPopup.appendChild(addContainerBtnValidation);
     addContainerBtnValidation.appendChild(btnAnnuler);
@@ -906,8 +923,7 @@ prodContainerZoneChoix.innerHTML = '';
 
 function afficherPopupValidation (){
 
-const validationChoix = document.getElementById('container-popup');
-// console.log(prodContainerZoneChoix);
+const validationChoix = document.getElementById('container-popup-articles');
 
 // on vérifie si containerPopup existe : 
   if (!validationChoix) {
@@ -960,7 +976,7 @@ validationChoix.innerHTML = '';
       btnValidation.id = 'btn-etape-suivante';
       btnValidation.textContent = 'Valider';
       btnValidation.addEventListener('click', () => {
-        ajouterArticleAuPanier();
+        ajouterArticlePanier();
         validationChoix.style.display = 'none';
         validationChoix.innerHTML = '';
       })

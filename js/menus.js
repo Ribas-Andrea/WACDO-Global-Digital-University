@@ -319,8 +319,8 @@ function afficherProduits(categories) {
 // Ajout de l'évènement au clic pour mettre une bordure (cette bordure va se situer dans la selection des poduits du main)
         prodContainerZoneChoix.addEventListener("click", () => {
           // console.log("click");
-            document.querySelectorAll('.container-zone-choix').forEach(prodCardBoisson => {
-            prodCardBoisson.classList.remove('activeBorder');
+            document.querySelectorAll('.container-zone-choix').forEach(prodCard => {
+            prodCard.classList.remove('activeBorder');
 // Enlève toutes les bordures jaunes
             });
             prodContainerZoneChoix.classList.add("activeBorder");
@@ -331,7 +331,7 @@ function afficherProduits(categories) {
 // Création de plusieurs if pour l'ouverture des popups : 
             if (categories === "boissons"){
 // Si je suis dans la catégorie des boissons
-              afficherPopupBoissons("boissons");
+              afficherPopupBoissons(prod.nom);
 // Je vais afficher la popup concernant les boissons
             }
             if (categories === "menus"){
@@ -339,9 +339,15 @@ function afficherProduits(categories) {
               afficherPopupMenus('menus');
 // Je vais afficher la popup concernant les menus
             }
-            if (categories === "burgers"){
+            if (    categories === "burgers" ||
+                    categories === "frites" ||
+                    categories === "encas" ||
+                    categories === "wraps" ||
+                    categories === "salades" ||
+                    categories === "desserts" ||
+                    categories === "sauces"){
             // Si je suis dans la catégorie des burgers
-              afficherPopupValidation('burgers');
+              afficherPopupValidation();
             // Je vais afficher la popup concernant le boutons de validation pour le panier
             }
             });
