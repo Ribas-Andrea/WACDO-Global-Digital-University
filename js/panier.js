@@ -1,8 +1,10 @@
 const panier = []; 
 // Creation d'un tableau pour les articles du panier
 
-
-
+// Pour afficher le message du panier vide au chargement : 
+document.addEventListener("DOMContentLoaded", () => {
+  afficherPanier();
+});
 
 // -------------------------------------------------------------- Panier -------------------------------------------------------------------------------------------------
 
@@ -229,7 +231,7 @@ function afficherPanier() {
         // code pour article
 
     titrePanier = document.createElement('h3');
-    titrePanier.textContent = article.type.article;
+    titrePanier.textContent = ` ${article.quantite} ${article.type.article}`;
 
     prixElement = document.createElement ('p');
     prixElement.classList.add('prix-menu');

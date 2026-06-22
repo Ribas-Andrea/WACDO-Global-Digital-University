@@ -7,12 +7,17 @@
   box-sizing: border-box;
 }
 
-body,
-main {
-  max-width: 1920px;
-  max-height: 1080px;
+html, 
+body {
   overflow-x: hidden; /* évite la barre horizontale et cache ce qui dépasse */
   background-color: white;
+  height: 100%;
+}
+
+body {
+  max-width: 1920px;
+  /* max-height: 1080px; */
+  margin: 0 auto;
 }
 
 #fond-ecran {

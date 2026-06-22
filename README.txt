@@ -47,11 +47,8 @@ Etapes avancement github :
 34/ Ajout d'un bouton de validation pour envoyer au panier d'un burger
 35/ Ajout des boissons au panier
 36/ Correction erreur sur panier undefined : rassemblement des 3 fonctions afficher panier en une
-37/ A faire : 
- - Les menus deviennent undifined à l'ajout de sautres produits
- - Lorsque je choisis plusieurs boissons, il n'y en a qu'une au panier
+37/ Correction ajout barre de scroll du panier avec boutons visibles + ajout de la quantité pour les articles seuls
+38/ A faire : 
+ - Lorsque je choisis plusieurs boissons, il n'y en a qu'une au panier 
  - faire le click du bouton annuler des boissons
- - correction de la suppression de la poubelle qui supprime tout le panier
- - les quantités disparaissent à l'ajout de d'autres produits
- - pas de quantités si plusieurs au niveau des articles seuls
  - mettre en place le total du panier
