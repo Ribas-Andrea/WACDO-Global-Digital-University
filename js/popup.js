@@ -879,6 +879,7 @@ containerPopupBoissons.innerHTML = '';
       }
       valeurCompteur.textContent = compteur;
   // permet de changer la valeur du compteur au clic
+  localStorage.setItem("memoireCompteur", compteur);
     })
 
     addPopup.appendChild(addContainerParentCompteur);

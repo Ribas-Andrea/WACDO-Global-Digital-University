@@ -48,7 +48,7 @@ Etapes avancement github :
 35/ Ajout des boissons au panier
 36/ Correction erreur sur panier undefined : rassemblement des 3 fonctions afficher panier en une
 37/ Correction ajout barre de scroll du panier avec boutons visibles + ajout de la quantité pour les articles seuls
+38/ Ajout de la quantite des boissons
 38/ A faire : 
- - Lorsque je choisis plusieurs boissons, il n'y en a qu'une au panier 
  - faire le click du bouton annuler des boissons
  - mettre en place le total du panier

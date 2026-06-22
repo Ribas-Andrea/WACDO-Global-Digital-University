@@ -64,6 +64,7 @@ function ajouterMenuPanier() {
 function ajouterBoissonPanier() {
   const data = JSON.parse(localStorage.getItem("memoireTaille"));
   const prix = Number(localStorage.getItem("memoirePrix"));
+  const compteur = Number(localStorage.getItem("memoireCompteur")) || 1;
 
   const boisson = data?.nom; // “si data existe, prends nom, sinon retourne undefined”
   const taille = data?.taille;  // “si data existe, prends taille, sinon retourne undefined”
@@ -86,7 +87,7 @@ function ajouterBoissonPanier() {
     // sinon on créer le nouveau produit : 
     panier.push({
       typeElement : "boisson",
-      quantite: 1,
+      quantite: compteur,
       type: { 
         article : boisson,
         taille : taille,
