@@ -256,6 +256,11 @@ h1 {
   height: 10%;
 }
 
+.container-logo-prix .logo-trash {
+  width: 60%;
+  height: 60%;
+}
+
 .liste-detail-produits {
   font-size: 14px;
   padding-left: 30px;
@@ -267,8 +272,17 @@ h1 {
   align-items: center;
 }
 
-.prix-menu{
+.prix-menu,
+.prix-boisson,
+.prix-article{
   font-weight: bold;
+}
+
+.container-logo-prix{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px
 }
 
 #container-total-panier {
