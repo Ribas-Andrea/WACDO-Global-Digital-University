@@ -50,6 +50,7 @@ Etapes avancement github :
 37/ Correction ajout barre de scroll du panier avec boutons visibles + ajout de la quantité pour les articles seuls
 38/ Ajout de la quantite des boissons
 39/ Correction de l'ajout de la boisson : lien entre la quantité et la taille choisie + maj localstorage à l'ouverture de la popup + message d'alert si non selection
-40/ A faire : 
- - faire le click du bouton annuler des boissons
- - mettre en place le total du panier
+40/ Correction du bouton annuler : ne pas fermer l popup mais tout réinitialiser
+41/ A faire : 
+  - faire la bouton abandon du panier
+  - mettre en place le total du panier

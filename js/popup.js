@@ -908,29 +908,36 @@ containerPopupBoissons.innerHTML = '';
     const btnAnnuler = document.createElement ('button');
     btnAnnuler.id = 'btn-annuler-commande';
     btnAnnuler.textContent = "Annuler";
-    btnAnnuler.addEventListener('click', () =>{
-      containerPopupBoissons.style.display = 'none';
-      containerPopupBoissons.innerHTML = '';
-      localStorage.removeItem("memoireTaille");
-      localStorage.removeItem("memoirePrix");
-      localStorage.removeItem("memoireCompteur");
-      });
+    btnAnnuler.addEventListener('click', () => {
+    localStorage.removeItem("memoireTaille");
+    localStorage.removeItem("memoirePrix");
+    localStorage.removeItem("memoireCompteur");
+
+    // Enlever la sélection des tailles
+    document.querySelectorAll('.btn-taille').forEach(btn => {
+        btn.classList.remove('selectionne');
+    });
+
+    // Remettre le compteur à 0
+    compteur = 0;
+    document.getElementById('compteur').textContent = '0';
+});
 
     const btnAjouter = document.createElement ('button');
     btnAjouter.id = 'btn-ajouter-commande';
     btnAjouter.textContent = "Ajouter à ma commande";
-    btnAjouter.addEventListener('click', () =>{
+    btnAnnuler.addEventListener('click', () => {
+        localStorage.removeItem("memoireTaille");
+        localStorage.removeItem("memoirePrix");
+        localStorage.removeItem("memoireCompteur");
 
-      const ajoutOk = ajouterBoissonPanier();
+        // Enlever la bordure de sélection
+        addContainerPetiteTaille.classList.remove('activeBorder');
+        addContainerGrandeTaille.classList.remove('activeBorder');
 
-      if (!ajoutOk) {
-        return;
-      }
-
-      // ajouterBoissonPanier()
-      afficherPanier()
-      containerPopupBoissons.style.display = 'none';
-      containerPopupBoissons.innerHTML = '';
+        // Remettre le compteur à sa valeur initiale
+        compteur = 1;
+        valeurCompteur.textContent = compteur;
     });
 
 
