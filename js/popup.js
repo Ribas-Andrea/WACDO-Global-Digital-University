@@ -611,6 +611,10 @@ console.log("memoireBoisson =", boisson.nom);
 // Creation de la fonction pour afficher les popup par la section principale : 
 function afficherPopupBoissons (produitRecherche){
 
+  localStorage.removeItem("memoireTaille");
+  localStorage.removeItem("memoirePrix");
+  localStorage.removeItem("memoireCompteur");
+
 const containerPopupBoissons = document.getElementById('container-popup-boissons');
 // console.log(prodContainerZoneChoix);
 
@@ -708,6 +712,9 @@ containerPopupBoissons.innerHTML = '';
     addImgLogoCroix.addEventListener('click', () => {
     containerPopupBoissons.style.display = 'none';
     containerPopupBoissons.innerHTML = '';
+    localStorage.removeItem("memoireTaille");
+    localStorage.removeItem("memoirePrix");
+    localStorage.removeItem("memoireCompteur");
 });
 
     containerPopupBoissons.appendChild(addPopup);
@@ -757,6 +764,7 @@ containerPopupBoissons.innerHTML = '';
                 nom: boisson.nom,
                 taille: "petite"
             }));
+            localStorage.setItem("memoirePrix", boisson.prix);
         });
 
     const addDivParentImgPetiteTaille = document.createElement ('div');
@@ -789,6 +797,7 @@ containerPopupBoissons.innerHTML = '';
                 nom: boisson.nom,
                 taille: "grande"
             }));
+            localStorage.setItem("memoirePrix", boisson.prix);
         });
 
 
@@ -879,7 +888,7 @@ containerPopupBoissons.innerHTML = '';
       }
       valeurCompteur.textContent = compteur;
   // permet de changer la valeur du compteur au clic
-  localStorage.setItem("memoireCompteur", compteur);
+    localStorage.setItem("memoireCompteur", compteur);
     })
 
     addPopup.appendChild(addContainerParentCompteur);
@@ -899,16 +908,30 @@ containerPopupBoissons.innerHTML = '';
     const btnAnnuler = document.createElement ('button');
     btnAnnuler.id = 'btn-annuler-commande';
     btnAnnuler.textContent = "Annuler";
+    btnAnnuler.addEventListener('click', () =>{
+      containerPopupBoissons.style.display = 'none';
+      containerPopupBoissons.innerHTML = '';
+      localStorage.removeItem("memoireTaille");
+      localStorage.removeItem("memoirePrix");
+      localStorage.removeItem("memoireCompteur");
+      });
 
     const btnAjouter = document.createElement ('button');
     btnAjouter.id = 'btn-ajouter-commande';
     btnAjouter.textContent = "Ajouter à ma commande";
     btnAjouter.addEventListener('click', () =>{
-      ajouterBoissonPanier()
+
+      const ajoutOk = ajouterBoissonPanier();
+
+      if (!ajoutOk) {
+        return;
+      }
+
+      // ajouterBoissonPanier()
       afficherPanier()
       containerPopupBoissons.style.display = 'none';
       containerPopupBoissons.innerHTML = '';
-    })
+    });
 
 
 
@@ -964,7 +987,6 @@ validationChoix.innerHTML = '';
     
 // Ajout phrase de confirmation d'ajout d'un article : 
       const containerDemandeValidation = document.createElement('div');
-
       const demandeValidation = document.createElement('p');
       const memoireArticle = localStorage.getItem("memoireArticle");
       demandeValidation.textContent = `Voulez-vous ajouter  ${memoireArticle} à votre panier ?`;

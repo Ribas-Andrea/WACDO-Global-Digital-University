@@ -69,9 +69,10 @@ function ajouterBoissonPanier() {
   const boisson = data?.nom; // “si data existe, prends nom, sinon retourne undefined”
   const taille = data?.taille;  // “si data existe, prends taille, sinon retourne undefined”
 
-  if (!boisson) {
-    console.warn("Aucun produit sélectionné");
-    return;
+  if (!taille || !prix) {
+    console.warn("Veuillez sélectionner une taille.");
+    alert("Veuillez sélectionner une taille.");
+    return false;
   }
 
     // On recherche s'il y a un produit identique : (on met p pour le nom d'une variable)
@@ -82,7 +83,7 @@ function ajouterBoissonPanier() {
 
   if (produitExistant) {
     // Si le produit existe déjà alors on augmente la quantité : 
-    produitExistant.quantite += 1;
+    produitExistant.quantite += compteur;
   } else {
     // sinon on créer le nouveau produit : 
     panier.push({
@@ -98,6 +99,8 @@ function ajouterBoissonPanier() {
   console.log("PANIER AJOUTÉ :", panier);
   // afficherBoissonPanier();
   afficherPanier();
+
+  return true;
 }
 
 function ajouterArticlePanier() {

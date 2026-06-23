@@ -49,6 +49,7 @@ Etapes avancement github :
 36/ Correction erreur sur panier undefined : rassemblement des 3 fonctions afficher panier en une
 37/ Correction ajout barre de scroll du panier avec boutons visibles + ajout de la quantité pour les articles seuls
 38/ Ajout de la quantite des boissons
-38/ A faire : 
+39/ Correction de l'ajout de la boisson : lien entre la quantité et la taille choisie + maj localstorage à l'ouverture de la popup + message d'alert si non selection
+40/ A faire : 
  - faire le click du bouton annuler des boissons
  - mettre en place le total du panier
