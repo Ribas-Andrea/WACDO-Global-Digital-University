@@ -715,7 +715,7 @@ containerPopupBoissons.innerHTML = '';
     localStorage.removeItem("memoireTaille");
     localStorage.removeItem("memoirePrix");
     localStorage.removeItem("memoireCompteur");
-});
+    });
 
     containerPopupBoissons.appendChild(addPopup);
     addPopup.appendChild(addLogoCroix);
@@ -909,24 +909,6 @@ containerPopupBoissons.innerHTML = '';
     btnAnnuler.id = 'btn-annuler-commande';
     btnAnnuler.textContent = "Annuler";
     btnAnnuler.addEventListener('click', () => {
-    localStorage.removeItem("memoireTaille");
-    localStorage.removeItem("memoirePrix");
-    localStorage.removeItem("memoireCompteur");
-
-    // Enlever la sélection des tailles
-    document.querySelectorAll('.btn-taille').forEach(btn => {
-        btn.classList.remove('selectionne');
-    });
-
-    // Remettre le compteur à 0
-    compteur = 0;
-    document.getElementById('compteur').textContent = '0';
-});
-
-    const btnAjouter = document.createElement ('button');
-    btnAjouter.id = 'btn-ajouter-commande';
-    btnAjouter.textContent = "Ajouter à ma commande";
-    btnAnnuler.addEventListener('click', () => {
         localStorage.removeItem("memoireTaille");
         localStorage.removeItem("memoirePrix");
         localStorage.removeItem("memoireCompteur");
@@ -939,15 +921,28 @@ containerPopupBoissons.innerHTML = '';
         compteur = 1;
         valeurCompteur.textContent = compteur;
     });
+    const btnAjouter = document.createElement ('button');
+    btnAjouter.id = 'btn-ajouter-commande';
+    btnAjouter.textContent = "Ajouter à ma commande";
+    btnAjouter.addEventListener('click', () =>{
 
+      const ajoutOk = ajouterBoissonPanier();
 
+      if (!ajoutOk) {
+        return;
+      }
+      // ajouterBoissonPanier()
+      afficherPanier()
+      containerPopupBoissons.style.display = 'none';
+      containerPopupBoissons.innerHTML = '';
 
+    });
 
     addPopup.appendChild(addContainerBtnValidation);
     addContainerBtnValidation.appendChild(btnAnnuler);
     addContainerBtnValidation.appendChild(btnAjouter);
 
-  });
+    });
 }
 
 

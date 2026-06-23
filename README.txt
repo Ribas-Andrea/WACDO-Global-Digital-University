@@ -51,6 +51,8 @@ Etapes avancement github :
 38/ Ajout de la quantite des boissons
 39/ Correction de l'ajout de la boisson : lien entre la quantité et la taille choisie + maj localstorage à l'ouverture de la popup + message d'alert si non selection
 40/ Correction du bouton annuler : ne pas fermer l popup mais tout réinitialiser
-41/ A faire : 
+41/ Correction bouton ajouter des boisson : erreur de parenthèses
+42/ A faire : 
+- pb prix menu maxi besto of
   - faire la bouton abandon du panier
   - mettre en place le total du panier
