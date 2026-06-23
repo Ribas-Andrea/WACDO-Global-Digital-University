@@ -211,9 +211,17 @@ function afficherPanier() {
         listPanier.appendChild(li);
         });
 
+
+        let prix = article.type.prix * article.quantite;
+
+        if (article.type.menu === "Maxi Best of") {
+        prix += 1.20 * article.quantite;
+        }
+
         prixElement = document.createElement ('p');
         prixElement.classList.add('prix-menu');
-        prixElement.textContent = `${(article.type.prix * article.quantite).toFixed(2)} €`;
+        prixElement.textContent = `${prix.toFixed(2)} €`;
+
 
         containerListPrix.appendChild(listPanier);
         containerListPrix.appendChild(prixElement);

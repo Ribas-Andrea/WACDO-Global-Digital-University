@@ -28,7 +28,7 @@ Etapes avancement github :
 15/ Javascript nav + menus
 16/ Javascript : addEventListener au click sur les card avec affichage titre,Description et produits + défiler de la navbar
 17/ Javascript : ajout d'erreur avec catch + reprise du responsive de la zone de choix
-18 / Javascript : début ajout au panier 1 menu
+18/ Javascript : début ajout au panier 1 menu
 19/ Javascript : ajout de la popup sur le click de la nav bar pour le choix du menu
 20/ Modification popup boissons avec ajout class imbriqué de la nav bar pour pouvoir modifier les tailles sur la popup + modification des étapes du switch pour effecer le contenu et le remettre avec le btn retour
 21/ Corection des problèmes d'affichage css suite à l'ajout du conteneur de boissons et de l'affichage du texte avec le bouton retour de la poopup de la nav + creation popup de la boisson en javascript
@@ -53,6 +53,7 @@ Etapes avancement github :
 40/ Correction du bouton annuler : ne pas fermer l popup mais tout réinitialiser
 41/ Correction bouton ajouter des boisson : erreur de parenthèses
 42/ Mise en place du total du panier + modification css pour affichage du prix des boissons et des articles seuls
+43/ Ajustement du prix maxi best of +1.20€
 43/ A faire : 
-  - pb prix menu maxi besto of
+  - faire la bouton payer du panier
   - faire la bouton abandon du panier
