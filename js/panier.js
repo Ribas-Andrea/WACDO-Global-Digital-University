@@ -29,6 +29,7 @@ function ajouterMenuPanier() {
   const boisson = localStorage.getItem("memoireBoisson");
   const accompagnement = localStorage.getItem("memoireAccompagnement");
   const prix = Number(localStorage.getItem("memoirePrix"));
+  const sauce = localStorage.getItem("memoireSauce");
 
   if (!menu && !burger && !prix) {
     console.warn("Aucun produit sélectionné");
@@ -41,7 +42,8 @@ function ajouterMenuPanier() {
     p.type.burger === burger &&
     p.type.prix === prix &&
     p.options.boisson === boisson &&
-    p.options.accompagnement === accompagnement
+    p.options.accompagnement === accompagnement &&
+    p.options.sauce === sauce
   );
 
   if (produitExistant) {
@@ -53,7 +55,7 @@ function ajouterMenuPanier() {
       typeElement : "menu",
       quantite: 1,
       type: { menu, burger, prix },
-      options: { accompagnement, boisson }
+      options: { accompagnement, boisson, sauce }
     });
   }
   console.log("PANIER AJOUTÉ :", panier);

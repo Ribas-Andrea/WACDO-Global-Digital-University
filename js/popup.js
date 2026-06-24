@@ -242,13 +242,13 @@ function afficherPopupMenus (categorieRecherchee){
 
 let cardSelected = null;
 
-  if (step === 1 || step === 2) {
+  if (step === 1 || step === 2 ) {
     cardSelected = document.querySelector(
       ".container-taille.activeBorder"
     );
   }
 
-  if (step === 3) {
+    if (step === 3 || step === 4) {
     cardSelected = document.querySelector(
       ".card-categories-nav.activeBorder"
     );
@@ -260,7 +260,7 @@ let cardSelected = null;
 }
 
 // pour fermer la popup avec le bouton 'Ajouter le menu à ma commande'
-  if(step === 3){
+  if(step === 4){
   containerPopupMenus.style.display = 'none';
   containerPopupMenus.innerHTML = '';
 
@@ -270,7 +270,7 @@ let cardSelected = null;
 
   }
 
-  if (step < 3) {
+  if (step < 4) {
     cardSelected.classList.remove("activeBorder");
     step++;
     defilerPopupMenus();
@@ -590,6 +590,145 @@ console.log("memoireBoisson =", boisson.nom);
 
               });
 
+// Evènement au click pour ajouter au panier avec retour à la page menu :  ( à finir) 
+// Inclure des variable "type burger, type menus, type boisson, type accompagnement" pour mémoriser les choix et les mettre dans la fonction afficherPanier 
+
+              break;  
+          
+            case 4:
+              // ces éléments permettent d'enlever les éléments du case 3 avec le bouton retour
+              // Pour cacher les cartes frites/potatoes : 
+              addContainerPetiteTaille.style.display = 'none';
+              addContainerGrandeTaille.style.display = 'none';
+              // ces éléments permettent de mettre les éléments du case 3
+              // Pour recevoir le conteneur des boissons : 
+              addContainerChoixTaille.style.display = 'flex';
+              // Pour afficher tous ces éléments : 
+              btnRetour.style.display = 'flex';
+              titrePopup.style.display = 'flex';
+              descriptionPopup.style.display = 'flex';
+
+              
+
+              // Modification du titre et de la description
+              titrePopup.textContent = "Choisissez votre sauce";
+              descriptionPopup.textContent = "Une sauce ?";
+
+              fetch('./data/produits.json')
+                .then(response => response.json())
+                .then(data => {
+
+                  const listsauces = data.sauces;
+
+                  containerChoixBoissons.innerHTML = '';
+                  containerChoixBoissons.style.display = 'flex';
+
+                  const imgFlecheGaucheBoissons = document.createElement('img');
+                  imgFlecheGaucheBoissons.id ="fleche-gauche";
+                  imgFlecheGaucheBoissons.src = './assets/fleche-slider.png';
+
+
+// On met en place un compteur pour déplacer la nav bar au click des flèches sans dépasser 4 click : 
+                      let compteur = 0;
+                      const max = 4; // exemple à adapter selon nombre de catégories visibles
+                      imgFlecheGaucheBoissons.addEventListener('click', () => {
+
+                        if (compteur > 0 ) {
+                            compteur--;
+                            containerListBoissons.style.transform = `translateX(-${145 * compteur}px)`;
+// Permet de déplacer 1 card par une card grace à la taille de 145px (taille de la card + le gap)
+                        }
+                      });
+
+                  const choixBoissons = document.createElement('div');
+                  choixBoissons.id = "choix-categorie-produits"; 
+
+                  const containerListBoissons = document.createElement('div');
+                  containerListBoissons.id ="container-liste-categories";
+
+                  const imgFlecheDroiteBoissons = document.createElement('img');
+                  imgFlecheDroiteBoissons.classList.add ('fleche-droite');
+                  imgFlecheDroiteBoissons.src = './assets/fleche-slider.png';
+
+                      imgFlecheDroiteBoissons.addEventListener('click', () => {
+
+                          if (compteur < max) {
+                              compteur++;
+                              containerListBoissons.style.transform = `translateX(-${145 * compteur}px)`;
+                          }
+                      });
+
+
+
+                  choixBoissons.appendChild(containerListBoissons);
+
+                  containerChoixBoissons.appendChild(imgFlecheGaucheBoissons);
+                  containerChoixBoissons.appendChild(choixBoissons);
+                  containerChoixBoissons.appendChild(imgFlecheDroiteBoissons);
+
+                  addContainerChoixTaille.appendChild(containerChoixBoissons);
+
+                      listsauces.forEach((sauce) => {
+
+
+// La creation des card boissons : 
+                      
+                        const cardBoissons = document.createElement('div');
+                        cardBoissons.classList.add('card-categories-nav');
+                        cardBoissons.addEventListener("click", () => {
+                          console.log("clic");
+                          document.querySelectorAll('.card-categories-nav').forEach(cardBoisson => {
+// Récupère toutes les cartes ayant cette classe : <div class="card-categories-nav"></div> puis on parcourt chaque carte une par une pour enlever la bordure jaune s'il y en a une
+
+                            cardBoisson.classList.remove('activeBorder');
+                            });
+                            cardBoissons.classList.add("activeBorder");
+// On active la bordure sur la carte selectionnée
+
+
+// ********************************************** Local Storage *************************************
+
+// On stocke ici la boisson sélectionnée (la dernière cliquée)
+// IMPORTANT : ce n'est pas un tableau, juste une seule valeur
+
+// Quand l'utilisateur clique sur une boisson :
+localStorage.setItem("memoireSauce", sauce.nom);
+console.log("memoireSauce =", sauce.nom);
+// ↑ On enregistre l'id de la boisson
+// ↑ À chaque nouveau clic, cette valeur est écrasée
+// → donc il ne reste TOUJOURS que la dernière boisson choisie
+
+
+// *************************************************************************************************
+                        });
+
+                        const containerImgCardBoisson = document.createElement('div');
+                        containerImgCardBoisson.classList.add('container-img-card-categorie');
+
+                        const imgCardBoisson = document.createElement('img');
+                        imgCardBoisson.classList.add('img-card-categorie');
+                        imgCardBoisson.src = sauce.image;
+
+                        const containerTitreCardBoisson = document.createElement('div');
+                        containerTitreCardBoisson.classList.add('container-titre-img-nav');
+
+                        const titreCardBoisson = document.createElement('p');
+                        titreCardBoisson.classList.add('titre-img-nav');
+                        titreCardBoisson.textContent = sauce.nom;
+
+                        containerImgCardBoisson.appendChild(imgCardBoisson);
+                        containerTitreCardBoisson.appendChild(titreCardBoisson);
+
+                        cardBoissons.appendChild(containerImgCardBoisson);
+                        cardBoissons.appendChild(containerTitreCardBoisson);
+
+
+                        containerListBoissons.appendChild(cardBoissons);
+
+                      });
+
+              });
+
 
               OpenbtnEtapeSuivante.textContent = 'Ajouter le menu à ma commande';
 
@@ -598,8 +737,12 @@ console.log("memoireBoisson =", boisson.nom);
 // Inclure des variable "type burger, type menus, type boisson, type accompagnement" pour mémoriser les choix et les mettre dans la fonction afficherPanier 
 
               break;  
-          };
 
+
+            };
+          
+
+          
 
         }
 

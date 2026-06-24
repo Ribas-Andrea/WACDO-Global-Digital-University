@@ -57,7 +57,8 @@ Etapes avancement github :
 44/ Correction problème affichage de la popup menu au case 1 avec le bouton retour du case 2
 45/ Correction total panier à la suppression d'un article + function abandon du panier
 46/ Ajout de la redirection vers les page chevalet + remerciements au bouton payer + ajout du bouton nouvelle commande sur la page remerciements
-47/ A faire : 
+47/ Ajout du choix des sauces dans les step (step 4)
+48/ A faire : 
   - ajouter des options d'ajout sur le menu
   - créer une page de paiement en html avec l'insertion innerHTML voir mail mentor
   - Ajout bouton nouvelle commande sur la page de remerciement
