@@ -1,0 +1,48 @@
+.mise-en-page{
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10%;
+    border: 1px solid #d9d9d9;
+    padding: 10%
+}
+
+.panier{
+  display: flex;
+  flex-direction: column;
+}
+
+
+.form-type-paiement {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  border: 1px solid #d9d9d9;
+  padding: 8%;
+  margin: 1%;
+  gap: 5%;
+}
+
+
+input{
+  display: none;
+}
+
+.choix-cb{
+  display: flex;
+  flex-direction: column; 
+}
+
+
+
+.btn-paiement {
+  background-color: #ffc836;
+  padding: 16px 32px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+}
+

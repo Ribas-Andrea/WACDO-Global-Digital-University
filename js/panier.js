@@ -370,6 +370,7 @@ const prixTotal = document.getElementById('montant');
 
   return total;
 
+  localStorage.setItem = ('memoirePrixTotal',prixTotal)
 
 }
 totalPanier()
@@ -435,7 +436,7 @@ const btnPayer = document.getElementById('btn-payer');
         // 👉 redirection vers la page de paiement + vers la page chevalet si sur place ou remerciement si emporter
 
         if(mode === "surplace"){
-          window.location.href = 'chevalet.html';
+          window.location.href = 'paiements.html';
         } else if (mode === "emporter"){
           window.location.href = 'remerciements.html';
         }
@@ -451,3 +452,4 @@ const btnPayer = document.getElementById('btn-payer');
 }
 
 payerPanier()
+

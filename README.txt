@@ -58,7 +58,6 @@ Etapes avancement github :
 45/ Correction total panier à la suppression d'un article + function abandon du panier
 46/ Ajout de la redirection vers les page chevalet + remerciements au bouton payer + ajout du bouton nouvelle commande sur la page remerciements
 47/ Ajout du choix des sauces dans les step (step 4)
-48/ A faire : 
-  - ajouter des options d'ajout sur le menu
+48/ Début de la page paiement
+49/ A faire : 
   - créer une page de paiement en html avec l'insertion innerHTML voir mail mentor
-  - Ajout bouton nouvelle commande sur la page de remerciement

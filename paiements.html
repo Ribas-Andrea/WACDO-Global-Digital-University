@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wacdo</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/paiement.css" />
+</head>
+<body>
+  <div class="mise-en-page">
+  <h1>Votre commande : </h1>
+
+  <form action="">
+
+<div class="panier">
+  <p>Voici le détail de votre panier : </p>
+</div>
+
+<p>Veuillez selectionner un mode de paiement : </p>
+
+  <div class="choix-cb">
+
+
+    <input type="radio" id="carteBancaire" name="cb" value="carte bancaire" />
+    <label class="form-type-paiement" for="carteBancaire"> <img src="./assets/paiements/cb.jpg" alt="cb" width="40">Carte Bancaire
+    </label>
+
+
+  
+    <input type="radio" id="paypal" name="paypal" value="paypal" />
+    <label class="form-type-paiement" for="paypal"><img src="./assets/paiements/paypal.jpg" alt="cb" width="40">Paypal</label>
+
+
+
+    <input type="radio" id="chqVacance" name="chqvacance" value="chèque vacances" />
+    <label class="form-type-paiement" for="chqVacance"><img src="./assets/paiements/chqvac.jfif" alt="cb" width="40">Chèque-Vacances Connect</label>
+
+
+
+    <input type="radio" id="titresRestaurant" name="titresRestaurant" value="titres restaurant" />
+    <label class="form-type-paiement" for="titresRestaurant"><img src="./assets/paiements/titres.jfif" alt="cb" width="40">Titres-Restaurant</label>
+
+
+  </div>
+
+  <div>
+    <button class="btn-paiement" type="submit">Payer</button>
+  </div>
+
+  </form>
+  </div>
+  <script type="module" src="./js/paiements.js"></script>
+</body>
+</html>
