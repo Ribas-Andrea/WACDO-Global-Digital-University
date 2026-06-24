@@ -1,5 +1,6 @@
 /* --------------------------------------------- Menu accueil --------------------------------------------- */
 
+
 #container-menu-accueil {
   display: flex;
   flex-direction: column;
@@ -12,7 +13,6 @@
   padding: 32px;
   position: absolute;
   top: 20%; /* distance du bas*/
-  z-index: 2; /*image devant le fond d'écran*/
   margin-left:30%;
 }
 

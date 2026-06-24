@@ -301,6 +301,8 @@ function afficherPanier() {
     }
 
     containerPanier.appendChild(prodPanier);
+
+    localStorage.setItem("panier", JSON.stringify(panier));
   });
 }
 
@@ -413,3 +415,37 @@ function abandonPanier() {
 
 abandonPanier();
 
+function payerPanier(){
+
+
+const btnPayer = document.getElementById('btn-payer');
+
+  btnPayer.addEventListener('click', () => {
+
+    console.log("Vous avez cliqué sur payer");
+
+    if (confirm("Avez-vous fini votre commande ?")) {
+        const mode = localStorage.getItem("mode");
+        const panier = JSON.parse(localStorage.getItem("panier"));
+          console.log("PANIER:", panier);
+          console.log("MODE:", mode);
+          console.log("Vous aller être rediriger vers la page de paiement");
+        // 👉 redirection vers la page de paiement + vers la page chevalet si sur place ou remerciement si emporter
+
+        if(mode === "surplace"){
+          window.location.href = 'chevalet.html';
+        } else if (mode === "emporter"){
+          window.location.href = 'remerciements.html';
+        }
+      
+      } else {
+        console.log("Continuer votre commande");
+      }
+
+
+  });
+
+
+}
+
+payerPanier()

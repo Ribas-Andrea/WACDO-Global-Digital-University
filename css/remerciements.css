@@ -1,4 +1,4 @@
-/* --------------------------------------------- Menu chevalet --------------------------------------------- */
+/* --------------------------------------------- Menu remerciements --------------------------------------------- */
 
 #container-menu-remerciements {
   display: flex;
@@ -11,8 +11,8 @@
   padding: 32px;
   position: absolute;
   bottom: 32%; /* distance du bas 300px */
-  z-index: 2; /*image devant le fond d'écran*/
   margin-left: 29%;
+
 }
 
 #image-remerciements {
@@ -36,6 +36,19 @@ h1 {
 #img-a-bientot {
   width: 40%;
   padding-top: 80px;
+}
+
+#btn-nouvelle-commande {
+  border-radius: 8px;
+  background-color: #ffc836;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 25px 50px;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  top: 85%;
+  left: 40%;
 }
 
 /* --------------------------------------------- Responsive --------------------------------------------- */
