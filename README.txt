@@ -54,6 +54,7 @@ Etapes avancement github :
 41/ Correction bouton ajouter des boisson : erreur de parenthèses
 42/ Mise en place du total du panier + modification css pour affichage du prix des boissons et des articles seuls
 43/ Ajustement du prix maxi best of +1.20€
-43/ A faire : 
+44/ Correction problème affichage de la popup menu au case 1 avec le bouton retour du case 2
+45/ A faire : 
   - faire la bouton payer du panier
   - faire la bouton abandon du panier

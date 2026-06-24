@@ -214,7 +214,7 @@ function afficherPanier() {
 
         let prix = article.type.prix * article.quantite;
 
-        if (article.type.menu === "Maxi Best of") {
+        if (article.type.menu === "Maxi Best Of") {
         prix += 1.20 * article.quantite;
         }
 

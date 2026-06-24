@@ -298,35 +298,72 @@ console.log(step)
             addLogoCroix.appendChild(btnRetour);
 
 
-            addContainerPetiteTaille.addEventListener("click", () => {
+function gererChoixPetiteTaille() {
 
-            if(step <= 1){
-              localStorage.setItem("memoireMenu", "Best of");
-            }
+  addContainerPetiteTaille.addEventListener("click", () => {
 
-            if(step === 2){
-              localStorage.setItem("memoireAccompagnement", "Frites");
-            }
+  addContainerPetiteTaille.classList.add("activeBorder");
+  addContainerGrandeTaille.classList.remove("activeBorder");
 
-          });
+      if(step === 1){
+        titrePopup.textContent = "Une petite faim ?";
+        descriptionPopup.textContent = "Le menu Best Of comprend un sandwich, une moyenne frite et une boisson 30 Cl";
+        texteChoixPetiteTaille.textContent = 'Menu Best Of';
+        imgPetiteTaille.src= "./assets/illustration-best-of.png";
+        localStorage.setItem("memoireMenu", "Best of");
+      }
 
-          addContainerGrandeTaille.addEventListener("click", () => {
+      if(step === 2){
+        titrePopup.textContent = "Choisissez votre accompagnement";
+        descriptionPopup.textContent = "Frites, potatoes, la pomme de terre dans tous ses états";
+        texteChoixPetiteTaille.textContent='Frites';
+        imgPetiteTaille.src= "./assets/frites/MOYENNE_FRITE.png";
+        localStorage.setItem("memoireAccompagnement", "Frites");
+      }
+});
+}
 
-            if(step === 1){
-              localStorage.setItem("memoireMenu", "Maxi Best of");
-            }
+function gererChoixGrandeTaille() {
 
-            if(step === 2){
-              localStorage.setItem("memoireAccompagnement", "Potatoes");
-            }
+  addContainerGrandeTaille.addEventListener("click", () => {
+  console.log("GRANDE");
 
-          });
+  addContainerGrandeTaille.classList.add("activeBorder");
+  addContainerPetiteTaille.classList.remove("activeBorder");
+
+        if(step === 1){
+          titrePopup.textContent = "Une grosse faim ?";
+          descriptionPopup.textContent = "Le menu maxi Best Of comprend un sandwich, une grande frite et une boisson 50 Cl";
+          texteChoixGrandeTaille.textContent = 'Menu Maxi Best Of';
+          imgGrandeTaille.src= "./assets/illustration-maxi-best-of.png";
+          localStorage.setItem("memoireMenu", "Maxi Best Of");
+        }
+
+        if(step === 2){
+          titrePopup.textContent = "Choisissez votre accompagnement";
+          descriptionPopup.textContent = "Frites, potatoes, la pomme de terre dans tous ses états";
+          texteChoixPetiteTaille.textContent='Frites';
+          imgPetiteTaille.src= "./assets/frites/MOYENNE_FRITE.png";
+          texteChoixGrandeTaille.textContent='Potatoes';
+          imgGrandeTaille.src= "./assets/frites/GRANDE_POTATOES.png";
+          imgGrandeTaille.style.width = "100%";
+          imgGrandeTaille.style.height = "100%";
+          localStorage.setItem("memoireAccompagnement", "Potatoes");
+        }
+  });
+}
+
+
 
         function defilerPopupMenus() {
 
           switch(step) {
 
             case 1:
+
+            // On remet le local storage a 0 : 
+            addContainerPetiteTaille.classList.remove("activeBorder");
+            addContainerGrandeTaille.classList.remove("activeBorder");
 
             // ces éléments permettent de remettre les éléments du case 1 avec le bouton retour
 
@@ -338,39 +375,29 @@ console.log(step)
               imgPetiteTaille.style.display = 'flex';
               imgGrandeTaille.style.display = 'flex';
               OpenbtnEtapeSuivante.style.display = 'flex';
-              // pour remettre le titre du bouton orsque l'on clique sur le bouton retour : 
+              // pour remettre le titre du bouton lorsque l'on clique sur le bouton retour : 
               OpenbtnEtapeSuivante.textContent = 'Étape suivante';
 
+              // Popup menus d'origine sans click (permet de retrouver ces élément avec le bouton retour du case 2) : 
+              titrePopup.textContent = "Une grosse faim ?";
+              descriptionPopup.textContent = "Les menus comprennent un sandwich, une frite et une boisson";
+              texteChoixPetiteTaille.textContent='Menu Best Of';
+              imgPetiteTaille.src= "./assets/illustration-best-of.png";
+              texteChoixGrandeTaille.textContent='Menu Maxi Best Of';
+              imgGrandeTaille.src= "./assets/illustration-maxi-best-of.png";
 
-              // Evenement au click pour selectionner le menu et changer le texte pour afficher 50Cl/30cl et petite faim/grosse faim sur le titre
-                addContainerGrandeTaille.addEventListener("click", () => {
-                addContainerGrandeTaille.classList.add("activeBorder");
-                addContainerPetiteTaille.classList.remove("activeBorder");
-                // Modification du titre, de la description et de l'image
-                titrePopup.textContent = "Une grosse faim ?";
-                descriptionPopup.textContent = "Le menu maxi Best Of comprend un sandwich, une grande frite et une boisson 50 Cl";
-                texteChoixGrandeTaille.textContent = 'Menu Maxi Best Of';
-                imgGrandeTaille.src= "./assets/illustration-maxi-best-of.png";
-
-                });
+              gererChoixPetiteTaille()
+              gererChoixGrandeTaille()
 
 
-                addContainerPetiteTaille.addEventListener("click", () => {
-                addContainerPetiteTaille.classList.add("activeBorder");
-                addContainerGrandeTaille.classList.remove("activeBorder");
-                // Modification du titre, de la description et de l'image
-                titrePopup.textContent = "Une petite faim ?";
-                descriptionPopup.textContent = "Le menu Best Of comprend un sandwich, une moyenne frite et une boisson 30 Cl";
-                texteChoixPetiteTaille.textContent = 'Menu Best Of';
-                imgPetiteTaille.src= "./assets/illustration-best-of.png";
-
-                });
-
-
-              
               break;
 
             case 2:
+
+            // On remet le local storage a 0 : 
+            addContainerPetiteTaille.classList.remove("activeBorder");
+            addContainerGrandeTaille.classList.remove("activeBorder");
+
               // ces éléments permettent de remettre les éléments du case 2 avec le bouton retour
               // On fait apparaître le bouton retour : 
               btnRetour.style.display = 'flex';
@@ -395,34 +422,8 @@ console.log(step)
               imgGrandeTaille.style.width = "100%";
               imgGrandeTaille.style.height = "100%";
 
-
-              // Click sur l'image de gauche
-              addContainerPetiteTaille.addEventListener("click", () => {
-              addContainerPetiteTaille.classList.add("activeBorder");
-              addContainerGrandeTaille.classList.remove("activeBorder");
-              // Modification du titre, de la description et de l'image
-              titrePopup.textContent = "Choisissez votre accompagnement";
-              descriptionPopup.textContent = "Frites, potatoes, la pomme de terre dans tous ses états";
-              texteChoixPetiteTaille.textContent='Frites';
-              imgPetiteTaille.src= "./assets/frites/MOYENNE_FRITE.png";
-
-              });
-
-
-              // Click sur l'image de droite
-              addContainerGrandeTaille.addEventListener("click", () => {
-              addContainerGrandeTaille.classList.add("activeBorder");
-              addContainerPetiteTaille.classList.remove("activeBorder");
-              // Modification du titre, de la description et de l'image
-              titrePopup.textContent = "Choisissez votre accompagnement";
-              descriptionPopup.textContent = "Frites, potatoes, la pomme de terre dans tous ses états";
-              texteChoixGrandeTaille.textContent='Potatoes';
-              imgGrandeTaille.src= "./assets/frites/GRANDE_POTATOES.png";
-              imgGrandeTaille.style.width = "100%";
-              imgGrandeTaille.style.height = "100%";
-              });
-
-
+              gererChoixPetiteTaille()
+              gererChoixGrandeTaille()
 
               break;
 
