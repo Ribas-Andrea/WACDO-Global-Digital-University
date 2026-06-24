@@ -328,8 +328,8 @@ function supprimerPanier(index) {
 
   panier.splice(index, 1);
 
-  // afficherMenuPanier();
   afficherPanier();
+  totalPanier();
 }
 
 
@@ -369,3 +369,47 @@ const prixTotal = document.getElementById('montant');
 
 }
 totalPanier()
+
+
+
+
+function abandonPanier() {
+  const btnAbandon = document.getElementById('btn-abandon');
+
+  btnAbandon.addEventListener('click', () => {
+    console.log("Vous avez cliqué sur abandon");
+
+    if (confirm("Êtes-vous sûr de vouloir abandonner votre commande ?")) {
+
+      const panierExiste =
+        localStorage.getItem("memoireMenu") ||
+        localStorage.getItem("memoireBurger") ||
+        localStorage.getItem("memoireArticle");
+
+      if (panierExiste) {
+        localStorage.removeItem("memoireMenu");
+        localStorage.removeItem("memoireBurger");
+        localStorage.removeItem("memoireArticle");
+        localStorage.removeItem("memoireAccompagnement");
+        localStorage.removeItem("memoireBoisson");
+        localStorage.removeItem("memoireTaille");
+        localStorage.removeItem("memoirePrix");
+        localStorage.removeItem("memoireCompteur");
+        localStorage.removeItem("mode");
+
+        console.log("Suppression effectuée");
+      } else {
+        console.log("Panier déjà vide");
+      }
+
+      // 👉 redirection après suppression OU annulation confirm
+      window.location.href = 'index.html';
+
+    } else {
+      console.log("Suppression annulée");
+    }
+  });
+}
+
+abandonPanier();
+
