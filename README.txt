@@ -59,5 +59,6 @@ Etapes avancement github :
 46/ Ajout de la redirection vers les page chevalet + remerciements au bouton payer + ajout du bouton nouvelle commande sur la page remerciements
 47/ Ajout du choix des sauces dans les step (step 4)
 48/ Début de la page paiement
-49/ A faire : 
+49/ Avancement de la page paiement : creation du titre avec le mode et numero de commande + mise en page du panier
+50/ A faire : 
   - créer une page de paiement en html avec l'insertion innerHTML voir mail mentor

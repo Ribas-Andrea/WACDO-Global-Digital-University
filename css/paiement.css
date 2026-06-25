@@ -1,27 +1,87 @@
-.mise-en-page{
+body{
+    background-color: #d9d9d9;
+}
+
+
+#container-page-paiement{
+  margin: 30px 70px 30px 70px;
+}
+
+.titreH1 {
+  margin-left: 30px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.container-panier-cb{
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.container-panier, .container-cb{
     height: auto;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    margin: 10%;
-    border: 1px solid #d9d9d9;
-    padding: 10%
+    margin: 15px auto;
+    background-color: white;
+    border-radius: 8px;
+    padding: 5px;
 }
+
+.container-cb{
+    width: 66.67%;
+}
+
+.container-panier{
+    width: auto;
+}
+
+/* -------------------------------------------------------------------------- Partie panier --------------------------------------------------------------------------------- */
 
 .panier{
   display: flex;
   flex-direction: column;
+  gap: 20px;
 }
 
+h2{
+  margin-bottom: 10px;
+  padding: 15px 15px 15px 15px;
+}
+
+h3{
+  font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 15px 15px 15px;
+}
+
+.barre-separation{
+  border: 1px solid #d9d9d9;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.article {
+  display: flex;
+  justify-content: space-between;
+  padding: 1px 50px 1px 50px;
+}
+
+
+
+/* -------------------------------------------------------------------------- Partie paiement --------------------------------------------------------------------------------- */
 
 .form-type-paiement {
   display: inline-flex;
   flex-direction: row;
   align-items: center;
   border: 1px solid #d9d9d9;
-  padding: 8%;
+  padding: 2%;
   margin: 1%;
   gap: 5%;
+  height: 70px;
+  cursor: pointer;
 }
 
 
@@ -34,7 +94,12 @@ input{
   flex-direction: column; 
 }
 
-
+.container-btn-payer{
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
 
 .btn-paiement {
   background-color: #ffc836;

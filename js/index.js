@@ -13,7 +13,7 @@ function choixLieu () {
     console.log("click sur place");
     btnChoixLieuSurPlace.classList.add("activeBorder");
     btnChoixLieuEmporter.classList.remove("activeBorder");
-    const mode = localStorage.setItem("mode", "surplace");
+    const mode = localStorage.setItem("mode", "sur place");
     console.log("mode =", mode);
     window.location.href = 'menus.html';
     });
@@ -22,7 +22,7 @@ function choixLieu () {
     console.log("click à emporter");
     btnChoixLieuEmporter.classList.add("activeBorder");
     btnChoixLieuSurPlace.classList.remove("activeBorder");  
-    const mode = localStorage.setItem("mode", "emporter");
+    const mode = localStorage.setItem("mode", "à emporter");
     window.location.href = 'menus.html';
   });
 

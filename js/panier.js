@@ -11,13 +11,18 @@ document.addEventListener("DOMContentLoaded", () => {
 function afficherNumeroCommande(){
   const mode = localStorage.getItem("mode");
   console.log(localStorage.getItem("mode"));
+  const numeroCommandeSurplace = "327";
+  const numeroCommandeEmporter = "73";
 
 
-if (mode === "surplace") {
-  document.getElementById("numero-commande-sur-place").textContent = "327";
+
+if (mode === "sur place") {
+  document.getElementById("numero-commande-sur-place").textContent = numeroCommandeSurplace;
+  localStorage.setItem("memoireNumeroCommande", numeroCommandeSurplace);
 }; 
-if (mode === "emporter") {
-  document.getElementById("numero-commande-emporter").textContent = "73";
+if (mode === "à emporter") {
+  document.getElementById("numero-commande-emporter").textContent = numeroCommandeEmporter;
+  localStorage.setItem("memoireNumeroCommande", numeroCommandeEmporter);
 }
 }
 afficherNumeroCommande()
@@ -368,9 +373,10 @@ const prixTotal = document.getElementById('montant');
   prixTotal.textContent = totalForm;
 }
 
-  return total;
+  localStorage.setItem('memoirePrixTotal', total.toFixed(2));
+  console.log(localStorage.getItem('memoirePrixTotal'));
 
-  localStorage.setItem = ('memoirePrixTotal',prixTotal)
+  return total;
 
 }
 totalPanier()
@@ -428,19 +434,12 @@ const btnPayer = document.getElementById('btn-payer');
     console.log("Vous avez cliqué sur payer");
 
     if (confirm("Avez-vous fini votre commande ?")) {
-        const mode = localStorage.getItem("mode");
+        
         const panier = JSON.parse(localStorage.getItem("panier"));
           console.log("PANIER:", panier);
-          console.log("MODE:", mode);
           console.log("Vous aller être rediriger vers la page de paiement");
-        // 👉 redirection vers la page de paiement + vers la page chevalet si sur place ou remerciement si emporter
 
-        if(mode === "surplace"){
-          window.location.href = 'paiements.html';
-        } else if (mode === "emporter"){
-          window.location.href = 'remerciements.html';
-        }
-      
+        window.location.href = 'paiements.html';
       } else {
         console.log("Continuer votre commande");
       }
