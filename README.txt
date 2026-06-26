@@ -60,5 +60,8 @@ Etapes avancement github :
 47/ Ajout du choix des sauces dans les step (step 4)
 48/ Début de la page paiement
 49/ Avancement de la page paiement : creation du titre avec le mode et numero de commande + mise en page du panier
-50/ A faire : 
-  - créer une page de paiement en html avec l'insertion innerHTML voir mail mentor
+50/ Ajout de la date de la commande
+51/ A faire : 
+  - Faire évènement au clic avec bordure jaune sur le choix de paiement + vérifi s'il y a bien un choix,
+  - Faire une fausse popup en fonction du choix de paiement ??
+  - Régler la taille de la poubelle du panier

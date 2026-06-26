@@ -8,11 +8,11 @@ let numeroCommande = localStorage.getItem('memoireNumeroCommande');
 titreH1.innerHTML += `
 
       <h1 class="titreH1">
-        Votre Commande ${mode} n° ${numeroCommande} :
+        Votre Commande ${mode} n° ${numeroCommande} du ${new Date().toLocaleDateString("fr-FR")} :
       </h1>
   `;
 
-
+// ajouter date.now() pour afficher la date
 // console.log('Mode :', numeroCommande);
 }
 afficherNumeroCommande ()
@@ -80,10 +80,14 @@ afficherPanierPaiement()
 
 function afficherModePaiement() {
 
-  document.querySelectorAll('.choixCb').forEach(input => {
+  document.querySelectorAll('.choixRglt').forEach(input => {
     input.addEventListener('change', (e) => {
       localStorage.setItem('memoireModePaiement', e.target.value);
-      console.log('STOCKÉ =', e.target.value);
+      console.log('STOCKÉ =', e.target);
+      
+      // boucle pour rtirer la bordure partout ou elle est utilisée => parcourrir les éléments qui ont la classe choixRglt (sur chaque élément je retire la class selected)
+
+      e.target.classlist.add('selected');
     });
   });
 
