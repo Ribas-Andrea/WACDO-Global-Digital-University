@@ -62,6 +62,7 @@ Etapes avancement github :
 49/ Avancement de la page paiement : creation du titre avec le mode et numero de commande + mise en page du panier
 50/ Ajout de la date de la commande
 51/ Correction taille de la poubelle du panier
-52/ A faire : 
-  - Faire évènement au clic avec bordure jaune sur le choix de paiement + vérifi s'il y a bien un choix,
-  - Faire une fausse popup de validation après choix du paiement
+52/ Ajout de la bordure à la selection d'un choix de paiement + message de confirmation et verification si selection d'un paiement sur le bouton payer + modification de l'affichage du panier dans la partie de paiement (deplacement du mot menu)
+53/ A faire : 
+  - Enlever les chiffres du chevalet puis permettre de mettre qu'un seul chiffre et de se positionner sur la case suivante
+  - Remplacer les messages de confirmation et d'alert pas des popups ??

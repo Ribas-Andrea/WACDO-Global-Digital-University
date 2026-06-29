@@ -53,9 +53,12 @@ console.log('Total :', prixTotal);
 panier.forEach(produit => {
 
   let nom = '';
+  let nomBurger = (produit.type?.burger || "").replace("Menu ", ""); // permet d'enlever le mot menu de chaque titre de menu du fichier json
+
 
   if (produit.typeElement === 'menu') {
-    nom = `${produit.type.menu} ${produit.type.burger}`;
+
+    nom = `Menu ${produit.type.menu} ${nomBurger}`;
   } else {
     nom = produit.type.article;
   }
@@ -65,6 +68,7 @@ panier.forEach(produit => {
     <div class="article">
          <div> 
             <h4>${nom}</h4>
+            
             <p>Quantité : ${produit.quantite}</p>
         </div>
         <div>
@@ -84,10 +88,15 @@ function afficherModePaiement() {
     input.addEventListener('change', (e) => {
       localStorage.setItem('memoireModePaiement', e.target.value);
       console.log('STOCKÉ =', e.target);
-      
-      // boucle pour rtirer la bordure partout ou elle est utilisée => parcourrir les éléments qui ont la classe choixRglt (sur chaque élément je retire la class selected)
+// boucle pour rtirer la bordure partout ou elle est utilisée => parcourrir les éléments qui ont la classe choixRglt (sur chaque élément je retire la class selected)
+// Enlever la bordure de tous les labels
+        document.querySelectorAll('.form-type-paiement').forEach(label => {
+            label.classList.remove('activeBorder');
+        });
 
-      e.target.classlist.add('selected');
+        // Ajouter la bordure au label correspondant
+        const label = document.querySelector(`label[for="${e.target.id}"]`);
+        label.classList.add('activeBorder');
     });
   });
 
@@ -109,11 +118,23 @@ const redirection = document.querySelector('.btn-paiement');
 redirection.addEventListener('click', () => {
   event.preventDefault();
   console.log("Vous avez cliqué sur payer");
-  if(mode === "sur place"){
-    window.location.href = 'chevalet.html';
-  } else if (mode === "à emporter"){
-    window.location.href = 'remerciements.html';
+  const cardSelected = document.querySelector('.choixRglt:checked');
+  if (!cardSelected) {
+      alert("Veuillez sélectionner un mode de paiement.");
+      return;
   }
+  if(mode === "sur place"){
+        if (confirm('êtes-vous sûr de votre choix ?')){
+          window.location.href = 'chevalet.html';
+        }
+  } else if (mode === "à emporter"){
+        if (confirm('êtes-vous sûr de votre choix ?')){
+          window.location.href = 'remerciements.html';
+        }
+
+  }
+
+  
 })
 
 }
