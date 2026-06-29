@@ -63,6 +63,9 @@ Etapes avancement github :
 50/ Ajout de la date de la commande
 51/ Correction taille de la poubelle du panier
 52/ Ajout de la bordure à la selection d'un choix de paiement + message de confirmation et verification si selection d'un paiement sur le bouton payer + modification de l'affichage du panier dans la partie de paiement (deplacement du mot menu)
-53/ A faire : 
-  - Enlever les chiffres du chevalet puis permettre de mettre qu'un seul chiffre et de se positionner sur la case suivante
-  - Remplacer les messages de confirmation et d'alert pas des popups ??
+53/ Envoie de la commande vers une API fictive en method post avec en-tête 'Content-Type' : 'application/json'
+54/ A faire : 
+  - Remplacer les messages de confirmation et d'alert par des popups ??
+  - Voir les données envoyées à l'API + affichage de ces données
+  - Gérer la réponse API (succès ou erreur) et afficher le message utilisateur correspondant
+  - Créer un message de confirmation "Votre commande a bien été prise en compte !", votre commande a bien été prise en compte + panier vide

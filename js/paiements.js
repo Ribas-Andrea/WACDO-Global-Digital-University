@@ -12,7 +12,6 @@ titreH1.innerHTML += `
       </h1>
   `;
 
-// ajouter date.now() pour afficher la date
 // console.log('Mode :', numeroCommande);
 }
 afficherNumeroCommande ()
@@ -106,37 +105,64 @@ function afficherModePaiement() {
 afficherModePaiement ()
 
 
-function payer () {
-  const saved = localStorage.getItem('memoireModePaiement');
-  console.log('Mode de paiement choisi :',saved);
-  const prixTotal = localStorage.getItem('memoirePrixTotal') || '0.00';
-  console.log('prix total panier : ', prixTotal)
-  const mode = localStorage.getItem("mode");
-  console.log("MODE:", mode);
+function validationCommande () {
 
-const redirection = document.querySelector('.btn-paiement');
-redirection.addEventListener('click', () => {
-  event.preventDefault();
-  console.log("Vous avez cliqué sur payer");
-  const cardSelected = document.querySelector('.choixRglt:checked');
-  if (!cardSelected) {
-      alert("Veuillez sélectionner un mode de paiement.");
-      return;
-  }
-  if(mode === "sur place"){
-        if (confirm('êtes-vous sûr de votre choix ?')){
-          window.location.href = 'chevalet.html';
+  const redirection = document.querySelector('.btn-paiement');
+  redirection.addEventListener('click', async (event) => {
+    event.preventDefault();
+    console.log("Vous avez cliqué sur payer");
+    const cardSelected = document.querySelector('.choixRglt:checked');
+    if (!cardSelected) {
+        alert("Veuillez sélectionner un mode de paiement.");
+        return;
+    }
+
+
+    // récupération des données
+    const data = {
+      modePaiement :  localStorage.getItem('memoireModePaiement'),
+      modeCommande : localStorage.getItem("mode"),
+      panier : localStorage.getItem("panier")
+    }; 
+
+    console.log("📦 Envoi des données :", data);
+
+
+    // Sauvegarde locale
+    localStorage.setItem("commande", JSON.stringify(data));
+
+
+   
+// Déclaration fetch pour envoie fausse API : 
+    const response = await fetch('https://api.local/commande',{
+        method: 'POST',
+        headers : {'Content-Type' : 'application/json'},
+        body: JSON.stringify(data)
+    }).catch(() => {
+      // Simulation si pas de backend
+      return {
+        ok: true,
+        json: async () => ({
+          message: "Commande simulée (pas de backend)"
+        })
+      };
+    });
+
+    const result = await response.json();
+  console.log("Réponse API simulée :", result);
+
+ // redirection en fonction du modeCommande : 
+        if(data.modeCommande === "sur place"){
+              if (confirm('êtes-vous sûr de votre choix ?')){
+                window.location.href = 'chevalet.html';
+              }
+        } else if (data.modeCommande === "à emporter"){
+              if (confirm('êtes-vous sûr de votre choix ?')){
+                window.location.href = 'remerciements.html';
+              }
         }
-  } else if (mode === "à emporter"){
-        if (confirm('êtes-vous sûr de votre choix ?')){
-          window.location.href = 'remerciements.html';
-        }
-
-  }
-
-  
-})
-
+  })
 }
 
-payer ()
+validationCommande ()
+
