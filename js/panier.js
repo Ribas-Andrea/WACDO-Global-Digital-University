@@ -194,12 +194,11 @@ function afficherPanier() {
 
     if (article.typeElement === "menu"){
 
+        const containerTitreLogoPrix = document.createElement('div');
+        containerTitreLogoPrix.classList.add('container-titre-logo');
 
-        const containerTitreLogo = document.createElement('div');
-        containerTitreLogo.classList.add('container-titre-logo');
-
-        const containerListPrix = document.createElement('div');
-        containerListPrix.classList.add('container-list-prix');
+        const containerTitreListe = document.createElement('div');
+        containerTitreListe.classList.add('container-titre-liste');
 
         titrePanier = document.createElement('h3');
         const nomBurger = (article.type?.burger || "").replace("Menu ", ""); // permet d'enlever le mot menu de chaque titre de menu du fichier json
@@ -207,37 +206,45 @@ function afficherPanier() {
         titrePanier.textContent =`${article.quantite} ${libelleMenu} ${article.type.menu} ${nomBurger} `;
 
         
-        const listPanier = document.createElement('ul');
-        listPanier.classList.add('liste-detail-produits');
+        const listePanier = document.createElement('ul');
+        listePanier.classList.add('liste-detail-produits');
 
 
 
         Object.entries(article.options).forEach(([cle, valeur]) => {
         const li = document.createElement('li');
         li.textContent = valeur;
-        listPanier.appendChild(li);
+        listePanier.appendChild(li);
         });
+
+
+
+        const containerLogoPrix = document.createElement('div');
+        containerLogoPrix.classList.add('container-logo-prix');
 
 
         let prix = article.type.prix * article.quantite;
 
         if (article.type.menu === "Maxi Best Of") {
-        prix += 1.20 * article.quantite;
+        prix += 0.50 * article.quantite;
         }
 
         prixElement = document.createElement ('p');
         prixElement.classList.add('prix-menu');
         prixElement.textContent = `${prix.toFixed(2)} €`;
 
+        containerLogoPrix.appendChild(logoSupp);
+        containerLogoPrix.appendChild(prixElement);
 
-        containerListPrix.appendChild(listPanier);
-        containerListPrix.appendChild(prixElement);
+        containerTitreListe.appendChild(titrePanier);
+        containerTitreListe.appendChild(listePanier);
 
-        containerTitreLogo.appendChild(titrePanier);
-        containerTitreLogo.appendChild(logoSupp);
 
-        prodPanier.appendChild(containerTitreLogo);
-        prodPanier.appendChild(containerListPrix);
+        containerTitreLogoPrix.appendChild(containerTitreListe);
+        containerTitreLogoPrix.appendChild(containerLogoPrix);
+
+        prodPanier.appendChild(containerTitreLogoPrix);
+
 
         
     } else if (article.typeElement === "boisson"){
