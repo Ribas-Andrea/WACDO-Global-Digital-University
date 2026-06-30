@@ -2,4 +2,24 @@ const btnNouvelleCommande = document.getElementById('btn-nouvelle-commande');
 btnNouvelleCommande.addEventListener('click', () => {
   console.log('vous allez faire une nouvelle commande')
   window.location.href = './index.html'
+
+      localStorage.removeItem("mode");
+      localStorage.removeItem("memoireNumeroCommande");
+      localStorage.removeItem("memoirePrixTotal");
+      localStorage.removeItem("memoireBurger");
+      localStorage.removeItem("memoireArticle");
+      localStorage.removeItem("memoireMenu");
+      localStorage.removeItem("memoireAccompagnement");
+      localStorage.removeItem("memoireBoisson");
+      localStorage.removeItem("memoireSauce");
+      localStorage.removeItem("panier");
+      localStorage.removeItem("memoireTaille");
+      localStorage.removeItem("memoirePrix");
+      localStorage.removeItem("memoireCompteur");
+      localStorage.removeItem("memoireModePaiement");
+      localStorage.removeItem("commande");
+
+
 })
+
+

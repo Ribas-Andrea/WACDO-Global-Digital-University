@@ -343,6 +343,7 @@ function supprimerPanier(index) {
   if (index < 0 || index >= panier.length) return;
 
   panier.splice(index, 1);
+  localStorage.removeItem("panier");
 
   afficherPanier();
   totalPanier();
@@ -414,6 +415,9 @@ function abandonPanier() {
         localStorage.removeItem("memoirePrix");
         localStorage.removeItem("memoireCompteur");
         localStorage.removeItem("mode");
+        localStorage.removeItem("memoireNumeroCommande");
+        localStorage.removeItem("memoirePrixTotal");
+        localStorage.removeItem("memoireSauce");
 
         console.log("Suppression effectuée");
       } else {
@@ -422,6 +426,7 @@ function abandonPanier() {
 
       // 👉 redirection après suppression OU annulation confirm
       window.location.href = 'index.html';
+      localStorage.removeItem("panier");
 
     } else {
       console.log("Suppression annulée");
@@ -440,12 +445,17 @@ const btnPayer = document.getElementById('btn-payer');
 
     console.log("Vous avez cliqué sur payer");
 
-    if (confirm("Avez-vous fini votre commande ?")) {
+// faire un if panier.length < 0 alors afficher message popup panier vide, veuillez ajouter des produits pour poursuive votre commande    
         
-        const panier = JSON.parse(localStorage.getItem("panier"));
-          console.log("PANIER:", panier);
-          console.log("Vous aller être rediriger vers la page de paiement");
+const panier = JSON.parse(localStorage.getItem("panier")) || [];
+console.log("PANIER:", panier);
 
+
+if (panier.length === 0) {
+    alert('Votre panier est vide, veuillez ajouter des produits pour poursuive votre commande');
+} else 
+      if (confirm("Avez-vous fini votre commande ?")) {
+        console.log("Vous aller être rediriger vers la page de paiement");
         window.location.href = 'paiements.html';
       } else {
         console.log("Continuer votre commande");

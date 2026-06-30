@@ -65,7 +65,7 @@ Etapes avancement github :
 52/ Ajout de la bordure à la selection d'un choix de paiement + message de confirmation et verification si selection d'un paiement sur le bouton payer + modification de l'affichage du panier dans la partie de paiement (deplacement du mot menu)
 53/ Envoie de la commande vers une API fictive en method post avec en-tête 'Content-Type' : 'application/json'
 54/ Mise en place du message de confirmation de commande prise en compte + message utilisateur pour la réponse de l'API (succes ou erreur)
-55/ A faire : 
+55/ Ajout de la condition de ne pas avoir le panier vide pour le valider + vidage du local storage pour une nouvelle commande et bouton abandon
+56/ A faire : 
   - Remplacer les messages de confirmation et d'alert par des popups ??
   - Voir les données envoyées à l'API + affichage de ces données
-  - Ne pas pouvoir valider le panier s'il est vide

@@ -123,7 +123,7 @@ function validationCommande () {
     const data = {
       modePaiement :  localStorage.getItem('memoireModePaiement'),
       modeCommande : localStorage.getItem("mode"),
-      panier : localStorage.getItem("panier")
+      panier : JSON.parse(localStorage.getItem("panier"))
     }; 
 
     console.log("Envoi des données :", data);
