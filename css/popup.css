@@ -453,7 +453,7 @@ h1 {
   padding: 20px;
 }
 
-#container-popup-articles {
+#container-popup-articles, #succes-commande {
   display: none;
 
   position: fixed;

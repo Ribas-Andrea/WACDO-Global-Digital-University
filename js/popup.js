@@ -1158,3 +1158,147 @@ validationChoix.innerHTML = '';
 
 
 }
+
+function afficherPopupMessageSucces (){
+
+const messageValidation = document.getElementById('succes-commande');
+const modeCommande = localStorage.getItem("mode");
+
+// on vérifie si containerPopup existe : 
+  if (!messageValidation) {
+    console.error('Conteneur popup introuvable');
+    return;
+    }
+
+// pour enlever le display none de la popup
+messageValidation.style.display = 'flex';
+messageValidation.innerHTML = '';  
+// enlève la popup de la nav
+
+
+    const addPopup = document.createElement ('section');
+    addPopup.id = 'popupValider';
+
+
+    const addLogoCroix = document.createElement ('div');
+    addLogoCroix.id ='img-logo-croix';
+
+    const addImgLogoCroix = document.createElement ('img');
+    addImgLogoCroix.id ='croix';
+    addImgLogoCroix.src = './assets/supprimer.png';
+    addImgLogoCroix.alt = 'Logo Croix';
+
+
+    // pour fermer la popup avec la croix
+    addImgLogoCroix.addEventListener('click', () => {
+    messageValidation.style.display = 'none';
+    messageValidation.innerHTML = '';
+});
+
+    messageValidation.appendChild(addPopup);
+    addPopup.appendChild(addLogoCroix);
+    addLogoCroix.appendChild(addImgLogoCroix);
+
+    
+// Ajout phrase de confirmation d'ajout d'un article : 
+      const containerDemandeValidation = document.createElement('div');
+      const demandeValidation = document.createElement('p');
+      const memoireArticle = localStorage.getItem("memoireArticle");
+      demandeValidation.textContent = `Votre commande a été valider avec succès !`;
+      demandeValidation.style.paddingBottom = '20px';
+
+
+
+  // Ajout du bouton de validation : 
+      const btnValidation = document.createElement('button');
+      btnValidation.id = 'btn-etape-suivante';
+      btnValidation.textContent = 'OK';
+      btnValidation.addEventListener('click', () => {
+ // redirection en fonction du modeCommande : 
+        if(modeCommande === "sur place"){
+            window.location.href = 'chevalet.html';
+        } else if (modeCommande === "à emporter"){
+            window.location.href = 'remerciements.html';
+        }
+      })
+
+      containerDemandeValidation.appendChild(demandeValidation);
+      containerDemandeValidation.appendChild(btnValidation);
+
+      addPopup.appendChild(containerDemandeValidation);
+
+
+
+}
+
+function afficherPopupMessageErreur (){
+
+const messageValidation = document.getElementById('succes-commande');
+const modeCommande = localStorage.getItem("mode");
+
+// on vérifie si containerPopup existe : 
+  if (!messageValidation) {
+    console.error('Conteneur popup introuvable');
+    return;
+    }
+
+// pour enlever le display none de la popup
+messageValidation.style.display = 'flex';
+messageValidation.innerHTML = '';  
+// enlève la popup de la nav
+
+
+    const addPopup = document.createElement ('section');
+    addPopup.id = 'popupValider';
+
+
+    const addLogoCroix = document.createElement ('div');
+    addLogoCroix.id ='img-logo-croix';
+
+    const addImgLogoCroix = document.createElement ('img');
+    addImgLogoCroix.id ='croix';
+    addImgLogoCroix.src = './assets/supprimer.png';
+    addImgLogoCroix.alt = 'Logo Croix';
+
+
+    // pour fermer la popup avec la croix
+    addImgLogoCroix.addEventListener('click', () => {
+    messageValidation.style.display = 'none';
+    messageValidation.innerHTML = '';
+});
+
+    messageValidation.appendChild(addPopup);
+    addPopup.appendChild(addLogoCroix);
+    addLogoCroix.appendChild(addImgLogoCroix);
+
+    
+// Ajout phrase de confirmation d'ajout d'un article : 
+      const containerDemandeValidation = document.createElement('div');
+      const demandeValidation = document.createElement('p');
+      const memoireArticle = localStorage.getItem("memoireArticle");
+      demandeValidation.textContent = `Une erreur s'est produite`;
+      demandeValidation.style.paddingBottom = '20px';
+
+
+
+  // Ajout du bouton de validation : 
+      const btnValidation = document.createElement('button');
+      btnValidation.id = 'btn-etape-suivante';
+      btnValidation.textContent = 'OK';
+      btnValidation.addEventListener('click', () => {
+ // redirection en fonction du modeCommande : 
+        if(modeCommande === "sur place"){
+            window.location.href = 'chevalet.html';
+        } else if (modeCommande === "à emporter"){
+            window.location.href = 'remerciements.html';
+        }
+      })
+
+      containerDemandeValidation.appendChild(demandeValidation);
+      containerDemandeValidation.appendChild(btnValidation);
+
+      addPopup.appendChild(containerDemandeValidation);
+
+
+
+}

@@ -116,6 +116,7 @@ function validationCommande () {
         alert("Veuillez sélectionner un mode de paiement.");
         return;
     }
+    
 
 
     // récupération des données
@@ -125,7 +126,7 @@ function validationCommande () {
       panier : localStorage.getItem("panier")
     }; 
 
-    console.log("📦 Envoi des données :", data);
+    console.log("Envoi des données :", data);
 
 
     // Sauvegarde locale
@@ -149,20 +150,86 @@ function validationCommande () {
     });
 
     const result = await response.json();
-  console.log("Réponse API simulée :", result);
+    console.log("Réponse API simulée :", result);
 
- // redirection en fonction du modeCommande : 
-        if(data.modeCommande === "sur place"){
-              if (confirm('êtes-vous sûr de votre choix ?')){
-                window.location.href = 'chevalet.html';
-              }
-        } else if (data.modeCommande === "à emporter"){
-              if (confirm('êtes-vous sûr de votre choix ?')){
-                window.location.href = 'remerciements.html';
-              }
-        }
+     if (confirm('êtes-vous sûr de votre choix ?')){
+      sessionStorage.setItem("commandeValidee", "true");
+      window.location.href = 'menus.html';
+     }
   })
 }
 
 validationCommande ()
 
+// function popupvalidationCommande (){
+// alert('Votre commande a bien été prise en compte !')
+// }
+
+
+// function afficherPopupValidation (){
+
+// const validationChoix = document.getElementById('container-popup-articles');
+
+// // on vérifie si containerPopup existe : 
+//   if (!validationChoix) {
+//     console.error('Conteneur popup introuvable');
+//     return;
+//     }
+
+// // pour enlever le display none de la popup
+// validationChoix.style.display = 'flex';
+// validationChoix.innerHTML = '';  
+// // enlève la popup de la nav
+
+
+//     const addPopup = document.createElement ('section');
+//     addPopup.id = 'popupValider';
+
+
+//     const addLogoCroix = document.createElement ('div');
+//     addLogoCroix.id ='img-logo-croix';
+
+//     const addImgLogoCroix = document.createElement ('img');
+//     addImgLogoCroix.id ='croix';
+//     addImgLogoCroix.src = './assets/supprimer.png';
+//     addImgLogoCroix.alt = 'Logo Croix';
+
+
+//     // pour fermer la popup avec la croix
+//     addImgLogoCroix.addEventListener('click', () => {
+//     validationChoix.style.display = 'none';
+//     validationChoix.innerHTML = '';
+// });
+
+//     validationChoix.appendChild(addPopup);
+//     addPopup.appendChild(addLogoCroix);
+//     addLogoCroix.appendChild(addImgLogoCroix);
+
+    
+// // Ajout phrase de confirmation d'ajout d'un article : 
+//       const containerDemandeValidation = document.createElement('div');
+//       const demandeValidation = document.createElement('p');
+//       const memoireArticle = localStorage.getItem("memoireArticle");
+//       demandeValidation.textContent = `Voulez-vous ajouter  ${memoireArticle} à votre panier ?`;
+//       demandeValidation.style.paddingBottom = '20px';
+
+
+
+//   // Ajout du bouton de validation : 
+//       const btnValidation = document.createElement('button');
+//       btnValidation.id = 'btn-etape-suivante';
+//       btnValidation.textContent = 'Valider';
+//       btnValidation.addEventListener('click', () => {
+//         ajouterArticlePanier();
+//         validationChoix.style.display = 'none';
+//         validationChoix.innerHTML = '';
+//       })
+
+//       containerDemandeValidation.appendChild(demandeValidation);
+//       containerDemandeValidation.appendChild(btnValidation);
+
+//       addPopup.appendChild(containerDemandeValidation);
+
+
+
+// }

@@ -474,12 +474,27 @@ function afficherProduits(categories) {
 }
 
 
+function afficherMessageValidationCommande (){
+  document.addEventListener("DOMContentLoaded", () => {
+    if (sessionStorage.getItem("commandeValidee") === "true") {
+        sessionStorage.removeItem("commandeValidee");
+        // Afficher la popup
+        afficherPopupMessageSucces ()
+        // alert("Votre commande a été validée avec succès !");
+    } else if(sessionStorage.getItem("commandeValidee") === "false") {
+        sessionStorage.removeItem("commandeValidee");
+        afficherPopupMessageErreur ()
+        // pour vérifier : aller dans l'inspecteur/application/sessionStorage/remplacer les donnees par commandeValidee puis false et recharger la page : la popup affiche bien le message d'erreur
+    }
+});
+}
+
 
 // -------------------------------------------------------------- Lancement des fonctions -------------------------------------------------------------------------------------------------
 
 
 getDataCat();
-
+afficherMessageValidationCommande ()
 // Les fonctions (afficherDescription()) et (afficherProduits()) sont lancées directement dans la fonction principale getDataCat() grâce à la detection du clic de la nav bar
 
 
