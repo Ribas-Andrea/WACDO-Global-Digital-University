@@ -1,8 +1,3 @@
-/* main,
-body {
-  background-color: grey;
-} */
-
 #container-popup-menus {
   display: none;
 
@@ -180,154 +175,6 @@ h1 {
   border: 4px solid #ffc400 ;
   /* !important; */
 }
-/* --------------------------------------------- Responsive --------------------------------------------- */
-
-@media (max-width: 1720px) {
-  #container-titre-description-img {
-    padding: 0 5% 0 5%;
-  }
-}
-
-@media (max-width: 1000px) {
-  h1 {
-    font-size: 20px;
-  }
-
-  #texte-description-popup {
-    font-size: 12px;
-    margin-bottom: 25px;
-  }
-
-  .texte-choix-taille {
-    font-size: 20px;
-  }
-
-  #container-choix-taille {
-    gap: 35px;
-  }
-
-  #valeur-compteur {
-    font-size: 30px;
-    padding: 0px 40px 0 40px;
-  }
-
-  #btn-plus,
-  #btn-moins {
-    font-size: 30px;
-    width: 65px;
-    height: 65px;
-  }
-
-  #container-compteur {
-    width: 226px;
-    height: 65px;
-  }
-
-  #container-btn-validation {
-    gap: 40px;
-  }
-
-  #btn-annuler-commande,
-  #btn-ajouter-commande {
-    padding: 10px 20px;
-    font-size: 14px;
-  }
-}
-
-@media (max-width: 800px) {
-  #container-choix-taille {
-    flex-direction: column;
-  }
-
-  #container-choix-taille {
-    align-items: center;
-  }
-
-  .container-taille {
-    width: 190px;
-    height: 165px;
-  }
-
-  #valeur-compteur {
-    padding: 0px 25px 0 25px;
-  }
-
-  #container-compteur {
-    width: 195px;
-  }
-
-  #container-btn-validation {
-    flex-direction: column-reverse;
-  }
-
-  #container-btn-validation {
-    gap: 30px;
-  }
-}
-
-@media (max-width: 500px) {
-  #croix {
-    width: 10%;
-  }
-
-  .container-taille {
-    width: 145px;
-    height: 125px;
-  }
-
-  #container-titre-descritpion-popup {
-    padding-bottom: 10px;
-  }
-
-  #valeur-compteur {
-    font-size: 25px;
-    padding: 0px 20px 0 20px;
-  }
-
-  #container-compteur {
-    width: 145px;
-  }
-
-  #container-btn-validation {
-    gap: 20px;
-  }
-
-  #img-grande-taille,
-  #img-petite-taille {
-    width: 89px;
-    height: 104px;
-  }
-
-  h1 {
-    font-size: 15px;
-  }
-
-  #texte-description-popup {
-    font-size: 7px;
-    margin-bottom: 20px;
-  }
-
-  .texte-choix-taille {
-    font-size: 15px;
-  }
-
-  #container-choix-taille {
-    gap: 10px;
-  }
-
-  #btn-plus,
-  #btn-moins {
-    font-size: 25px;
-  }
-
-  #btn-annuler-commande,
-  #btn-ajouter-commande {
-    padding: 8px 12px;
-    font-size: 10px;
-  }
-}
-
-
 
 /* --------------------------------------------- Css pour javascript popup de la nav bar --------------------------------------------- */
 
@@ -415,7 +262,7 @@ h1 {
 
 
 .nav-popup-boissons .activeBorder{
-  border: 4px solid #ffc400 !important;
+  border: 4px solid #ffc400;
 }
 
 
@@ -446,7 +293,7 @@ h1 {
 
 
 #popupValider {
-  width: 70%;
+  width: 22%;
   max-width: 500px;
   background-color: white;
   border-radius: 16px;
@@ -470,6 +317,389 @@ h1 {
 
 }
 
+/* --------------------------------------------- Responsive --------------------------------------------- */
+
+@media (max-width: 1720px) {
+  #container-titre-description-img {
+    padding: 0 5% 0 5%;
+  }
+
+  #popupValider {
+  width: 24%;
+  }
+}
+
+@media (max-width: 1450px) {
+  #popupValider {
+  width: 28%;
+  }
+}
+
+@media (max-width: 1215px) {
+  #popupValider {
+  width: 32%;
+  }
+}
+
+@media (max-width: 1060px) {
+  #popupValider {
+  width: 38%;
+  }
+}
+
+@media (max-width: 1000px) {
+  h1 {
+    font-size: 20px;
+  }
+
+  #texte-description-popup {
+    font-size: 12px;
+    margin-bottom: 25px;
+  }
+
+  .nav-popup-boissons .card-categories-nav {
+    height: 130px;
+    width: 110px;
+    font-size: 14px;
+    }
+
+  .texte-choix-taille {
+    font-size: 20px;
+  }
+
+  #container-choix-taille {
+    gap: 35px;
+  }
+
+  #valeur-compteur {
+    font-size: 30px;
+    padding: 0px 40px 0 40px;
+  }
+
+  #btn-plus,
+  #btn-moins {
+    font-size: 30px;
+    width: 65px;
+    height: 65px;
+  }
+
+  #container-compteur {
+    width: 226px;
+    height: 65px;
+  }
+
+  #container-btn-validation {
+    gap: 40px;
+  }
+
+  #btn-annuler-commande,
+  #btn-ajouter-commande {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  #popupValider {
+    font-size: 15px;
+    width: 45%;
+  }
+}
+
+@media (max-width: 800px) {
 
 
+  #container-choix-taille {
+    flex-direction: column;
+  }
 
+  .nav-popup-boissons .card-categories-nav {
+    height: 110px;
+    width: 100px;
+  }
+
+  .nav-popup-boissons {
+    gap: 5px;
+  }
+
+  .nav-popup-boissons #container-liste-categories {
+    gap: 5px;
+  }
+
+  .nav-popup-boissons #fleche-gauche {
+    height: 70px;
+  }
+
+  .nav-popup-boissons .fleche-droite {
+    height: 70px;
+  }
+
+  #container-choix-taille {
+    align-items: center;
+    gap: 10px;
+  }
+
+  .container-taille {
+    width: 190px;
+    height: 165px;
+  }
+
+  #img-grande-taille {
+    height: 130px;
+  }
+
+  #valeur-compteur {
+    padding: 0px 25px 0 25px;
+  }
+
+  #container-compteur {
+    width: 195px;
+  }
+
+  #container-btn-validation {
+    flex-direction: column-reverse;
+  }
+
+  #container-btn-validation {
+    gap: 30px;
+  }
+
+  #btn-ajouter-commande, #btn-etape-suivante{
+    justify-content: center;
+  }
+
+  #popupValider {
+    width: 50%;
+  }
+}
+
+@media (max-width: 700px) {
+
+  .nav-popup-boissons .card-categories-nav {
+    height: 90px;
+    width: 80px;
+  }
+
+  .nav-popup-boissons .img-card-categorie {
+    height: 70px;
+  }
+
+  .nav-popup-boissons #fleche-gauche {
+    height: 60px;
+  }
+
+  .nav-popup-boissons .fleche-droite {
+    height: 60px;
+  }
+
+  .titre-img-nav {
+    font-size: 10px;
+  }
+
+  #btn-retour {
+    padding: 12px 24px;
+    font-size: 14px;
+  } 
+
+  img#croix {
+    width: 20px;
+    height: 20px;
+  }
+  
+}
+
+@media (max-width: 590px) {
+  .nav-popup-boissons .card-categories-nav {
+    height: 80px;
+    width: 60px;
+  }
+
+  .nav-popup-boissons .img-card-categorie {
+    height: 60px;
+  }
+
+  .nav-popup-boissons #fleche-gauche {
+    height: 50px;
+  }
+
+  .nav-popup-boissons .fleche-droite {
+    height: 50px;
+  }
+
+  .titre-img-nav {
+    font-size: 7px;
+  }
+
+  #popupValider {
+  width: 70%;
+  }
+
+  #btn-retour {
+    padding: 10px 20px;
+    font-size: 12px;
+  } 
+
+  img#croix {
+    width: 15px;
+    height: 15px;
+  }
+}
+
+@media (max-width: 500px) {
+  #croix {
+    width: 10%;
+  }
+
+  .container-taille {
+    width: 145px;
+    height: 125px;
+  }
+
+  #container-titre-descritpion-popup {
+    padding-bottom: 10px;
+  }
+
+  #valeur-compteur {
+    font-size: 25px;
+    padding: 0px 20px 0 20px;
+  }
+
+  #container-compteur {
+    width: 145px;
+  }
+
+  #container-btn-validation {
+    gap: 20px;
+  }
+
+  #img-grande-taille,
+  #img-petite-taille {
+    width: 89px;
+    height: 104px;
+  }
+
+  h1 {
+    font-size: 15px;
+  }
+
+  #texte-description-popup {
+    font-size: 10px;
+    margin-bottom: 20px;
+  }
+
+  .texte-choix-taille {
+    font-size: 15px;
+  }
+
+  #container-choix-taille {
+    gap: 10px;
+  }
+
+  #btn-plus,
+  #btn-moins {
+    font-size: 25px;
+  }
+
+  #btn-annuler-commande,
+  #btn-ajouter-commande,
+  #btn-etape-suivante {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 485px) {
+
+  .nav-popup-boissons .container-titre-img-nav {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+  }
+
+  .nav-popup-boissons .card-categories-nav {
+    height: 70px;
+    width: 60px;
+  }
+
+  #container-titre-description-img {
+    padding: 0;
+  }
+
+  #container-liste-categories {
+    margin-left: 0px;
+  }
+
+  #btn-retour {
+    padding: 7px 15px;
+    font-size: 10px;
+  } 
+
+  img#croix {
+    width: 15px;
+    height: 15px;
+  }
+}
+
+
+@media (max-width: 350px) {
+
+   .nav-popup-boissons .card-categories-nav {
+    height: 55px;
+    width: 55px;
+  }
+
+  .nav-popup-boissons .img-card-categorie {
+    height: 35px;
+  }
+
+  .nav-popup-boissons .container-img-card-categorie {
+    padding: 0;
+  }
+
+  .nav-popup-boissons #fleche-gauche {
+    height: 40px;
+  }
+
+  .nav-popup-boissons .fleche-droite {
+    height: 40px;
+  }
+
+  .activeBorder{
+    border: 2px solid #ffc400;
+  }
+
+  .img-card-categorie {
+    height: 50px;
+  }
+
+  #container-nos-produits {
+    margin-left: 20px;
+  }
+
+  #container-titre-descritpion-popup {
+    padding-bottom: 8px;
+  }
+
+  h1 {
+    margin-left: 0;
+    font-size: 10px;
+    padding-bottom: 10px;
+  }
+
+  #texte-description-popup {
+    font-size: 8px;
+    margin-bottom: 10px;
+  }
+
+  #description-produits {
+    padding-bottom: 0;
+  } 
+
+  #container-zone-choix {
+    justify-content: flex-start;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .titre-img-nav {
+    font-size: 7px;
+  }
+}

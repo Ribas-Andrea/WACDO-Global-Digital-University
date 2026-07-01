@@ -77,20 +77,14 @@ function getDataCat() {
 
             const cardInitiale = catListCard.children[index]; 
 // Récupération de l'élément enfants  catListCard(parent).children(enfant)[index](on prend l'enfant à la position index)
-            cardInitiale.style.borderColor = '#6e6e6e'; 
-// On applique une couleur de bordure initial (et permettra à revenir à cette couleur à la fin de l'évènement)
-            cardInitiale.style.borderWidth = '1px'; 
-// on remet la bordure à 1px
+            cardInitiale.classList.remove('activeBorder');
           } 
-// fin de la boucle
 
 // Ajout de la bordure jaune sur la carte selectionnée:
           const catNavSelectCard = document.getElementById(index); 
 // on récupère la carte correspondant à l'ID "index" que l'on a créé précédemment lors de la génération des cartes.
-          catNavSelectCard.style.borderColor = '#ffc836'; 
-// on applique une couleur jaune au click (à la selection de la card)
-          catNavSelectCard.style.borderWidth = '8px'; 
-// on applique une largeur de bordure de 4px
+          catNavSelectCard.classList.add('activeBorder');
+
 
 // Affiche le contenu correspondant à la catégorie sélectionnée selon l'index de la carte cliquée, on appelle :
 // - afficherDescription() pour mettre à jour le texte descriptif,
@@ -298,6 +292,7 @@ function afficherDescription(indexCategorie) {
 // on vérifie ce que contient le titre
 
           const titreDescription = document.createElement('p');
+          titreDescription.id= 'description-produits';
           titreDescription.textContent = titre.description;
 
           titreProd.appendChild(titreSection);
@@ -413,7 +408,7 @@ function afficherProduits(categories) {
 // Number() convertit la valeur (string) en nombre
 
 
-            console.log('>>>>>>>>>>>','id cliqué :', id);
+            console.log('id cliqué :', id);
 // Donne le numéro de l'id cliqué dans la console : il y a écrit : id cliqué + numro de l'id
 
 

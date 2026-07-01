@@ -41,7 +41,7 @@ h1 {
 #btn-nouvelle-commande {
   border-radius: 8px;
   background-color: #ffc836;
-  font-size: 18px;
+  font-size: 26px;
   font-weight: 700;
   padding: 25px 50px;
   border: none;
@@ -59,12 +59,16 @@ h1 {
   h1 {
     font-size: 25px;
   }
+
+  #btn-nouvelle-commande {
+  font-size: 15px;
+}
 }
 
 @media (max-width: 1069px) {
   #container-menu-remerciements {
     width: 50%;
-    bottom: 50%;
+    bottom: 37%;
   }
 }
 
@@ -73,6 +77,10 @@ h1 {
     width: 60%;
     margin-left: 25%;
     bottom: 40%;
+  }
+
+  #btn-nouvelle-commande {
+    top: 70%;
   }
 }
 
@@ -88,12 +96,51 @@ h1 {
     width: 40%;
     padding-top: 40px;
   }
+
+  #btn-nouvelle-commande {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 620px) {
+    
+  #btn-nouvelle-commande {
+    left: 38%;
+  }
 }
 
 @media (max-width: 600px) {
   #container-menu-remerciements {
     width: 60%;
     margin-left: 25%;
-    bottom: 60%;
+  }
+}
+
+@media (max-width: 520px) {
+    
+  #btn-nouvelle-commande {
+    left: 36%;
+  }
+}
+
+@media (max-width: 440px) {
+    
+  #btn-nouvelle-commande {
+    padding: 20px 30px;
+  }
+
+  #container-menu-remerciements {
+    bottom: 55%;
+  }
+
+  #btn-nouvelle-commande {
+    top: 55%;
+  }
+}
+
+@media (max-width: 400px) {
+    
+  #btn-nouvelle-commande {
+    left: 34%;
   }
 }

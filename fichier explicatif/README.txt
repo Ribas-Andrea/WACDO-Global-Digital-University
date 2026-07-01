@@ -66,6 +66,7 @@ Etapes avancement github :
 53/ Envoie de la commande vers une API fictive en method post avec en-tête 'Content-Type' : 'application/json'
 54/ Mise en place du message de confirmation de commande prise en compte + message utilisateur pour la réponse de l'API (succes ou erreur)
 55/ Ajout de la condition de ne pas avoir le panier vide pour le valider + vidage du local storage pour une nouvelle commande et bouton abandon
-56/ A faire : 
-  - Remplacer les messages de confirmation et d'alert par des popups ??
-  - Voir les données envoyées à l'API + affichage de ces données
+56/ Responsive page chevalet + page remerciements + page menus (nav + produit + panier) + popup articles + popup boissons + popup menus
+57/ A faire : 
+  - Adaptation sur plusieurs écrans : page paiements
+  - Vérifier toutes les fonctionnalitées

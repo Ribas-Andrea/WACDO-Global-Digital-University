@@ -101,7 +101,7 @@ form label .input-numero-chevalet {
 @media (max-width: 1280px) {
   #container-menu-chevalet {
     padding: 18px;
-    bottom: 17.5%;
+    bottom: 7.5%;
     height: auto;
   }
 
@@ -127,21 +127,110 @@ form label .input-numero-chevalet {
 
 @media (max-width: 978px) {
   #container-menu-chevalet {
-    width: 60%;
+    width: 35%;
     height: auto;
-    margin-left: 22%;
+    bottom: 20.5%;
+    margin-left: 37%;
   }
+  h1 {
+    font-size: 25px;
+  }
+
+  #texte-chevalet {
+    font-size: 15px;
+  }
+
+  .input-numero-chevalet {
+    font-size: 30px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-bottom: 8px solid #d9d9d9;
+  }
+
+  .btn-chevalet {
+    font-size: 14px;
+  }
+
+  #container-img-chevalet img {
+    width: 80%;
+  }
+
 }
 
 @media (max-width: 682px) {
+
   #container-menu-chevalet {
-    width: 60%;
-    height: auto;
+    bottom: 13.5%;
+  }
+
+  h1 {
+    font-size: 18px;
+  }
+
+  #texte-chevalet {
+    font-size: 10px;
   }
 }
 
-@media (max-width: 625px) {
+@media (max-width: 638px) {
+
+  #container-menu-chevalet {
+    bottom: 17.5%;
+  }
+
   #container-img-chevalet img {
     width: 70%;
   }
+
+  h1 {
+    font-size: 16px;
+  }
+
+  #texte-chevalet {
+    font-size: 8px;
+    padding-top: 20px;
+  }
+
+  .input-numero-chevalet {
+    font-size: 20px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-bottom: 5px solid #d9d9d9;
+  }
+
+  .btn-chevalet {
+    font-size: 10px;
+   }
+
+}
+
+@media (max-width: 415px) {
+
+  #container-menu-chevalet {
+    bottom: 42.5%;
+  }
+
+  #container-img-chevalet img {
+    width: 60%;
+  }
+
+  h1 {
+    font-size: 14px;
+  }
+
+  #texte-chevalet {
+    font-size: 8px;
+    padding-top: 18px;
+  }
+
+  .input-numero-chevalet {
+    font-size: 18px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-bottom: 5px solid #d9d9d9;
+  }
+
+  .btn-chevalet {
+    font-size: 8px;
+   }
 }
