@@ -49,6 +49,7 @@ h1 {
   position: relative;
   top: 85%;
   left: 40%;
+  right: 45%;
 }
 
 /* --------------------------------------------- Responsive --------------------------------------------- */
@@ -67,16 +68,9 @@ h1 {
 
 @media (max-width: 1069px) {
   #container-menu-remerciements {
-    width: 50%;
-    bottom: 37%;
-  }
-}
-
-@media (max-width: 940px) {
-  #container-menu-remerciements {
-    width: 60%;
-    margin-left: 25%;
+    width: 55%;
     bottom: 40%;
+    margin-left: 25%;
   }
 
   #btn-nouvelle-commande {
@@ -102,27 +96,6 @@ h1 {
   }
 }
 
-@media (max-width: 620px) {
-    
-  #btn-nouvelle-commande {
-    left: 38%;
-  }
-}
-
-@media (max-width: 600px) {
-  #container-menu-remerciements {
-    width: 60%;
-    margin-left: 25%;
-  }
-}
-
-@media (max-width: 520px) {
-    
-  #btn-nouvelle-commande {
-    left: 36%;
-  }
-}
-
 @media (max-width: 440px) {
     
   #btn-nouvelle-commande {
@@ -135,12 +108,5 @@ h1 {
 
   #btn-nouvelle-commande {
     top: 55%;
-  }
-}
-
-@media (max-width: 400px) {
-    
-  #btn-nouvelle-commande {
-    left: 34%;
   }
 }

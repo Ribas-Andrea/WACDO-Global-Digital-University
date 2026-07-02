@@ -96,9 +96,7 @@ form label .input-numero-chevalet {
   h1 {
     font-size: 30px;
   }
-}
 
-@media (max-width: 1280px) {
   #container-menu-chevalet {
     padding: 18px;
     bottom: 7.5%;
@@ -128,7 +126,6 @@ form label .input-numero-chevalet {
 @media (max-width: 978px) {
   #container-menu-chevalet {
     width: 35%;
-    height: auto;
     bottom: 20.5%;
     margin-left: 37%;
   }
@@ -160,22 +157,7 @@ form label .input-numero-chevalet {
 @media (max-width: 682px) {
 
   #container-menu-chevalet {
-    bottom: 13.5%;
-  }
-
-  h1 {
-    font-size: 18px;
-  }
-
-  #texte-chevalet {
-    font-size: 10px;
-  }
-}
-
-@media (max-width: 638px) {
-
-  #container-menu-chevalet {
-    bottom: 17.5%;
+    bottom: 33.5%;
   }
 
   #container-img-chevalet img {
@@ -206,8 +188,12 @@ form label .input-numero-chevalet {
 
 @media (max-width: 415px) {
 
+
+
   #container-menu-chevalet {
-    bottom: 42.5%;
+    bottom: 30.5%;
+    width: 50%;
+    margin-left: 30%;
   }
 
   #container-img-chevalet img {

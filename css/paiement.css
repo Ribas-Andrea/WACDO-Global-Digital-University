@@ -17,6 +17,7 @@ body{
   display: flex;
   flex-wrap: nowrap;
   gap: 5%;
+  width: 100%;
 }
 
 .container-panier, .container-cb{
@@ -30,12 +31,12 @@ body{
 }
 
 .container-cb{
-    width: 65%;
+    width: 55%;
     height: fit-content;
 }
 
 .container-panier{
-    width: 30%;
+    width: 40%;
 }
 
 /* -------------------------------------------------------------------------- Partie panier --------------------------------------------------------------------------------- */
@@ -133,237 +134,19 @@ input{
 
 /* -------------------------------------------------------------------------- Responsive --------------------------------------------------------------------------------- */
 
-@media (max-width: 1665px) {
 
-  .container-cb{
-    width: 60%;
-  }
+@media (max-width: 1275px) {
 
-}
-
-@media (max-width: 1630px) {
-
-  .container-cb{
-    width: 55%;
-  }
-
-  .container-panier {
-    width: 35%;
-  }
-
-}
-
-@media (max-width: 1425px) {
-
-  .container-cb{
+.container-cb{
     width: 50%;
-  }
-
-  .container-panier {
-    width: 40%;
-  }
-
 }
 
-@media (max-width: 1260px) {
-
-  .article {
-    padding: 1px 35px 1px 35px;
-  }
-
-  .prix-article {
-    font-size: 14px;
-  }
+.container-panier{
+    width: 45%;
+}
 }
 
-@media (max-width: 1225px) {
-
-  .titreH1 {
-    font-size: 24px;
-  }
-
-  h2 {
-    font-size: 20px;
-  }
-
-  .titreTotal {
-    font-size: 18px;
-  }
-
-  .montantTotal {
-    font-size: 18px;
-  }
-
-  h4 {
-    font-size: 14px;
-  }
-
-  .quantite {
-    font-size: 12px;
-  }
-
-  .prix-article{
-    font-size: 12px;
-  }
-
-  .form-type-paiement{
-    font-size: 14px;
-  }
-
-}
-
-@media (max-width: 1120px) {
-
-  .article {
-    padding: 1px 30px 1px 30px;
-  }
-}
-
-@media (max-width: 1090px) {
-
-  h4 {
-    max-width: 75%;
-  }
-
-  .article {
-    padding: 1px 25px 1px 25px;
-  }
-}
-
-@media (max-width: 1055px) {
-
-  h4 {
-    max-width: 75%;
-  }
-
-  .article {
-    padding: 1px 15px 1px 15px;
-  }
-}
-
-@media (max-width: 1005px) {
-
-  .container-panier-cb {
-    gap: 3%;
-  }
-
-  .titreH1 {
-    font-size: 22px;
-  }
-
-  h2 {
-    font-size: 18px;
-  }
-
-  .titreTotal {
-    font-size: 16px;
-  }
-
-  .montantTotal {
-    font-size: 16px;
-  }
-
-  h4 {
-    font-size: 12px;
-  }
-
-  .quantite {
-    font-size: 10px;
-  }
-
-  .prix-article{
-    font-size: 10px;
-  }
-
-  .form-type-paiement{
-    font-size: 12px;
-  }
-
-  .article {
-    padding: 1px 25px 1px 25px;
-  }
-}
-
-@media (max-width: 950px) {
-
-  .container-cb{
-    width: 60%;
-  }
-
-  .titreH1 {
-    font-size: 20px;
-  }
-
-  h2 {
-    font-size: 16px;
-  }
-
-  .titreTotal {
-    font-size: 14px;
-  }
-
-  .montantTotal {
-    font-size: 14px;
-  }
-
-  h4 {
-    font-size: 10px;
-  }
-
-  .quantite {
-    font-size: 8px;
-  }
-
-  .prix-article{
-    font-size: 8px;
-  }
-}
-
-@media (max-width: 855px) {
-
-  .container-cb{
-    width: 55%;
-  }
-
-  .container-panier-cb {
-    gap: 2%;
-  }
-}
-
-@media (max-width: 830px) {
-
-  .titreH1 {
-    font-size: 18px;
-  }
-
-  h2 {
-    font-size: 14px;
-  }
-
-  .titreTotal {
-    font-size: 12px;
-  }
-
-  .montantTotal {
-    font-size: 12px;
-  }
-
-  h4 {
-    font-size: 8px;
-    max-width: 100%;
-  }
-
-  .quantite {
-    font-size: 6px;
-  }
-
-  .prix-article{
-    font-size: 6px;
-  }
-
-}
-
-@media (max-width: 750px) {
+@media (max-width: 1130px) {
 
   .titreH1{
     text-align: center;
@@ -373,8 +156,12 @@ input{
     flex-direction: column-reverse;
   }
 
-  .container-panier {
-    width: 50%;
+  .container-cb{
+      width: 55%;
+  }
+
+  .container-panier{
+      width: 55%;
   }
 
   .panier {
@@ -420,26 +207,27 @@ input{
   .panier {
     gap: 10px;
   }
-}
 
-@media (max-width: 700px) {
-  h4 {
-      max-width: 80%;
-  }
-
-  .form-type-paiement {
+  .form-type-paiement{
     height: 50px;
+    font-size: 14px;
+  }
+
+  .form-type-paiement img{
+    height: 30px;
+    width: 30px;
   }
 }
 
-@media (max-width: 570px) {
-  .article {
-    padding: 1px 20px 1px 20px;
+@media (max-width: 665px) {
+
+  .container-cb{
+      width: 70%;
   }
 
-}
-
-@media (max-width: 550px) {
+  .container-panier{
+      width: 70%;
+  }
 
   .titreH1 {
     font-size: 16px;
@@ -461,105 +249,60 @@ input{
       max-width: 70%;
   }
 
-  .article {
-    padding: 1px 15px 1px 15px;
+  .form-type-paiement{
+    height: 40px;
+    font-size: 12px;
   }
 
+  .form-type-paiement img{
+    height: 25px;
+    width: 25px;
+  }
 }
 
-@media (max-width: 530px) {
+@media (max-width: 550px) {
 
   .titreH1 {
-    text-align: center;
-    font-size: 18px;
-  }
-
-  h2 {
-    text-align: center;
     font-size: 16px;
   }
 
-  .panier {
-    gap: 10px;
+  h2 {
+    font-size: 12px;
   }
 
-  .article {
-    padding: 1px 25px 1px 25px;
+  .titreTotal {
+    font-size: 10px;
+  }
+
+  .montantTotal {
+    font-size: 10px;
   }
 
   h4 {
+    font-size: 10px;
+    max-width: 70%;
+  }
+
+  .quantite {
     font-size: 8px;
   }
-  .quantite {
-    font-size: 6px;
-  }
-
-  .prix-article{
-    font-size: 6px;
-  }
-
-}
-@media (max-width: 510px) {
 
   .article {
     padding: 1px 8px 1px 8px;
   }
-}
-
-@media (max-width: 450px) {
-  .article {
-    padding: 1px 5px 1px 5px;
-  }
-
-    .form-type-paiement {
-    height: 30px;
-  }
-}
-
-@media (max-width: 427spx) {
-
-  .article {
-    padding: 1px 1px 1px 1px;
-  }
-
-  .titreTotal {
-    font-size: 8px;
-  }
-
-  .montantTotal {
-    font-size: 8px;
-  }
-
-    h4 {
-    font-size: 6px;
-  }
-  .quantite {
-    font-size: 5px;
-  }
 
   .prix-article{
-    font-size: 5px;
-  }
-}
-
-@media (max-width: 425px) {
-
-  .container-panier {
-    width: 60%;
-  }
-}
-
-@media (max-width: 370px) {
-
-  .container-panier {
-    width: 80%;
-  }
-
-  .titreTotal {
     font-size: 8px;
   }
 
-  .montantTotal {
-    font-size: 8px;
+  .form-type-paiement{
+    height: 30px;
+    font-size: 10px;
   }
+
+  .form-type-paiement img{
+    height: 15px;
+    width: 15px;
+  }
+
 }

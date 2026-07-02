@@ -79,6 +79,13 @@ h1 {
   padding-top: 15px;
 }
 
+/* --------------------------------------------- Javascript --------------------------------------------- */
+
+
+.activeBorder{
+  border: 4px solid #ffc400;
+}
+
 /* --------------------------------------------- Responsive --------------------------------------------- */
 
 @media (max-width: 1875px) {
@@ -104,12 +111,6 @@ h1 {
   }
 }
 
-@media (max-width: 1475px) {
-  #fond-ecran {
-    top: 0%;
-  }
-}
-
 @media (max-width: 915px) {
   #container-menu-accueil {
     height: auto;
@@ -131,6 +132,11 @@ h1 {
 }
 
 @media (max-width: 722px) {
+
+  #fond-ecran {
+    top: 0%;
+  }
+  
   #container-menu-accueil {
     height: auto;
   }
@@ -152,10 +158,11 @@ h1 {
 @media (max-width: 540px) {
   #container-menu-accueil {
     height: auto;
+    padding: 10px;
   }
 
   h1 {
-    font-size: 20px;
+    font-size: 15px;
   }
 
   #container-btn-choix-lieu {
@@ -167,48 +174,18 @@ h1 {
     margin-bottom: 15px;
   }
 
-  .btn-choix-lieu-sur-place,
-  .btn-choix-lieu-emporter{
-    border: 5px solid #ffc836;
-  }
-
-.btn-img-sur-place,
-.btn-img-emporter {
-    width: 30%;
-  }
-}
-
-@media (max-width: 375px) {
-  #container-menu-accueil {
-    height: auto;
-    padding: 20px;
-  }
-
-  h1 {
-    font-size: 15px;
-  }
-
   #question-choix-lieu {
     font-size: 8px;
     padding-top: 15px;
   }
 
-.choix-lieu-sur-place,
-.choix-lieu-emporter {
+  .choix-lieu-sur-place,
+  .choix-lieu-emporter {
     font-size: 8px;
   }
-}
 
-@media (max-width: 300px) {
-  #container-menu-accueil {
-    height: auto;
-    padding: 10px;
+  .btn-img-sur-place,
+  .btn-img-emporter {
+    width: 30%;
   }
-}
-
-/* --------------------------------------------- Javascript --------------------------------------------- */
-
-
-.activeBorder{
-  border: 4px solid #ffc400;
 }

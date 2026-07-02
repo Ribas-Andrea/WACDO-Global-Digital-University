@@ -68,5 +68,6 @@ Etapes avancement github :
 55/ Ajout de la condition de ne pas avoir le panier vide pour le valider + vidage du local storage pour une nouvelle commande et bouton abandon
 56/ Responsive page chevalet + page remerciements + page menus (nav + produit + panier) + popup articles + popup boissons + popup menus
 57/ Responsive page paiements
+58/ Modif mediaqueries suite rdv mentor (fusion de plusieurs taille) + modif affichage produit de flex-start a space-arround
 58/ A faire : 
   - Vérifier toutes les fonctionnalitées

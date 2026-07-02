@@ -8,7 +8,7 @@ let numeroCommande = localStorage.getItem('memoireNumeroCommande');
 titreH1.innerHTML += `
 
       <h1 class="titreH1">
-        Votre Commande ${mode} n° ${numeroCommande} du ${new Date().toLocaleDateString("fr-FR")} :
+        Votre Commande ${mode} n° ${numeroCommande} du ${new Date().toLocaleDateString("fr-FR")} &nbsp;:
       </h1>
   `;
 

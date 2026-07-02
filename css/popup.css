@@ -52,7 +52,7 @@ img#croix {
 }
 
 #container-titre-description-img {
-  padding: 0px 15% 0 15%;
+  padding: 0 5% 0 5%;
   margin-bottom: 50px;
 }
 
@@ -295,6 +295,7 @@ h1 {
 #popupValider {
   width: 22%;
   max-width: 500px;
+  min-width: 300px;
   background-color: white;
   border-radius: 16px;
   padding: 20px;
@@ -319,35 +320,7 @@ h1 {
 
 /* --------------------------------------------- Responsive --------------------------------------------- */
 
-@media (max-width: 1720px) {
-  #container-titre-description-img {
-    padding: 0 5% 0 5%;
-  }
-
-  #popupValider {
-  width: 24%;
-  }
-}
-
-@media (max-width: 1450px) {
-  #popupValider {
-  width: 28%;
-  }
-}
-
-@media (max-width: 1215px) {
-  #popupValider {
-  width: 32%;
-  }
-}
-
-@media (max-width: 1060px) {
-  #popupValider {
-  width: 38%;
-  }
-}
-
-@media (max-width: 1000px) {
+@media (max-width: 900px) {
   h1 {
     font-size: 20px;
   }
@@ -357,64 +330,16 @@ h1 {
     margin-bottom: 25px;
   }
 
+  #container-choix-taille {
+    flex-direction: column;
+    gap: 35px;
+  }
+
   .nav-popup-boissons .card-categories-nav {
     height: 130px;
     width: 110px;
     font-size: 14px;
     }
-
-  .texte-choix-taille {
-    font-size: 20px;
-  }
-
-  #container-choix-taille {
-    gap: 35px;
-  }
-
-  #valeur-compteur {
-    font-size: 30px;
-    padding: 0px 40px 0 40px;
-  }
-
-  #btn-plus,
-  #btn-moins {
-    font-size: 30px;
-    width: 65px;
-    height: 65px;
-  }
-
-  #container-compteur {
-    width: 226px;
-    height: 65px;
-  }
-
-  #container-btn-validation {
-    gap: 40px;
-  }
-
-  #btn-annuler-commande,
-  #btn-ajouter-commande {
-    padding: 10px 20px;
-    font-size: 14px;
-  }
-
-  #popupValider {
-    font-size: 15px;
-    width: 45%;
-  }
-}
-
-@media (max-width: 800px) {
-
-
-  #container-choix-taille {
-    flex-direction: column;
-  }
-
-  .nav-popup-boissons .card-categories-nav {
-    height: 110px;
-    width: 100px;
-  }
 
   .nav-popup-boissons {
     gap: 5px;
@@ -442,71 +367,48 @@ h1 {
     height: 165px;
   }
 
+  .texte-choix-taille {
+    font-size: 20px;
+  }
+
   #img-grande-taille {
     height: 130px;
   }
 
   #valeur-compteur {
-    padding: 0px 25px 0 25px;
+    font-size: 30px;
+    padding: 0px 40px 0 40px;
   }
 
   #container-compteur {
-    width: 195px;
+  width: 226px;
+  height: 65px;
+  }
+
+  #btn-plus,
+  #btn-moins {
+    font-size: 30px;
+    width: 65px;
+    height: 65px;
   }
 
   #container-btn-validation {
     flex-direction: column-reverse;
+    gap: 40px;
   }
 
   #container-btn-validation {
     gap: 30px;
   }
 
-  #btn-ajouter-commande, #btn-etape-suivante{
+  #btn-ajouter-commande,#btn-annuler-commande, #btn-etape-suivante{
     justify-content: center;
-  }
-
-  #popupValider {
-    width: 50%;
-  }
-}
-
-@media (max-width: 700px) {
-
-  .nav-popup-boissons .card-categories-nav {
-    height: 90px;
-    width: 80px;
-  }
-
-  .nav-popup-boissons .img-card-categorie {
-    height: 70px;
-  }
-
-  .nav-popup-boissons #fleche-gauche {
-    height: 60px;
-  }
-
-  .nav-popup-boissons .fleche-droite {
-    height: 60px;
-  }
-
-  .titre-img-nav {
-    font-size: 10px;
-  }
-
-  #btn-retour {
-    padding: 12px 24px;
+    padding: 10px 20px;
     font-size: 14px;
-  } 
-
-  img#croix {
-    width: 20px;
-    height: 20px;
   }
-  
 }
 
-@media (max-width: 590px) {
+@media (max-width: 650px) {
   .nav-popup-boissons .card-categories-nav {
     height: 80px;
     width: 60px;
@@ -526,10 +428,6 @@ h1 {
 
   .titre-img-nav {
     font-size: 7px;
-  }
-
-  #popupValider {
-  width: 70%;
   }
 
   #btn-retour {
@@ -604,9 +502,6 @@ h1 {
     padding: 8px 12px;
     font-size: 12px;
   }
-}
-
-@media (max-width: 485px) {
 
   .nav-popup-boissons .container-titre-img-nav {
     display: flex;
@@ -638,10 +533,9 @@ h1 {
   }
 }
 
+@media (max-width: 400px) {
 
-@media (max-width: 350px) {
-
-   .nav-popup-boissons .card-categories-nav {
+  .nav-popup-boissons .card-categories-nav {
     height: 55px;
     width: 55px;
   }
@@ -660,10 +554,6 @@ h1 {
 
   .nav-popup-boissons .fleche-droite {
     height: 40px;
-  }
-
-  .activeBorder{
-    border: 2px solid #ffc400;
   }
 
   .img-card-categorie {
