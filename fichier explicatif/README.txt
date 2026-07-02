@@ -67,6 +67,6 @@ Etapes avancement github :
 54/ Mise en place du message de confirmation de commande prise en compte + message utilisateur pour la réponse de l'API (succes ou erreur)
 55/ Ajout de la condition de ne pas avoir le panier vide pour le valider + vidage du local storage pour une nouvelle commande et bouton abandon
 56/ Responsive page chevalet + page remerciements + page menus (nav + produit + panier) + popup articles + popup boissons + popup menus
-57/ A faire : 
-  - Adaptation sur plusieurs écrans : page paiements
+57/ Responsive page paiements
+58/ A faire : 
   - Vérifier toutes les fonctionnalitées

@@ -68,10 +68,10 @@ panier.forEach(produit => {
          <div> 
             <h4>${nom}</h4>
             
-            <p>Quantité : ${produit.quantite}</p>
+            <p class="quantite">Quantité : ${produit.quantite}</p>
         </div>
         <div>
-            <p>${(produit.quantite * produit.type.prix).toFixed(2)} €</p>
+            <p class="prix-article">${(produit.quantite * produit.type.prix).toFixed(2)} €</p>
         </div>
     </div>
   `;
