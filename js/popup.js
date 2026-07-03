@@ -102,24 +102,62 @@ function afficherPopupMenus (categorieRecherchee){
 
       const addPopup = document.createElement ('section');
       addPopup.id = 'popup';
+      addPopup.tabIndex = 0;
+
+      // Ajout du bouton retour : 
+      // Evènement au click pour que lorsque je clique sur retour, je retourne au case précédent (step --) sans retourner avant la 1 qui n'existe pas donc strictement >;
+      const btnRetour = document.createElement('button');
+      btnRetour.id = 'btn-retour';
+      btnRetour.textContent = 'Retour';
+      btnRetour.tabIndex = 0;
+      btnRetour.addEventListener("click", () => {
+
+        if(step > 1){
+          step--;
+          defilerPopupMenus();
+        }
+
+      });
+      btnRetour.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+        e.preventDefault();
+        btnRetour.click(); // Déclenche exactement le même comportement que le clic
+      }
+      });
 
       const addLogoCroix = document.createElement ('div');
       addLogoCroix.id ='img-logo-croix';
+
+      
 
       const addImgLogoCroix = document.createElement ('img');
       addImgLogoCroix.id ='croix';
       addImgLogoCroix.src = './assets/supprimer.png';
       addImgLogoCroix.alt = 'Logo Croix';
+      addImgLogoCroix.tabIndex = 0;
+
+ 
 
 
       // pour fermer la popup avec la croix
       addImgLogoCroix.addEventListener('click', () => {
       containerPopupMenus.style.display = 'none';
       containerPopupMenus.innerHTML = '';
+      
+
       });
 
+        addImgLogoCroix.addEventListener("keydown", (e) => {
+          if (e.key === "Enter") {
+              e.preventDefault();
+              addImgLogoCroix.click(); // Déclenche exactement le même comportement que le clic
+          }
+        });
+
       containerPopupMenus.appendChild(addPopup);
+      addPopup.focus();
       addPopup.appendChild(addLogoCroix);
+      addLogoCroix.appendChild(btnRetour);
       addLogoCroix.appendChild(addImgLogoCroix);
 
     // > addContainerTitreDescriptionImg div id container-titre-description-img
@@ -163,6 +201,8 @@ function afficherPopupMenus (categorieRecherchee){
 
       const addContainerPetiteTaille = document.createElement ('div');
       addContainerPetiteTaille.classList.add('container-taille');
+      addContainerPetiteTaille.tabIndex = 0;
+
 
       const addDivParentImgPetiteTaille = document.createElement ('div');
 
@@ -179,6 +219,7 @@ function afficherPopupMenus (categorieRecherchee){
 
       const addContainerGrandeTaille = document.createElement ('div');
       addContainerGrandeTaille.classList.add('container-taille');
+      addContainerGrandeTaille.tabIndex = 0;
    
 
       const addDivParentImgGrandeTaille = document.createElement ('div');
@@ -279,23 +320,11 @@ console.log(step)
       });
 
 
-// Ajout du bouton retour : 
-// Evènement au click pour que lorsque je clique sur retour, je retourne au case précédent (step --) sans retourner avant la 1 qui n'existe pas donc strictement >;
-      const btnRetour = document.createElement('button');
-      btnRetour.id = 'btn-retour';
-      btnRetour.textContent = 'Retour';
-      btnRetour.addEventListener("click", () => {
 
-        if(step > 1){
-          step--;
-          defilerPopupMenus();
-        }
-
-      });
 
             addPopup.appendChild(addContainerBtnValidation);
             addContainerBtnValidation.appendChild(OpenbtnEtapeSuivante);
-            addLogoCroix.appendChild(btnRetour);
+
 
 
 function gererChoixPetiteTaille() {
@@ -321,6 +350,13 @@ function gererChoixPetiteTaille() {
         localStorage.setItem("memoireAccompagnement", "Frites");
       }
 });
+
+  addContainerPetiteTaille.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+        e.preventDefault();
+        addContainerPetiteTaille.click(); // Déclenche exactement le même comportement que le clic
+    }
+  });
 }
 
 function gererChoixGrandeTaille() {
@@ -351,6 +387,13 @@ function gererChoixGrandeTaille() {
           localStorage.setItem("memoireAccompagnement", "Potatoes");
         }
   });
+
+  addContainerGrandeTaille.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
+      e.preventDefault();
+      addContainerGrandeTaille.click(); // Déclenche exactement le même comportement que le clic
+  }
+  });
 }
 
 
@@ -368,7 +411,8 @@ function gererChoixGrandeTaille() {
             // ces éléments permettent de remettre les éléments du case 1 avec le bouton retour
 
               // pour cacher le bouton retour sur la case 1
-              btnRetour.style.display = 'none'; 
+              btnRetour.style.visibility = "hidden";
+              btnRetour.tabIndex = -1;
               // pour afficher tous ces éléments : 
               titrePopup.style.display = 'flex';
               descriptionPopup.style.display = 'flex';
@@ -389,6 +433,7 @@ function gererChoixGrandeTaille() {
               gererChoixPetiteTaille()
               gererChoixGrandeTaille()
 
+              addContainerPetiteTaille.focus(); // pour être sur la petite taille en arrivant au case 1 (manipulation avec tab)
 
               break;
 
@@ -400,7 +445,8 @@ function gererChoixGrandeTaille() {
 
               // ces éléments permettent de remettre les éléments du case 2 avec le bouton retour
               // On fait apparaître le bouton retour : 
-              btnRetour.style.display = 'flex';
+              btnRetour.style.visibility = "visible";
+              btnRetour.tabIndex = 0;
               // Pour cacher le conteneur des boissons avec le bouton retour : 
               containerChoixBoissons.style.display = 'none';
               // Pour afficher tous ces éléments : 
@@ -424,6 +470,8 @@ function gererChoixGrandeTaille() {
 
               gererChoixPetiteTaille()
               gererChoixGrandeTaille()
+
+              addContainerPetiteTaille.focus(); // pour retourner sur la petite taille en arrivant au case 2
 
               break;
 
@@ -487,17 +535,31 @@ function gererChoixGrandeTaille() {
                   const imgFlecheGaucheBoissons = document.createElement('img');
                   imgFlecheGaucheBoissons.id ="fleche-gauche";
                   imgFlecheGaucheBoissons.src = './assets/fleche-slider.png';
+                  imgFlecheGaucheBoissons.tabIndex = 0;
 
 
 // On met en place un compteur pour déplacer la nav bar au click des flèches sans dépasser 4 click : 
                       let compteur = 0;
-                      const max = 4; // exemple à adapter selon nombre de catégories visibles
+                      const max = 5; // exemple à adapter selon nombre de catégories visibles
+                      function largeurBoisson() {
+                          const carte = containerListBoissons.querySelector('.card-categories-nav');
+                          const gap = parseInt(window.getComputedStyle(containerListBoissons).gap) || 0;
+
+                            return carte.offsetWidth + gap;
+                        }
                       imgFlecheGaucheBoissons.addEventListener('click', () => {
 
                         if (compteur > 0 ) {
                             compteur--;
-                            containerListBoissons.style.transform = `translateX(-${145 * compteur}px)`;
+                            containerListBoissons.style.transform =`translateX(-${largeurBoisson() * compteur}px)`;
 // Permet de déplacer 1 card par une card grace à la taille de 145px (taille de la card + le gap)
+                        }
+                      });
+
+                      imgFlecheGaucheBoissons.addEventListener("keydown", (e) => {
+                        if (e.key === "Enter") {
+                            e.preventDefault();
+                            imgFlecheGaucheBoissons.click(); // Déclenche exactement le même comportement que le clic
                         }
                       });
 
@@ -507,17 +569,26 @@ function gererChoixGrandeTaille() {
                   const containerListBoissons = document.createElement('div');
                   containerListBoissons.id ="container-liste-categories";
 
+
                   const imgFlecheDroiteBoissons = document.createElement('img');
                   imgFlecheDroiteBoissons.classList.add ('fleche-droite');
                   imgFlecheDroiteBoissons.src = './assets/fleche-slider.png';
+                  imgFlecheDroiteBoissons.tabIndex = 0;
 
-                      imgFlecheDroiteBoissons.addEventListener('click', () => {
+                  imgFlecheDroiteBoissons.addEventListener('click', () => {
 
-                          if (compteur < max) {
-                              compteur++;
-                              containerListBoissons.style.transform = `translateX(-${145 * compteur}px)`;
-                          }
-                      });
+                      if (compteur < max) {
+                          compteur++;
+                          containerListBoissons.style.transform =`translateX(-${largeurBoisson() * compteur}px)`;
+                      }
+                  });
+
+                  imgFlecheDroiteBoissons.addEventListener("keydown", (e) => {
+                    if (e.key === "Enter") {
+                        e.preventDefault();
+                        imgFlecheDroiteBoissons.click(); // Déclenche exactement le même comportement que le clic
+                    }
+                  });
 
 
 
@@ -536,6 +607,7 @@ function gererChoixGrandeTaille() {
                       
                         const cardBoissons = document.createElement('div');
                         cardBoissons.classList.add('card-categories-nav');
+                        cardBoissons.tabIndex = 0;
                         cardBoissons.addEventListener("click", () => {
                           console.log("clic");
                           document.querySelectorAll('.card-categories-nav').forEach(cardBoisson => {
@@ -562,6 +634,12 @@ console.log("memoireBoisson =", boisson.nom);
 
 // *************************************************************************************************
                         });
+                        cardBoissons.addEventListener("keydown", (e) => {
+                            if (e.key === "Enter") {
+                                e.preventDefault();
+                                cardBoissons.click();
+                            }
+                        });
 
                         const containerImgCardBoisson = document.createElement('div');
                         containerImgCardBoisson.classList.add('container-img-card-categorie');
@@ -587,11 +665,14 @@ console.log("memoireBoisson =", boisson.nom);
                         containerListBoissons.appendChild(cardBoissons);
 
                       });
-
+imgFlecheGaucheBoissons.focus(); // pour retourner sur la petite taille en arrivant au case 3
               });
 
 // Evènement au click pour ajouter au panier avec retour à la page menu :  ( à finir) 
 // Inclure des variable "type burger, type menus, type boisson, type accompagnement" pour mémoriser les choix et les mettre dans la fonction afficherPanier 
+
+
+
 
               break;  
           
@@ -626,19 +707,32 @@ console.log("memoireBoisson =", boisson.nom);
                   const imgFlecheGaucheBoissons = document.createElement('img');
                   imgFlecheGaucheBoissons.id ="fleche-gauche";
                   imgFlecheGaucheBoissons.src = './assets/fleche-slider.png';
+                  imgFlecheGaucheBoissons.tabIndex = 0;
 
 
 // On met en place un compteur pour déplacer la nav bar au click des flèches sans dépasser 4 click : 
-                      let compteur = 0;
-                      const max = 4; // exemple à adapter selon nombre de catégories visibles
-                      imgFlecheGaucheBoissons.addEventListener('click', () => {
+                  let compteur = 0;
+                  const max = 5; // exemple à adapter selon nombre de catégories visibles
+                  function largeurBoisson() {
+                    const carte = containerListBoissons.querySelector('.card-categories-nav');
+                    const gap = parseInt(window.getComputedStyle(containerListBoissons).gap) || 0;
 
-                        if (compteur > 0 ) {
-                            compteur--;
-                            containerListBoissons.style.transform = `translateX(-${145 * compteur}px)`;
+                      return carte.offsetWidth + gap;
+                  }
+                  imgFlecheGaucheBoissons.addEventListener('click', () => {
+
+                    if (compteur > 0 ) {
+                        compteur--;
+                        containerListBoissons.style.transform =`translateX(-${largeurBoisson() * compteur}px)`;
 // Permet de déplacer 1 card par une card grace à la taille de 145px (taille de la card + le gap)
-                        }
-                      });
+                    }
+                  });
+                  imgFlecheGaucheBoissons.addEventListener("keydown", (e) => {
+                      if (e.key === "Enter") {
+                          e.preventDefault();
+                          imgFlecheGaucheBoissons.click();
+                      }
+                  });
 
                   const choixBoissons = document.createElement('div');
                   choixBoissons.id = "choix-categorie-produits"; 
@@ -649,14 +743,21 @@ console.log("memoireBoisson =", boisson.nom);
                   const imgFlecheDroiteBoissons = document.createElement('img');
                   imgFlecheDroiteBoissons.classList.add ('fleche-droite');
                   imgFlecheDroiteBoissons.src = './assets/fleche-slider.png';
+                  imgFlecheDroiteBoissons.tabIndex = 0;
 
-                      imgFlecheDroiteBoissons.addEventListener('click', () => {
+                  imgFlecheDroiteBoissons.addEventListener('click', () => {
 
-                          if (compteur < max) {
-                              compteur++;
-                              containerListBoissons.style.transform = `translateX(-${145 * compteur}px)`;
-                          }
-                      });
+                      if (compteur < max) {
+                          compteur++;
+                          containerListBoissons.style.transform =`translateX(-${largeurBoisson() * compteur}px)`;
+                      }
+                  });
+                  imgFlecheDroiteBoissons.addEventListener("keydown", (e) => {
+                      if (e.key === "Enter") {
+                          e.preventDefault();
+                          imgFlecheDroiteBoissons.click();
+                      }
+                  });
 
 
 
@@ -675,6 +776,7 @@ console.log("memoireBoisson =", boisson.nom);
                       
                         const cardBoissons = document.createElement('div');
                         cardBoissons.classList.add('card-categories-nav');
+                        cardBoissons.tabIndex = 0;
                         cardBoissons.addEventListener("click", () => {
                           console.log("clic");
                           document.querySelectorAll('.card-categories-nav').forEach(cardBoisson => {
@@ -701,6 +803,12 @@ console.log("memoireSauce =", sauce.nom);
 
 // *************************************************************************************************
                         });
+                        cardBoissons.addEventListener("keydown", (e) => {
+                          if (e.key === "Enter") {
+                              e.preventDefault();
+                              cardBoissons.click();
+                          }
+                        });
 
                         const containerImgCardBoisson = document.createElement('div');
                         containerImgCardBoisson.classList.add('container-img-card-categorie');
@@ -726,7 +834,7 @@ console.log("memoireSauce =", sauce.nom);
                         containerListBoissons.appendChild(cardBoissons);
 
                       });
-
+imgFlecheGaucheBoissons.focus(); // pour retourner sur la petite taille en arrivant au case 3
               });
 
 

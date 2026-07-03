@@ -17,11 +17,12 @@
 
 #img-logo-croix {
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: row;
   justify-content: space-between;
   padding-right: 2px;
   margin-top: 2px;
   margin-bottom: 10px;
+  width: 100%;
 }
 
 img#croix {
@@ -29,8 +30,13 @@ img#croix {
   height: 30px;
 }
 
+#croix {
+  margin-left: auto;
+}
+
 #btn-retour {
-  display: none;
+  display: flex;
+  visibility: hidden;
   flex-direction: row;
   align-items: center;
   padding-right: 2px;

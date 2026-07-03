@@ -34,6 +34,7 @@ function getDataCat() {
         catNav.id = index; 
 // Attribue un identifiant unique à chaque carte (permet notamment de modifier son apparence lors d'un clic (voir boucle for en dessous))
         catNav.classList.add('card-categories-nav'); 
+        catNav.tabIndex = 0;
 // Ajoute une class à chaque card (pour le CSS)
 // Ces 2 dernières lignes : Cela revient à dire que nous mettons des paramètres à catNav : let catNav = { id: 0, classList: []) pour ensuite mettre une écoute :  addEventListener: () => {}...... }
 
@@ -143,6 +144,12 @@ function getDataCat() {
 // on créer l'évènement d'écoute sur catNav au click et on applique la fonction selectionnerCard crée précédement.
 
 // 2- On ajoute les autres éléments HTML au DOM : 
+        catNav.addEventListener("keydown", (e) => {
+            if (e.key === "Enter") {
+                e.preventDefault();
+                catNav.click(); // Déclenche exactement le même comportement que le clic mais avec la touche entrée
+            }
+        });
 
         const catNavContainerImgCard = document.createElement('div');
         catNavContainerImgCard.classList.add('container-img-card-categorie');
@@ -199,12 +206,25 @@ const container = document.getElementById('container-liste-categories');
 let compteur = 0;
 const max = 6; // exemple à adapter selon nombre de catégories visibles
 
+
+// Fonction qui sert à calculer automatiquement de combien le slider doit se déplacer lorsqu'on clique sur une flèche : 
+  function largeurProduit() {
+    const produit = container.querySelector('.card-categories-nav');
+    const style = window.getComputedStyle(produit);
+
+    const gap = parseInt(window.getComputedStyle(container).gap) || 0; 
+    // on récupère la gap : getComputedStyle() demande au navigateur :"Quelle est la valeur réelle du gap ?" ; Le || 0 signifie :"Si jamais il n'y a pas de gap, utilise 0." ; parseInt transform 35px en chiffre 35
+
+    return produit.offsetWidth + gap;
+    //offsetWidth est la largeur réelle de la carte. Donc la fonction retourne la largeur de la carte + le gap
+  }
+
 // Flèche droite
 flecheDroite.addEventListener('click', () => {
 
     if (compteur < max) {
         compteur++;
-        container.style.transform = `translateX(-${185 * compteur}px)`;
+        container.style.transform = `translateX(-${largeurProduit() * compteur}px)`;
     }
 });
 
@@ -214,7 +234,7 @@ flecheDroite.addEventListener('click', () => {
 
     if (compteur > 0 ) {
         compteur--;
-        container.style.transform = `translateX(-${185 * compteur}px)`;
+        container.style.transform = `translateX(-${largeurProduit() * compteur}px)`;
     };
   });
 
@@ -380,6 +400,7 @@ function afficherProduits(categories) {
 
         const prodCardChoix = document.createElement('article');
         prodCardChoix.classList.add('card-choix');
+        prodCardChoix.tabIndex = 0;
         prodCardChoix.dataset.id = prod.id; 
 // Création (ou assignation) de l’id dans le HTML via JavaScript
 // prodCardChoix = élément HTML (une carte produit)
@@ -426,11 +447,13 @@ function afficherProduits(categories) {
                 8: 'desserts',
                 9: 'sauces'
             };
+        });
 
-
-
-
-
+        prodCardChoix.addEventListener("keydown", (e) => {
+          if (e.key === "Enter") {
+              e.preventDefault();
+              prodCardChoix.click(); // Déclenche exactement le même comportement que le clic
+          }
         });
         
         const prodContainerImgCard = document.createElement('div');

@@ -70,5 +70,22 @@ Etapes avancement github :
 57/ Responsive page paiements
 58/ Modif mediaqueries suite rdv mentor (fusion de plusieurs taille) + modif affichage produit de flex-start a space-arround
 59/ Résolution texte avec la commande &nbsp; ou \u00A0 pour éviter que les deux point aillent à la ligne seuls
-60/ A faire : 
-  - Vérifier toutes les fonctionnalitées
+60/ Résolution déplacement des card avec les flèches en fonction du responsive + début de vérification du fonctionnement avec tab (page menu avec popup menus)
+61/ A faire : 
+
+I/ Séquence 6 : 
+  1) Continuer la manipulation avec TAB : 
+    * Page menus : 
+      - popupBoissons,
+      - popupArticles,
+      - panier,
+    * Page paiement,
+    * Page menus  :
+      - popup validation API
+    * Page chevalet,
+    * Page remerciements.
+  2) Vérifier toutes les fonctionnalitées (pc + mobile) sur plusieurs navigateurs + vérification si erreur dans la console
+  3) Passage des fichiers au w3C + corriger les erreurs + refaire le test avec tab vérifier que tout fonctionne et si modif de fichier refaire w3C
+  4) Regarder la vidéo de ressources + faire le quizz
+
+II/Séquence 7 : 
