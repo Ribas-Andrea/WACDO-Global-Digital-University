@@ -8,7 +8,7 @@ let numeroCommande = localStorage.getItem('memoireNumeroCommande');
 titreH1.innerHTML += `
 
       <h1 class="titreH1">
-        Votre Commande ${mode} n° ${numeroCommande} du ${new Date().toLocaleDateString("fr-FR")} &nbsp;:
+        Votre Commande ${mode} n° ${numeroCommande} du ${new Date().toLocaleDateString("fr-FR")}&nbsp;:
       </h1>
   `;
 
@@ -37,9 +37,9 @@ console.log('Total :', prixTotal);
     <div class="total">
       <h3>
         <div class="titreTotal">
-        Total (TTC): 
+        Total (TTC)&nbsp;: 
         </div>
-        <div class="montantTotal"> ${prixTotal} €
+        <div class="montantTotal"> ${prixTotal}&nbsp;€
         </div>
       </h3>
     </div>
@@ -68,10 +68,10 @@ panier.forEach(produit => {
          <div> 
             <h4>${nom}</h4>
             
-            <p class="quantite">Quantité : ${produit.quantite}</p>
+            <p class="quantite">Quantité :&nbsp;${produit.quantite}</p>
         </div>
         <div>
-            <p class="prix-article">${(produit.quantite * produit.type.prix).toFixed(2)} €</p>
+            <p class="prix-article">${(produit.quantite * produit.type.prix).toFixed(2)}&nbsp;€</p>
         </div>
     </div>
   `;

@@ -69,5 +69,6 @@ Etapes avancement github :
 56/ Responsive page chevalet + page remerciements + page menus (nav + produit + panier) + popup articles + popup boissons + popup menus
 57/ Responsive page paiements
 58/ Modif mediaqueries suite rdv mentor (fusion de plusieurs taille) + modif affichage produit de flex-start a space-arround
-58/ A faire : 
+59/ Résolution texte avec la commande &nbsp; ou \u00A0 pour éviter que les deux point aillent à la ligne seuls
+60/ A faire : 
   - Vérifier toutes les fonctionnalitées

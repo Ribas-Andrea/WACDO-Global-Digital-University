@@ -142,7 +142,6 @@ function ajouterArticlePanier() {
     });
   }
   console.log("PANIER AJOUTÉ :", panier);
-  // afficherArticlePanier();
   afficherPanier();
   totalPanier();
 }
@@ -231,7 +230,7 @@ function afficherPanier() {
 
         prixElement = document.createElement ('p');
         prixElement.classList.add('prix-menu');
-        prixElement.textContent = `${prix.toFixed(2)} €`;
+        prixElement.innerHTML = `${prix.toFixed(2)}&nbsp;€`;
 
         containerLogoPrix.appendChild(logoSupp);
         containerLogoPrix.appendChild(prixElement);
@@ -276,7 +275,7 @@ function afficherPanier() {
         prix += 0.50 * article.quantite;
         }
 
-    prixElement.textContent = `${prix.toFixed(2)} €`;
+    prixElement.innerHTML = `${prix.toFixed(2)}&nbsp;€`;
 
   
     containerLogoPrix.appendChild(logoSupp);
@@ -303,7 +302,7 @@ function afficherPanier() {
 
     prixElement = document.createElement ('p');
     prixElement.classList.add('prix-article');
-    prixElement.textContent = `${(article.type.prix * article.quantite).toFixed(2)} €`;
+    prixElement.innerHTML = `${(article.type.prix * article.quantite).toFixed(2)}&nbsp;€`;
  
     containerLogoPrix.appendChild(logoSupp);
     containerLogoPrix.appendChild(prixElement);
@@ -375,7 +374,8 @@ const prixTotal = document.getElementById('montant');
     total += produit.quantite * getPrix(produit);
   }
 
-  const totalForm = total.toFixed(2) + " €";
+  const totalForm = `${total.toFixed(2)}\u00A0€`; 
+  // \u00A0 = caractère insecable, permet de ne pas avoir le signe € seul à la lisgne avec le responsive
 
   if (prixTotal) {
   prixTotal.textContent = totalForm;

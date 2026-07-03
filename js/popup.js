@@ -1135,7 +1135,7 @@ validationChoix.innerHTML = '';
       const containerDemandeValidation = document.createElement('div');
       const demandeValidation = document.createElement('p');
       const memoireArticle = localStorage.getItem("memoireArticle");
-      demandeValidation.textContent = `Voulez-vous ajouter  ${memoireArticle} à votre panier ?`;
+      demandeValidation.innerHTML = `Voulez-vous ajouter  ${memoireArticle} à votre panier&nbsp;?`;
       demandeValidation.style.paddingBottom = '20px';
 
 
@@ -1204,7 +1204,7 @@ messageValidation.innerHTML = '';
       const containerDemandeValidation = document.createElement('div');
       const demandeValidation = document.createElement('p');
       const memoireArticle = localStorage.getItem("memoireArticle");
-      demandeValidation.textContent = `Votre commande a été valider avec succès !`;
+      demandeValidation.innerHTML = "Votre commande a été validée avec succès&nbsp;!";
       demandeValidation.style.paddingBottom = '20px';
 
 
@@ -1276,7 +1276,7 @@ messageValidation.innerHTML = '';
       const containerDemandeValidation = document.createElement('div');
       const demandeValidation = document.createElement('p');
       const memoireArticle = localStorage.getItem("memoireArticle");
-      demandeValidation.textContent = `Une erreur s'est produite`;
+      demandeValidation.innerHTML = "Une erreur s'est produite&nbsp;!";
       demandeValidation.style.paddingBottom = '20px';
 
 
