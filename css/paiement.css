@@ -28,6 +28,7 @@ body {
   background-color: white;
   border-radius: 8px;
   padding: 5px;
+  border: none;
 }
 
 .container-cb {

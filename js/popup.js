@@ -297,6 +297,7 @@ function afficherPopupMenus(categorieRecherchee) {
             descriptionPopup.textContent = 'Le menu Best Of comprend un sandwich, une moyenne frite et une boisson 30 Cl';
             texteChoixPetiteTaille.textContent = 'Menu Best Of';
             imgPetiteTaille.src = './assets/illustration-best-of.png';
+            imgPetiteTaille.alt ='image best of';
             localStorage.setItem('memoireMenu', 'Best of');
           }
 
@@ -305,6 +306,7 @@ function afficherPopupMenus(categorieRecherchee) {
             descriptionPopup.textContent = 'Frites, potatoes, la pomme de terre dans tous ses états';
             texteChoixPetiteTaille.textContent = 'Frites';
             imgPetiteTaille.src = './assets/frites/MOYENNE_FRITE.png';
+            imgPetiteTaille.alt = 'image moyenne frite';
             localStorage.setItem('memoireAccompagnement', 'Frites');
           }
         });
@@ -329,6 +331,7 @@ function afficherPopupMenus(categorieRecherchee) {
             descriptionPopup.textContent = 'Le menu maxi Best Of comprend un sandwich, une grande frite et une boisson 50 Cl';
             texteChoixGrandeTaille.textContent = 'Menu Maxi Best Of';
             imgGrandeTaille.src = './assets/illustration-maxi-best-of.png';
+            imgGrandeTaille.alt ='image maxi best of'
             localStorage.setItem('memoireMenu', 'Maxi Best Of');
           }
 
@@ -337,8 +340,10 @@ function afficherPopupMenus(categorieRecherchee) {
             descriptionPopup.textContent = 'Frites, potatoes, la pomme de terre dans tous ses états';
             texteChoixPetiteTaille.textContent = 'Frites';
             imgPetiteTaille.src = './assets/frites/MOYENNE_FRITE.png';
+            imgPetiteTaille.alt ="image moyenne frites"
             texteChoixGrandeTaille.textContent = 'Potatoes';
             imgGrandeTaille.src = './assets/frites/GRANDE_POTATOES.png';
+            imgGrandeTaille.alt = 'image grand potatoes'
             imgGrandeTaille.style.width = '100%';
             imgGrandeTaille.style.height = '100%';
             localStorage.setItem('memoireAccompagnement', 'Potatoes');
@@ -379,8 +384,10 @@ function afficherPopupMenus(categorieRecherchee) {
             descriptionPopup.textContent = 'Les menus comprennent un sandwich, une frite et une boisson';
             texteChoixPetiteTaille.textContent = 'Menu Best Of';
             imgPetiteTaille.src = './assets/illustration-best-of.png';
+            imgPetiteTaille.alt ='image best of';
             texteChoixGrandeTaille.textContent = 'Menu Maxi Best Of';
             imgGrandeTaille.src = './assets/illustration-maxi-best-of.png';
+            imgGrandeTaille.alt ='image maxi best of';
 
             gererChoixPetiteTaille();
             gererChoixGrandeTaille();
@@ -414,8 +421,10 @@ function afficherPopupMenus(categorieRecherchee) {
             descriptionPopup.textContent = 'Frites, potatoes, la pomme de terre dans tous ses états';
             texteChoixPetiteTaille.textContent = 'Frites';
             imgPetiteTaille.src = './assets/frites/MOYENNE_FRITE.png';
+            imgPetiteTaille.alt =' image moyenne frite'
             texteChoixGrandeTaille.textContent = 'Potatoes';
             imgGrandeTaille.src = './assets/frites/GRANDE_POTATOES.png';
+            imgGrandeTaille.alt ='image grande potatoes'
             imgGrandeTaille.style.width = '100%';
             imgGrandeTaille.style.height = '100%';
 
@@ -485,6 +494,7 @@ function afficherPopupMenus(categorieRecherchee) {
                 const imgFlecheGaucheBoissons = document.createElement('img');
                 imgFlecheGaucheBoissons.id = 'fleche-gauche';
                 imgFlecheGaucheBoissons.src = './assets/fleche-slider.png';
+                imgFlecheGaucheBoissons.alt ='image fleche slider gauche'
                 imgFlecheGaucheBoissons.tabIndex = 0;
 
                 // On met en place un compteur pour déplacer la nav bar au click des flèches sans dépasser 4 click :
@@ -520,6 +530,7 @@ function afficherPopupMenus(categorieRecherchee) {
                 const imgFlecheDroiteBoissons = document.createElement('img');
                 imgFlecheDroiteBoissons.classList.add('fleche-droite');
                 imgFlecheDroiteBoissons.src = './assets/fleche-slider.png';
+                imgFlecheDroiteBoissons.alt ='image fleche slider droite';
                 imgFlecheDroiteBoissons.tabIndex = 0;
 
                 imgFlecheDroiteBoissons.addEventListener('click', () => {
@@ -587,6 +598,7 @@ function afficherPopupMenus(categorieRecherchee) {
                   const imgCardBoisson = document.createElement('img');
                   imgCardBoisson.classList.add('img-card-categorie');
                   imgCardBoisson.src = boisson.image;
+                  imgCardBoisson.alt = `Image de la catégorie ${boisson.nom}`;
 
                   const containerTitreCardBoisson = document.createElement('div');
                   containerTitreCardBoisson.classList.add('container-titre-img-nav');
@@ -639,6 +651,7 @@ function afficherPopupMenus(categorieRecherchee) {
                 const imgFlecheGaucheBoissons = document.createElement('img');
                 imgFlecheGaucheBoissons.id = 'fleche-gauche';
                 imgFlecheGaucheBoissons.src = './assets/fleche-slider.png';
+                imgFlecheGaucheBoissons.alt ='image fleche slider gauche';
                 imgFlecheGaucheBoissons.tabIndex = 0;
 
                 // On met en place un compteur pour déplacer la nav bar au click des flèches sans dépasser 4 click :
@@ -673,6 +686,7 @@ function afficherPopupMenus(categorieRecherchee) {
                 const imgFlecheDroiteBoissons = document.createElement('img');
                 imgFlecheDroiteBoissons.classList.add('fleche-droite');
                 imgFlecheDroiteBoissons.src = './assets/fleche-slider.png';
+                imgFlecheDroiteBoissons.alt ='image fleche slider droite';
                 imgFlecheDroiteBoissons.tabIndex = 0;
 
                 imgFlecheDroiteBoissons.addEventListener('click', () => {
@@ -739,6 +753,7 @@ function afficherPopupMenus(categorieRecherchee) {
                   const imgCardBoisson = document.createElement('img');
                   imgCardBoisson.classList.add('img-card-categorie');
                   imgCardBoisson.src = sauce.image;
+                  imgCardBoisson.alt = `Image de la catégorie ${sauce.nom}`;
 
                   const containerTitreCardBoisson = document.createElement('div');
                   containerTitreCardBoisson.classList.add('container-titre-img-nav');
@@ -954,7 +969,7 @@ function afficherPopupBoissons(produitRecherche) {
       const imgPetiteTaille = document.createElement('img');
       imgPetiteTaille.id = 'img-petite-taille';
       imgPetiteTaille.src = './assets/boissons/coca-cola.png';
-      imgPetiteTaille.alt = 'Petite Taille';
+      imgPetiteTaille.alt = 'Boisson Petite Taille';
       imgPetiteTaille.style.width = '80%';
       imgPetiteTaille.style.height = '100%';
 
@@ -994,7 +1009,7 @@ function afficherPopupBoissons(produitRecherche) {
       const imgGrandeTaille = document.createElement('img');
       imgGrandeTaille.id = 'img-grande-taille';
       imgGrandeTaille.src = './assets/boissons/coca-cola.png';
-      imgGrandeTaille.alt = 'Grande Taille';
+      imgGrandeTaille.alt = 'Boisson Grande Taille';
 
       const addDivTxtChoixGrandeTaille = document.createElement('div');
 

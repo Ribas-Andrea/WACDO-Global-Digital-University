@@ -79,10 +79,12 @@ Etapes avancement github :
 66/ Annul test mobile
 67/ Ajustement du container zone choix en center pour mobile
 68/ Verification W3c CSS + HTMl + corrections + enregistrement  avec prettier
+69/ Installation extension wave + modification accessibilité page index + page menus + debut page paiement
 
 A faire : 
 
 I/ Séquence 6 : 
+  - Modifier les erreurs qui s'affiche avec l'extension wave de chrome
   - Vérifier toutes les fonctionnalitées (pc + mobile) sur plusieurs navigateurs + vérification si erreur dans la console
   - Regarder la vidéo de ressources + faire le quizz
 
