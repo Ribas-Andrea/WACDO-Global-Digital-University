@@ -3,11 +3,11 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: "Source Sans 3";
+  font-family: 'Source Sans 3';
   box-sizing: border-box;
 }
 
-html, 
+html,
 body {
   overflow-x: hidden; /* évite la barre horizontale et cache ce qui dépasse */
   background-color: white;
@@ -20,7 +20,7 @@ body {
 }
 
 #fond-ecran {
-  background-image: url("../assets/mc_landing_banner.png");
+  background-image: url('../assets/mc_landing_banner.png');
   opacity: 0.85;
   position: fixed;
   top: -90px;

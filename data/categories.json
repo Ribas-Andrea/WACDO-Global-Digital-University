@@ -1,56 +1,56 @@
 [
-    {
-        "id":1,
-        "title": "menus",
-        "image": "assets/categories/menus.png",
-        "description": "Un Sandwich,une friture ou une salade et une boisson"
-    },
-    {
-        "id":2,
-        "title": "boissons",
-        "image": "assets/categories/boissons.png",
-        "description": "Une petite soif, sucrée, légère, rafraîchissante "
-    },
-    {
-        "id":3,
-        "title": "burgers",
-        "image": "assets/categories/burgers.png",
-        "description": "Une vraie faim, juteuse, généreuse, gourmande"
-    },
-    {
-        "id":4,
-        "title": "frites",
-        "image": "assets/categories/frites.png",
-        "description": "Une petite faim, croustillante, dorée, irrésistible"
-    },
-    {
-        "id":5,
-        "title": "encas",
-        "image": "assets/categories/encas.png",
-        "description": "Une petite pause, rapide, simple, satisfaisante"
-    },
-    {
-        "id":6,
-        "title": "wraps",
-        "image": "assets/categories/wraps.png",
-        "description": "Une vraie envie, roulée, fraîche, généreuse"
-    },
-    {
-        "id":7,
-        "title": "salades",
-        "image": "assets/categories/salades.png",
-        "description": "Une envie légère, fraîche, colorée, équilibrée"
-    },
-    {
-        "id":8,
-        "title": "desserts",
-        "image": "assets/categories/desserts.png",
-        "description": "Une petite gourmandise, sucrée, fondante, irrésistible"
-    },
-    {
-        "id":9,
-        "title": "sauces",
-        "image": "assets/categories/sauces.png",
-        "description": "Un petit plus, onctueux, savoureux, indispensable"
-    }
+  {
+    "id": 1,
+    "title": "menus",
+    "image": "assets/categories/menus.png",
+    "description": "Un Sandwich,une friture ou une salade et une boisson"
+  },
+  {
+    "id": 2,
+    "title": "boissons",
+    "image": "assets/categories/boissons.png",
+    "description": "Une petite soif, sucrée, légère, rafraîchissante "
+  },
+  {
+    "id": 3,
+    "title": "burgers",
+    "image": "assets/categories/burgers.png",
+    "description": "Une vraie faim, juteuse, généreuse, gourmande"
+  },
+  {
+    "id": 4,
+    "title": "frites",
+    "image": "assets/categories/frites.png",
+    "description": "Une petite faim, croustillante, dorée, irrésistible"
+  },
+  {
+    "id": 5,
+    "title": "encas",
+    "image": "assets/categories/encas.png",
+    "description": "Une petite pause, rapide, simple, satisfaisante"
+  },
+  {
+    "id": 6,
+    "title": "wraps",
+    "image": "assets/categories/wraps.png",
+    "description": "Une vraie envie, roulée, fraîche, généreuse"
+  },
+  {
+    "id": 7,
+    "title": "salades",
+    "image": "assets/categories/salades.png",
+    "description": "Une envie légère, fraîche, colorée, équilibrée"
+  },
+  {
+    "id": 8,
+    "title": "desserts",
+    "image": "assets/categories/desserts.png",
+    "description": "Une petite gourmandise, sucrée, fondante, irrésistible"
+  },
+  {
+    "id": 9,
+    "title": "sauces",
+    "image": "assets/categories/sauces.png",
+    "description": "Un petit plus, onctueux, savoureux, indispensable"
+  }
 ]

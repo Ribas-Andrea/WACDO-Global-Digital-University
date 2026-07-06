@@ -1,61 +1,46 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Wacdo</title>
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/paiement.css" />
-</head>
-<body>
-<div id="container-page-paiement">
-     <div id="container-titre"></div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wacdo</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/paiement.css" />
+  </head>
+  <body>
+    <div id="container-page-paiement">
+      <div id="container-titre"></div>
 
-    <div class = "container-panier-cb">
-      
+      <div class="container-panier-cb">
         <div class="container-panier">
           <div class="panier">
-            <h2>Voici le détail de votre panier&nbsp;: </h2>
+            <h2>Voici le détail de votre panier&nbsp;:</h2>
           </div>
         </div>
 
-
-
-      <form class="container-cb" action="">
-        <h2>Veuillez sélectionner un mode de paiement&nbsp;: </h2>
+        <form class="container-cb" action="#">
+          <h2>Veuillez sélectionner un mode de paiement&nbsp;:</h2>
 
           <div class="choix-cb">
-
-
             <input type="radio" class="choixRglt" id="carteBancaire" name="paiement" value="carte bancaire" />
-            <label class="form-type-paiement" for="carteBancaire" tabindex="0"> <img src="./assets/paiements/cb.jpg" alt="cb" width="40">Carte Bancaire
-            </label>
+            <label class="form-type-paiement" for="carteBancaire" tabindex="0"> <img src="./assets/paiements/cb.jpg" alt="cb" width="40" />Carte Bancaire </label>
 
-
-          
             <input type="radio" class="choixRglt" id="paypal" name="paiement" value="paypal" />
-            <label class="form-type-paiement" for="paypal" tabindex="0"><img src="./assets/paiements/paypal.jpg" alt="cb" width="40">Paypal</label>
-
-
+            <label class="form-type-paiement" for="paypal" tabindex="0"><img src="./assets/paiements/paypal.jpg" alt="cb" width="40" />Paypal</label>
 
             <input type="radio" class="choixRglt" id="chqVacances" name="paiement" value="chèque vacances" />
-            <label class="form-type-paiement" for="chqVacances" tabindex="0"><img src="./assets/paiements/chqvac.jfif" alt="cb" width="40">Chèque-Vacances Connect</label>
-
-
+            <label class="form-type-paiement" for="chqVacances" tabindex="0"><img src="./assets/paiements/chqvac.jfif" alt="cb" width="40" />Chèque-Vacances Connect</label>
 
             <input type="radio" class="choixRglt" id="titresRestaurant" name="paiement" value="titres restaurant" />
-            <label class="form-type-paiement" for="titresRestaurant" tabindex="0"><img src="./assets/paiements/titres.jfif" alt="cb" width="40">Titres-Restaurant</label>
-
-
+            <label class="form-type-paiement" for="titresRestaurant" tabindex="0"><img src="./assets/paiements/titres.jfif" alt="cb" width="40" />Titres-Restaurant</label>
           </div>
 
           <div class="container-btn-payer">
             <button class="btn-paiement" type="submit">Payer</button>
           </div>
-
-      </form>
-  </div>
-</div>
-  <script type="module" src="./js/paiements.js"></script>
-</body>
+        </form>
+      </div>
+    </div>
+    <script type="module" src="./js/paiements.js"></script>
+  </body>
 </html>

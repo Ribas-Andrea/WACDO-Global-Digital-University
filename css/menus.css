@@ -165,7 +165,6 @@ h1 {
   height: 40%;
 }
 
-
 /* --------------------------------------------- Droite --------------------------------------------- */
 
 #partie-droite-panier {
@@ -274,7 +273,7 @@ h1 {
   padding-left: 30px;
 }
 
-.container-list-prix{
+.container-list-prix {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -282,11 +281,11 @@ h1 {
 
 .prix-menu,
 .prix-boisson,
-.prix-article{
+.prix-article {
   font-weight: bold;
 }
 
-.container-logo-prix{
+.container-logo-prix {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -320,7 +319,7 @@ h1 {
   padding-top: 25px;
   flex-shrink: 0;
   /* Les boutons restent en bas visible dès qu'il y a trop d'article */
-      padding-bottom: 25px;
+  padding-bottom: 25px;
 }
 
 #btn-abandon {
@@ -331,7 +330,7 @@ h1 {
   font-weight: 400;
   cursor: pointer;
   width: 45%;
-  }
+}
 
 #btn-payer {
   border-radius: 8px;
@@ -342,16 +341,11 @@ h1 {
   border: none;
   cursor: pointer;
   width: 45%;
-  }
-
- 
+}
 
 /* --------------------------------------------- Responsive --------------------------------------------- */
 
-
 @media (max-width: 1670px) {
-
-
   #partie-gauche-choix-produits {
     width: 70%;
   }
@@ -495,10 +489,9 @@ h1 {
     width: 100px;
     padding-top: 5px;
   }
-} 
+}
 
 @media (max-width: 640px) {
-
   #nav-page-produits {
     margin-right: 15px;
   }
@@ -506,12 +499,9 @@ h1 {
   #container-liste-categories {
     gap: 15px;
   }
-
 }
 
 @media (max-width: 485px) {
-
-
   #nav-page-produits {
     height: 70px;
     margin: 20px;
@@ -559,7 +549,4 @@ h1 {
   .prix-produit {
     padding-top: 3px;
   }
-  
 }
-
-

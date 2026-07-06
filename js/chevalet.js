@@ -1,32 +1,28 @@
 function numeroChevalet() {
   const inputChevalet = document.querySelectorAll('.input-numero-chevalet');
-      inputChevalet.forEach((input, index) => {
-      input.addEventListener("input", () => {
-        input.value = input.value.replace(/\D/g, ""); // garde uniquement les chiffres
-        if (input.value.length === 1 && index < inputChevalet.length - 1) {
-            inputChevalet[index + 1].focus();
-        }
-      });
+  inputChevalet.forEach((input, index) => {
+    input.addEventListener('input', () => {
+      input.value = input.value.replace(/\D/g, ''); // garde uniquement les chiffres
+      if (input.value.length === 1 && index < inputChevalet.length - 1) {
+        inputChevalet[index + 1].focus();
+      }
+    });
   });
 
   const enregistrerNumero = document.querySelector('.btn-chevalet');
-  enregistrerNumero.addEventListener('click', () =>{
+  enregistrerNumero.addEventListener('click', () => {
+    const tousRemplis = [...inputChevalet].every((input) => input.value !== '');
+    console.log(tousRemplis);
 
-      const tousRemplis = [...inputChevalet].every(input => input.value !== "");
-      console.log(tousRemplis);
-
-        if (!tousRemplis) {
-          alert("Veuillez saisir le numéro de chevalet.");
-          return
-        } else {
-          console.log('vous avez enregistrer le numéro de commande')
-          event.preventDefault();
-          window.location.href = './remerciements.html'
-        }
-  })
-
-
+    if (!tousRemplis) {
+      alert('Veuillez saisir le numéro de chevalet.');
+      return;
+    } else {
+      console.log('vous avez enregistrer le numéro de commande');
+      event.preventDefault();
+      window.location.href = './remerciements.html';
+    }
+  });
 }
 
-
-numeroChevalet()
+numeroChevalet();

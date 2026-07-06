@@ -78,12 +78,12 @@ Etapes avancement github :
 65/ Test images sur mobile
 66/ Annul test mobile
 67/ Ajustement du container zone choix en center pour mobile
+68/ Verification W3c CSS + HTMl + corrections + enregistrement  avec prettier
 
 A faire : 
 
 I/ Séquence 6 : 
   - Vérifier toutes les fonctionnalitées (pc + mobile) sur plusieurs navigateurs + vérification si erreur dans la console
-  - Passage des fichiers au w3C + corriger les erreurs + refaire le test avec tab vérifier que tout fonctionne et si modif de fichier refaire w3C
   - Regarder la vidéo de ressources + faire le quizz
 
 II/Séquence 7 : 

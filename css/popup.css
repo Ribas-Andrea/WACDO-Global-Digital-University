@@ -12,7 +12,6 @@
 
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 9999;
-
 }
 
 #img-logo-croix {
@@ -48,7 +47,6 @@ img#croix {
   border: 1px solid black;
   border-radius: 8px;
 }
-
 
 #popup {
   width: 70%;
@@ -179,16 +177,14 @@ h1 {
   cursor: pointer;
 }
 
-.activeBorder{
-  border: 4px solid #ffc400 ;
+.activeBorder {
+  border: 4px solid #ffc400;
   /* !important; */
 }
 
 /* --------------------------------------------- Css pour javascript popup de la nav bar --------------------------------------------- */
 
-
-
-.nav-popup-boissons{
+.nav-popup-boissons {
   display: flex;
   align-items: center;
   gap: 30px;
@@ -206,7 +202,7 @@ h1 {
   margin-right: 5px;
   cursor: pointer;
   height: 60%;
-  }
+}
 
 .nav-popup-boissons #choix-categorie-produits {
   display: flex;
@@ -268,14 +264,11 @@ h1 {
   height: 60%;
 }
 
-
-.nav-popup-boissons .activeBorder{
+.nav-popup-boissons .activeBorder {
   border: 4px solid #ffc400;
 }
 
-
 /* ---------------------- CSS pour la Popup bouton valider pour les boissons -------------------------------------------- */
-
 
 #container-popup-boissons {
   display: none;
@@ -291,14 +284,9 @@ h1 {
 
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 9999;
-
 }
 
-
-
-
 /* ---------------------- CSS pour la Popup bouton valider pour les articles à l'unité -------------------------------------------- */
-
 
 #popupValider {
   width: 22%;
@@ -323,7 +311,6 @@ h1 {
 
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 9999;
-
 }
 
 #succes-commande {
@@ -363,7 +350,7 @@ h1 {
     height: 130px;
     width: 110px;
     font-size: 14px;
-    }
+  }
 
   .nav-popup-boissons {
     gap: 5px;
@@ -405,8 +392,8 @@ h1 {
   }
 
   #container-compteur {
-  width: 226px;
-  height: 65px;
+    width: 226px;
+    height: 65px;
   }
 
   #btn-plus,
@@ -425,7 +412,9 @@ h1 {
     gap: 30px;
   }
 
-  #btn-ajouter-commande,#btn-annuler-commande, #btn-etape-suivante{
+  #btn-ajouter-commande,
+  #btn-annuler-commande,
+  #btn-etape-suivante {
     justify-content: center;
     padding: 10px 20px;
     font-size: 14px;
@@ -457,7 +446,7 @@ h1 {
   #btn-retour {
     padding: 10px 20px;
     font-size: 12px;
-  } 
+  }
 
   img#croix {
     width: 15px;
@@ -550,7 +539,7 @@ h1 {
   #btn-retour {
     padding: 7px 15px;
     font-size: 10px;
-  } 
+  }
 
   img#croix {
     width: 15px;
@@ -559,7 +548,6 @@ h1 {
 }
 
 @media (max-width: 400px) {
-
   .nav-popup-boissons .card-categories-nav {
     height: 55px;
     width: 55px;
@@ -606,8 +594,8 @@ h1 {
 
   #description-produits {
     padding-bottom: 0;
-  } 
-  
+  }
+
   .titre-img-nav {
     font-size: 7px;
   }

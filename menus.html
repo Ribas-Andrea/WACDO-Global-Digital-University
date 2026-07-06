@@ -15,29 +15,26 @@
     <main id="page-choix-produits">
       <aside id="partie-gauche-choix-produits">
         <nav id="nav-page-produits">
-          <img id="fleche-gauche" src="assets/fleche-slider.png" alt="fleche-slider-gauche" tabIndex="0" />
+          <img id="fleche-gauche" src="assets/fleche-slider.png" alt="fleche-slider-gauche" tabindex="0" />
           <div id="choix-categorie-produits">
-            <div id="container-liste-categories">
-            </div>
+            <div id="container-liste-categories"></div>
           </div>
-          <img class="fleche-droite" src="assets/fleche-slider.png" alt="fleche-slider-droite" tabIndex="0"/>
+          <img class="fleche-droite" src="assets/fleche-slider.png" alt="fleche-slider-droite" tabindex="0" />
         </nav>
         <section>
-         <!-- <div class="titre-produits">
-            <h1>Nos menus</h1>
-            <p id="description-produits">Un Sandwich,une friture ou une salade et une boisson</p>
-          </div> -->
-          <div id="container-nos-produits">
-          </div> 
-          <div id="container-zone-choix">
-          </div> 
+          <div id="container-nos-produits"></div>
+          <div id="container-zone-choix"></div>
         </section>
-
+        <div id="container-popup-menus"></div>
+        <div id="container-popup-boissons"></div>
+        <div id="container-popup-articles"></div>
+        <div id="succes-commande"></div>
       </aside>
+
       <aside id="partie-droite-panier">
         <div id="container-panier">
           <img class="logo-panier" src="assets/logo.png" alt="logo" />
-        
+
           <div id="container-numero-commande">
             <div id="numero-commande">
               <!-- C'est l'un ou l'autre qui sera géréé en javascript  -->
@@ -47,10 +44,10 @@
 
               <div id="numero-sur-place">
                 <p>Sur place&nbsp;:</p>
-                 <p id="numero-commande-sur-place"><!--326--> </p> 
+                <p id="numero-commande-sur-place"><!--326--></p>
               </div>
             </div>
-            <div id="numero-commande-emporter"><!--72--> </div>
+            <div id="numero-commande-emporter"><!--72--></div>
           </div>
           <div class="barre-separation"></div>
 
@@ -100,23 +97,9 @@
         </div>
       </aside>
     </main>
-    <div id="container-popup-menus">
-      <nav id="nav-page-produits">
-        <img id="fleche-gauche" src="assets/fleche-slider.png" alt="fleche-slider-gauche" />
-        <div id="choix-categorie-produits">
-          <div id="container-liste-categories">
-          </div>
-        </div>
-        <img class="fleche-droite" src="assets/fleche-slider.png" alt="fleche-slider-droite" />
-      </nav>
-    </div>
-    <div id="container-popup-boissons"></div>
-    <div id="container-popup-articles"></div>
-    <div id="succes-commande"></div>
+
     <script src="./js/menus.js"></script>
     <script src="./js/panier.js"></script>
     <script src="./js/popup.js"></script>
   </body>
 </html>
-
-
