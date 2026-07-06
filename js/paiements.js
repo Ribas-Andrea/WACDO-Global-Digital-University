@@ -148,25 +148,37 @@ function validationCommande () {
     localStorage.setItem("commande", JSON.stringify(data));
 
 
-   
+   console.log("AVANT FETCH");
 // Déclaration fetch pour envoie fausse API : 
-    const response = await fetch('https://api.local/commande',{
-        method: 'POST',
-        headers : {'Content-Type' : 'application/json'},
-        body: JSON.stringify(data)
-    }).catch(() => {
-      // Simulation si pas de backend
-      return {
-        ok: true,
-        json: async () => ({
-          message: "Commande simulée (pas de backend)"
-        })
-      };
-    });
+let response;
 
-    const result = await response.json();
-    console.log("Réponse API simulée :", result);
+try {
+  response = await fetch('https://api.local/commande', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+  });
 
+  // cas où fetch répond mais pas exploitable
+  if (!response || !response.ok) {
+    throw new Error("Réponse API invalide");
+  }
+
+} catch (error) {
+  console.warn("API indisponible → simulation");
+
+  response = {
+    ok: true,
+    json: async () => ({
+      message: "Commande simulée (fallback local)"
+    })
+  };
+}
+
+const result = await response.json();
+console.log("Réponse finale :", result);
+
+console.log("APRÈS FETCH");
 
     sessionStorage.setItem("commandeValidee", "true");
     window.location.href = 'menus.html';

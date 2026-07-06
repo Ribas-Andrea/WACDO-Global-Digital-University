@@ -10,6 +10,8 @@
 // Creation de la fonction pour afficher la popup de choix du menus à partir de la nav : 
 function afficherPopupMenus (categorieRecherchee){
 
+  closeAllPopups();
+
   const containerPopupMenus = document.getElementById('container-popup-menus');
   // console.log(containerPopupMenus);
 
@@ -862,6 +864,8 @@ imgFlecheGaucheBoissons.focus(); // pour retourner sur la petite taille en arriv
 // Creation de la fonction pour afficher les popup par la section principale : 
 function afficherPopupBoissons (produitRecherche){
 
+  closeAllPopups();
+
 // Pour vérifier ou se situe le focus : 
 //   document.addEventListener("focusin", () => {
 //     console.log(document.activeElement);
@@ -1237,6 +1241,8 @@ containerPopupBoissons.innerHTML = '';
 
 function afficherPopupArticles (){
 
+  closeAllPopups();
+
 const validationChoix = document.getElementById('container-popup-articles');
 
 // on vérifie si containerPopup existe : 
@@ -1316,6 +1322,8 @@ validationChoix.innerHTML = '';
 
 function afficherPopupMessageAPISucces (){
 
+  closeAllPopups();
+
 const messageValidation = document.getElementById('succes-commande');
 const modeCommande = localStorage.getItem("mode");
 
@@ -1348,6 +1356,7 @@ messageValidation.innerHTML = '';
 
     // pour fermer la popup avec la croix
     addImgLogoCroix.addEventListener('click', () => {
+      console.log('tu as cliqué sur la croix');
     messageValidation.style.display = 'none';
     messageValidation.innerHTML = '';
     });
@@ -1381,8 +1390,10 @@ messageValidation.innerHTML = '';
  // redirection en fonction du modeCommande : 
         if(modeCommande === "sur place"){
             window.location.href = 'chevalet.html';
+            // alert("REDIRECTION OK");
         } else if (modeCommande === "à emporter"){
             window.location.href = 'remerciements.html';
+            // alert("REDIRECTION OK");
         }
       })
 
@@ -1398,6 +1409,8 @@ messageValidation.innerHTML = '';
 
 
 function afficherPopupMessageAPIErreur (){
+
+  closeAllPopups();
 
 const messageValidation = document.getElementById('succes-commande');
 const modeCommande = localStorage.getItem("mode");
@@ -1452,6 +1465,7 @@ messageValidation.innerHTML = '';
       btnValidation.id = 'btn-etape-suivante';
       btnValidation.textContent = 'OK';
       btnValidation.addEventListener('click', () => {
+        console.log('Vous avez cliqué sur ok')
  // redirection en fonction du modeCommande : 
         if(modeCommande === "sur place"){
             window.location.href = 'chevalet.html';
@@ -1467,4 +1481,9 @@ messageValidation.innerHTML = '';
 
 
 
+}
+
+function closeAllPopups() {
+  document.getElementById('container-popup-articles').style.display = 'none';
+  document.getElementById('succes-commande').style.display = 'none';
 }
