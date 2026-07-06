@@ -75,6 +75,7 @@ Etapes avancement github :
 62/ Test modification chemin d'accès images du fichier JSON categories pour test mobile
 63/ Test modification chemin d'accès images du fichier JSON produits pour test mobile (partie menus)
 64/ Ajout d'une fonction de fermeture des popups pour adaptation sur firefox + verification fonctionnalité edge ok
+65/ Test images sur mobile
 
 A faire : 
 
