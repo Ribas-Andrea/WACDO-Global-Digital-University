@@ -157,7 +157,7 @@ function getDataCat() {
         const catNavImgCard = document.createElement('img');
         catNavImgCard.classList.add('img-card-categorie');
 
-        catNavImgCard.src = "./" + cat.image; 
+        catNavImgCard.src = cat.image; 
 // cat.image : on récupère les données JSON grâce à la console (ici, on ouvre les catégories (cat) et la partie image de la categorie(image)), attention de bien mettre src pour une image :
 
         const catNavContainerTitreImg = document.createElement('div');
@@ -461,7 +461,7 @@ function afficherProduits(categories) {
 
         const prodImgCard = document.createElement('img');
         prodImgCard.classList.add('img-card-produits');
-        prodImgCard.src = "./" + prod.image;
+        prodImgCard.src = prod.image;
 
         const prodContainerTitrePrix = document.createElement('div');
         prodContainerTitrePrix.classList.add('container-titre-prix');
