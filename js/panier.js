@@ -173,6 +173,7 @@ function afficherPanier() {
 
     const logoSupp = document.createElement('img');
     logoSupp.classList.add('logo-trash');
+    logoSupp.tabIndex = 0;
     logoSupp.src = './assets/trash.png';
     logoSupp.alt = 'Supprimer';
     logoSupp.addEventListener('click', () =>{
@@ -183,6 +184,12 @@ function afficherPanier() {
         console.log("Suppression annulée");
         }
     })
+    logoSupp.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") {
+          e.preventDefault();
+          logoSupp.click(); // Déclenche exactement le même comportement que le clic
+      }
+    });
 
 
     let titrePanier;

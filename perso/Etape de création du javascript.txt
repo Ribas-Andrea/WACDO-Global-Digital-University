@@ -468,3 +468,80 @@ flecheDroite.addEventListener('click', () => {
 
 
 
+
+
+// ******************************** ACCESSIBILITE *************************************
+
+
+La fonction TAB pour navigateurs (seulement les éléments cliquable) : 
+
+
+Les boutons a, button et form sont automatiquement detecter par la touche tab (pour le smalvoyants).
+Pour les autres éléments du site, il faut ajouter des éléments selon les cas : 
+
+Cas 1 : Si a, button, ou form : 
+Il doit y avoir un href obligatoire, sinon ajouter dans le html href="#"
+
+Cas 2 : Sil s'agit d'un autre élément fabriqué en html, il faut ajouter tabIndex ou tabIndex="0" dans le html
+
+Cas 3 : Si cet autre élément est générer en JavaScript : 
+
+1/ Après la déclaration et création de l'élément ajouter : 
+
+element.tabIndex = 0;
+
+2/ Après la fonction d'écoute au clic, faire une fonction d'écoute au clavier : 
+
+exemple 1 : 
+
+A/ Evènement au click : 
+
+    element.addEventListener('click', () => {
+
+        if (compteur < max) {
+            compteur++;
+            element.style.transform =`translateX(-${largeurBoisson() * compteur}px)`;
+        }
+    });
+
+B/ Evènement au clavier :
+
+    element.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+            e.preventDefault();
+            element.click(); // Déclenche exactement le même comportement que le clic
+        }
+    });
+
+exemple 2 : 
+
+A/ Evènement au click :
+
+    element.addEventListener('click', () => {
+        element.style.display = 'none';
+        element.innerHTML = '';
+    });
+
+B/ Evènement au clavier :
+
+    element.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+            e.preventDefault();
+            element.click(); // Déclenche exactement le même comportement que le clic
+        }
+    });
+
+
+
+Pour se positionner sur un élément à l'ouverture d'une popup : 
+
+* Si plusieurs step, mettre à chaque fin de step : 
+
+element.focus(); 
+
+
+* Si popup : 
+
+    element1.appendChild(element2);
+    element2.focus();
+    element2.appendChild(element3);

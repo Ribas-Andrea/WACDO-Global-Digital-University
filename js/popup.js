@@ -102,7 +102,6 @@ function afficherPopupMenus (categorieRecherchee){
 
       const addPopup = document.createElement ('section');
       addPopup.id = 'popup';
-      addPopup.tabIndex = 0;
 
       // Ajout du bouton retour : 
       // Evènement au click pour que lorsque je clique sur retour, je retourne au case précédent (step --) sans retourner avant la 1 qui n'existe pas donc strictement >;
@@ -322,8 +321,8 @@ console.log(step)
 
 
 
-            addPopup.appendChild(addContainerBtnValidation);
-            addContainerBtnValidation.appendChild(OpenbtnEtapeSuivante);
+      addPopup.appendChild(addContainerBtnValidation);
+      addContainerBtnValidation.appendChild(OpenbtnEtapeSuivante);
 
 
 
@@ -863,6 +862,11 @@ imgFlecheGaucheBoissons.focus(); // pour retourner sur la petite taille en arriv
 // Creation de la fonction pour afficher les popup par la section principale : 
 function afficherPopupBoissons (produitRecherche){
 
+// Pour vérifier ou se situe le focus : 
+//   document.addEventListener("focusin", () => {
+//     console.log(document.activeElement);
+// });
+
   localStorage.removeItem("memoireTaille");
   localStorage.removeItem("memoirePrix");
   localStorage.removeItem("memoireCompteur");
@@ -949,6 +953,7 @@ containerPopupBoissons.innerHTML = '';
 
     const addPopup = document.createElement ('section');
     addPopup.id = 'popup';
+    addPopup.tabIndex = 0;
 
 
     const addLogoCroix = document.createElement ('div');
@@ -956,6 +961,7 @@ containerPopupBoissons.innerHTML = '';
 
     const addImgLogoCroix = document.createElement ('img');
     addImgLogoCroix.id ='croix';
+    addImgLogoCroix.tabIndex = 0;
     addImgLogoCroix.src = './assets/supprimer.png';
     addImgLogoCroix.alt = 'Logo Croix';
 
@@ -969,7 +975,15 @@ containerPopupBoissons.innerHTML = '';
     localStorage.removeItem("memoireCompteur");
     });
 
+    addImgLogoCroix.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") {
+          e.preventDefault();
+          addImgLogoCroix.click(); // Déclenche exactement le même comportement que le clic
+      }
+  });
+
     containerPopupBoissons.appendChild(addPopup);
+    addPopup.focus();
     addPopup.appendChild(addLogoCroix);
     addLogoCroix.appendChild(addImgLogoCroix);
 
@@ -1008,6 +1022,7 @@ containerPopupBoissons.innerHTML = '';
 
     const addContainerPetiteTaille = document.createElement ('div');
     addContainerPetiteTaille.classList.add('container-taille');
+    addContainerPetiteTaille.tabIndex = 0;
         addContainerPetiteTaille.addEventListener("click", () => {
         console.log("clic petite taille");
         addContainerGrandeTaille.classList.remove('activeBorder');
@@ -1017,6 +1032,13 @@ containerPopupBoissons.innerHTML = '';
                 taille: "petite"
             }));
             localStorage.setItem("memoirePrix", boisson.prix);
+        });
+
+        addContainerPetiteTaille.addEventListener("keydown", (e) => {
+          if (e.key === "Enter") {
+              e.preventDefault();
+              addContainerPetiteTaille.click(); // Déclenche exactement le même comportement que le clic
+          }
         });
 
     const addDivParentImgPetiteTaille = document.createElement ('div');
@@ -1041,6 +1063,7 @@ containerPopupBoissons.innerHTML = '';
 
     const addContainerGrandeTaille = document.createElement ('div');
     addContainerGrandeTaille.classList.add('container-taille');
+    addContainerGrandeTaille.tabIndex = 0;
         addContainerGrandeTaille.addEventListener("click", () => {
         console.log("clic grande taille");
         addContainerPetiteTaille.classList.remove('activeBorder');
@@ -1051,6 +1074,13 @@ containerPopupBoissons.innerHTML = '';
             }));
             localStorage.setItem("memoirePrix", boisson.prix);
         });
+        addContainerGrandeTaille.addEventListener("keydown", (e) => {
+            if (e.key === "Enter") {
+                e.preventDefault();
+                addContainerGrandeTaille.click(); // Déclenche exactement le même comportement que le clic
+            }
+        });
+
 
 
     const addDivParentImgGrandeTaille = document.createElement ('div');
@@ -1122,6 +1152,7 @@ containerPopupBoissons.innerHTML = '';
       }
     });
 
+
     const valeurCompteur = document.createElement ('span');
     valeurCompteur.id = 'valeur-compteur';
     valeurCompteur.textContent='1';
@@ -1141,7 +1172,8 @@ containerPopupBoissons.innerHTML = '';
       valeurCompteur.textContent = compteur;
   // permet de changer la valeur du compteur au clic
     localStorage.setItem("memoireCompteur", compteur);
-    })
+    });
+
 
     addPopup.appendChild(addContainerParentCompteur);
 
@@ -1173,6 +1205,8 @@ containerPopupBoissons.innerHTML = '';
         compteur = 1;
         valeurCompteur.textContent = compteur;
     });
+
+
     const btnAjouter = document.createElement ('button');
     btnAjouter.id = 'btn-ajouter-commande';
     btnAjouter.textContent = "Ajouter à ma commande";
@@ -1190,6 +1224,8 @@ containerPopupBoissons.innerHTML = '';
 
     });
 
+
+
     addPopup.appendChild(addContainerBtnValidation);
     addContainerBtnValidation.appendChild(btnAnnuler);
     addContainerBtnValidation.appendChild(btnAjouter);
@@ -1199,7 +1235,7 @@ containerPopupBoissons.innerHTML = '';
 
 
 
-function afficherPopupValidation (){
+function afficherPopupArticles (){
 
 const validationChoix = document.getElementById('container-popup-articles');
 
@@ -1217,6 +1253,7 @@ validationChoix.innerHTML = '';
 
     const addPopup = document.createElement ('section');
     addPopup.id = 'popupValider';
+    addPopup.tabIndex = 0;
 
 
     const addLogoCroix = document.createElement ('div');
@@ -1224,6 +1261,7 @@ validationChoix.innerHTML = '';
 
     const addImgLogoCroix = document.createElement ('img');
     addImgLogoCroix.id ='croix';
+    addImgLogoCroix.tabIndex = 0;
     addImgLogoCroix.src = './assets/supprimer.png';
     addImgLogoCroix.alt = 'Logo Croix';
 
@@ -1232,9 +1270,16 @@ validationChoix.innerHTML = '';
     addImgLogoCroix.addEventListener('click', () => {
     validationChoix.style.display = 'none';
     validationChoix.innerHTML = '';
-});
+    });
+    addImgLogoCroix.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") {
+          e.preventDefault();
+          addImgLogoCroix.click(); // Déclenche exactement le même comportement que le clic
+      }
+    });
 
     validationChoix.appendChild(addPopup);
+    addPopup.focus();
     addPopup.appendChild(addLogoCroix);
     addLogoCroix.appendChild(addImgLogoCroix);
 
@@ -1267,7 +1312,9 @@ validationChoix.innerHTML = '';
 
 }
 
-function afficherPopupMessageSucces (){
+
+
+function afficherPopupMessageAPISucces (){
 
 const messageValidation = document.getElementById('succes-commande');
 const modeCommande = localStorage.getItem("mode");
@@ -1286,6 +1333,7 @@ messageValidation.innerHTML = '';
 
     const addPopup = document.createElement ('section');
     addPopup.id = 'popupValider';
+    addPopup.tabIndex = 0;
 
 
     const addLogoCroix = document.createElement ('div');
@@ -1293,6 +1341,7 @@ messageValidation.innerHTML = '';
 
     const addImgLogoCroix = document.createElement ('img');
     addImgLogoCroix.id ='croix';
+    addImgLogoCroix.tabIndex = 0;
     addImgLogoCroix.src = './assets/supprimer.png';
     addImgLogoCroix.alt = 'Logo Croix';
 
@@ -1301,9 +1350,16 @@ messageValidation.innerHTML = '';
     addImgLogoCroix.addEventListener('click', () => {
     messageValidation.style.display = 'none';
     messageValidation.innerHTML = '';
-});
+    });
+    addImgLogoCroix.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+            e.preventDefault();
+            addImgLogoCroix.click(); // Déclenche exactement le même comportement que le clic
+        }
+    });
 
     messageValidation.appendChild(addPopup);
+    addPopup.focus();
     addPopup.appendChild(addLogoCroix);
     addLogoCroix.appendChild(addImgLogoCroix);
 
@@ -1339,7 +1395,9 @@ messageValidation.innerHTML = '';
 
 }
 
-function afficherPopupMessageErreur (){
+
+
+function afficherPopupMessageAPIErreur (){
 
 const messageValidation = document.getElementById('succes-commande');
 const modeCommande = localStorage.getItem("mode");

@@ -393,7 +393,7 @@ function afficherProduits(categories) {
                     categories === "desserts" ||
                     categories === "sauces"){
             // Si je suis dans la catégorie des burgers
-              afficherPopupValidation();
+              afficherPopupArticles();
             // Je vais afficher la popup concernant le boutons de validation pour le panier
             }
             });
@@ -523,16 +523,16 @@ function afficherProduits(categories) {
 }
 
 
-function afficherMessageValidationCommande (){
+function afficherMessageAPIValidationCommande (){
   document.addEventListener("DOMContentLoaded", () => {
     if (sessionStorage.getItem("commandeValidee") === "true") {
         sessionStorage.removeItem("commandeValidee");
         // Afficher la popup
-        afficherPopupMessageSucces ()
+        afficherPopupMessageAPISucces ()
         // alert("Votre commande a été validée avec succès !");
     } else if(sessionStorage.getItem("commandeValidee") === "false") {
         sessionStorage.removeItem("commandeValidee");
-        afficherPopupMessageErreur ()
+        afficherPopupMessageAPIErreur ()
         // pour vérifier : aller dans l'inspecteur/application/sessionStorage/remplacer les donnees par commandeValidee puis false et recharger la page : la popup affiche bien le message d'erreur
     }
 });
@@ -544,7 +544,7 @@ function afficherMessageValidationCommande (){
 
 getDataCat();
 flecheNav ()
-afficherMessageValidationCommande ()
+afficherMessageAPIValidationCommande ()
 // Les fonctions (afficherDescription()) et (afficherProduits()) sont lancées directement dans la fonction principale getDataCat() grâce à la detection du clic de la nav bar
 
 

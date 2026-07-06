@@ -99,6 +99,18 @@ function afficherModePaiement() {
     });
   });
 
+  document.querySelectorAll(".form-type-paiement").forEach(label => {
+    label.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+
+            const input = document.getElementById(label.htmlFor);
+            input.click(); // coche le radio et déclenche "change"
+        }
+    });
+  });
+
+
 }
 
 
@@ -115,6 +127,9 @@ function validationCommande () {
     if (!cardSelected) {
         alert("Veuillez sélectionner un mode de paiement.");
         return;
+    }
+    if (!confirm("Êtes-vous sûr de vouloir valider votre commande ?")) {
+      return; // L'utilisateur annule, on arrête tout.
     }
     
 
@@ -152,84 +167,11 @@ function validationCommande () {
     const result = await response.json();
     console.log("Réponse API simulée :", result);
 
-     if (confirm('êtes-vous sûr de votre choix ?')){
-      sessionStorage.setItem("commandeValidee", "true");
-      window.location.href = 'menus.html';
-     }
+
+    sessionStorage.setItem("commandeValidee", "true");
+    window.location.href = 'menus.html';
+    
   })
 }
 
 validationCommande ()
-
-// function popupvalidationCommande (){
-// alert('Votre commande a bien été prise en compte !')
-// }
-
-
-// function afficherPopupValidation (){
-
-// const validationChoix = document.getElementById('container-popup-articles');
-
-// // on vérifie si containerPopup existe : 
-//   if (!validationChoix) {
-//     console.error('Conteneur popup introuvable');
-//     return;
-//     }
-
-// // pour enlever le display none de la popup
-// validationChoix.style.display = 'flex';
-// validationChoix.innerHTML = '';  
-// // enlève la popup de la nav
-
-
-//     const addPopup = document.createElement ('section');
-//     addPopup.id = 'popupValider';
-
-
-//     const addLogoCroix = document.createElement ('div');
-//     addLogoCroix.id ='img-logo-croix';
-
-//     const addImgLogoCroix = document.createElement ('img');
-//     addImgLogoCroix.id ='croix';
-//     addImgLogoCroix.src = './assets/supprimer.png';
-//     addImgLogoCroix.alt = 'Logo Croix';
-
-
-//     // pour fermer la popup avec la croix
-//     addImgLogoCroix.addEventListener('click', () => {
-//     validationChoix.style.display = 'none';
-//     validationChoix.innerHTML = '';
-// });
-
-//     validationChoix.appendChild(addPopup);
-//     addPopup.appendChild(addLogoCroix);
-//     addLogoCroix.appendChild(addImgLogoCroix);
-
-    
-// // Ajout phrase de confirmation d'ajout d'un article : 
-//       const containerDemandeValidation = document.createElement('div');
-//       const demandeValidation = document.createElement('p');
-//       const memoireArticle = localStorage.getItem("memoireArticle");
-//       demandeValidation.textContent = `Voulez-vous ajouter  ${memoireArticle} à votre panier ?`;
-//       demandeValidation.style.paddingBottom = '20px';
-
-
-
-//   // Ajout du bouton de validation : 
-//       const btnValidation = document.createElement('button');
-//       btnValidation.id = 'btn-etape-suivante';
-//       btnValidation.textContent = 'Valider';
-//       btnValidation.addEventListener('click', () => {
-//         ajouterArticlePanier();
-//         validationChoix.style.display = 'none';
-//         validationChoix.innerHTML = '';
-//       })
-
-//       containerDemandeValidation.appendChild(demandeValidation);
-//       containerDemandeValidation.appendChild(btnValidation);
-
-//       addPopup.appendChild(containerDemandeValidation);
-
-
-
-// }
