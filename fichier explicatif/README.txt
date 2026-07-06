@@ -74,7 +74,9 @@ Etapes avancement github :
 61/ Suite fonctionnement avec TAB popupBoissons + popupArticles + page paiements + popupValidationAPI + modification envoie API pour avoir le message de confirmation avant l'envoie des données
 62/ Test modification chemin d'accès images du fichier JSON categories pour test mobile
 63/ Test modification chemin d'accès images du fichier JSON produits pour test mobile (partie menus)
- A faire : 
+64/ Test confirmé : Modification des chemin d'accès des photos des autres produits du ficher JSON produits
+
+A faire : 
 
 I/ Séquence 6 : 
   1) Continuer la manipulation avec TAB : Finie
