@@ -4,79 +4,79 @@
             "id": 1,
             "nom":"Menu Le 280",
             "prix": 8.80,
-            "image": "../assets/burgers/280.png"
+            "image": "assets/burgers/280.png"
         },
         {
             "id": 2,
             "nom":"Menu Big Tasty",
             "prix": 10.60,
-            "image": "../assets/burgers/BIG_TASTY_1_VIANDE.png"
+            "image": "assets/burgers/BIG_TASTY_1_VIANDE.png"
         },
         {
             "id": 3,
             "nom":"Menu Big Tasty Bacon",
             "prix": 10.90,
-            "image": "../assets/burgers/BIG_TASTY_BACON_1_VIANDE.png"
+            "image": "assets/burgers/BIG_TASTY_BACON_1_VIANDE.png"
         },
         {
             "id": 4,
             "nom":"Menu Big Mac",
             "prix": 8.00,
-            "image": "../assets/burgers/BIGMAC.png"
+            "image": "assets/burgers/BIGMAC.png"
         },
         {
             "id": 5,
             "nom":"Menu CBO",
             "prix": 10.90,
-            "image": "../assets/burgers/CBO.png"
+            "image": "assets/burgers/CBO.png"
         },
         {
             "id": 6,
             "nom":"Menu MC Chicken",
             "prix": 9.30,
-            "image": "../assets/burgers/MCCHICKEN.png"
+            "image": "assets/burgers/MCCHICKEN.png"
         },
         {
             "id": 7,
             "nom":"Menu MC Crispy",
             "prix": 7.20,
-            "image": "../assets/burgers/MCCRISPY.png"
+            "image": "assets/burgers/MCCRISPY.png"
         },
         {
             "id": 8,
             "nom":"Menu MC Fish",
             "prix": 7.20,
-            "image": "../assets/burgers/MCFISH.png"
+            "image": "assets/burgers/MCFISH.png"
         },
         {
             "id": 9,
             "nom":"Menu Royal Bacon",
             "prix": 7.05,
-            "image": "../assets/burgers/ROYALBACON.png"
+            "image": "assets/burgers/ROYALBACON.png"
         },
         {
             "id": 10,
             "nom":"Menu Royal Cheese",
             "prix": 6.40,
-            "image": "../assets/burgers/ROYALCHEESE.png"
+            "image": "assets/burgers/ROYALCHEESE.png"
         },
         {
             "id": 11,
             "nom":"Menu Royal Deluxe",
             "prix": 7.40,
-            "image": "../assets/burgers/ROYALDELUXE.png"
+            "image": "assets/burgers/ROYALDELUXE.png"
         },
         {
             "id": 12,
             "nom":"Menu Signature BBQ Beef 2 viandes",
             "prix": 13.50,
-            "image": "../assets/burgers/SIGNATURE_BBQ_BEEF_(2_VIANDES).png"
+            "image": "assets/burgers/SIGNATURE_BBQ_BEEF_(2_VIANDES).png"
         },
         {
             "id": 13,
             "nom":"Menu Signature Beef BBQ",
             "prix": 11.90,
-            "image": "../assets/burgers/SIGNATURE_BEEF_BBQ_BURGER_(1_VIANDE).png"
+            "image": "assets/burgers/SIGNATURE_BEEF_BBQ_BURGER_(1_VIANDE).png"
         }
 
     ],
