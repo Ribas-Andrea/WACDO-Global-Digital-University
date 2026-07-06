@@ -475,7 +475,6 @@ function afficherProduits(categories) {
         const prodPrix = document.createElement('span');
         prodPrix.classList.add('prix-produit');
         prodPrix.innerHTML = `${prod.prix.toFixed(2)}&nbsp;€`; // toFixed pour ajouter une 2eme décimale
-        prodPrix.style.paddingTop = '15px';
 
         // <div id="container-zone-choix"> prodList
         //   <div id="container-zone-choix"> </div> prodContainerZoneChoix

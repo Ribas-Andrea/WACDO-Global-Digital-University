@@ -77,6 +77,7 @@ Etapes avancement github :
 64/ Ajout d'une fonction de fermeture des popups pour adaptation sur firefox + verification fonctionnalité edge ok
 65/ Test images sur mobile
 66/ Annul test mobile
+67/ Ajustement du container zone choix en center pour mobile
 
 A faire : 
 

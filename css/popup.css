@@ -607,13 +607,7 @@ h1 {
   #description-produits {
     padding-bottom: 0;
   } 
-
-  #container-zone-choix {
-    justify-content: flex-start;
-    margin-left: 10px;
-    margin-right: 10px;
-  }
-
+  
   .titre-img-nav {
     font-size: 7px;
   }
