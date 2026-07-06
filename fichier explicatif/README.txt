@@ -72,7 +72,8 @@ Etapes avancement github :
 59/ Résolution texte avec la commande &nbsp; ou \u00A0 pour éviter que les deux point aillent à la ligne seuls
 60/ Résolution déplacement des card avec les flèches en fonction du responsive + début de vérification du fonctionnement avec tab (page menu avec popup menus)
 61/ Suite fonctionnement avec TAB popupBoissons + popupArticles + page paiements + popupValidationAPI + modification envoie API pour avoir le message de confirmation avant l'envoie des données
-62/ A faire : 
+62/ Test modification chemin d'accès images du fichier JSON categories pour test mobile
+63/ A faire : 
 
 I/ Séquence 6 : 
   1) Continuer la manipulation avec TAB : Finie
