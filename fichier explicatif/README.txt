@@ -81,11 +81,8 @@ Etapes avancement github :
 68/ Verification W3c CSS + HTMl + corrections + enregistrement  avec prettier
 69/ Installation extension wave + modification accessibilité page index + page menus + debut page paiement
 70/ Fin de l'accessibilité avec wave + repassage validator W3C
+71/ Modification responsive de la page chevalet pour le mode paysage mobile
 
 A faire : 
 
-I/ Séquence 6 : 
-  - Modifier les erreurs qui s'affiche avec l'extension wave de chrome
-  - Vérifier toutes les fonctionnalitées (pc + mobile) sur plusieurs navigateurs + vérification si erreur dans la console
-
-II/Séquence 7 : 
+Séquence 7

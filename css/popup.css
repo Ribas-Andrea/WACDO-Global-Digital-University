@@ -1,3 +1,4 @@
+
 #container-popup-menus {
   display: none;
 
@@ -191,6 +192,14 @@ h1 {
   display: flex;
   align-items: center;
   gap: clamp(5px, 2vw, 30px);
+  /*
+  clamp : clamp(min, valeur-préférée, max)
+  ex : 
+width: clamp(280px, 35vw, 550px);
+280px → la valeur minimale. La largeur ne descendra jamais en dessous de 280px, même sur un tout petit écran.
+35vw → la valeur préférée, celle que le navigateur essaie d'utiliser en priorité. vw = "viewport width", donc 35vw = 35% de la largeur de la fenêtre. C'est cette valeur qui rend la largeur fluide : elle change en continu quand tu redimensionnes l'écran.
+550px → la valeur maximale. La largeur ne dépassera jamais 550px, même sur un écran très large.
+  */
   width: 100%;
 }
 
