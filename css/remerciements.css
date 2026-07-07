@@ -4,13 +4,13 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  width: 43%; /* 698px*/
+  width: 43%;
   background-color: white;
   border-radius: 16px;
   box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.25);
   padding: 32px;
   position: absolute;
-  bottom: 32%; /* distance du bas 300px */
+  bottom: 32%;
   margin-left: 29%;
 }
 
@@ -53,13 +53,11 @@ h1 {
 
 /* --------------------------------------------- Responsive --------------------------------------------- */
 
-
 /* *********************************************************
    Tablette + petits écrans
 ************************************************************/
 
 @media (min-width: 979px) and (max-width: 1420px) {
-
   #container-menu-remerciements {
     width: 50%;
     padding: 24px;
@@ -89,13 +87,11 @@ h1 {
   }
 }
 
-
 /* *********************************************************
    Mobile + tablette portrait
 ************************************************************/
 
 @media (max-width: 978px) {
-
   #container-menu-remerciements {
     width: 55%;
     max-height: 85vh;
@@ -134,13 +130,11 @@ h1 {
   }
 }
 
-
 /* *********************************************************
    Petit mobile
 ************************************************************/
 
 @media (max-width: 480px) {
-
   #container-menu-remerciements {
     width: 65%;
     padding: 12px;
@@ -178,10 +172,8 @@ h1 {
 
 /* Correction fond écran mobile paysage 915px */
 @media (max-width: 915px) and (orientation: landscape) {
-
   body {
     background-position: center center;
     overflow-x: hidden;
   }
-
 }

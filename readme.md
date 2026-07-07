@@ -160,7 +160,7 @@ http://localhost:5500/data/categories.json
 
 L'application est hébergée avec **GitHub Pages**.
 
-**Version en ligne :** https://ribas-andrea.github.io/WACDO-Global-Digital-University/menus.html
+**Version en ligne :** https://ribas-andrea.github.io/WACDO-Global-Digital-University/index.html
 
 
 ---

@@ -9,14 +9,11 @@ function afficherNumeroCommande() {
         Votre Commande ${mode} n° ${numeroCommande} du ${new Date().toLocaleDateString('fr-FR')}&nbsp;:
       </h1>
   `;
-
-  // console.log('Mode :', numeroCommande);
 }
 afficherNumeroCommande();
 
 function afficherPanierPaiement() {
   const affichagePanier = document.querySelector('.panier');
-
   const panier = JSON.parse(localStorage.getItem('panier')) || [];
   const prixTotal = localStorage.getItem('memoirePrixTotal') || '0.00';
 
@@ -41,7 +38,7 @@ function afficherPanierPaiement() {
 
   panier.forEach((produit) => {
     let nom = '';
-    let nomBurger = (produit.type?.burger || '').replace('Menu ', ''); // permet d'enlever le mot menu de chaque titre de menu du fichier json
+    let nomBurger = (produit.type?.burger || '').replace('Menu ', '');
 
     if (produit.typeElement === 'menu') {
       nom = `Menu ${produit.type.menu} ${nomBurger}`;
@@ -61,7 +58,7 @@ function afficherPanierPaiement() {
             <p class="prix-article">${(produit.quantite * produit.type.prix).toFixed(2)}&nbsp;€</p>
         </div>
     </div>
-  `;
+    `;
   });
 }
 
@@ -72,13 +69,10 @@ function afficherModePaiement() {
     input.addEventListener('change', (e) => {
       localStorage.setItem('memoireModePaiement', e.target.value);
       console.log('STOCKÉ =', e.target);
-      // boucle pour rtirer la bordure partout ou elle est utilisée => parcourrir les éléments qui ont la classe choixRglt (sur chaque élément je retire la class selected)
-      // Enlever la bordure de tous les labels
       document.querySelectorAll('.form-type-paiement').forEach((label) => {
         label.classList.remove('activeBorder');
       });
 
-      // Ajouter la bordure au label correspondant
       const label = document.querySelector(`label[for="${e.target.id}"]`);
       label.classList.add('activeBorder');
     });
@@ -90,7 +84,7 @@ function afficherModePaiement() {
         e.preventDefault();
 
         const input = document.getElementById(label.htmlFor);
-        input.click(); // coche le radio et déclenche "change"
+        input.click();
       }
     });
   });
@@ -109,10 +103,9 @@ function validationCommande() {
       return;
     }
     if (!confirm('Êtes-vous sûr de vouloir valider votre commande ?')) {
-      return; // L'utilisateur annule, on arrête tout.
+      return;
     }
 
-    // récupération des données
     const data = {
       modePaiement: localStorage.getItem('memoireModePaiement'),
       modeCommande: localStorage.getItem('mode'),
@@ -121,11 +114,10 @@ function validationCommande() {
 
     console.log('Envoi des données :', data);
 
-    // Sauvegarde locale
     localStorage.setItem('commande', JSON.stringify(data));
 
     console.log('AVANT FETCH');
-    // Déclaration fetch pour envoie fausse API :
+
     let response;
 
     try {
@@ -135,7 +127,6 @@ function validationCommande() {
         body: JSON.stringify(data)
       });
 
-      // cas où fetch répond mais pas exploitable
       if (!response || !response.ok) {
         throw new Error('Réponse API invalide');
       }

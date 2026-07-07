@@ -1,12 +1,8 @@
 /* --------------------------------------------- Menu chevalet --------------------------------------------- */
 
-
 *, *::before, *::after {
   box-sizing: border-box;
-  /* Evite tout débordement */
 }
-
-
 
 #container-menu-chevalet {
   display: flex;
@@ -194,6 +190,7 @@ form label .input-numero-chevalet {
     font-size: clamp(10px, 2vh, 14px);
   }
 }
+
 /* *********************************************************
    3. Mobile portrait (tous formats)
 ************************************************************/

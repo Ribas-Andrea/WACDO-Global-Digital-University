@@ -1,7 +1,6 @@
 function choixLieu() {
   const btnChoixLieuSurPlace = document.querySelector('.btn-choix-lieu-sur-place');
   const btnChoixLieuEmporter = document.querySelector('.btn-choix-lieu-emporter');
-  // Attention si on met querySelectorAll, il faudra un forEach car il sert à parcourir plusieurs éléments d'une même class
 
   if (!btnChoixLieuSurPlace || !btnChoixLieuEmporter) {
     console.error('Boutons introuvables');

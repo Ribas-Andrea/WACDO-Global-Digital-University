@@ -17,32 +17,34 @@
             <h2>Voici le détail de votre panier&nbsp;:</h2>
           </div>
         </div>
-        
-            <form class="container-cb" action="#">
-              <fieldset >
 
-              <legend>Veuillez sélectionner un mode de paiement&nbsp;:</legend>
+        <form class="container-cb" action="#">
+          <fieldset>
+            <legend>Veuillez sélectionner un mode de paiement&nbsp;:</legend>
 
-              <div class="choix-cb">
-                <input type="radio" class="choixRglt" id="carteBancaire" name="paiement" value="carte bancaire" />
-                <label class="form-type-paiement" for="carteBancaire" tabindex="0"> <img src="./assets/paiements/cb.jpg" alt="moyen de paiement cb" width="40" />Carte Bancaire </label>
+            <div class="choix-cb">
+              <input type="radio" class="choixRglt" id="carteBancaire" name="paiement" value="carte bancaire" />
+              <label class="form-type-paiement" for="carteBancaire" tabindex="0"> <img src="./assets/paiements/cb.jpg" alt="moyen de paiement cb" width="40" />Carte Bancaire </label>
 
-                <input type="radio" class="choixRglt" id="paypal" name="paiement" value="paypal" />
-                <label class="form-type-paiement" for="paypal" tabindex="0"><img src="./assets/paiements/paypal.jpg" alt="moyen de paiement paypal" width="40" />Paypal</label>
+              <input type="radio" class="choixRglt" id="paypal" name="paiement" value="paypal" />
+              <label class="form-type-paiement" for="paypal" tabindex="0"><img src="./assets/paiements/paypal.jpg" alt="moyen de paiement paypal" width="40" />Paypal</label>
 
-                <input type="radio" class="choixRglt" id="chqVacances" name="paiement" value="chèque vacances" />
-                <label class="form-type-paiement" for="chqVacances" tabindex="0"><img src="./assets/paiements/chqvac.jfif" alt="moyen de paiement chèque vacances" width="40" />Chèque-Vacances Connect</label>
+              <input type="radio" class="choixRglt" id="chqVacances" name="paiement" value="chèque vacances" />
+              <label class="form-type-paiement" for="chqVacances" tabindex="0"
+                ><img src="./assets/paiements/chqvac.jfif" alt="moyen de paiement chèque vacances" width="40" />Chèque-Vacances Connect</label
+              >
 
-                <input type="radio" class="choixRglt" id="titresRestaurant" name="paiement" value="titres restaurant" />
-                <label class="form-type-paiement" for="titresRestaurant" tabindex="0"><img src="./assets/paiements/titres.jfif" alt="moyen de paiement titres restaurants" width="40" />Titres-Restaurant</label>
-              </div>
+              <input type="radio" class="choixRglt" id="titresRestaurant" name="paiement" value="titres restaurant" />
+              <label class="form-type-paiement" for="titresRestaurant" tabindex="0"
+                ><img src="./assets/paiements/titres.jfif" alt="moyen de paiement titres restaurants" width="40" />Titres-Restaurant</label
+              >
+            </div>
 
-              <div class="container-btn-payer">
-                <button class="btn-paiement" type="submit">Payer</button>
-              </div>
-            </fieldset>
-          </form>
-            
+            <div class="container-btn-payer">
+              <button class="btn-paiement" type="submit">Payer</button>
+            </div>
+          </fieldset>
+        </form>
       </div>
     </div>
     <script type="module" src="./js/paiements.js"></script>

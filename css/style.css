@@ -9,7 +9,7 @@
 
 html,
 body {
-  overflow-x: hidden; /* évite la barre horizontale et cache ce qui dépasse */
+  overflow-x: hidden;
   background-color: white;
   height: 100%;
 }

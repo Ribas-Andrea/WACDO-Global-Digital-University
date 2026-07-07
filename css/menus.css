@@ -171,9 +171,7 @@ h1 {
   display: flex;
   width: 20%;
   background-color: #f1f1f1;
-  /* flex-direction: column; */
-  /* padding-right: 25px; */
-  position: sticky; /*permet de faire suivre le panier quand on descend en bas de page, il faut un top: 0 pour que cela fontionne*/
+  position: sticky;
   top: 0;
   height: 100%;
 }
@@ -189,7 +187,6 @@ h1 {
 }
 
 #container-panier {
-  /* padding-left: 25px; */
   padding: 0 10px;
   display: flex;
   flex: 1;
@@ -239,7 +236,6 @@ h1 {
 #container-articles-panier {
   width: 100%;
   flex: 1;
-  /* flex: 1 va prendre tout l'espace disponible entre le haut du panier et le bloc du bas. */
   overflow-y: auto;
   min-height: 0;
   max-height: 500px;
@@ -318,7 +314,6 @@ h1 {
   justify-content: space-around;
   padding-top: 25px;
   flex-shrink: 0;
-  /* Les boutons restent en bas visible dès qu'il y a trop d'article */
   padding-bottom: 25px;
 }
 
