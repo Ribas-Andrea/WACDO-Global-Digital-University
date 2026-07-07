@@ -147,7 +147,12 @@ Le projet a été testé afin de vérifier :
 * Validation **CSS** réalisée avec le validateur **W3C** (aucune erreur).
 * Les quelques avertissements restants concernent des titres générés dynamiquement par JavaScript après le chargement des données JSON.
 * Vérification de l'accessibilité (navigation clavier, attributs `alt`, labels de formulaires, structure sémantique).
+---
 
+## Accessibilité des ressources JSON via une URL locale
+
+http://localhost:5500/data/produits.json
+http://localhost:5500/data/categories.json
 
 ---
 
@@ -156,6 +161,7 @@ Le projet a été testé afin de vérifier :
 L'application est hébergée avec **GitHub Pages**.
 
 **Version en ligne :** https://ribas-andrea.github.io/WACDO-Global-Digital-University/menus.html
+
 
 ---
 
