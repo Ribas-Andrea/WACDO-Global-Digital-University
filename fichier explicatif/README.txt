@@ -82,6 +82,7 @@ Etapes avancement github :
 69/ Installation extension wave + modification accessibilité page index + page menus + debut page paiement
 70/ Fin de l'accessibilité avec wave + repassage validator W3C
 71/ Modification responsive de la page chevalet pour le mode paysage mobile
+72/ Mise à jour du fichier README
 
 A faire : 
 

@@ -1,40 +1,165 @@
-# Fichiers fournis
-Les assets (fichiers images) et la liste des produits ainsi que des catégories (au format json)
+# WACDO
 
-## Lien public vers le prototype figma
-https://www.figma.com/design/0qnd0pH4qryZqjzXcB4qjN/borne?node-id=97-775&t=SJ4QkHUyIRA5QSb0-1
+## Description du projet
+
+WACDO est une application Front-end simulant une borne de commande numérique pour un restaurant de restauration rapide.
+
+Ce projet a été réalisé dans le cadre d'une évaluation de développement Front-end. Il consiste à intégrer une maquette fournie et à développer une interface interactive permettant aux clients de composer, personnaliser et valider leur commande.
+
+L'application est responsive et s'adapte à différentes résolutions d'écran afin d'offrir une expérience utilisateur fluide sur les bornes numériques.
+
+**Maquette Figma :** [Lien vers le prototype](https://www.figma.com/design/0qnd0pH4qryZqjzXcB4qjN/borne?node-id=97-775&t=SJ4QkHUyIRA5QSb0-1)
+
+**Version en ligne :** [Voir la démo](https://ribas-andrea.github.io/WACDO-Global-Digital-University/menus.html)
+
+---
+
+## Fonctionnalités
+
+L'application permet de :
+
+* Choisir le mode de consommation (**Sur place** ou **À emporter**).
+* Charger dynamiquement les catégories, menus et produits depuis des fichiers JSON.
+* Naviguer entre les différentes catégories de produits.
+* Composer une commande avec des produits individuels ou des menus.
+* Personnaliser les menus (burger, accompagnement, boisson et sauce).
+* Gérer les différentes tailles des boissons et accompagnements avec mise à jour automatique du prix.
+* Ajouter des articles au panier.
+* Calculer automatiquement le montant total de la commande.
+* Saisir un numéro de chevalet pour les commandes sur place.
+* Valider la commande.
+* Simuler l'envoi des informations de commande au format JSON vers une API fictive.
+* Afficher une page de confirmation après validation.
+
+---
+
+## Fonctionnement — parcours utilisateur
+
+1. Choix du mode de consommation (Sur place ou À emporter).
+2. Chargement des catégories et produits depuis des fichiers JSON.
+3. Affichage dynamique des produits grâce à JavaScript.
+4. Sélection et personnalisation des produits ou menus.
+5. Ajout des articles au panier.
+6. Calcul automatique du montant de la commande.
+7. Validation de la commande avec saisie du numéro de chevalet si nécessaire.
+8. Envoi des données de la commande au format JSON vers une API fictive.
+9. Affichage d'une page de remerciement confirmant la prise en compte de la commande.
+
+---
+
+## Structure du projet
+
+```text
+WACDO/
+│
+├── assets/          # Images et ressources graphiques
+├── css/             # Feuilles de style
+├── data/            # Fichiers JSON (catégories, produits)
+├── js/              # Scripts JavaScript
+├── index.html
+├── menus.html
+├── chevalet.html
+├── paiements.html
+├── remerciements.html
+├── popup.html
+└── README.md
+```
+
+### Détail des pages HTML
+
+| Page | Rôle |
+|---|---|
+| `index.html` | Choix du mode de commande (sur place ou à emporter) |
+| `menus.html` | Affiche tous les articles disponibles et le panier |
+| `paiement.html` | Affiche le détail de la commande et le choix du mode de paiement |
+| `chevalet.html` | Permet à l'utilisateur de saisir un numéro de chevalet |
+| `remerciements.html` | Page de remerciement en fin de commande |
+| `popup.html` | Ancien fichier de construction des popups (CSS) — n'est plus utilisé |
+
+### Détail des scripts JavaScript
+
+* **`index.js`** — Gère la sélection entre "sur place" et "à emporter", génère un numéro de commande et enregistre les informations dans le `localStorage`.
+
+* **`menus.js`** — Cœur de la logique de commande :
+  * Sélection d'une catégorie avec défilement via des flèches (`flecheNav()`), qui déclenche l'ouverture de la popup correspondante (menus, boissons ou autres articles) et enregistre le choix dans le `localStorage`.
+  * Affichage des articles du panier selon les choix de l'utilisateur, avec mise à jour du `localStorage`.
+  * Gestion de l'abandon ou de la validation du panier, avec redirection vers `paiements.html`.
+  * Au retour de la page de paiement, affichage d'un message de succès ou d'échec de la commande, puis redirection vers `chevalet.html` si la commande est "sur place", ou vers `remerciements.html` si elle est "à emporter".
+
+* **`popup.js`** — Affiche dans `menus.html` les popups de sélection (menus, boissons, articles).
+
+* **`panier.js`** — Affiche le numéro de commande, l'ajout de chaque type de produit (menus, boissons, articles) et calcule le montant total du panier.
+
+* **`paiements.js`** — Récupère le panier depuis le `localStorage` et l'affiche sur `paiements.html` avec le numéro de commande, la date du jour et le mode de commande choisi. Gère le choix du mode de paiement et redirige vers `menus.html` après validation.
+
+* **`chevalet.js`** — Permet la saisie du numéro de chevalet (3 chiffres, un seul chiffre par champ) et sa validation.
+
+* **`remerciements.js`** — Permet de revenir à `index.html` pour lancer une nouvelle commande.
+
+### Autres dossiers
+
+* **`assets/`** — Regroupe toutes les images du site (illustrations, icônes, logo).
+* **`css/`** — Une feuille de style par page, plus un fichier `style.css` global.
+* **`data/`** — Fichiers `categories.json` et `produits.json` utilisés pour générer dynamiquement le contenu.
+
+---
+
+## Technologies utilisées
+
+* **HTML5** — structure sémantique des pages.
+* **CSS3** — mise en page, animations et responsive design.
+* **JavaScript (Vanilla JS)** — logique métier, manipulation du DOM et gestion des interactions.
+* **JSON** — stockage des données des catégories, menus et produits.
+* **AJAX (Fetch API)** — chargement dynamique des données JSON.
+* **LocalStorage / SessionStorage** — mémorisation temporaire des informations de commande.
+* **Google Fonts** — intégration de la police *Source Sans 3*.
+
+---
+
+## Installation
+
+### Exécution en local
+
+1. Cloner ou télécharger le projet.
+2. Ouvrir le dossier dans Visual Studio Code (ou un autre éditeur).
+3. Lancer le projet avec un serveur local (par exemple **Live Server**).
+
+> L'utilisation d'un serveur local est nécessaire afin de permettre le chargement des fichiers JSON via la Fetch API.
+
+---
+
+## Tests et validation
+
+Le projet a été testé afin de vérifier :
+
+* le chargement des fichiers JSON ;
+* l'affichage dynamique des catégories et des produits ;
+* la navigation entre les différentes catégories ;
+* la personnalisation des menus ;
+* la gestion du panier ;
+* le calcul automatique des prix ;
+* la validation de la commande ;
+* le responsive design sur différentes résolutions d'écran.
+
+### Validation technique
+
+* Validation **HTML** réalisée avec le validateur **W3C** (aucune erreur).
+* Validation **CSS** réalisée avec le validateur **W3C** (aucune erreur).
+* Les quelques avertissements restants concernent des titres générés dynamiquement par JavaScript après le chargement des données JSON.
+* Vérification de l'accessibilité (navigation clavier, attributs `alt`, labels de formulaires, structure sémantique).
 
 
-## Explication des fichiers
+---
 
-html : 
-* index : choix du mode de commande (surplace ou à emporter),
-* menus : affiche tout les articles et le panier,
-* paiement : affiche le détail de la commande et le choix du mode de paiement
-* chevalet : permet à l'utilisateur de remplir un numéro de chevalet
-* remerciement : page de remerciement 
-* popup : fichier qui ne sert plus  :a été utiliser pour la construction de la popup avec le css
+## Déploiement
 
-css : donne le style de chaque page
+L'application est hébergée avec **GitHub Pages**.
 
-js : 
-* index : permet la selection entre surplace ou à emporter, de donner un numéro de commande et de les enregistrer dans le local storage
-* menus : 
-  1/ permet de choisir une catégorie : avec défilement des catégorie avec les flèches (function flecheNav ()) : 
-      - si menus : popup menus + enregistrement dans le localStorage
-      - si boissons : popup boissons + enregistrement dans le localStorage
-      - si autres articles : popup articles + enregistrement dans le localStorage
-  2/ permet d'afficher les articles dans le panier en fonctions du choix de l'utilisateur + enregistrement dans le localStorage
-  3/ permet l'abandon ou la validation du panier + enregistrement dans le localStorage + redirection sur la page de paiements.html
-  4/ Après avoir été sur la page de paiement qui a retourné sur cette page : il y a un message de validation de commande : succès ou echec
-* popup : permet d'afficher dans la page menus.html les poppups menus, boissons et articles cités précédements
-* panier : permet de montrer le numéro de commande + l'ajout de chaque type de produits (menus, boissons, articles) et l'affichage correct de ceux-ci avec le calcul du montant total du panier.
-* paiements : permet de reprendre le panier du localStorage et de l'afficher la page paiements.html avec le numéro de commande (de la page index.html) 
-avec la date du jour et le mode de commande. Permet aussi à l'utilisateur de faire un choix de mode de paiement et de cliquer sur payer et avoir un renvoie 
-vers la page menus.html
-* chevalet : permet à l'utilisateur de remlir le uméro de chevalet  :seulement 3 chiffres et pas autres chose et un seul chiffre par input + bouton de validation
-* remerciements : permet de revenir à la page index pour faire une nouvelle commande
+**Version en ligne :** https://ribas-andrea.github.io/WACDO-Global-Digital-University/menus.html
 
-assets : regroupe toutes les images du site
+---
 
-data  :regroupe tous les fichiers json utilisés
+
+## Auteur
+
+Projet réalisé par **Andrea Ribas** dans le cadre de la certification **Développeur web Node option Angular** à **Global Digital University**.
