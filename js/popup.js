@@ -199,6 +199,7 @@ function afficherPopupMenus(categorieRecherchee) {
       addContainerGrandeTaille.tabIndex = 0;
 
       const addDivParentImgGrandeTaille = document.createElement('div');
+      addDivParentImgGrandeTaille.classList.add('container-grande-taille');
 
       const imgGrandeTaille = document.createElement('img');
       imgGrandeTaille.id = 'img-grande-taille';
@@ -344,8 +345,6 @@ function afficherPopupMenus(categorieRecherchee) {
             texteChoixGrandeTaille.textContent = 'Potatoes';
             imgGrandeTaille.src = './assets/frites/GRANDE_POTATOES.png';
             imgGrandeTaille.alt = 'image grand potatoes'
-            imgGrandeTaille.style.width = '100%';
-            imgGrandeTaille.style.height = '100%';
             localStorage.setItem('memoireAccompagnement', 'Potatoes');
           }
         });
@@ -425,8 +424,6 @@ function afficherPopupMenus(categorieRecherchee) {
             texteChoixGrandeTaille.textContent = 'Potatoes';
             imgGrandeTaille.src = './assets/frites/GRANDE_POTATOES.png';
             imgGrandeTaille.alt ='image grande potatoes'
-            imgGrandeTaille.style.width = '100%';
-            imgGrandeTaille.style.height = '100%';
 
             gererChoixPetiteTaille();
             gererChoixGrandeTaille();
@@ -638,7 +635,7 @@ function afficherPopupMenus(categorieRecherchee) {
 
             // Modification du titre et de la description
             titrePopup.textContent = 'Choisissez votre sauce';
-            descriptionPopup.textContent = 'Une sauce ?';
+            descriptionPopup.innerHTML = 'Douce, relevée ou gourmande… laquelle sera votre coup de cœur&nbsp;?';
 
             fetch('./data/produits.json')
               .then((response) => response.json())

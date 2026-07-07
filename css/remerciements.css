@@ -52,59 +52,136 @@ h1 {
 }
 
 /* --------------------------------------------- Responsive --------------------------------------------- */
-@media (max-width: 1420px) {
-  #texte-remerciements {
-    font-size: 15px;
-  }
-  h1 {
-    font-size: 25px;
-  }
 
-  #btn-nouvelle-commande {
-    font-size: 15px;
-  }
-}
 
-@media (max-width: 1069px) {
+/* *********************************************************
+   Tablette + petits écrans
+************************************************************/
+
+@media (min-width: 979px) and (max-width: 1420px) {
+
   #container-menu-remerciements {
-    width: 55%;
-    bottom: 40%;
+    width: 50%;
+    padding: 24px;
+    bottom: 30%;
     margin-left: 25%;
   }
 
-  #btn-nouvelle-commande {
-    top: 70%;
-  }
-}
-
-@media (max-width: 700px) {
   #texte-remerciements {
-    font-size: 10px;
-    padding-top: 30px;
+    font-size: 18px;
+    padding-top: 35px;
   }
+
   h1 {
-    font-size: 20px;
+    font-size: 30px;
   }
+
   #img-a-bientot {
-    width: 40%;
-    padding-top: 40px;
+    width: 35%;
+    padding-top: 50px;
   }
 
   #btn-nouvelle-commande {
-    font-size: 10px;
+    font-size: 18px;
+    padding: 15px 30px;
+    top: 80%;
+    left: 35%;
   }
 }
 
-@media (max-width: 440px) {
-  #btn-nouvelle-commande {
-    padding: 20px 30px;
-  }
+
+/* *********************************************************
+   Mobile + tablette portrait
+************************************************************/
+
+@media (max-width: 978px) {
 
   #container-menu-remerciements {
-    bottom: 55%;
+    width: 55%;
+    max-height: 85vh;
+    padding: 15px;
+    bottom: 50%;
+    margin-left: 22.5%;
+    border-radius: 12px;
+  }
+
+  #image-remerciements img {
+    width: 50%;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  #texte-remerciements {
+    font-size: 13px;
+    padding-top: 20px;
+    width: 100%;
+  }
+
+  #img-a-bientot {
+    width: 35%;
+    padding-top: 25px;
   }
 
   #btn-nouvelle-commande {
+    font-size: 13px;
+    padding: 10px 20px;
+    right: auto;
+    align-self: center;
+    margin-top: 15px;
     top: 55%;
   }
+}
+
+
+/* *********************************************************
+   Petit mobile
+************************************************************/
+
+@media (max-width: 480px) {
+
+  #container-menu-remerciements {
+    width: 65%;
+    padding: 12px;
+    bottom: 70%;
+    margin-left: 17.5%;
+    border-radius: 10px;
+  }
+
+  #image-remerciements img {
+    width: 45%;
+  }
+
+  h1 {
+    font-size: 16px;
+  }
+
+  #texte-remerciements {
+    font-size: 9px;
+    padding-top: 15px;
+  }
+
+  #img-a-bientot {
+    width: 40%;
+    padding-top: 15px;
+  }
+
+  #btn-nouvelle-commande {
+    font-size: 9px;
+    padding: 8px 15px;
+    margin-top: 10px;
+    top: 33%;
+    left: 40%;
+  }
+}
+
+/* Correction fond écran mobile paysage 915px */
+@media (max-width: 915px) and (orientation: landscape) {
+
+  body {
+    background-position: center center;
+    overflow-x: hidden;
+  }
+
 }

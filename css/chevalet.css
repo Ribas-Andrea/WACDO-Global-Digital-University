@@ -4,15 +4,16 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  width: 42%;
+  width: clamp(280px, 35vw, 550px);
   background-color: white;
   border-radius: 16px;
   box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.25);
-  padding: 32px;
+  padding: clamp(12px, 2.5vw, 32px);
   position: absolute;
-  bottom: 6%;
-  z-index: 2; /*image devant le fond d'écran*/
-  margin-left: 29%;
+  top: 6%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
 }
 
 #container-img-chevalet {
@@ -22,6 +23,12 @@
   align-items: center;
 }
 
+#container-img-chevalet img {
+  width: auto;
+  height: clamp(50px, 12vw, 130px);
+  object-fit: contain;
+}
+
 #menu-chevalet-titre-p {
   display: flex;
   flex-direction: column;
@@ -29,13 +36,13 @@
 
 h1 {
   font-weight: 700;
-  font-size: 42px;
+  font-size: clamp(18px, 3.2vw, 42px);
 }
 
 #texte-chevalet {
   font-weight: 700;
-  font-size: 26px;
-  padding-top: 45px;
+  font-size: clamp(11px, 1.8vw, 26px);
+  padding-top: clamp(10px, 3vw, 45px);
   width: 80%;
 }
 
@@ -50,6 +57,19 @@ form label .input-numero-chevalet {
   gap: 15px;
 }
 
+
+.cache-label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 #form-numero-chevalet {
   display: flex;
   justify-content: space-around;
@@ -59,13 +79,13 @@ form label .input-numero-chevalet {
 }
 
 .input-numero-chevalet {
-  padding-top: 30px;
-  padding-bottom: 30px;
-  font-size: 96px;
+  padding-top: clamp(5px, 2vw, 30px);
+  padding-bottom: clamp(5px, 2vw, 30px);
+  font-size: clamp(20px, 6vw, 96px);
   font-weight: 700;
   text-align: center;
   border: none;
-  border-bottom: 15px solid #d9d9d9;
+  border-bottom: clamp(4px, 1vw, 15px) solid #d9d9d9;
   width: 30%;
 }
 
@@ -80,137 +100,97 @@ form label .input-numero-chevalet {
 
 .btn-chevalet {
   background-color: #ffc836;
-  padding: 16px 32px;
+  padding: clamp(6px, 1.2vw, 16px) clamp(12px, 2.5vw, 32px);
   border-radius: 8px;
   font-weight: 700;
-  font-size: 18px;
+  font-size: clamp(10px, 1.3vw, 18px);
   border: none;
   cursor: pointer;
 }
 
 /* --------------------------------------------- Responsive --------------------------------------------- */
-@media (max-width: 1314px) {
-  #texte-chevalet {
-    font-size: 20px;
-  }
-  h1 {
-    font-size: 30px;
-  }
 
+
+
+/* *********************************************************
+   1. Tablettes + petits écrans paysage
+************************************************************/
+
+
+
+@media (min-width: 979px) and (max-width: 1314px) {
   #container-menu-chevalet {
-    padding: 18px;
-    bottom: 7.5%;
-    height: auto;
-  }
-
-  #texte-chevalet {
-    padding-top: 30px;
-  }
-
-  .input-numero-chevalet {
-    font-size: 50px;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    top: 8%;
   }
 
   #form-numero-chevalet {
     padding-top: 10px;
     padding-bottom: 45px;
   }
-
-  .btn-chevalet {
-    padding: 10px 20px;
-  }
 }
 
-@media (max-width: 978px) {
+/* *********************************************************
+   2. Mobile paysage + tablette portrait
+************************************************************/
+
+
+@media (max-width: 978px) and (orientation: landscape) {
   #container-menu-chevalet {
-    width: 35%;
-    bottom: 20.5%;
-    margin-left: 37%;
-  }
-  h1 {
-    font-size: 25px;
+    max-height: 85vh;
+    top: 15%;
   }
 
-  #texte-chevalet {
-    font-size: 15px;
-  }
-
-  .input-numero-chevalet {
-    font-size: 30px;
-    padding-top: 15px;
+  #form-numero-chevalet {
+    padding-top: 5px;
     padding-bottom: 15px;
-    border-bottom: 8px solid #d9d9d9;
+    gap: 10px;
   }
 
-  .btn-chevalet {
-    font-size: 14px;
-  }
-
-  #container-img-chevalet img {
-    width: 80%;
-  }
-}
-
-@media (max-width: 682px) {
-  #container-menu-chevalet {
-    bottom: 33.5%;
-  }
-
-  #container-img-chevalet img {
-    width: 70%;
-  }
-
-  h1 {
-    font-size: 16px;
-  }
-
-  #texte-chevalet {
-    font-size: 8px;
-    padding-top: 20px;
+  form label .input-numero-chevalet {
+    justify-content: center;
+    padding-left: 5px;
+    padding-right: 5px;
+    gap: 8px;
   }
 
   .input-numero-chevalet {
-    font-size: 20px;
-    padding-top: 8px;
-    padding-bottom: 8px;
-    border-bottom: 5px solid #d9d9d9;
+    width: 15%;
   }
 
-  .btn-chevalet {
-    font-size: 10px;
+  #form-btn {
+    padding-top: 15px;
   }
 }
 
-@media (max-width: 415px) {
+/* *********************************************************
+   3. Mobile portrait (tous formats)
+************************************************************/
+
+
+@media (max-width: 978px) and (orientation: portrait) {
   #container-menu-chevalet {
-    bottom: 30.5%;
-    width: 50%;
-    margin-left: 30%;
+    max-height: 85vh;
+    top: 20%;
   }
 
-  #container-img-chevalet img {
-    width: 60%;
+  #form-numero-chevalet {
+    padding-top: 0;
+    padding-bottom: 10px;
+    gap: 8px;
   }
 
-  h1 {
-    font-size: 14px;
-  }
-
-  #texte-chevalet {
-    font-size: 8px;
-    padding-top: 18px;
+  form label .input-numero-chevalet {
+    justify-content: center;
+    padding-left: 5px;
+    padding-right: 5px;
+    gap: 5px;
   }
 
   .input-numero-chevalet {
-    font-size: 18px;
-    padding-top: 8px;
-    padding-bottom: 8px;
-    border-bottom: 5px solid #d9d9d9;
+    width: 15%;
   }
 
-  .btn-chevalet {
-    font-size: 8px;
+  #form-btn {
+    padding-top: 12px;
   }
 }

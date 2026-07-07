@@ -85,6 +85,17 @@ h4 {
 
 /* -------------------------------------------------------------------------- Partie paiement --------------------------------------------------------------------------------- */
 
+.container-cb fieldset {
+  border: none;
+  padding: 5px;
+  margin: 5px;
+}
+
+.container-cb legend, h2 {
+  font-size: 24px;
+  font-weight: 700;
+}
+
 .form-type-paiement {
   display: inline-flex;
   flex-direction: row;
@@ -98,7 +109,8 @@ h4 {
 }
 
 input {
-  display: none;
+  position: absolute;
+  opacity: 0;
 }
 
 .choix-cb {
@@ -172,7 +184,7 @@ input {
     font-size: 20px;
   }
 
-  h2 {
+  .container-cb legend, h2 {
     font-size: 16px;
   }
 
@@ -224,7 +236,7 @@ input {
     font-size: 16px;
   }
 
-  h2 {
+  .container-cb legend, h2 {
     font-size: 12px;
   }
 
@@ -256,7 +268,7 @@ input {
     font-size: 16px;
   }
 
-  h2 {
+  .container-cb legend, h2 {
     font-size: 12px;
   }
 

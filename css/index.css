@@ -5,7 +5,7 @@
   flex-direction: column;
   justify-content: space-around;
   width: 45%;
-  height: 65%;
+  height: 60%;
   background-color: white;
   border-radius: 16px;
   box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.25);
@@ -83,16 +83,24 @@ h1 {
 .activeBorder {
   border: 4px solid #ffc400;
 }
-
 /* --------------------------------------------- Responsive --------------------------------------------- */
 
-@media (max-width: 1875px) {
+/* *********************************************************
+   Tablette / petit écran paysage
+************************************************************/
+
+@media screen and (max-width: 1024px) and (orientation: landscape) {
+
   #fond-ecran {
     width: 100%;
+    top: 0;
   }
 
   #container-menu-accueil {
+    width: 55%;
     height: auto;
+    padding: 25px;
+    margin-left: 22%;
   }
 
   h1 {
@@ -101,17 +109,28 @@ h1 {
 
   #question-choix-lieu {
     font-size: 20px;
+    padding-top: 30px;
   }
 
   .choix-lieu-sur-place,
   .choix-lieu-emporter {
     font-size: 20px;
   }
+
 }
 
-@media (max-width: 915px) {
+/* *********************************************************
+   Tablette / mobile portrait
+************************************************************/
+
+@media screen and (max-width: 768px) and (orientation: portrait) {
+
   #container-menu-accueil {
+    width: 70%;
     height: auto;
+    padding: 20px;
+    margin-left: 15%;
+    top: 15%;
   }
 
   h1 {
@@ -120,60 +139,43 @@ h1 {
 
   #question-choix-lieu {
     font-size: 15px;
-    padding-top: 30px;
+    padding-top: 25px;
   }
 
   .choix-lieu-sur-place,
   .choix-lieu-emporter {
     font-size: 15px;
   }
+
 }
 
-@media (max-width: 722px) {
-  #fond-ecran {
-    top: 0%;
-  }
+/* *********************************************************
+   Petit mobile portrait
+************************************************************/
+
+@media screen and (max-width: 540px) and (orientation: portrait) {
 
   #container-menu-accueil {
-    height: auto;
-  }
-
-  h1 {
-    font-size: 20px;
-  }
-
-  #question-choix-lieu {
-    font-size: 10px;
-  }
-
-  .choix-lieu-sur-place,
-  .choix-lieu-emporter {
-    font-size: 10px;
-  }
-}
-
-@media (max-width: 540px) {
-  #container-menu-accueil {
-    height: auto;
+    width: 80%;
     padding: 10px;
+    margin-left: 10%;
+    top: 10%;
   }
 
   h1 {
     font-size: 15px;
-  }
-
-  #container-btn-choix-lieu {
-    flex-direction: column;
-    gap: 15px;
-    margin: auto;
-    width: 60%;
-    margin-top: 15px;
-    margin-bottom: 15px;
   }
 
   #question-choix-lieu {
     font-size: 8px;
     padding-top: 15px;
+  }
+
+  #container-btn-choix-lieu {
+    flex-direction: column;
+    gap: 15px;
+    width: 60%;
+    margin: 15px auto;
   }
 
   .choix-lieu-sur-place,
@@ -185,4 +187,5 @@ h1 {
   .btn-img-emporter {
     width: 30%;
   }
+
 }

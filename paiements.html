@@ -17,9 +17,11 @@
             <h2>Voici le détail de votre panier&nbsp;:</h2>
           </div>
         </div>
-        <fieldset class="container-cb">
-            <form  action="#">
-              <h2>Veuillez sélectionner un mode de paiement&nbsp;:</h2>
+        
+            <form class="container-cb" action="#">
+              <fieldset >
+
+              <legend>Veuillez sélectionner un mode de paiement&nbsp;:</legend>
 
               <div class="choix-cb">
                 <input type="radio" class="choixRglt" id="carteBancaire" name="paiement" value="carte bancaire" />
@@ -38,8 +40,9 @@
               <div class="container-btn-payer">
                 <button class="btn-paiement" type="submit">Payer</button>
               </div>
-            </form>
-          </fieldset>
+            </fieldset>
+          </form>
+            
       </div>
     </div>
     <script type="module" src="./js/paiements.js"></script>
