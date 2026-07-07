@@ -6,6 +6,9 @@
   justify-content: space-around;
   width: 45%;
   height: 60%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-sizing: border-box;
   background-color: white;
   border-radius: 16px;
   box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.25);
@@ -116,6 +119,52 @@ h1 {
     font-size: 20px;
   }
 }
+
+/* *********************************************************
+   Tablette paysage (toutes largeurs, hauteur ~792px)
+************************************************************/
+
+@media screen and (max-height: 850px) and (orientation: landscape) {
+  #container-menu-accueil {
+    width: 55%;
+    height: auto;
+    max-height: 90vh;
+    padding: clamp(16px, 3vh, 25px);
+    margin-left: 22%;
+    top: 5%;
+    justify-content: flex-start;
+    gap: 10px;
+  }
+
+  h1 {
+    font-size: clamp(22px, 3vh, 30px);
+  }
+
+  #question-choix-lieu {
+    font-size: clamp(14px, 2.2vh, 20px);
+    padding-top: clamp(10px, 2vh, 30px);
+  }
+
+  #container-btn-choix-lieu {
+    margin-top: clamp(15px, 3vh, 40px);
+    margin-bottom: clamp(15px, 3vh, 40px);
+    gap: 20px;
+  }
+
+  .choix-lieu-sur-place,
+  .choix-lieu-emporter {
+    font-size: clamp(14px, 2.2vh, 20px);
+    padding-top: 10px;
+  }
+
+  .btn-img-sur-place,
+  .btn-img-emporter {
+    width: 50%;
+    max-height: 20vh;
+    object-fit: contain;
+  }
+}
+
 
 /* *********************************************************
    Tablette / mobile portrait
