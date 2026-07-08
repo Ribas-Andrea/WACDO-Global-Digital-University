@@ -21,6 +21,10 @@ body {
 
 #fond-ecran {
   background-image: url('../assets/mc_landing_banner.png');
+  background-image: image-set(
+    url('../assets/webp/mc_landing_banner.webp') type('image/webp'),
+    url('../assets/mc_landing_banner.png') type('image/png')
+  );
   opacity: 0.85;
   position: fixed;
   top: -90px;
