@@ -1,6 +1,5 @@
 const panier = [];
 
-
 document.addEventListener('DOMContentLoaded', () => {
   afficherPanier();
 });
@@ -70,7 +69,6 @@ function ajouterBoissonPanier() {
     return false;
   }
 
-
   const produitExistant = panier.find((p) => p.type.article === boisson && p.type.taille === taille);
 
   if (produitExistant) {
@@ -101,7 +99,6 @@ function ajouterArticlePanier() {
     console.warn('Aucun produit sélectionné');
     return;
   }
-
 
   const produitExistant = panier.find((p) => p.type.article === article);
 
@@ -150,8 +147,19 @@ function afficherPanier() {
     logoSupp.tabIndex = 0;
     logoSupp.src = './assets/trash.png';
     logoSupp.alt = 'Supprimer';
+
+    let nomProduit;
+    if (article.typeElement === 'menu') {
+      const nomBurger = (article.type?.burger || '').replace('Menu ', '');
+      nomProduit = `Menu ${article.type.menu} ${nomBurger}`;
+    } else if (article.typeElement === 'boisson') {
+      nomProduit = article.type.article;
+    } else if (article.typeElement === 'article') {
+      nomProduit = article.type.article;
+    }
+
     logoSupp.addEventListener('click', () => {
-      if (confirm('Êtes-vous sûr de vouloir supprimer ce menu?')) {
+      if (confirm(`Êtes-vous sûr de vouloir supprimer ${nomProduit} ?`)) {
         supprimerPanier(index);
         console.log('Suppression effectuée');
       } else {
@@ -244,7 +252,6 @@ function afficherPanier() {
 
       prodPanier.appendChild(containerTitreLogoPrix);
     } else if (article.typeElement === 'article') {
-
       const containerTitreLogoPrix = document.createElement('div');
       containerTitreLogoPrix.classList.add('container-titre-logo');
 

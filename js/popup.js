@@ -926,40 +926,19 @@ function afficherPopupMessageAPISucces() {
   addPopup.id = 'popupValider';
   addPopup.tabIndex = 0;
 
-  const addLogoCroix = document.createElement('div');
-  addLogoCroix.id = 'img-logo-croix';
-
-  const addImgLogoCroix = document.createElement('img');
-  addImgLogoCroix.id = 'croix';
-  addImgLogoCroix.tabIndex = 0;
-  addImgLogoCroix.src = './assets/supprimer.png';
-  addImgLogoCroix.alt = 'Logo Croix';
-
-  addImgLogoCroix.addEventListener('click', () => {
-    console.log('tu as cliqué sur la croix');
-    messageValidation.style.display = 'none';
-    messageValidation.innerHTML = '';
-  });
-  addImgLogoCroix.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter') {
-      e.preventDefault();
-      addImgLogoCroix.click();
-    }
-  });
 
   messageValidation.appendChild(addPopup);
   addPopup.focus();
-  addPopup.appendChild(addLogoCroix);
-  addLogoCroix.appendChild(addImgLogoCroix);
 
   const containerDemandeValidation = document.createElement('div');
+  containerDemandeValidation.classList.add('container-validation');
   const demandeValidation = document.createElement('p');
   const memoireArticle = localStorage.getItem('memoireArticle');
   demandeValidation.innerHTML = 'Votre commande a été validée avec succès&nbsp;!';
   demandeValidation.style.paddingBottom = '20px';
 
   const btnValidation = document.createElement('button');
-  btnValidation.id = 'btn-etape-suivante';
+  btnValidation.id = 'btn-etape-suivante-API';
   btnValidation.textContent = 'OK';
   btnValidation.addEventListener('click', () => {
     if (modeCommande === 'sur place') {
@@ -992,31 +971,17 @@ function afficherPopupMessageAPIErreur() {
   const addPopup = document.createElement('section');
   addPopup.id = 'popupValider';
 
-  const addLogoCroix = document.createElement('div');
-  addLogoCroix.id = 'img-logo-croix';
-
-  const addImgLogoCroix = document.createElement('img');
-  addImgLogoCroix.id = 'croix';
-  addImgLogoCroix.src = './assets/supprimer.png';
-  addImgLogoCroix.alt = 'Logo Croix';
-
-  addImgLogoCroix.addEventListener('click', () => {
-    messageValidation.style.display = 'none';
-    messageValidation.innerHTML = '';
-  });
-
   messageValidation.appendChild(addPopup);
-  addPopup.appendChild(addLogoCroix);
-  addLogoCroix.appendChild(addImgLogoCroix);
 
   const containerDemandeValidation = document.createElement('div');
+  containerDemandeValidation.classList.add('container-validation');
   const demandeValidation = document.createElement('p');
   const memoireArticle = localStorage.getItem('memoireArticle');
   demandeValidation.innerHTML = "Une erreur s'est produite&nbsp;!";
   demandeValidation.style.paddingBottom = '20px';
 
   const btnValidation = document.createElement('button');
-  btnValidation.id = 'btn-etape-suivante';
+  btnValidation.id = 'btn-etape-suivante-API';
   btnValidation.textContent = 'OK';
   btnValidation.addEventListener('click', () => {
     console.log('Vous avez cliqué sur ok');

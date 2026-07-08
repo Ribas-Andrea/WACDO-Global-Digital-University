@@ -311,15 +311,23 @@ function afficherProduits(categories) {
 }
 
 function afficherMessageAPIValidationCommande() {
-  document.addEventListener('DOMContentLoaded', () => {
-    if (sessionStorage.getItem('commandeValidee') === 'true') {
-      sessionStorage.removeItem('commandeValidee');
-      afficherPopupMessageAPISucces();
-    } else if (sessionStorage.getItem('commandeValidee') === 'false') {
-      sessionStorage.removeItem('commandeValidee');
-      afficherPopupMessageAPIErreur();
-    }
-  });
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', verifierEtAfficher);
+  } else {
+    verifierEtAfficher();
+  }
+}
+
+function verifierEtAfficher() {
+  const statut = sessionStorage.getItem('commandeValidee');
+  console.log('Valeur lue dans sessionStorage :', statut);
+  if (statut === 'true') {
+    sessionStorage.removeItem('commandeValidee');
+    afficherPopupMessageAPISucces();
+  } else if (statut === 'false') {
+    sessionStorage.removeItem('commandeValidee');
+    afficherPopupMessageAPIErreur();
+  }
 }
 
 // -------------------------------------------------------------- Lancement des fonctions -------------------------------------------------------------------------------------------------
