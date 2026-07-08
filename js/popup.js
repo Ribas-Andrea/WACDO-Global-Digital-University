@@ -108,6 +108,7 @@ function afficherPopupMenus(categorieRecherchee) {
       addContainerPetiteTaille.tabIndex = 0;
 
       const addDivParentImgPetiteTaille = document.createElement('div');
+      addDivParentImgPetiteTaille.classList.add('container-petite-taille');
 
       const picturePetiteTaille = document.createElement('picture');
       const sourcePetiteTaille = document.createElement('source');
@@ -339,6 +340,7 @@ function afficherPopupMenus(categorieRecherchee) {
         sourceFlecheGauche.type = 'image/webp';
 
         const imgFlecheGauche = document.createElement('img');
+        imgFlecheGauche.id = 'fleche-gauche'; //
         imgFlecheGauche.src = './assets/fleche-slider.png';
         imgFlecheGauche.alt = 'Flèche gauche';
 
@@ -480,7 +482,7 @@ function afficherPopupMenus(categorieRecherchee) {
             afficherListeProduits(
               data.sauces,
               'Choisissez votre sauce',
-              'Douce, relevée ou gourmande… laquelle sera votre coup de cœur ?',
+              'Douce, relevée ou gourmande… laquelle sera votre coup de cœur\u00A0?',
               'memoireSauce'
             );
 
@@ -704,8 +706,7 @@ function afficherPopupBoissons(produitRecherche) {
       });
 
       const addDivParentImgPetiteTaille = document.createElement('div');
-      addDivParentImgPetiteTaille.style.display = 'flex';
-      addDivParentImgPetiteTaille.style.justifyContent = 'center';
+      addDivParentImgPetiteTaille.classList.add('container-petite-taille');
 
       const picturePetiteTaille = document.createElement('picture');
       const sourcePetiteTaille = document.createElement('source');
@@ -716,8 +717,6 @@ function afficherPopupBoissons(produitRecherche) {
       imgPetiteTaille.id = 'img-petite-taille';
       imgPetiteTaille.src = boisson.image;
       imgPetiteTaille.alt = `Boisson ${boisson.nom} Petite Taille`;
-      imgPetiteTaille.style.width = '80%';
-      imgPetiteTaille.style.height = '100%';
 
       picturePetiteTaille.appendChild(sourcePetiteTaille);
       picturePetiteTaille.appendChild(imgPetiteTaille);
@@ -752,8 +751,7 @@ function afficherPopupBoissons(produitRecherche) {
       });
 
       const addDivParentImgGrandeTaille = document.createElement('div');
-      addDivParentImgGrandeTaille.style.display = 'flex';
-      addDivParentImgGrandeTaille.style.justifyContent = 'center';
+      addDivParentImgGrandeTaille.classList.add('container-grande-taille');
 
       const pictureGrandeTaille = document.createElement('picture');
       const sourceGrandeTaille = document.createElement('source');
@@ -761,7 +759,8 @@ function afficherPopupBoissons(produitRecherche) {
       sourceGrandeTaille.type = 'image/webp';
 
       const imgGrandeTaille = document.createElement('img');
-      imgGrandeTaille.id = 'img-grande-taille';
+      imgGrandeTaille.id = 'img-grande-taille'; //
+
       imgGrandeTaille.src = boisson.image;
       imgGrandeTaille.alt = `Boisson ${boisson.nom} Grande Taille`;
 
