@@ -21,6 +21,17 @@
   width: 100%;
 }
 
+#img-logo-croix-article {
+  display: flex;
+  align-items: center;
+  margin: 0 0 5px 0;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding-right: 2px;
+  width: 100%;
+}
+
+
 img#croix {
   width: 30px;
   height: 30px;
@@ -232,7 +243,7 @@ h1 {
   overflow: hidden;
 }
 
-.nav-popup-boissons .container-img-card-categorie {
+.nav-popup-boissons .container-img-card-categorie picture {
   flex: 1;
   min-height: 0;
   display: flex;
@@ -626,7 +637,7 @@ h1 {
     height: 65px;
   }
 
-  .nav-popup-boissons .container-img-card-categorie {
+  .nav-popup-boissons .container-img-card-categorie picture {
     padding: 2px;
   }
 

@@ -4,79 +4,92 @@
       "id": 1,
       "nom": "Menu Le 280",
       "prix": 8.8,
-      "image": "assets/burgers/280.png"
+      "image": "assets/burgers/280.png",
+      "imageWebp": "assets/webp/burgers/280.webp"
     },
     {
       "id": 2,
       "nom": "Menu Big Tasty",
       "prix": 10.6,
-      "image": "assets/burgers/BIG_TASTY_1_VIANDE.png"
+      "image": "assets/burgers/BIG_TASTY_1_VIANDE.png",
+      "imageWebp": "assets/webp/burgers/BIG_TASTY_1_VIANDE.webp"
     },
     {
       "id": 3,
       "nom": "Menu Big Tasty Bacon",
       "prix": 10.9,
-      "image": "assets/burgers/BIG_TASTY_BACON_1_VIANDE.png"
+      "image": "assets/burgers/BIG_TASTY_BACON_1_VIANDE.png",
+      "imageWebp": "assets/webp/burgers/BIG_TASTY_BACON_1_VIANDE.webp"
     },
     {
       "id": 4,
       "nom": "Menu Big Mac",
       "prix": 8.0,
-      "image": "assets/burgers/BIGMAC.png"
+      "image": "assets/burgers/BIGMAC.png",
+      "imageWebp": "assets/webp/burgers/BIGMAC.webp"
     },
     {
       "id": 5,
       "nom": "Menu CBO",
       "prix": 10.9,
-      "image": "assets/burgers/CBO.png"
+      "image": "assets/burgers/CBO.png",
+      "imageWebp": "assets/webp/burgers/CBO.webp"
     },
     {
       "id": 6,
       "nom": "Menu MC Chicken",
       "prix": 9.3,
-      "image": "assets/burgers/MCCHICKEN.png"
+      "image": "assets/burgers/MCCHICKEN.png",
+      "imageWebp": "assets/webp/burgers/MCCHICKEN.webp"
     },
     {
       "id": 7,
       "nom": "Menu MC Crispy",
       "prix": 7.2,
-      "image": "assets/burgers/MCCRISPY.png"
+      "image": "assets/burgers/MCCRISPY.png",
+      "imageWebp": "assets/webp/burgers/MCCRISPY.webp"
     },
     {
       "id": 8,
       "nom": "Menu MC Fish",
       "prix": 7.2,
-      "image": "assets/burgers/MCFISH.png"
+      "image": "assets/burgers/MCFISH.png",
+      "imageWebp": "assets/webp/burgers/MCFISH.webp"
     },
     {
       "id": 9,
       "nom": "Menu Royal Bacon",
       "prix": 7.05,
-      "image": "assets/burgers/ROYALBACON.png"
+      "image": "assets/burgers/ROYALBACON.png",
+      "imageWebp": "assets/webp/burgers/ROYALBACON.webp"
     },
     {
       "id": 10,
       "nom": "Menu Royal Cheese",
       "prix": 6.4,
-      "image": "assets/burgers/ROYALCHEESE.png"
+      "image": "assets/burgers/ROYALCHEESE.png",
+      "imageWebp": "assets/webp/burgers/ROYALCHEESE.webp"
     },
     {
       "id": 11,
       "nom": "Menu Royal Deluxe",
       "prix": 7.4,
-      "image": "assets/burgers/ROYALDELUXE.png"
+      "image": "assets/burgers/ROYALDELUXE.png",
+      "imageWebp": "assets/webp/burgers/ROYALDELUXE.webp"
     },
     {
       "id": 12,
       "nom": "Menu Signature BBQ Beef 2 viandes",
       "prix": 13.5,
-      "image": "assets/burgers/SIGNATURE_BBQ_BEEF_(2_VIANDES).png"
+      "image": "assets/burgers/SIGNATURE_BBQ_BEEF_(2_VIANDES).png",
+      "imageWebp": "assets/webp/burgers/SIGNATURE_BBQ_BEEF_(2_VIANDES).webp"
     },
     {
       "id": 13,
       "nom": "Menu Signature Beef BBQ",
       "prix": 11.9,
-      "image": "assets/burgers/SIGNATURE_BEEF_BBQ_BURGER_(1_VIANDE).png"
+      "image": "assets/burgers/SIGNATURE_BEEF_BBQ_BURGER_(1_VIANDE).png",
+      "imageWebp": "assets/webp/burgers/SIGNATURE_BEEF_BBQ_BURGER_(1_VIANDE).webp"
     }
   ],
   "burgers": [
@@ -84,79 +97,92 @@
       "id": 14,
       "nom": "Le 280",
       "prix": 6.8,
-      "image": "assets/burgers/280.png"
+      "image": "assets/burgers/280.png",
+      "imageWebp": "assets/webp/burgers/280.webp"
     },
     {
       "id": 15,
       "nom": "Big Tasty",
       "prix": 8.6,
-      "image": "assets/burgers/BIG_TASTY_1_VIANDE.png"
+      "image": "assets/burgers/BIG_TASTY_1_VIANDE.png",
+      "imageWebp": "assets/webp/burgers/BIG_TASTY_1_VIANDE.webp"
     },
     {
       "id": 16,
       "nom": "Big Tasty Bacon",
       "prix": 8.9,
-      "image": "assets/burgers/BIG_TASTY_BACON_1_VIANDE.png"
+      "image": "assets/burgers/BIG_TASTY_BACON_1_VIANDE.png",
+      "imageWebp": "assets/webp/burgers/BIG_TASTY_BACON_1_VIANDE.webp"
     },
     {
       "id": 17,
       "nom": "Big Mac",
       "prix": 6.0,
-      "image": "assets/burgers/BIGMAC.png"
+      "image": "assets/burgers/BIGMAC.png",
+      "imageWebp": "assets/webp/burgers/BIGMAC.webp"
     },
     {
       "id": 18,
       "nom": "CBO",
       "prix": 8.9,
-      "image": "assets/burgers/CBO.png"
+      "image": "assets/burgers/CBO.png",
+      "imageWebp": "assets/webp/burgers/CBO.webp"
     },
     {
       "id": 19,
       "nom": "MC Chicken",
       "prix": 7.3,
-      "image": "assets/burgers/MCCHICKEN.png"
+      "image": "assets/burgers/MCCHICKEN.png",
+      "imageWebp": "assets/webp/burgers/MCCHICKEN.webp"
     },
     {
       "id": 20,
       "nom": "MC Crispy",
       "prix": 5.3,
-      "image": "assets/burgers/MCCRISPY.png"
+      "image": "assets/burgers/MCCRISPY.png",
+      "imageWebp": "assets/webp/burgers/MCCRISPY.webp"
     },
     {
       "id": 21,
       "nom": "MC Fish",
       "prix": 4.85,
-      "image": "assets/burgers/MCFISH.png"
+      "image": "assets/burgers/MCFISH.png",
+      "imageWebp": "assets/webp/burgers/MCFISH.webp"
     },
     {
       "id": 22,
       "nom": "Royal Bacon",
       "prix": 5.1,
-      "image": "assets/burgers/ROYALBACON.png"
+      "image": "assets/burgers/ROYALBACON.png",
+      "imageWebp": "assets/webp/burgers/ROYALBACON.webp"
     },
     {
       "id": 23,
       "nom": "Royal Cheese",
       "prix": 4.4,
-      "image": "assets/burgers/ROYALCHEESE.png"
+      "image": "assets/burgers/ROYALCHEESE.png",
+      "imageWebp": "assets/webp/burgers/ROYALCHEESE.webp"
     },
     {
       "id": 24,
       "nom": "Royal Deluxe",
       "prix": 5.4,
-      "image": "assets/burgers/ROYALDELUXE.png"
+      "image": "assets/burgers/ROYALDELUXE.png",
+      "imageWebp": "assets/webp/burgers/ROYALDELUXE.webp"
     },
     {
       "id": 25,
       "nom": "Signature BBQ Beef 2 viandes",
       "prix": 11.4,
-      "image": "assets/burgers/SIGNATURE_BBQ_BEEF_(2_VIANDES).png"
+      "image": "assets/burgers/SIGNATURE_BBQ_BEEF_(2_VIANDES).png",
+      "imageWebp": "assets/webp/burgers/SIGNATURE_BBQ_BEEF_(2_VIANDES).webp"
     },
     {
       "id": 26,
       "nom": "Signature Beef BBQ",
       "prix": 10.3,
-      "image": "assets/burgers/SIGNATURE_BEEF_BBQ_BURGER_(1_VIANDE).png"
+      "image": "assets/burgers/SIGNATURE_BEEF_BBQ_BURGER_(1_VIANDE).png",
+      "imageWebp": "assets/webp/burgers/SIGNATURE_BEEF_BBQ_BURGER_(1_VIANDE).webp"
     }
   ],
   "boissons": [
@@ -164,49 +190,57 @@
       "id": 27,
       "nom": "Coca Cola",
       "prix": 1.9,
-      "image": "assets/boissons/coca-cola.png"
+      "image": "assets/boissons/coca-cola.png",
+      "imageWebp": "assets/webp/boissons/coca-cola.webp"
     },
     {
       "id": 28,
       "nom": "Coca Sans Sucres",
       "prix": 1.9,
-      "image": "assets/boissons/coca-sans-sucres.png"
+      "image": "assets/boissons/coca-sans-sucres.png",
+      "imageWebp": "assets/webp/boissons/coca-sans-sucres.webp"
     },
     {
       "id": 29,
       "nom": "Eau",
       "prix": 1.0,
-      "image": "assets/boissons/eau.png"
+      "image": "assets/boissons/eau.png",
+      "imageWebp": "assets/webp/boissons/eau.webp"
     },
     {
       "id": 30,
       "nom": "Fanta Orange",
       "prix": 1.9,
-      "image": "assets/boissons/fanta.png"
+      "image": "assets/boissons/fanta.png",
+      "imageWebp": "assets/webp/boissons/fanta.webp"
     },
     {
       "id": 31,
       "nom": "Ice Tea Pêche",
       "prix": 1.9,
-      "image": "assets/boissons/ice-tea-peche.png"
+      "image": "assets/boissons/ice-tea-peche.png",
+      "imageWebp": "assets/webp/boissons/ice-tea-peche.webp"
     },
     {
       "id": 32,
       "nom": "Ice Tea Citron",
       "prix": 1.9,
-      "image": "assets/boissons/the-vert-citron-sans-sucres.png"
+      "image": "assets/boissons/the-vert-citron-sans-sucres.png",
+      "imageWebp": "assets/webp/boissons/the-vert-citron-sans-sucres.webp"
     },
     {
       "id": 33,
       "nom": "Jus d'Orange",
       "prix": 2.1,
-      "image": "assets/boissons/jus-orange.png"
+      "image": "assets/boissons/jus-orange.png",
+      "imageWebp": "assets/webp/boissons/jus-orange.webp"
     },
     {
       "id": 34,
       "nom": "Jus de Pommes Bio",
       "prix": 2.3,
-      "image": "assets/boissons/jus-pomme-bio.png"
+      "image": "assets/boissons/jus-pomme-bio.png",
+      "imageWebp": "assets/webp/boissons/jus-pomme-bio.webp"
     }
   ],
   "frites": [
@@ -214,31 +248,36 @@
       "id": 35,
       "nom": "Petite Frite",
       "prix": 1.45,
-      "image": "assets/frites/PETITE_FRITE.png"
+      "image": "assets/frites/PETITE_FRITE.png",
+      "imageWebp": "assets/webp/frites/PETITE_FRITE.webp"
     },
     {
       "id": 36,
       "nom": "Moyenne Frite",
       "prix": 2.75,
-      "image": "assets/frites/MOYENNE_FRITE.png"
+      "image": "assets/frites/MOYENNE_FRITE.png",
+      "imageWebp": "assets/webp/frites/MOYENNE_FRITE.webp"
     },
     {
       "id": 37,
       "nom": "Grande Frite",
       "prix": 3.5,
-      "image": "assets/frites/GRANDE_FRITE.png"
+      "image": "assets/frites/GRANDE_FRITE.png",
+      "imageWebp": "assets/webp/frites/GRANDE_FRITE.webp"
     },
     {
       "id": 38,
       "nom": "Potatoes",
       "prix": 2.15,
-      "image": "assets/frites/POTATOES.png"
+      "image": "assets/frites/POTATOES.png",
+      "imageWebp": "assets/webp/frites/POTATOES.webp"
     },
     {
       "id": 39,
       "nom": "Grande Potatoes",
       "prix": 3.4,
-      "image": "assets/frites/GRANDE_POTATOES.png"
+      "image": "assets/frites/GRANDE_POTATOES.png",
+      "imageWebp": "assets/webp/frites/GRANDE_POTATOES.webp"
     }
   ],
   "encas": [
@@ -246,25 +285,29 @@
       "id": 40,
       "nom": "Cheeseburger",
       "prix": 2.6,
-      "image": "assets/encas/cheeseburger.png"
+      "image": "assets/encas/cheeseburger.png",
+      "imageWebp": "assets/webp/encas/cheeseburger.webp"
     },
     {
       "id": 41,
       "nom": "Croc MCdo",
       "prix": 3.2,
-      "image": "assets/encas/croc-mc-do.png"
+      "image": "assets/encas/croc-mc-do.png",
+      "imageWebp": "assets/webp/encas/croc-mc-do.webp"
     },
     {
       "id": 42,
       "nom": "Nuggets x4",
       "prix": 4.2,
-      "image": "assets/encas/nuggets_4.png"
+      "image": "assets/encas/nuggets_4.png",
+      "imageWebp": "assets/webp/encas/nuggets_4.webp"
     },
     {
       "id": 43,
       "nom": "Nuggets x20",
       "prix": 13.0,
-      "image": "assets/encas/nuggets_20.png"
+      "image": "assets/encas/nuggets_20.png",
+      "imageWebp": "assets/webp/encas/nuggets_20.webp"
     }
   ],
   "desserts": [
@@ -272,55 +315,64 @@
       "id": 44,
       "nom": "Brownie",
       "prix": 2.6,
-      "image": "assets/desserts/brownies.png"
+      "image": "assets/desserts/brownies.png",
+      "imageWebp": "assets/webp/desserts/brownies.webp"
     },
     {
       "id": 45,
       "nom": "Cheesecake chocolat M&M'S",
       "prix": 3.1,
-      "image": "assets/desserts/cheesecake_choconuts_M&M_s.png"
+      "image": "assets/desserts/cheesecake_choconuts_M&M_s.png",
+      "imageWebp": "assets/webp/desserts/cheesecake_choconuts_M&M_s.webp"
     },
     {
       "id": 46,
       "nom": "Cheesecake Fraise",
       "prix": 3.1,
-      "image": "assets/desserts/cheesecake_fraise.png"
+      "image": "assets/desserts/cheesecake_fraise.png",
+      "imageWebp": "assets/webp/desserts/cheesecake_fraise.webp"
     },
     {
       "id": 47,
       "nom": "Cookie",
       "prix": 3.2,
-      "image": "assets/desserts/cookie.png"
+      "image": "assets/desserts/cookie.png",
+      "imageWebp": "assets/webp/desserts/cookie.webp"
     },
     {
       "id": 48,
       "nom": "Donut",
       "prix": 2.6,
-      "image": "assets/desserts/doghnut.png"
+      "image": "assets/desserts/doghnut.png",
+      "imageWebp": "assets/webp/desserts/doghnut.webp"
     },
     {
       "id": 49,
       "nom": "Macarons",
       "prix": 2.7,
-      "image": "assets/desserts/macarons.png"
+      "image": "assets/desserts/macarons.png",
+      "imageWebp": "assets/webp/desserts/macarons.webp"
     },
     {
       "id": 50,
       "nom": "MC Fleury",
       "prix": 4.4,
-      "image": "assets/desserts/MCFleury.png"
+      "image": "assets/desserts/MCFleury.png",
+      "imageWebp": "assets/webp/desserts/MCFleury.webp"
     },
     {
       "id": 51,
       "nom": "Muffin",
       "prix": 3.6,
-      "image": "assets/desserts/muffin.png"
+      "image": "assets/desserts/muffin.png",
+      "imageWebp": "assets/webp/desserts/muffin.webp"
     },
     {
       "id": 52,
       "nom": "Sunday",
       "prix": 1.0,
-      "image": "assets/desserts/sunday.png"
+      "image": "assets/desserts/sunday.png",
+      "imageWebp": "assets/webp/desserts/sunday.webp"
     }
   ],
   "sauces": [
@@ -328,43 +380,50 @@
       "id": 53,
       "nom": "Classic Barbecue",
       "prix": 0.7,
-      "image": "assets/sauces/classic-barbecue.png"
+      "image": "assets/sauces/classic-barbecue.png",
+      "imageWebp": "assets/webp/sauces/classic-barbecue.webp"
     },
     {
       "id": 54,
       "nom": "Classic Moutarde",
       "prix": 0.7,
-      "image": "assets/sauces/classic-moutarde.png"
+      "image": "assets/sauces/classic-moutarde.png",
+      "imageWebp": "assets/webp/sauces/classic-moutarde.webp"
     },
     {
       "id": 55,
       "nom": "Creamy Deluxe",
       "prix": 0.7,
-      "image": "assets/sauces/cremy-deluxe.png"
+      "image": "assets/sauces/cremy-deluxe.png",
+      "imageWebp": "assets/webp/sauces/cremy-deluxe.webp"
     },
     {
       "id": 56,
       "nom": "Ketchup",
       "prix": 0.7,
-      "image": "assets/sauces/ketchup.png"
+      "image": "assets/sauces/ketchup.png",
+      "imageWebp": "assets/webp/sauces/ketchup.webp"
     },
     {
       "id": 57,
       "nom": "Chinoise",
       "prix": 0.7,
-      "image": "assets/sauces/sauce-chinoise.png"
+      "image": "assets/sauces/sauce-chinoise.png",
+      "imageWebp": "assets/webp/sauces/sauce-chinoise.webp"
     },
     {
       "id": 58,
       "nom": "Curry",
       "prix": 0.7,
-      "image": "assets/sauces/sauce-curry.png"
+      "image": "assets/sauces/sauce-curry.png",
+      "imageWebp": "assets/webp/sauces/sauce-curry.webp"
     },
     {
       "id": 59,
       "nom": "Pommes Frites",
       "prix": 0.7,
-      "image": "assets/sauces/sauce-pommes-frite.png"
+      "image": "assets/sauces/sauce-pommes-frite.png",
+      "imageWebp": "assets/webp/sauces/sauce-pommes-frite.webp"
     }
   ],
   "salades": [
@@ -372,19 +431,22 @@
       "id": 60,
       "nom": "Petite Salade",
       "prix": 3.3,
-      "image": "assets/salades/PETITE-SALADE.png"
+      "image": "assets/salades/PETITE-SALADE.png",
+      "imageWebp": "assets/webp/salades/PETITE-SALADE.webp"
     },
     {
       "id": 61,
       "nom": "Cesar Classic",
       "prix": 8.8,
-      "image": "assets/salades/SALADE_CLASSIC_CAESAR.png"
+      "image": "assets/salades/SALADE_CLASSIC_CAESAR.png",
+      "imageWebp": "assets/webp/salades/SALADE_CLASSIC_CAESAR.webp"
     },
     {
       "id": 62,
       "nom": "Italienne Mozza",
       "prix": 8.8,
-      "image": "assets/salades/SALADE_ITALIAN_MOZZA.png"
+      "image": "assets/salades/SALADE_ITALIAN_MOZZA.png",
+      "imageWebp": "assets/webp/salades/SALADE_ITALIAN_MOZZA.webp"
     }
   ],
   "wraps": [
@@ -392,25 +454,29 @@
       "id": 63,
       "nom": "MC Wrap chevre",
       "prix": 3.1,
-      "image": "assets/wraps/mcwrap-chevre.png"
+      "image": "assets/wraps/mcwrap-chevre.png",
+      "imageWebp": "assets/webp/wraps/mcwrap-chevre.webp"
     },
     {
       "id": 64,
       "nom": "MC Wrap Poulet Bacon",
       "prix": 3.3,
-      "image": "assets/wraps/MCWRAP-POULET-BACON.png"
+      "image": "assets/wraps/MCWRAP-POULET-BACON.png",
+      "imageWebp": "assets/webp/wraps/MCWRAP-POULET-BACON.webp"
     },
     {
       "id": 65,
       "nom": "Ptit Wrap Chevre",
       "prix": 2.6,
-      "image": "assets/wraps/PTIT_WRAP_CHEVRE.png"
+      "image": "assets/wraps/PTIT_WRAP_CHEVRE.png",
+      "imageWebp": "assets/webp/wraps/PTIT_WRAP_CHEVRE.webp"
     },
     {
       "id": 66,
       "nom": "Ptit Wrap Ranch",
       "prix": 2.6,
-      "image": "assets/wraps/PTIT_WRAP_RANCH.png"
+      "image": "assets/wraps/PTIT_WRAP_RANCH.png",
+      "imageWebp": "assets/webp/wraps/PTIT_WRAP_RANCH.webp"
     }
   ]
 }

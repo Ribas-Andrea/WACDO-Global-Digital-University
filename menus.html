@@ -15,11 +15,17 @@
     <main id="page-choix-produits">
       <aside id="partie-gauche-choix-produits">
         <nav id="nav-page-produits">
-          <img id="fleche-gauche" src="assets/fleche-slider.png" alt="fleche-slider-gauche" tabindex="0" />
+          <picture>
+            <source srcset="assets/webp/fleche-slider.webp" type="image/webp">
+             <img id="fleche-gauche-nav" src="assets/fleche-slider.png" alt="fleche slider gauche" tabindex="0" />
+          </picture>
           <div id="choix-categorie-produits">
             <div id="container-liste-categories"></div>
           </div>
-          <img class="fleche-droite" src="assets/fleche-slider.png" alt="fleche-slider-droite" tabindex="0" />
+          <picture>
+            <source srcset="assets/webp/fleche-slider.webp" type="image/webp">
+             <img class="fleche-droite-nav" src="assets/fleche-slider.png" alt="fleche slider droite" tabindex="0" />
+          </picture>
         </nav>
         <section>
           <div id="container-nos-produits"></div>
@@ -33,7 +39,10 @@
 
       <aside id="partie-droite-panier">
         <div id="container-panier">
-          <img class="logo-panier" src="assets/logo.png" alt="logo wacdo" />
+          <picture>
+            <source srcset="assets/webp/logo.webp" type="image/webp">
+            <img class="logo-panier" src="assets/logo.png" alt="logo wacdo" tabindex="0"  />
+          </picture>
 
           <div id="container-numero-commande">
             <div id="numero-commande">
@@ -43,10 +52,10 @@
 
               <div id="numero-sur-place">
                 <p>Sur place&nbsp;:</p>
-                <p id="numero-commande-sur-place"><!--326--></p>
+                <p id="numero-commande-sur-place"></p>
               </div>
             </div>
-            <div id="numero-commande-emporter"><!--72--></div>
+            <div id="numero-commande-emporter"></div>
           </div>
           <div class="barre-separation"></div>
           <div id="container-articles-panier"></div>
@@ -56,7 +65,7 @@
               >TOTAL <br />
               (ttc)</span
             >
-            <span id="montant"><!--36.50€--> </span>
+            <span id="montant"> </span>
           </div>
           <div id="container-btn-panier">
             <button id="btn-abandon">Abandon</button>

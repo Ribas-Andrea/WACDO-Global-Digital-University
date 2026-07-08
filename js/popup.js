@@ -25,6 +25,8 @@ function afficherPopupMenus(categorieRecherchee) {
         return;
       }
 
+      let step = 1;
+
       const addPopup = document.createElement('section');
       addPopup.id = 'popup';
 
@@ -48,6 +50,12 @@ function afficherPopupMenus(categorieRecherchee) {
       const addLogoCroix = document.createElement('div');
       addLogoCroix.id = 'img-logo-croix';
 
+      const logoSuppPicture = document.createElement('picture');
+
+      const logoSuppSource = document.createElement('source');
+      logoSuppSource.srcset = './assets/webp/supprimer.webp';
+      logoSuppSource.type = 'image/webp';
+
       const addImgLogoCroix = document.createElement('img');
       addImgLogoCroix.id = 'croix';
       addImgLogoCroix.src = './assets/supprimer.png';
@@ -66,11 +74,14 @@ function afficherPopupMenus(categorieRecherchee) {
         }
       });
 
+    
       containerPopupMenus.appendChild(addPopup);
       addPopup.focus();
       addPopup.appendChild(addLogoCroix);
       addLogoCroix.appendChild(btnRetour);
-      addLogoCroix.appendChild(addImgLogoCroix);
+      addLogoCroix.appendChild(logoSuppPicture);
+      logoSuppPicture.appendChild(logoSuppSource);
+      logoSuppPicture.appendChild(addImgLogoCroix);
 
       const addContainerTitreDescriptionImg = document.createElement('div');
       addContainerTitreDescriptionImg.id = 'container-titre-description-img';
@@ -88,9 +99,9 @@ function afficherPopupMenus(categorieRecherchee) {
       const addContainerChoixTaille = document.createElement('div');
       addContainerChoixTaille.id = 'container-choix-taille';
 
-      const containerChoixBoissons = document.createElement('div');
-      containerChoixBoissons.classList.add('nav-popup-boissons');
-      containerChoixBoissons.style.display = 'none';
+      const containerChoixBoissonsSauces = document.createElement('div');
+      containerChoixBoissonsSauces.classList.add('nav-popup-boissons');
+      containerChoixBoissonsSauces.style.display = 'none';
 
       const addContainerPetiteTaille = document.createElement('div');
       addContainerPetiteTaille.classList.add('container-taille');
@@ -98,10 +109,18 @@ function afficherPopupMenus(categorieRecherchee) {
 
       const addDivParentImgPetiteTaille = document.createElement('div');
 
+      const picturePetiteTaille = document.createElement('picture');
+      const sourcePetiteTaille = document.createElement('source');
+      sourcePetiteTaille.srcset = './assets/webp/illustration-best-of.webp';
+      sourcePetiteTaille.type = 'image/webp';
+
       const imgPetiteTaille = document.createElement('img');
       imgPetiteTaille.id = 'img-petite-taille';
       imgPetiteTaille.src = './assets/illustration-best-of.png';
       imgPetiteTaille.alt = 'Petite Taille';
+
+      picturePetiteTaille.appendChild(sourcePetiteTaille);
+      picturePetiteTaille.appendChild(imgPetiteTaille);
 
       const addDivTxtChoixPetiteTaille = document.createElement('div');
 
@@ -116,10 +135,18 @@ function afficherPopupMenus(categorieRecherchee) {
       const addDivParentImgGrandeTaille = document.createElement('div');
       addDivParentImgGrandeTaille.classList.add('container-grande-taille');
 
+      const pictureGrandeTaille = document.createElement('picture');
+      const sourceGrandeTaille = document.createElement('source');
+      sourceGrandeTaille.srcset = './assets/webp/illustration-maxi-best-of.webp';
+      sourceGrandeTaille.type = 'image/webp';
+
       const imgGrandeTaille = document.createElement('img');
       imgGrandeTaille.id = 'img-grande-taille';
       imgGrandeTaille.src = './assets/illustration-maxi-best-of.png';
       imgGrandeTaille.alt = 'Grande Taille';
+
+      pictureGrandeTaille.appendChild(sourceGrandeTaille);
+      pictureGrandeTaille.appendChild(imgGrandeTaille);
 
       const addDivTxtChoixGrandeTaille = document.createElement('div');
 
@@ -141,19 +168,20 @@ function afficherPopupMenus(categorieRecherchee) {
       addContainerPetiteTaille.appendChild(addDivParentImgPetiteTaille);
       addContainerPetiteTaille.appendChild(addDivTxtChoixPetiteTaille);
 
-      addDivParentImgPetiteTaille.appendChild(imgPetiteTaille);
+      addDivParentImgPetiteTaille.appendChild(picturePetiteTaille);
+
       addDivTxtChoixPetiteTaille.appendChild(texteChoixPetiteTaille);
 
       addContainerGrandeTaille.appendChild(addDivParentImgGrandeTaille);
       addContainerGrandeTaille.appendChild(addDivTxtChoixGrandeTaille);
 
-      addDivParentImgGrandeTaille.appendChild(imgGrandeTaille);
+      addDivParentImgGrandeTaille.appendChild(pictureGrandeTaille);
+
       addDivTxtChoixGrandeTaille.appendChild(texteChoixGrandeTaille);
 
       const addContainerBtnValidation = document.createElement('div');
       addContainerBtnValidation.id = 'container-btn-validation';
 
-      let step = 1;
       const OpenbtnEtapeSuivante = document.createElement('button');
       OpenbtnEtapeSuivante.id = 'btn-etape-suivante';
       OpenbtnEtapeSuivante.textContent = 'Étape suivante';
@@ -166,7 +194,7 @@ function afficherPopupMenus(categorieRecherchee) {
         }
 
         if (step === 3 || step === 4) {
-          cardSelected = document.querySelector('.card-categories-nav.activeBorder');
+          cardSelected = containerChoixBoissonsSauces.querySelector('.card-categories-nav.activeBorder');
         }
 
         if (!cardSelected) {
@@ -193,6 +221,274 @@ function afficherPopupMenus(categorieRecherchee) {
       addPopup.appendChild(addContainerBtnValidation);
       addContainerBtnValidation.appendChild(OpenbtnEtapeSuivante);
 
+
+
+      /* Les différentes fonction pour les étapes de la popup*/
+
+      function afficherStep1(){
+
+        addContainerPetiteTaille.classList.remove('activeBorder');
+        addContainerGrandeTaille.classList.remove('activeBorder');
+
+        btnRetour.style.visibility = 'hidden';
+        btnRetour.tabIndex = -1;
+
+        titrePopup.style.display = 'flex';
+        descriptionPopup.style.display = 'flex';
+
+        imgPetiteTaille.style.display = 'flex';
+        imgGrandeTaille.style.display = 'flex';
+
+        OpenbtnEtapeSuivante.style.display = 'flex';
+        OpenbtnEtapeSuivante.textContent = 'Étape suivante';
+
+        titrePopup.textContent = 'Une grosse faim ?';
+        descriptionPopup.textContent = 'Les menus comprennent un sandwich, une frite et une boisson';
+
+        texteChoixPetiteTaille.textContent = 'Menu Best Of';
+
+        sourcePetiteTaille.srcset = './assets/webp/illustration-best-of.webp';
+        imgPetiteTaille.src = './assets/illustration-best-of.png';
+        imgPetiteTaille.alt = 'image best of';
+
+
+        texteChoixGrandeTaille.textContent = 'Menu Maxi Best Of';
+
+        sourceGrandeTaille.srcset = './assets/webp/illustration-maxi-best-of.webp';
+        imgGrandeTaille.src = './assets/illustration-maxi-best-of.png';
+        imgGrandeTaille.alt = 'image maxi best of';
+
+        addContainerPetiteTaille.focus();
+      }
+
+      function afficherStep2() {
+
+        addContainerPetiteTaille.classList.remove('activeBorder');
+        addContainerGrandeTaille.classList.remove('activeBorder');
+
+        btnRetour.style.visibility = 'visible';
+        btnRetour.tabIndex = 0;
+
+        containerChoixBoissonsSauces.style.display = 'none';
+
+        titrePopup.style.display = 'flex';
+        descriptionPopup.style.display = 'flex';
+
+        addContainerPetiteTaille.style.display = 'flex';
+        addContainerGrandeTaille.style.display = 'flex';
+
+        OpenbtnEtapeSuivante.style.display = 'flex';
+        OpenbtnEtapeSuivante.textContent = 'Étape suivante';
+
+        titrePopup.textContent = 'Choisissez votre accompagnement';
+        descriptionPopup.textContent = 'Frites, potatoes, la pomme de terre dans tous ses états';
+
+        texteChoixPetiteTaille.textContent = 'Frites';
+
+        sourcePetiteTaille.srcset = './assets/webp/frites/MOYENNE_FRITE.webp';
+        imgPetiteTaille.src = './assets/frites/MOYENNE_FRITE.png';
+        imgPetiteTaille.alt = 'image moyenne frite';
+
+        texteChoixGrandeTaille.textContent = 'Potatoes';
+
+        sourceGrandeTaille.srcset = './assets/webp/frites/GRANDE_POTATOES.webp';
+        imgGrandeTaille.src = './assets/frites/GRANDE_POTATOES.png';
+        imgGrandeTaille.alt = 'image grande potatoes';
+
+        addContainerPetiteTaille.focus();
+      }
+
+      /*Une fonction principale pour récupérer la liste des produits pour les étapes 3 et 4*/
+
+      function afficherListeProduits(produits, titre, description, cleLocalStorage) {
+
+        addContainerPetiteTaille.style.display = 'none';
+        addContainerGrandeTaille.style.display = 'none';
+        addContainerChoixTaille.style.display = 'flex';
+
+        btnRetour.style.display = 'flex';
+        titrePopup.style.display = 'flex';
+        descriptionPopup.style.display = 'flex';
+
+        titrePopup.textContent = titre;
+        descriptionPopup.textContent = description;
+
+        containerChoixBoissonsSauces.innerHTML = '';
+        containerChoixBoissonsSauces.style.display = 'flex';
+
+        const choixProduits = document.createElement('div');
+        choixProduits.id = 'choix-categorie-produits';
+
+        const containerListe = document.createElement('div');
+        containerListe.id = 'container-liste-categories';
+
+        let compteur = 0;
+        const nbCartesVisibles = 4;
+        const max = Math.max(0, produits.length - nbCartesVisibles);
+        
+        function largeurSilder() {
+          const carte = containerListe.querySelector('.card-categories-nav');
+          const gap = parseInt(window.getComputedStyle(containerListe).gap) || 0;
+           return carte.offsetWidth + gap;
+        } 
+
+        const pictureFlecheGauche = document.createElement('picture');
+
+        const sourceFlecheGauche = document.createElement('source');
+        sourceFlecheGauche.srcset = './assets/webp/fleche-slider.webp';
+        sourceFlecheGauche.type = 'image/webp';
+
+        const imgFlecheGauche = document.createElement('img');
+        imgFlecheGauche.src = './assets/fleche-slider.png';
+        imgFlecheGauche.alt = 'Flèche gauche';
+
+        pictureFlecheGauche.append(sourceFlecheGauche);
+        pictureFlecheGauche.append(imgFlecheGauche)
+
+        imgFlecheGauche.addEventListener('click', () => {
+            if (compteur > 0) {
+              compteur--;
+              containerListe.style.transform = `translateX(-${largeurSilder() * compteur}px)`;
+              } 
+            });
+        imgFlecheGauche.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+              e.preventDefault();
+              imgFlecheGauche.click(); 
+            } 
+          });
+
+
+        const pictureFlecheDroite = document.createElement('picture');
+
+        const sourceFlecheDroite = document.createElement('source');
+        sourceFlecheDroite.srcset = './assets/webp/fleche-slider.webp';
+        sourceFlecheDroite.type = 'image/webp';
+
+        const imgFlecheDroite = document.createElement('img');
+        imgFlecheDroite.classList.add('fleche-droite');
+        imgFlecheDroite.src = './assets/fleche-slider.png';
+        imgFlecheDroite.alt = 'Flèche droite';
+        imgFlecheDroite.tabIndex = 0;
+
+        pictureFlecheDroite.append(sourceFlecheDroite);
+        pictureFlecheDroite.append(imgFlecheDroite)
+
+        imgFlecheDroite.addEventListener('click', () => {
+           if (compteur < max) { 
+            compteur++; 
+            containerListe.style.transform = `translateX(-${largeurSilder() * compteur}px)`;
+           } 
+          });
+
+        imgFlecheDroite.addEventListener('keydown', (e) => {
+           if (e.key === 'Enter') {
+             e.preventDefault();
+              imgFlecheDroite.click(); 
+            } 
+          });
+
+        choixProduits.appendChild(containerListe);
+        containerChoixBoissonsSauces.appendChild(pictureFlecheGauche);
+        containerChoixBoissonsSauces.appendChild(choixProduits);
+        containerChoixBoissonsSauces.appendChild(pictureFlecheDroite);
+
+        produits.forEach((produit) => {
+
+          const card = document.createElement('div');
+          card.classList.add('card-categories-nav');
+          card.tabIndex = 0;
+
+          card.addEventListener('click', () => {
+
+            document.querySelectorAll('.card-categories-nav').forEach(c =>
+              c.classList.remove('activeBorder')
+            );
+
+            card.classList.add('activeBorder');
+
+            localStorage.setItem(cleLocalStorage, produit.nom);
+          });
+
+          card.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+              e.preventDefault();
+              card.click();
+            }
+          });
+
+          const containerImg = document.createElement('div');
+          containerImg.classList.add('container-img-card-categorie');
+
+          const pictureBoissonsSauces = document.createElement('picture');
+
+          const sourceBoissonsSauces = document.createElement('source');
+          sourceBoissonsSauces.srcset = produit.imageWebp;
+          sourceBoissonsSauces.type = 'image/webp';
+
+          const imgBoissonsSauces = document.createElement('img');
+          imgBoissonsSauces.classList.add('img-card-categorie');
+          imgBoissonsSauces.src = produit.image;
+          imgBoissonsSauces.alt = produit.nom;
+
+          pictureBoissonsSauces.appendChild(sourceBoissonsSauces);
+          pictureBoissonsSauces.appendChild(imgBoissonsSauces);
+
+          const containerTitre = document.createElement('div');
+          containerTitre.classList.add('container-titre-img-nav');
+
+          const titre = document.createElement('p');
+          titre.classList.add('titre-img-nav');
+          titre.textContent = produit.nom;
+
+          containerImg.appendChild(pictureBoissonsSauces);
+          containerTitre.appendChild(titre);
+
+          card.appendChild(containerImg);
+          card.appendChild(containerTitre);
+
+          containerListe.appendChild(card);
+        });
+
+        addContainerChoixTaille.appendChild(containerChoixBoissonsSauces);
+      }
+
+      function afficherStep3() {
+
+        fetch('./data/produits.json')
+          .then(response => response.json())
+          .then(data => {
+
+            afficherListeProduits(
+              data.boissons,
+              'Choisissez votre boisson',
+              'Un soda, un jus de fruit ou un verre d’eau pour accompagner votre repas',
+              'memoireBoisson'
+            );
+
+          });
+      }
+
+      function afficherStep4() {
+
+        OpenbtnEtapeSuivante.textContent = 'Ajouter le menu à ma commande';
+
+        fetch('./data/produits.json')
+          .then(response => response.json())
+          .then(data => {
+
+            afficherListeProduits(
+              data.sauces,
+              'Choisissez votre sauce',
+              'Douce, relevée ou gourmande… laquelle sera votre coup de cœur ?',
+              'memoireSauce'
+            );
+
+          });
+      }
+
+      /* Les 2 fonction pour l'affichage des données en fonction de la taille du produits sur l'étape 1 et 2*/
+
       function gererChoixPetiteTaille() {
         addContainerPetiteTaille.addEventListener('click', () => {
           addContainerPetiteTaille.classList.add('activeBorder');
@@ -203,6 +499,7 @@ function afficherPopupMenus(categorieRecherchee) {
             descriptionPopup.textContent = 'Le menu Best Of comprend un sandwich, une moyenne frite et une boisson 30 Cl';
             texteChoixPetiteTaille.textContent = 'Menu Best Of';
             imgPetiteTaille.src = './assets/illustration-best-of.png';
+            sourcePetiteTaille.srcset = './assets/webp/illustration-best-of.webp';
             imgPetiteTaille.alt = 'image best of';
             localStorage.setItem('memoireMenu', 'Best of');
           }
@@ -212,6 +509,7 @@ function afficherPopupMenus(categorieRecherchee) {
             descriptionPopup.textContent = 'Frites, potatoes, la pomme de terre dans tous ses états';
             texteChoixPetiteTaille.textContent = 'Frites';
             imgPetiteTaille.src = './assets/frites/MOYENNE_FRITE.png';
+            sourcePetiteTaille.srcset = './assets/webp/frites/MOYENNE_FRITE.webp';
             imgPetiteTaille.alt = 'image moyenne frite';
             localStorage.setItem('memoireAccompagnement', 'Frites');
           }
@@ -237,6 +535,7 @@ function afficherPopupMenus(categorieRecherchee) {
             descriptionPopup.textContent = 'Le menu maxi Best Of comprend un sandwich, une grande frite et une boisson 50 Cl';
             texteChoixGrandeTaille.textContent = 'Menu Maxi Best Of';
             imgGrandeTaille.src = './assets/illustration-maxi-best-of.png';
+            sourceGrandeTaille.srcset = './assets/webp/illustration-maxi-best-of.webp';
             imgGrandeTaille.alt = 'image maxi best of';
             localStorage.setItem('memoireMenu', 'Maxi Best Of');
           }
@@ -246,9 +545,11 @@ function afficherPopupMenus(categorieRecherchee) {
             descriptionPopup.textContent = 'Frites, potatoes, la pomme de terre dans tous ses états';
             texteChoixPetiteTaille.textContent = 'Frites';
             imgPetiteTaille.src = './assets/frites/MOYENNE_FRITE.png';
+            sourcePetiteTaille.srcset = './assets/webp/frites/MOYENNE_FRITE.webp';
             imgPetiteTaille.alt = 'image moyenne frites';
             texteChoixGrandeTaille.textContent = 'Potatoes';
             imgGrandeTaille.src = './assets/frites/GRANDE_POTATOES.png';
+            sourceGrandeTaille.srcset = './assets/webp/frites/GRANDE_POTATOES.webp';
             imgGrandeTaille.alt = 'image grand potatoes';
             localStorage.setItem('memoireAccompagnement', 'Potatoes');
           }
@@ -262,327 +563,32 @@ function afficherPopupMenus(categorieRecherchee) {
         });
       }
 
+
+      /* La fonction pour faire défiler les popoups */
+
+
       function defilerPopupMenus() {
         switch (step) {
           case 1:
-            addContainerPetiteTaille.classList.remove('activeBorder');
-            addContainerGrandeTaille.classList.remove('activeBorder');
-            btnRetour.style.visibility = 'hidden';
-            btnRetour.tabIndex = -1;
-            titrePopup.style.display = 'flex';
-            descriptionPopup.style.display = 'flex';
-            imgPetiteTaille.style.display = 'flex';
-            imgGrandeTaille.style.display = 'flex';
-            OpenbtnEtapeSuivante.style.display = 'flex';
-            OpenbtnEtapeSuivante.textContent = 'Étape suivante';
-
-            titrePopup.textContent = 'Une grosse faim ?';
-            descriptionPopup.textContent = 'Les menus comprennent un sandwich, une frite et une boisson';
-            texteChoixPetiteTaille.textContent = 'Menu Best Of';
-            imgPetiteTaille.src = './assets/illustration-best-of.png';
-            imgPetiteTaille.alt = 'image best of';
-            texteChoixGrandeTaille.textContent = 'Menu Maxi Best Of';
-            imgGrandeTaille.src = './assets/illustration-maxi-best-of.png';
-            imgGrandeTaille.alt = 'image maxi best of';
-
-            gererChoixPetiteTaille();
-            gererChoixGrandeTaille();
-
-            addContainerPetiteTaille.focus();
-
+            afficherStep1();
             break;
 
           case 2:
-            addContainerPetiteTaille.classList.remove('activeBorder');
-            addContainerGrandeTaille.classList.remove('activeBorder');
-
-            btnRetour.style.visibility = 'visible';
-            btnRetour.tabIndex = 0;
-            containerChoixBoissons.style.display = 'none';
-            titrePopup.style.display = 'flex';
-            descriptionPopup.style.display = 'flex';
-            addContainerPetiteTaille.style.display = 'flex';
-            addContainerGrandeTaille.style.display = 'flex';
-            OpenbtnEtapeSuivante.style.display = 'flex';
-            OpenbtnEtapeSuivante.textContent = 'Étape suivante';
-
-            titrePopup.textContent = 'Choisissez votre accompagnement';
-            descriptionPopup.textContent = 'Frites, potatoes, la pomme de terre dans tous ses états';
-            texteChoixPetiteTaille.textContent = 'Frites';
-            imgPetiteTaille.src = './assets/frites/MOYENNE_FRITE.png';
-            imgPetiteTaille.alt = ' image moyenne frite';
-            texteChoixGrandeTaille.textContent = 'Potatoes';
-            imgGrandeTaille.src = './assets/frites/GRANDE_POTATOES.png';
-            imgGrandeTaille.alt = 'image grande potatoes';
-
-            gererChoixPetiteTaille();
-            gererChoixGrandeTaille();
-
-            addContainerPetiteTaille.focus();
-
+            afficherStep2();
             break;
 
           case 3:
-            addContainerPetiteTaille.style.display = 'none';
-            addContainerGrandeTaille.style.display = 'none';
-            addContainerChoixTaille.style.display = 'flex';
-            btnRetour.style.display = 'flex';
-            titrePopup.style.display = 'flex';
-            descriptionPopup.style.display = 'flex';
-
-            titrePopup.textContent = 'Choisissez votre boisson';
-            descriptionPopup.textContent = 'Un soda , un jus de fruit ou un verre d’eau pour accompagner votre repas';
-
-            fetch('./data/produits.json')
-              .then((response) => response.json())
-              .then((data) => {
-                const listboissons = data.boissons;
-
-                containerChoixBoissons.innerHTML = '';
-                containerChoixBoissons.style.display = 'flex';
-
-                const imgFlecheGaucheBoissons = document.createElement('img');
-                imgFlecheGaucheBoissons.id = 'fleche-gauche';
-                imgFlecheGaucheBoissons.src = './assets/fleche-slider.png';
-                imgFlecheGaucheBoissons.alt = 'image fleche slider gauche';
-                imgFlecheGaucheBoissons.tabIndex = 0;
-
-                let compteur = 0;
-                const max = 5;
-                function largeurBoisson() {
-                  const carte = containerListBoissons.querySelector('.card-categories-nav');
-                  const gap = parseInt(window.getComputedStyle(containerListBoissons).gap) || 0;
-
-                  return carte.offsetWidth + gap;
-                }
-                imgFlecheGaucheBoissons.addEventListener('click', () => {
-                  if (compteur > 0) {
-                    compteur--;
-                    containerListBoissons.style.transform = `translateX(-${largeurBoisson() * compteur}px)`;
-                  }
-                });
-
-                imgFlecheGaucheBoissons.addEventListener('keydown', (e) => {
-                  if (e.key === 'Enter') {
-                    e.preventDefault();
-                    imgFlecheGaucheBoissons.click();
-                  }
-                });
-
-                const choixBoissons = document.createElement('div');
-                choixBoissons.id = 'choix-categorie-produits';
-
-                const containerListBoissons = document.createElement('div');
-                containerListBoissons.id = 'container-liste-categories';
-
-                const imgFlecheDroiteBoissons = document.createElement('img');
-                imgFlecheDroiteBoissons.classList.add('fleche-droite');
-                imgFlecheDroiteBoissons.src = './assets/fleche-slider.png';
-                imgFlecheDroiteBoissons.alt = 'image fleche slider droite';
-                imgFlecheDroiteBoissons.tabIndex = 0;
-
-                imgFlecheDroiteBoissons.addEventListener('click', () => {
-                  if (compteur < max) {
-                    compteur++;
-                    containerListBoissons.style.transform = `translateX(-${largeurBoisson() * compteur}px)`;
-                  }
-                });
-
-                imgFlecheDroiteBoissons.addEventListener('keydown', (e) => {
-                  if (e.key === 'Enter') {
-                    e.preventDefault();
-                    imgFlecheDroiteBoissons.click();
-                  }
-                });
-
-                choixBoissons.appendChild(containerListBoissons);
-
-                containerChoixBoissons.appendChild(imgFlecheGaucheBoissons);
-                containerChoixBoissons.appendChild(choixBoissons);
-                containerChoixBoissons.appendChild(imgFlecheDroiteBoissons);
-
-                addContainerChoixTaille.appendChild(containerChoixBoissons);
-
-                listboissons.forEach((boisson) => {
-                  const cardBoissons = document.createElement('div');
-                  cardBoissons.classList.add('card-categories-nav');
-                  cardBoissons.tabIndex = 0;
-                  cardBoissons.addEventListener('click', () => {
-                    console.log('clic');
-                    document.querySelectorAll('.card-categories-nav').forEach((cardBoisson) => {
-                      cardBoisson.classList.remove('activeBorder');
-                    });
-                    cardBoissons.classList.add('activeBorder');
-                    localStorage.setItem('memoireBoisson', boisson.nom);
-                    console.log('memoireBoisson =', boisson.nom);
-                  });
-                  cardBoissons.addEventListener('keydown', (e) => {
-                    if (e.key === 'Enter') {
-                      e.preventDefault();
-                      cardBoissons.click();
-                    }
-                  });
-
-                  const containerImgCardBoisson = document.createElement('div');
-                  containerImgCardBoisson.classList.add('container-img-card-categorie');
-
-                  const imgCardBoisson = document.createElement('img');
-                  imgCardBoisson.classList.add('img-card-categorie');
-                  imgCardBoisson.src = boisson.image;
-                  imgCardBoisson.alt = `Image de la catégorie ${boisson.nom}`;
-
-                  const containerTitreCardBoisson = document.createElement('div');
-                  containerTitreCardBoisson.classList.add('container-titre-img-nav');
-
-                  const titreCardBoisson = document.createElement('p');
-                  titreCardBoisson.classList.add('titre-img-nav');
-                  titreCardBoisson.textContent = boisson.nom;
-
-                  containerImgCardBoisson.appendChild(imgCardBoisson);
-                  containerTitreCardBoisson.appendChild(titreCardBoisson);
-
-                  cardBoissons.appendChild(containerImgCardBoisson);
-                  cardBoissons.appendChild(containerTitreCardBoisson);
-
-                  containerListBoissons.appendChild(cardBoissons);
-                });
-                imgFlecheGaucheBoissons.focus();
-              });
-
+            afficherStep3();
             break;
 
           case 4:
-            addContainerPetiteTaille.style.display = 'none';
-            addContainerGrandeTaille.style.display = 'none';
-            addContainerChoixTaille.style.display = 'flex';
-
-            btnRetour.style.display = 'flex';
-            titrePopup.style.display = 'flex';
-            descriptionPopup.style.display = 'flex';
-
-            titrePopup.textContent = 'Choisissez votre sauce';
-            descriptionPopup.innerHTML = 'Douce, relevée ou gourmande… laquelle sera votre coup de cœur&nbsp;?';
-
-            fetch('./data/produits.json')
-              .then((response) => response.json())
-              .then((data) => {
-                const listsauces = data.sauces;
-
-                containerChoixBoissons.innerHTML = '';
-                containerChoixBoissons.style.display = 'flex';
-
-                const imgFlecheGaucheBoissons = document.createElement('img');
-                imgFlecheGaucheBoissons.id = 'fleche-gauche';
-                imgFlecheGaucheBoissons.src = './assets/fleche-slider.png';
-                imgFlecheGaucheBoissons.alt = 'image fleche slider gauche';
-                imgFlecheGaucheBoissons.tabIndex = 0;
-
-                let compteur = 0;
-                const max = 5;
-                function largeurBoisson() {
-                  const carte = containerListBoissons.querySelector('.card-categories-nav');
-                  const gap = parseInt(window.getComputedStyle(containerListBoissons).gap) || 0;
-
-                  return carte.offsetWidth + gap;
-                }
-                imgFlecheGaucheBoissons.addEventListener('click', () => {
-                  if (compteur > 0) {
-                    compteur--;
-                    containerListBoissons.style.transform = `translateX(-${largeurBoisson() * compteur}px)`;
-                  }
-                });
-                imgFlecheGaucheBoissons.addEventListener('keydown', (e) => {
-                  if (e.key === 'Enter') {
-                    e.preventDefault();
-                    imgFlecheGaucheBoissons.click();
-                  }
-                });
-
-                const choixBoissons = document.createElement('div');
-                choixBoissons.id = 'choix-categorie-produits';
-
-                const containerListBoissons = document.createElement('div');
-                containerListBoissons.id = 'container-liste-categories';
-
-                const imgFlecheDroiteBoissons = document.createElement('img');
-                imgFlecheDroiteBoissons.classList.add('fleche-droite');
-                imgFlecheDroiteBoissons.src = './assets/fleche-slider.png';
-                imgFlecheDroiteBoissons.alt = 'image fleche slider droite';
-                imgFlecheDroiteBoissons.tabIndex = 0;
-
-                imgFlecheDroiteBoissons.addEventListener('click', () => {
-                  if (compteur < max) {
-                    compteur++;
-                    containerListBoissons.style.transform = `translateX(-${largeurBoisson() * compteur}px)`;
-                  }
-                });
-                imgFlecheDroiteBoissons.addEventListener('keydown', (e) => {
-                  if (e.key === 'Enter') {
-                    e.preventDefault();
-                    imgFlecheDroiteBoissons.click();
-                  }
-                });
-
-                choixBoissons.appendChild(containerListBoissons);
-
-                containerChoixBoissons.appendChild(imgFlecheGaucheBoissons);
-                containerChoixBoissons.appendChild(choixBoissons);
-                containerChoixBoissons.appendChild(imgFlecheDroiteBoissons);
-
-                addContainerChoixTaille.appendChild(containerChoixBoissons);
-
-                listsauces.forEach((sauce) => {
-                  const cardBoissons = document.createElement('div');
-                  cardBoissons.classList.add('card-categories-nav');
-                  cardBoissons.tabIndex = 0;
-                  cardBoissons.addEventListener('click', () => {
-                    console.log('clic');
-                    document.querySelectorAll('.card-categories-nav').forEach((cardBoisson) => {
-                      cardBoisson.classList.remove('activeBorder');
-                    });
-                    cardBoissons.classList.add('activeBorder');
-                    localStorage.setItem('memoireSauce', sauce.nom);
-                    console.log('memoireSauce =', sauce.nom);
-                  });
-                  cardBoissons.addEventListener('keydown', (e) => {
-                    if (e.key === 'Enter') {
-                      e.preventDefault();
-                      cardBoissons.click();
-                    }
-                  });
-
-                  const containerImgCardBoisson = document.createElement('div');
-                  containerImgCardBoisson.classList.add('container-img-card-categorie');
-
-                  const imgCardBoisson = document.createElement('img');
-                  imgCardBoisson.classList.add('img-card-categorie');
-                  imgCardBoisson.src = sauce.image;
-                  imgCardBoisson.alt = `Image de la catégorie ${sauce.nom}`;
-
-                  const containerTitreCardBoisson = document.createElement('div');
-                  containerTitreCardBoisson.classList.add('container-titre-img-nav');
-
-                  const titreCardBoisson = document.createElement('p');
-                  titreCardBoisson.classList.add('titre-img-nav');
-                  titreCardBoisson.textContent = sauce.nom;
-
-                  containerImgCardBoisson.appendChild(imgCardBoisson);
-                  containerTitreCardBoisson.appendChild(titreCardBoisson);
-
-                  cardBoissons.appendChild(containerImgCardBoisson);
-                  cardBoissons.appendChild(containerTitreCardBoisson);
-
-                  containerListBoissons.appendChild(cardBoissons);
-                });
-                imgFlecheGaucheBoissons.focus();
-              });
-
-            OpenbtnEtapeSuivante.textContent = 'Ajouter le menu à ma commande';
-
+            afficherStep4();
             break;
         }
       }
 
+      gererChoixPetiteTaille();
+      gererChoixGrandeTaille();
       defilerPopupMenus();
     });
 }
@@ -621,13 +627,21 @@ function afficherPopupBoissons(produitRecherche) {
       addPopup.tabIndex = 0;
 
       const addLogoCroix = document.createElement('div');
-      addLogoCroix.id = 'img-logo-croix';
+      addLogoCroix.id = 'img-logo-croix-article';
+
+      const logoCroixPicture = document.createElement('picture');
+      const logoCroixSource = document.createElement('source');
+      logoCroixSource.srcset = './assets/webp/supprimer.webp';
+      logoCroixSource.type = 'image/webp';
 
       const addImgLogoCroix = document.createElement('img');
       addImgLogoCroix.id = 'croix';
       addImgLogoCroix.tabIndex = 0;
       addImgLogoCroix.src = './assets/supprimer.png';
       addImgLogoCroix.alt = 'Logo Croix';
+
+      logoCroixPicture.appendChild(logoCroixSource);
+      logoCroixPicture.appendChild(addImgLogoCroix);
 
       addImgLogoCroix.addEventListener('click', () => {
         containerPopupBoissons.style.display = 'none';
@@ -647,7 +661,7 @@ function afficherPopupBoissons(produitRecherche) {
       containerPopupBoissons.appendChild(addPopup);
       addPopup.focus();
       addPopup.appendChild(addLogoCroix);
-      addLogoCroix.appendChild(addImgLogoCroix);
+      addLogoCroix.appendChild(logoCroixPicture);
 
       const addContainerTitreDescriptionImg = document.createElement('div');
       addContainerTitreDescriptionImg.id = 'container-titre-description-img';
@@ -693,12 +707,20 @@ function afficherPopupBoissons(produitRecherche) {
       addDivParentImgPetiteTaille.style.display = 'flex';
       addDivParentImgPetiteTaille.style.justifyContent = 'center';
 
+      const picturePetiteTaille = document.createElement('picture');
+      const sourcePetiteTaille = document.createElement('source');
+      sourcePetiteTaille.srcset = boisson.imageWebp;
+      sourcePetiteTaille.type = 'image/webp';
+
       const imgPetiteTaille = document.createElement('img');
       imgPetiteTaille.id = 'img-petite-taille';
-      imgPetiteTaille.src = './assets/boissons/coca-cola.png';
-      imgPetiteTaille.alt = 'Boisson Petite Taille';
+      imgPetiteTaille.src = boisson.image;
+      imgPetiteTaille.alt = `Boisson ${boisson.nom} Petite Taille`;
       imgPetiteTaille.style.width = '80%';
       imgPetiteTaille.style.height = '100%';
+
+      picturePetiteTaille.appendChild(sourcePetiteTaille);
+      picturePetiteTaille.appendChild(imgPetiteTaille);
 
       const addDivTxtChoixPetiteTaille = document.createElement('div');
 
@@ -733,10 +755,18 @@ function afficherPopupBoissons(produitRecherche) {
       addDivParentImgGrandeTaille.style.display = 'flex';
       addDivParentImgGrandeTaille.style.justifyContent = 'center';
 
+      const pictureGrandeTaille = document.createElement('picture');
+      const sourceGrandeTaille = document.createElement('source');
+      sourceGrandeTaille.srcset = boisson.imageWebp;
+      sourceGrandeTaille.type = 'image/webp';
+
       const imgGrandeTaille = document.createElement('img');
       imgGrandeTaille.id = 'img-grande-taille';
-      imgGrandeTaille.src = './assets/boissons/coca-cola.png';
-      imgGrandeTaille.alt = 'Boisson Grande Taille';
+      imgGrandeTaille.src = boisson.image;
+      imgGrandeTaille.alt = `Boisson ${boisson.nom} Grande Taille`;
+
+      pictureGrandeTaille.appendChild(sourceGrandeTaille);
+      pictureGrandeTaille.appendChild(imgGrandeTaille);
 
       const addDivTxtChoixGrandeTaille = document.createElement('div');
 
@@ -758,13 +788,13 @@ function afficherPopupBoissons(produitRecherche) {
       addContainerPetiteTaille.appendChild(addDivParentImgPetiteTaille);
       addContainerPetiteTaille.appendChild(addDivTxtChoixPetiteTaille);
 
-      addDivParentImgPetiteTaille.appendChild(imgPetiteTaille);
+      addDivParentImgPetiteTaille.appendChild(picturePetiteTaille);
       addDivTxtChoixPetiteTaille.appendChild(texteChoixPetiteTaille);
 
       addContainerGrandeTaille.appendChild(addDivParentImgGrandeTaille);
       addContainerGrandeTaille.appendChild(addDivTxtChoixGrandeTaille);
 
-      addDivParentImgGrandeTaille.appendChild(imgGrandeTaille);
+      addDivParentImgGrandeTaille.appendChild(pictureGrandeTaille);
       addDivTxtChoixGrandeTaille.appendChild(texteChoixGrandeTaille);
 
       const addContainerParentCompteur = document.createElement('div');
@@ -863,13 +893,21 @@ function afficherPopupArticles() {
   addPopup.tabIndex = 0;
 
   const addLogoCroix = document.createElement('div');
-  addLogoCroix.id = 'img-logo-croix';
+  addLogoCroix.id = 'img-logo-croix-article';
+
+  const logoCroixPicture = document.createElement('picture');
+  const logoCroixSource = document.createElement('source');
+  logoCroixSource.srcset = './assets/webp/supprimer.webp';
+  logoCroixSource.type = 'image/webp';
 
   const addImgLogoCroix = document.createElement('img');
   addImgLogoCroix.id = 'croix';
   addImgLogoCroix.tabIndex = 0;
   addImgLogoCroix.src = './assets/supprimer.png';
   addImgLogoCroix.alt = 'Logo Croix';
+
+  logoCroixPicture.appendChild(logoCroixSource);
+  logoCroixPicture.appendChild(addImgLogoCroix);
 
   addImgLogoCroix.addEventListener('click', () => {
     validationChoix.style.display = 'none';
@@ -885,7 +923,7 @@ function afficherPopupArticles() {
   validationChoix.appendChild(addPopup);
   addPopup.focus();
   addPopup.appendChild(addLogoCroix);
-  addLogoCroix.appendChild(addImgLogoCroix);
+  addLogoCroix.appendChild(logoCroixPicture);
 
   const containerDemandeValidation = document.createElement('div');
   const demandeValidation = document.createElement('p');
@@ -908,7 +946,7 @@ function afficherPopupArticles() {
   addPopup.appendChild(containerDemandeValidation);
 }
 
-function afficherPopupMessageAPISucces() {
+function afficherPopupMessageAPI(texte) {
   closeAllPopups();
 
   const messageValidation = document.getElementById('succes-commande');
@@ -926,15 +964,14 @@ function afficherPopupMessageAPISucces() {
   addPopup.id = 'popupValider';
   addPopup.tabIndex = 0;
 
-
   messageValidation.appendChild(addPopup);
   addPopup.focus();
 
   const containerDemandeValidation = document.createElement('div');
   containerDemandeValidation.classList.add('container-validation');
+
   const demandeValidation = document.createElement('p');
-  const memoireArticle = localStorage.getItem('memoireArticle');
-  demandeValidation.innerHTML = 'Votre commande a été validée avec succès&nbsp;!';
+  demandeValidation.innerHTML = texte;
   demandeValidation.style.paddingBottom = '20px';
 
   const btnValidation = document.createElement('button');
@@ -954,48 +991,12 @@ function afficherPopupMessageAPISucces() {
   addPopup.appendChild(containerDemandeValidation);
 }
 
+function afficherPopupMessageAPISucces() {
+  afficherPopupMessageAPI('Votre commande a été validée avec succès&nbsp;!');
+}
+
 function afficherPopupMessageAPIErreur() {
-  closeAllPopups();
-
-  const messageValidation = document.getElementById('succes-commande');
-  const modeCommande = localStorage.getItem('mode');
-
-  if (!messageValidation) {
-    console.error('Conteneur popup introuvable');
-    return;
-  }
-
-  messageValidation.style.display = 'flex';
-  messageValidation.innerHTML = '';
-
-  const addPopup = document.createElement('section');
-  addPopup.id = 'popupValider';
-
-  messageValidation.appendChild(addPopup);
-
-  const containerDemandeValidation = document.createElement('div');
-  containerDemandeValidation.classList.add('container-validation');
-  const demandeValidation = document.createElement('p');
-  const memoireArticle = localStorage.getItem('memoireArticle');
-  demandeValidation.innerHTML = "Une erreur s'est produite&nbsp;!";
-  demandeValidation.style.paddingBottom = '20px';
-
-  const btnValidation = document.createElement('button');
-  btnValidation.id = 'btn-etape-suivante-API';
-  btnValidation.textContent = 'OK';
-  btnValidation.addEventListener('click', () => {
-    console.log('Vous avez cliqué sur ok');
-    if (modeCommande === 'sur place') {
-      window.location.href = 'chevalet.html';
-    } else if (modeCommande === 'à emporter') {
-      window.location.href = 'remerciements.html';
-    }
-  });
-
-  containerDemandeValidation.appendChild(demandeValidation);
-  containerDemandeValidation.appendChild(btnValidation);
-
-  addPopup.appendChild(containerDemandeValidation);
+  afficherPopupMessageAPI("Une erreur s'est produite&nbsp;!");
 }
 
 function closeAllPopups() {

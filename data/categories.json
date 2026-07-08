@@ -3,54 +3,63 @@
     "id": 1,
     "title": "menus",
     "image": "assets/categories/menus.png",
+    "imageWebp": "assets/webp/categories/menus.webp",
     "description": "Un Sandwich,une friture ou une salade et une boisson"
   },
   {
     "id": 2,
     "title": "boissons",
     "image": "assets/categories/boissons.png",
+    "imageWebp": "assets/webp/categories/boissons.webp",
     "description": "Une petite soif, sucrée, légère, rafraîchissante "
   },
   {
     "id": 3,
     "title": "burgers",
     "image": "assets/categories/burgers.png",
+    "imageWebp": "assets/webp/categories/burgers.webp",
     "description": "Une vraie faim, juteuse, généreuse, gourmande"
   },
   {
     "id": 4,
     "title": "frites",
     "image": "assets/categories/frites.png",
+    "imageWebp": "assets/webp/categories/frites.webp",
     "description": "Une petite faim, croustillante, dorée, irrésistible"
   },
   {
     "id": 5,
     "title": "encas",
     "image": "assets/categories/encas.png",
+    "imageWebp": "assets/webp/categories/encas.webp",
     "description": "Une petite pause, rapide, simple, satisfaisante"
   },
   {
     "id": 6,
     "title": "wraps",
     "image": "assets/categories/wraps.png",
+    "imageWebp": "assets/webp/categories/wraps.webp",
     "description": "Une vraie envie, roulée, fraîche, généreuse"
   },
   {
     "id": 7,
     "title": "salades",
     "image": "assets/categories/salades.png",
+    "imageWebp": "assets/webp/categories/salades.webp",
     "description": "Une envie légère, fraîche, colorée, équilibrée"
   },
   {
     "id": 8,
     "title": "desserts",
     "image": "assets/categories/desserts.png",
+    "imageWebp": "assets/webp/categories/desserts.webp",
     "description": "Une petite gourmandise, sucrée, fondante, irrésistible"
   },
   {
     "id": 9,
     "title": "sauces",
     "image": "assets/categories/sauces.png",
+    "imageWebp": "assets/webp/categories/sauces.webp",
     "description": "Un petit plus, onctueux, savoureux, indispensable"
   }
 ]

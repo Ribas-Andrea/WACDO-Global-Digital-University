@@ -2,7 +2,7 @@ function numeroChevalet() {
   const inputChevalet = document.querySelectorAll('.input-numero-chevalet');
   inputChevalet.forEach((input, index) => {
     input.addEventListener('input', () => {
-      input.value = input.value.replace(/\D/g, ''); // garde uniquement les chiffres
+      input.value = input.value.replace(/\D/g, '');
       if (input.value.length === 1 && index < inputChevalet.length - 1) {
         inputChevalet[index + 1].focus();
       }

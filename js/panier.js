@@ -142,11 +142,20 @@ function afficherPanier() {
     const prodPanier = document.createElement('article');
     prodPanier.classList.add('produits-panier');
 
-    const logoSupp = document.createElement('img');
-    logoSupp.classList.add('logo-trash');
-    logoSupp.tabIndex = 0;
-    logoSupp.src = './assets/trash.png';
-    logoSupp.alt = 'Supprimer';
+  const logoSuppPicture = document.createElement('picture');
+
+  const logoSuppSource = document.createElement('source');
+  logoSuppSource.srcset = './assets/webp/trash.webp';
+  logoSuppSource.type = 'image/webp';
+
+  const logoSupp = document.createElement('img');
+  logoSupp.classList.add('logo-trash');
+  logoSupp.tabIndex = 0;
+  logoSupp.src = './assets/trash.png';
+  logoSupp.alt = 'Supprimer';
+
+  logoSuppPicture.appendChild(logoSuppSource);
+  logoSuppPicture.appendChild(logoSupp);
 
     let nomProduit;
     if (article.typeElement === 'menu') {
@@ -210,7 +219,7 @@ function afficherPanier() {
       prixElement.classList.add('prix-menu');
       prixElement.innerHTML = `${prix.toFixed(2)}&nbsp;€`;
 
-      containerLogoPrix.appendChild(logoSupp);
+      containerLogoPrix.appendChild(logoSuppPicture);
       containerLogoPrix.appendChild(prixElement);
 
       containerTitreListe.appendChild(titrePanier);
@@ -244,7 +253,7 @@ function afficherPanier() {
 
       prixElement.innerHTML = `${prix.toFixed(2)}&nbsp;€`;
 
-      containerLogoPrix.appendChild(logoSupp);
+      containerLogoPrix.appendChild(logoSuppPicture);
       containerLogoPrix.appendChild(prixElement);
 
       containerTitreLogoPrix.appendChild(titrePanier);
@@ -265,7 +274,7 @@ function afficherPanier() {
       prixElement.classList.add('prix-article');
       prixElement.innerHTML = `${(article.type.prix * article.quantite).toFixed(2)}&nbsp;€`;
 
-      containerLogoPrix.appendChild(logoSupp);
+      containerLogoPrix.appendChild(logoSuppPicture);
       containerLogoPrix.appendChild(prixElement);
 
       containerTitreLogoPrix.appendChild(titrePanier);

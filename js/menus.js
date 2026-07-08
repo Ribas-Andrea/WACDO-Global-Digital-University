@@ -69,11 +69,18 @@ function getDataCat() {
         const catNavContainerImgCard = document.createElement('div');
         catNavContainerImgCard.classList.add('container-img-card-categorie');
 
+        const picture = document.createElement('picture');
+        const source = document.createElement('source');
+        source.srcset = cat.imageWebp;
+        source.type = 'image/webp';
+
         const catNavImgCard = document.createElement('img');
         catNavImgCard.classList.add('img-card-categorie');
-
         catNavImgCard.src = cat.image;
         catNavImgCard.alt = `Image de la catégorie ${cat.title}`;
+
+        picture.appendChild(source);
+        picture.appendChild(catNavImgCard);
 
         const catNavContainerTitreImg = document.createElement('div');
         catNavContainerTitreImg.classList.add('container-titre-img-nav');
@@ -82,7 +89,7 @@ function getDataCat() {
         catNavTitreImg.classList.add('titre-img-nav');
         catNavTitreImg.textContent = cat.title;
 
-        catNavContainerImgCard.appendChild(catNavImgCard);
+        catNavContainerImgCard.appendChild(picture);
         catNavContainerTitreImg.appendChild(catNavTitreImg);
 
         catNav.appendChild(catNavContainerImgCard);
@@ -97,8 +104,8 @@ function getDataCat() {
 }
 
 function flecheNav() {
-  const flecheGauche = document.getElementById('fleche-gauche');
-  const flecheDroite = document.querySelector('.fleche-droite');
+  const flecheGauche = document.getElementById('fleche-gauche-nav');
+  const flecheDroite = document.querySelector('.fleche-droite-nav');
   const container = document.getElementById('container-liste-categories');
   let compteur = 0;
   const max = 6;
@@ -196,13 +203,6 @@ function afficherProduits(categories) {
         prodCardChoix.classList.add('card-choix');
         prodCardChoix.tabIndex = 0;
         prodCardChoix.dataset.id = prod.id;
-        // Création (ou assignation) de l’id dans le HTML via JavaScript
-        // prodCardChoix = élément HTML (une carte produit)
-        // .dataset = accès aux attributs data-*
-        // .id = nom de l'attribut (data-id)
-        // prod.id = valeur venant de l'objet produit
-
-        // Evènement au clic pour mettre un id par catégorie et afficher la bonne categorie selon où l'on a cliqué sur la nav bar
         prodCardChoix.addEventListener('click', () => {
           localStorage.setItem('memoireBurger', prod.nom);
           console.log('memoireBurger =', prod.nom);
@@ -212,46 +212,34 @@ function afficherProduits(categories) {
 
           Number(localStorage.setItem('memoirePrix', prod.prix));
 
-          // console.log('Vous avez cliquer sur un article');
-          // Message de la console pour vérifier que le clic fonctionne sur le bon élément
-
           const id = Number(prodCardChoix.dataset.id);
-          // Récupération de l'id stocké dans l'attribut HTML data-id
-          // dataset permet d'accéder aux attributs data-*
-          // Number() convertit la valeur (string) en nombre
 
           console.log('id cliqué :', id);
-          // Donne le numéro de l'id cliqué dans la console : il y a écrit : id cliqué + numro de l'id
-
-          // Table de correspondance entre l'id et la catégorie :
-          // exemple : “Si j’ai l’ID 9 → je veux la catégorie 'sauces'”
-          const categories = {
-            1: 'menus',
-            2: 'boissons',
-            3: 'burgers',
-            4: 'frites',
-            5: 'encas',
-            6: 'wraps',
-            7: 'salades',
-            8: 'desserts',
-            9: 'sauces'
-          };
         });
 
         prodCardChoix.addEventListener('keydown', (e) => {
           if (e.key === 'Enter') {
             e.preventDefault();
-            prodCardChoix.click(); // Déclenche exactement le même comportement que le clic
+            prodCardChoix.click();
           }
         });
 
         const prodContainerImgCard = document.createElement('div');
         prodContainerImgCard.classList.add('container-img-card');
 
+        const prodPicture = document.createElement('picture');
+
+        const prodSource = document.createElement('source');
+        prodSource.srcset = prod.imageWebp;
+        prodSource.type = 'image/webp';
+
         const prodImgCard = document.createElement('img');
         prodImgCard.classList.add('img-card-produits');
         prodImgCard.src = prod.image;
         prodImgCard.alt = ` ${prod.nom}`;
+
+        prodPicture.appendChild(prodSource);
+        prodPicture.appendChild(prodImgCard);
 
         const prodContainerTitrePrix = document.createElement('div');
         prodContainerTitrePrix.classList.add('container-titre-prix');
@@ -264,42 +252,16 @@ function afficherProduits(categories) {
 
         const prodPrix = document.createElement('span');
         prodPrix.classList.add('prix-produit');
-        prodPrix.innerHTML = `${prod.prix.toFixed(2)}&nbsp;€`; // toFixed pour ajouter une 2eme décimale
-
-        // <div id="container-zone-choix"> prodList
-        //   <div id="container-zone-choix"> </div> prodContainerZoneChoix
-        // </div>
-        //
+        prodPrix.innerHTML = `${prod.prix.toFixed(2)}&nbsp;€`;
 
         prodList.appendChild(prodContainerZoneChoix);
 
-        // <div id="container-zone-choix">  prodContainerZoneChoix
-        //   <article class="card-choix"> prodCardChoix
-        //   </article>
-        // </div>
-
         prodContainerZoneChoix.appendChild(prodCardChoix);
-
-        // <article class="card-choix"> prodCardChoix
-        //   <div class="container-img-card"> prodContainerImgCard
-        //     </div>
-        //   <div class="container-titre-prix"> prodContainerTitrePrix
-        //   </div>
-        // </article>
 
         prodCardChoix.appendChild(prodContainerImgCard);
         prodCardChoix.appendChild(prodContainerTitrePrix);
 
-        // <div class="container-img-card"> prodContainerImgCard
-        //     <img class="img-card-produits" src="assets/burgers/BIG_TASTY_BACON_1_VIANDE.png" alt="BIG_TASTY_BACON_1_VIANDE" /> prodImgCard
-        // </div>
-
-        prodContainerImgCard.appendChild(prodImgCard);
-
-        // <div class="container-titre-prix"> prodContainerTitrePrix
-        //     <h2 class="nom-du-produit">Big Tasty Bacon 1 viande</h2> prodNom
-        //     <span class="prix-produit">7.50€</span> prodPrix
-        // </div>
+        prodContainerImgCard.appendChild(prodPicture);
 
         prodContainerTitrePrix.appendChild(prodNom);
         prodContainerTitrePrix.appendChild(prodPrix);
