@@ -23,11 +23,11 @@ function afficherPanierPaiement() {
   affichagePanier.innerHTML += `
     <div class="total">
       <h3>
-        <div class="titreTotal">
+        <span class="titreTotal">
         Total (TTC)&nbsp;: 
-        </div>
-        <div class="montantTotal"> ${prixTotal}&nbsp;€
-        </div>
+        </span>
+        <span class="montantTotal"> ${prixTotal}&nbsp;€
+        </span>
       </h3>
     </div>
   `;
