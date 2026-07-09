@@ -1,0 +1,4 @@
+*{margin:0;padding:0;font-family:'Source Sans 3';box-sizing:border-box}body,html{overflow-x:hidden;background-color:#fff;height:100%}body{max-width:1920px;margin:0 auto}#fond-ecran{background-image:url('../assets/mc_landing_banner.png');background-image:image-set(
+    url('../assets/webp/mc_landing_banner.webp') type('image/webp'),
+    url('../assets/mc_landing_banner.png') type('image/png')
+  );opacity:.85;position:fixed;top:-90px;width:110%;height:100vh;background-size:contain;background-position:top right;background-repeat:no-repeat}

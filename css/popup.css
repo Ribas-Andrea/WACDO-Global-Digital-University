@@ -31,7 +31,6 @@
   width: 100%;
 }
 
-
 img#croix {
   width: 30px;
   height: 30px;
@@ -129,12 +128,12 @@ h1 {
   object-fit: contain;
 }
 
-#img-petite-taille{
+#img-petite-taille {
   max-width: 70%;
   max-height: 70%;
 }
 
-#img-grande-taille{
+#img-grande-taille {
   max-width: 80%;
   max-height: 80%;
 }
